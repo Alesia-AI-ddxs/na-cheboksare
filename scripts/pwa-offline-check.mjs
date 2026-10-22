@@ -135,7 +135,7 @@ try {
   const controlled = await page.evaluate(() => !!navigator.serviceWorker.controller);
   ok('страница под управлением воркера', controlled);
 
-  // 2б. языковой пакет: выбираем китайский — его шрифт (≈10 МБ) заранее не качается, а сохраняется при выборе языка
+  // 2б. языковой пакет: выбираем китайский — его шрифт (с 1.1.1 подмножество ≈0,3 МБ, кэшируется заранее) есть в кэше
   await page.goto(`${SITE}/language?from=pwa`);
   await page.waitForTimeout(800);
   await page.locator('[data-testid="lang-zh-Hans"]').click();
@@ -145,7 +145,7 @@ try {
     .waitForFunction(
       async () => {
         const k = (await caches.keys()).find((x) => x.startsWith('na-cheboksare-'));
-        return !!k && (await (await caches.open(k)).keys()).some((r) => /NotoSansSC_400Regular/.test(r.url));
+        return !!k && (await (await caches.open(k)).keys()).some((r) => /NotoSansSC[._]/.test(r.url));
       },
       null,
       { timeout: 30000, polling: 300 },

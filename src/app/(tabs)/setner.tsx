@@ -5,7 +5,8 @@ import { CodeBox } from '../../components/CodeBox';
 import { SpeakerIcon } from '../../components/Icons';
 import { Btn, Card, H, P, Screen } from '../../components/ui';
 import { content } from '../../content';
-import { openUrl, setnerLink, shareText } from '../../share';
+import { setnerLink } from '../../setnerLink';
+import { openUrl, shareText } from '../../share';
 import { useGame } from '../../state/game';
 
 export default function SetnerTab() {

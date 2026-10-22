@@ -1,7 +1,9 @@
 {
  "app": "На Чебоксаре · Туризм — Чебоксары",
- "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.7 · 22 октября 2026",
- "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.7_2026-10-22.xlsx",
+ "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.8 · 22 октября 2026",
+ "contentVersionNumber": "2.8",
+ "contentDate": "2026-10-22",
+ "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.8_2026-10-22.xlsx",
  "languages": [
   {
    "code": "ru-RU",
@@ -811,8 +813,8 @@
     "en-US": "The bay you see is younger than anything we have talked about: its first section was filled in 1980, and the dam and fountains were built in 1996. The seven fountains are not decoration but an outlet: that is how Volga water is fed into the bay. The big one throws four jets twenty meters high; the six small ones stand around it in a circle.\nAnd on the parapets of the bay live six little figures of heroes from Chuvash legends: the Girl on the Moon, the Dancing Fox, Plagi the Beauty, Volga, Ulyp the Bogatyr, and a pair — Narspi and Setner. They were installed in 2024. Narspi and Setner come from Konstantin Ivanov”s poem; the others from the project “Legends of the Chuvash Land”.\nFind all six. I am that very Setner — so you already know one of them by sight.",
     "de-DE": "Die Bucht, die Sie sehen, ist jünger als alles, wovon wir gesprochen haben: Ihr erster Abschnitt wurde 1980 gefüllt, Damm und Fontänen entstanden 1996. Die sieben Fontänen sind kein Schmuck, sondern ein Wasserauslass: So wird Wolgawasser in die Bucht geleitet. Die große schießt vier Strahlen zwanzig Meter hoch, die sechs kleinen stehen im Kreis um sie herum.\nUnd auf den Brüstungen der Bucht leben sechs kleine Figuren von Helden tschuwaschischer Legenden: das Mädchen auf dem Mond, die tanzende Füchsin, die schöne Plagi, Wolga, der Recke Ulyp und ein Paar – Narspi und Setner. Aufgestellt wurden sie 2024. Narspi und Setner stammen aus dem Poem von Konstantin Iwanow, die übrigen aus dem Projekt „Legenden des Tschuwaschenlandes“.\nFinden Sie alle sechs. Ich bin jener Setner – eine Figur kennen Sie also schon vom Sehen.",
     "fr-FR": "La baie que vous voyez est plus jeune que tout ce dont nous avons parlé : sa première partie fut remplie en 1980, la digue et les fontaines construites en 1996. Les sept fontaines ne sont pas un ornement mais une prise d’eau : c’est ainsi que l’eau de la Volga alimente la baie. La grande lance quatre jets à vingt mètres, les six petites l’entourent en cercle.\nEt sur les parapets de la baie vivent six petites figurines de héros des légendes tchouvaches : la Jeune fille sur la Lune, la Renarde danseuse, la belle Plagui, Volga, le preux Oulyp et un couple — Narspi et Setner. Elles ont été installées en 2024. Narspi et Setner viennent du poème de Konstantin Ivanov, les autres du projet « Légendes du pays tchouvache ».\nTrouvez-les toutes les six. Je suis ce même Setner — vous en connaissez donc déjà une de vue.",
-    "zh-Hans": "你眼前的海湾比我们讲过的一切都年轻：它的第一期在1980年注水，大坝和喷泉建于1996年。七座喷泉不是装饰，而是出水口：伏尔加河的水就是这样注入海湾的。大喷泉四股水柱高达二十米，六座小喷泉围成一圈。\n海湾的护栏上住着六个楚瓦什传说英雄的小雕像：月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普，还有一对——纳尔斯皮与塞特涅尔。它们于2024年落成。纳尔斯皮与塞特涅尔出自康斯坦丁·伊万诺夫的长诗，其余的来自“楚瓦什大地的传说”项目。\n把六个都找出来吧。我就是那个塞特涅尔——所以有一个雕像你已经认得了。",
-    "hi-IN": "जो खाड़ी आप देख रहे हैं, वह हमारी हर बात से नई है: इसका पहला चरण 1980 में भरा गया, और बाँध व फ़व्वारे 1996 में बने। सात फ़व्वारे सजावट नहीं, बल्कि जल-निकास हैं: इसी तरह वोल्गा का पानी खाड़ी में आता है। बड़ा फ़व्वारा चार धाराएँ बीस मीटर ऊँची फेंकता है, छह छोटे उसके चारों ओर गोल घेरे में खड़े हैं।\nऔर खाड़ी की मुँडेरों पर चुवाश किंवदंतियों के नायकों की छह छोटी मूर्तियाँ रहती हैं: चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, और एक जोड़ी — नार्स्पी और सेत्नेर। इन्हें 2024 में स्थापित किया गया। नार्स्पी और सेत्नेर कोन्स्तान्तिन इवानोव की कविता से हैं, बाक़ी «चुवाश भूमि की किंवदंतियाँ» परियोजना से।\nसभी छह को ढूँढिए। मैं ही वह सेत्नेर हूँ — तो एक मूर्ति को आप पहले से पहचानते हैं।",
+    "zh-Hans": "你眼前的海湾比我们讲过的一切都年轻：它的第一期在1980年注水，大坝和喷泉建于1996年。七座喷泉不是装饰，而是出水口：伏尔加河的水就是这样注入海湾的。大喷泉四股水柱高达二十米，六座小喷泉围成一圈。\n海湾的护栏上住着六个楚瓦什传说英雄的小雕像：月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普，还有一对——纳尔斯皮与谢特涅尔。它们于2024年落成。纳尔斯皮与谢特涅尔出自康斯坦丁·伊万诺夫的长诗，其余的来自“楚瓦什大地的传说”项目。\n把六个都找出来吧。我就是那个谢特涅尔——所以有一个雕像你已经认得了。",
+    "hi-IN": "जो खाड़ी आप देख रहे हैं, वह हमारी हर बात से नई है: इसका पहला चरण 1980 में भरा गया, और बाँध व फ़व्वारे 1996 में बने। सात फ़व्वारे सजावट नहीं, बल्कि जल-निकास हैं: इसी तरह वोल्गा का पानी खाड़ी में आता है। बड़ा फ़व्वारा चार धाराएँ बीस मीटर ऊँची फेंकता है, छह छोटे उसके चारों ओर गोल घेरे में खड़े हैं।\nऔर खाड़ी की मुँडेरों पर चुवाश किंवदंतियों के नायकों की छह छोटी मूर्तियाँ रहती हैं: चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, और एक जोड़ी — नार्स्पी और सेतनेर। इन्हें 2024 में स्थापित किया गया। नार्स्पी और सेतनेर कोन्स्तान्तिन इवानोव की कविता से हैं, बाक़ी «चुवाश भूमि की किंवदंतियाँ» परियोजना से।\nसभी छह को ढूँढिए। मैं ही वह सेतनेर हूँ — तो एक मूर्ति को आप पहले से पहचानते हैं।",
     "tr-TR": "Gördüğünüz körfez, anlattığımız her şeyden daha genç: ilk bölümü 1980’de dolduruldu, set ve fıskiyeler 1996’da yapıldı. Yedi fıskiye süs değil, su çıkışıdır: Volga suyu körfeze böyle verilir. Büyüğü dört fıskiyeyle yirmi metreye fışkırır, altı küçüğü çevresinde halka olur.\nKörfezin korkuluklarında ise Çuvaş efsane kahramanlarının altı küçük heykelciği yaşar: Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp ve bir çift — Narspi ile Setner. 2024’te yerleştirildiler. Narspi ile Setner Konstantin İvanov’un şiirinden, diğerleri “Çuvaş Diyarının Efsaneleri” projesinden.\nAltısını da bulun. O Setner benim — demek ki birini zaten yüzünden tanıyorsunuz.",
     "ar": "الخليج الذي تراه أحدث من كل ما تحدثنا عنه: مُلئ قسمه الأول عام 1980، وبُني السد والنوافير عام 1996. النوافير السبع ليست زينة، بل منفذ للمياه: هكذا تُضخّ مياه الفولغا إلى الخليج. النافورة الكبرى تقذف أربع دفقات من الماء إلى ارتفاع عشرين مترًا، والستّ الصغيرة تقف حولها في دائرة.\nوعلى حواجز الخليج تعيش ستة تماثيل صغيرة لأبطال الأساطير التشوفاشية: الفتاة على القمر، والثعلبة الراقصة، والجميلة بلاغي، والفولغا، والبطل أوليب، والثنائي — نارسبي وسيتنر. نُصبت عام 2024. نارسبي وسيتنر من قصيدة كونستانتين إيفانوف، والبقية من مشروع «أساطير الأرض التشوفاشية».\nابحث عن الستة جميعًا. أنا سيتنر نفسه — لذا فأنت تعرف أحد هذه التماثيل بوجهه."
    }
@@ -859,7 +861,7 @@
    "layer": "ЛЕГЕНДА",
    "dispute": "Название — только туристический портал; ни у собора, ни у благочиния, ни в науке подтверждения нет. Чувашское написание — проверить носителем",
    "text": {
-    "ru-RU": "«Икону, что владыка Гурий привёз, у нас зовут по-своему — Торамуш. Турă амăшě — Матерь Божья. В книгах того имени нет, а в народе держится.»",
+    "ru-RU": "«Икону, что владыка Гурий привёз, у нас зовут по-своему — Торамуш. Турӑ амӑшӗ — Матерь Божья. В книгах того имени нет, а в народе держится.»",
     "en-GB": "‘The icon that Archbishop Guriy brought — we call it by our own name here: Toramush. Турӑ амӑшӗ — the Mother of God. That name isn’t in the books, but the people hold on to it.’",
     "en-US": "“The icon Archbishop Guriy brought, we call it by our own name — Toramush. Турӑ амӑшӗ, the Mother of God. You won’t find that name in the books, but people still use it.”",
     "de-DE": "„Die Ikone, die Erzbischof Gurij gebracht hat, nennen wir auf unsere Art — Toramusch. Турӑ амӑшӗ — die Gottesmutter. In den Büchern steht dieser Name nicht, aber im Volk lebt er weiter.“",
@@ -1335,7 +1337,7 @@
    "en-US": "Back to Setner",
    "de-DE": "Zurück zu Setner",
    "fr-FR": "Retour à Setner",
-   "zh-Hans": "返回塞特内尔",
+   "zh-Hans": "返回谢特涅尔",
    "hi-IN": "सेतनेर के पास लौटें",
    "tr-TR": "Setner'e dön",
    "ar": "العودة إلى سيتنر"
@@ -1555,7 +1557,7 @@
    "en-US": "Setner, your narrator",
    "de-DE": "Setner, der Erzähler",
    "fr-FR": "Setner, le narrateur",
-   "zh-Hans": "讲述者塞特内尔",
+   "zh-Hans": "讲述者谢特涅尔",
    "hi-IN": "कथावाचक सेतनेर",
    "tr-TR": "Anlatıcı Setner",
    "ar": "سيتنر — الراوي"
@@ -1859,24 +1861,24 @@
   },
   "ui.share_text": {
    "ru-RU": "Я прошёл этап «Город у воды» игры «На Чебоксаре» и собрал подлинные находки из раскопок Чебоксар.",
-   "en-GB": "I’ve completed ‘Town by the Water’ in the game Na Cheboksare and collected authentic finds from the Cheboksary excavations.",
-   "en-US": "I finished “Town by the Water” in the game Na Cheboksare and collected real finds from the Cheboksary digs.",
-   "de-DE": "Ich habe die Etappe „Stadt am Wasser“ im Spiel Na Cheboksare geschafft und echte Funde aus den Grabungen in Tscheboksary gesammelt.",
-   "fr-FR": "J’ai terminé l’étape « La ville au bord de l’eau » du jeu Na Cheboksare et réuni d’authentiques trouvailles des fouilles de Tcheboksary.",
-   "zh-Hans": "我完成了游戏《Na Cheboksare》的“水边的城市”关卡，收集了切博克萨雷考古发掘中的真实文物。",
-   "hi-IN": "मैंने खेल «Na Cheboksare» का चरण «पानी किनारे का नगर» पूरा किया और चेबोक्सारी की खुदाई की असली खोजें इकट्ठा कीं।",
-   "tr-TR": "Na Cheboksare oyununda “Su kıyısındaki şehir” etabını tamamladım ve Çeboksarı kazılarından gerçek buluntular topladım.",
+   "en-GB": "I’ve completed ‘Town by the Water’ in the game ‘Along the Cheboksar’ and collected authentic finds from the Cheboksary excavations.",
+   "en-US": "I finished “Town by the Water” in the game “Along the Cheboksar” and collected real finds from the Cheboksary digs.",
+   "de-DE": "Ich habe die Etappe „Stadt am Wasser“ im Spiel „In Tscheboksar“ geschafft und echte Funde aus den Grabungen in Tscheboksary gesammelt.",
+   "fr-FR": "J’ai terminé l’étape « La ville au bord de l’eau » du jeu « À Tcheboksar » et réuni d’authentiques trouvailles des fouilles de Tcheboksary.",
+   "zh-Hans": "我完成了游戏《切博克萨雷寻踪》的“水边的城市”关卡，收集了切博克萨雷考古发掘中的真实文物。",
+   "hi-IN": "मैंने खेल «चेबोक्सार में» का चरण «पानी किनारे का नगर» पूरा किया और चेबोक्सारी की खुदाई की असली खोजें इकट्ठा कीं।",
+   "tr-TR": "“Çeboksar'da” oyununda “Su kıyısındaki şehir” etabını tamamladım ve Çeboksarı kazılarından gerçek buluntular topladım.",
    "ar": "أنهيتُ مرحلة «مدينة على الماء» في لعبة «على تشيبوكساري» وجمعتُ مكتشفات أصلية من تنقيبات تشيبوكساري."
   },
   "ui.title": {
    "ru-RU": "НА ЧЕБОКСАРЕ",
-   "en-GB": "NA CHEBOKSARE",
-   "en-US": "NA CHEBOKSARE",
-   "de-DE": "NA CHEBOKSARE",
-   "fr-FR": "NA CHEBOKSARE",
-   "zh-Hans": "NA CHEBOKSARE",
-   "hi-IN": "NA CHEBOKSARE",
-   "tr-TR": "NA CHEBOKSARE",
+   "en-GB": "ALONG THE CHEBOKSAR",
+   "en-US": "ALONG THE CHEBOKSAR",
+   "de-DE": "IN TSCHEBOKSAR",
+   "fr-FR": "À TCHEBOKSAR",
+   "zh-Hans": "切博克萨雷寻踪",
+   "hi-IN": "चेबोक्सार में",
+   "tr-TR": "ÇEBOKSAR'DA",
    "ar": "على تشيبوكساري"
   },
   "ui.splash_quote": {
@@ -2204,8 +2206,8 @@
    "en-US": "Setner",
    "de-DE": "Setner",
    "fr-FR": "Setner",
-   "zh-Hans": "塞特涅尔",
-   "hi-IN": "सेत्नेर",
+   "zh-Hans": "谢特涅尔",
+   "hi-IN": "सेतनेर",
    "tr-TR": "Setner",
    "ar": "سيتنر"
   },
@@ -2248,8 +2250,8 @@
    "en-US": "The app collects no data at all. No name or phone needed — just your code, if you want to carry on with Setner.",
    "de-DE": "Die App sammelt keinerlei Daten. Kein Name, keine Telefonnummer – nur Ihr Code, wenn Sie mit Setner weitermachen möchten.",
    "fr-FR": "L’application ne collecte aucune donnée. Ni nom ni téléphone — seulement votre code, si vous voulez continuer avec Setner.",
-   "zh-Hans": "本应用不收集任何数据。不需要姓名和电话——只需您的代码，如果您想和塞特涅尔继续的话。",
-   "hi-IN": "ऐप कोई डेटा इकट्ठा नहीं करता। नाम-फ़ोन की ज़रूरत नहीं — बस आपका कोड, अगर आप सेत्नेर के साथ आगे बढ़ना चाहें।",
+   "zh-Hans": "本应用不收集任何数据。不需要姓名和电话——只需您的代码，如果您想和谢特涅尔继续的话。",
+   "hi-IN": "ऐप कोई डेटा इकट्ठा नहीं करता। नाम-फ़ोन की ज़रूरत नहीं — बस आपका कोड, अगर आप सेतनेर के साथ आगे बढ़ना चाहें।",
    "tr-TR": "Uygulama hiçbir veri toplamaz. Ad ve telefon gerekmez — yalnızca kodunuz, Setner ile devam etmek isterseniz.",
    "ar": "لا يجمع التطبيق أي بيانات. لا حاجة إلى اسم أو رقم هاتف — فقط الرمز، إن أردت المتابعة مع سيتنر."
   },
@@ -2347,8 +2349,8 @@
    "en-US": "Setner is the narrator of this walk and your guide on Telegram. Show him your code — he will log your progress and tell you what comes next.",
    "de-DE": "Setner ist der Erzähler dieses Spaziergangs und Ihr Begleiter auf Telegram. Zeigen Sie ihm Ihren Code – er vermerkt Ihren Fortschritt und sagt, wie es weitergeht.",
    "fr-FR": "Setner est le narrateur de cette promenade et votre guide sur Telegram. Montrez-lui votre code — il notera votre parcours et vous dira la suite.",
-   "zh-Hans": "塞特涅尔是这次漫步的讲述者，也是您在 Telegram 上的向导。把代码给他看——他会记录您的进度并告诉您接下来做什么。",
-   "hi-IN": "सेत्नेर इस सैर के कथावाचक और Telegram पर आपके मार्गदर्शक हैं। उन्हें अपना कोड दिखाइए — वे आपकी प्रगति दर्ज करेंगे और आगे का रास्ता बताएँगे।",
+   "zh-Hans": "谢特涅尔是这次漫步的讲述者，也是您在 Telegram 上的向导。把代码给他看——他会记录您的进度并告诉您接下来做什么。",
+   "hi-IN": "सेतनेर इस सैर के कथावाचक और Telegram पर आपके मार्गदर्शक हैं। उन्हें अपना कोड दिखाइए — वे आपकी प्रगति दर्ज करेंगे और आगे का रास्ता बताएँगे।",
    "tr-TR": "Setner bu yürüyüşün anlatıcısı ve Telegram’daki rehberinizdir. Ona kodunuzu gösterin — ilerlemenizi kaydeder ve sırada ne olduğunu söyler.",
    "ar": "سيتنر هو راوي هذه الجولة ودليلك في تيليغرام. أرِه رمزك — وسيسجّل تقدّمك ويخبرك بما يأتي بعد ذلك."
   },
@@ -2439,6 +2441,17 @@
    "hi-IN": "सामग्री संस्करण",
    "tr-TR": "İçerik sürümü",
    "ar": "إصدار المحتوى"
+  },
+  "ui.content_version": {
+   "ru-RU": "Версия содержания {version} · {date}",
+   "en-GB": "Content version {version} · {date}",
+   "en-US": "Content version {version} · {date}",
+   "de-DE": "Inhaltsversion {version} · {date}",
+   "fr-FR": "Version du contenu {version} · {date}",
+   "zh-Hans": "内容版本 {version} · {date}",
+   "hi-IN": "सामग्री संस्करण {version} · {date}",
+   "tr-TR": "İçerik sürümü {version} · {date}",
+   "ar": "إصدار المحتوى {version} · {date}"
   },
   "ui.unity_soon": {
    "ru-RU": "3D-сцены этой точки появятся в следующей версии.",
@@ -2556,8 +2569,8 @@
    "en-US": "The Girl on the Moon, the Dancing Fox, Plagi the Beauty, Volga, Ulyp the Bogatyr, Narspi and Setner. Game find: all six found.",
    "de-DE": "Das Mädchen auf dem Mond, die tanzende Füchsin, die schöne Plagi, Wolga, der Recke Ulyp, Narspi und Setner. Spielfund: alle sechs gefunden.",
    "fr-FR": "La Jeune fille sur la Lune, la Renarde danseuse, la belle Plagui, Volga, le preux Oulyp, Narspi et Setner. Trouvaille de jeu : toutes les six trouvées.",
-   "zh-Hans": "月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普、纳尔斯皮与塞特涅尔。游戏发现：六个全部找到。",
-   "hi-IN": "चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, नार्स्पी और सेत्नेर। खेल की खोज: सभी छह मिल गए।",
+   "zh-Hans": "月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普、纳尔斯皮与谢特涅尔。游戏发现：六个全部找到。",
+   "hi-IN": "चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, नार्स्पी और सेतनेर। खेल की खोज: सभी छह मिल गए।",
    "tr-TR": "Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp, Narspi ile Setner. Oyun buluntusu: altısı da bulundu.",
    "ar": "الفتاة على القمر، والثعلبة الراقصة، والجميلة بلاغي، والفولغا، والبطل أوليب، ونارسبي وسيتنر. اكتشاف في اللعبة: عُثر على الستة جميعًا."
   },
@@ -2615,6 +2628,17 @@
    "hi-IN": "लगता है यह आपकी भाषा है",
    "tr-TR": "Diliniz bu gibi görünüyor",
    "ar": "يبدو أن هذه لغتك"
+  },
+  "ui.lang_suggest_title": {
+   "ru-RU": "Предлагаем",
+   "en-GB": "Suggested",
+   "en-US": "Suggested",
+   "de-DE": "Vorschläge",
+   "fr-FR": "Suggestions",
+   "zh-Hans": "推荐",
+   "hi-IN": "सुझाव",
+   "tr-TR": "Önerilenler",
+   "ar": "مقترحات"
   },
   "ui.lang_continue": {
    "ru-RU": "Продолжить",

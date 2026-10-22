@@ -7,7 +7,10 @@
 //    на трёх показательных локалях: en-GB, ar (справа налево — с проверкой зеркальности), zh-Hans;
 //  - «тофу»: шрифт письма загружен (document.fonts) + тест-строки из листа ЯЗЫКИ нарисованы на снимках;
 //  - смена языка на лету и после перезагрузки (выбор запоминается в браузере);
-//  - ссылка на Сетнера несёт lang/voice.
+//  - ссылка на Сетнера: start=<код>_<письменный>[_<голосовой>] (v1.1.1, без &lang= &voice=);
+//  - (v1.1.1) блок «Предлагаем»: язык телефона + варианты страны телефона (CN при языке en → 中文（简体）;
+//    SA → العربية; RU → только Русский — языки России без перевода («готовится») не предлагаются);
+//  - (v1.1.1) «О проекте»: версия содержания на языке гостя (ui.content_version, дата средствами языка).
 // Итог проверок — qa/qa_report.json (ДА/НЕТ по каждому пункту).
 // Перед запуском: npm run web:export
 // Запуск: npm run qa:screens
@@ -382,6 +385,9 @@ try {
     await page.goto(`${BASE}/about`);
     await page.waitForTimeout(800);
     await shot(page, `${tag}_10_about.png`);
+    const ver = await byId(page, 'content-version').innerText().catch(() => '');
+    const verWord = (L['ui.content_version'] ?? '').split('{')[0].trim();
+    check(`${code}: «О проекте» — версия содержания на языке гостя`, ver.includes(content.contentVersionNumber) && !ver.includes('{') && ver.includes(verWord), ver);
     // Сетнер: ссылка несёт код, письменный вариант и произношение
     await page.goto(`${BASE}/setner`);
     await byId(page, 'to-bot').waitFor();
@@ -395,7 +401,32 @@ try {
     await byId(page, 'to-bot').click();
     await page.waitForTimeout(800);
     const v = FIRST_VOICE[code] ?? code;
-    check(`${code}: ссылка на Сетнера с lang/voice`, botUrl.includes(`lang=${encodeURIComponent(code)}`) && botUrl.includes(`voice=${encodeURIComponent(v)}`), botUrl);
+    const startRe = new RegExp(`\\?start=ND-[A-Z0-9]{4}_${code}${v !== code ? `_${v}` : ''}$`);
+    check(`${code}: ссылка на Сетнера start=<код>_${code}${v !== code ? `_${v}` : ''} (без &lang= &voice=)`, startRe.test(botUrl) && !/[&?](lang|voice)=/.test(botUrl), botUrl);
+    await ctx.close();
+  }
+
+  // 7б. Блок «Предлагаем» по стране телефона (v1.1.1): страна — из настроек браузера/телефона, без геолокации
+  for (const [loc, want, notWant, name] of [
+    ['en-CN', ['en-GB', 'zh-Hans'], [], 'CN при языке телефона en'],
+    ['en-SA', ['en-GB', 'ar'], [], 'SA при языке телефона en'],
+    ['ru-RU', ['ru-RU'], ['cv', 'tt', 'ba', 'mhr', 'mrj', 'mdf', 'myv'], 'RU'],
+    ['hi-IN', ['hi-IN'], ['mr-IN'], 'IN (маратхи без перевода)'],
+  ]) {
+    const { ctx, page } = await newPage({ locale: loc });
+    await page.goto(`${BASE}/`);
+    await page.waitForURL(/\/language/);
+    await byId(page, 'lang-suggest').waitFor();
+    await page.waitForTimeout(500);
+    const got = await page.evaluate(() =>
+      [...document.querySelectorAll('[data-testid="lang-suggest"] [data-testid^="sugg-"]')].map((e) => e.getAttribute('data-testid').slice(5)),
+    );
+    const okWant = want.every((c) => got.includes(c)) && got[0] === want[0];
+    const okNot = notWant.every((c) => !got.includes(c));
+    const okDup = new Set(got).size === got.length;
+    const soonIn = got.filter((c) => !(META.variants[c]?.strings > 0));
+    check(`«Предлагаем», ${name} (${loc}): ${want.join(' + ')}`, okWant && okNot && okDup && !soonIn.length, got.join(', '));
+    await shot(page, `60_suggest_${loc}.png`);
     await ctx.close();
   }
 
@@ -474,13 +505,13 @@ try {
       const f = walk(join(DIST, 'assets')).find((x) => re.test(x));
       return f ? '/' + f.slice(DIST.length + 1).split('\\').join('/') : null;
     };
-    const fams = {
-      NotoNaskhArabic: findAsset(/NotoNaskhArabic_400Regular\.[0-9a-f]+\.ttf$/),
-      NotoSansSC: findAsset(/NotoSansSC_400Regular\.[0-9a-f]+\.ttf$/),
-      NotoSansTC: findAsset(/NotoSansTC_400Regular\.[0-9a-f]+\.ttf$/),
-      NotoSansHK: findAsset(/NotoSansHK_400Regular\.[0-9a-f]+\.ttf$/),
-      NotoSansDevanagari: findAsset(/NotoSansDevanagari_400Regular\.[0-9a-f]+\.ttf$/),
-    };
+    // v1.1.1: в сборке — подмножества (assets/fonts/subset/<Семейство>.ttf); письма без текстов (TC, HK) не входят
+    const fams = Object.fromEntries(
+      ['NotoNaskhArabic', 'NotoSansSC', 'NotoSansTC', 'NotoSansHK', 'NotoSansDevanagari']
+        .map((n) => [n, findAsset(new RegExp(`fonts/subset/${n}\\.[0-9a-f]+\\.ttf$`))])
+        .filter(([, u]) => u),
+    );
+    check('лист тофу: в сборке только подмножества шрифтов (нет полных Noto)', !findAsset(/noto-sans-(sc|tc|hk)|NotoSans(SC|TC|HK)_400Regular/), Object.keys(fams).join(', '));
     const loaded = await page.evaluate(async (map) => {
       const out = {};
       for (const [name, url] of Object.entries(map)) {

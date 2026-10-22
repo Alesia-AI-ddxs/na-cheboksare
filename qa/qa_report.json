@@ -1,6 +1,6 @@
 {
- "date": "2026-10-22T08:34:45.116Z",
- "shots": 63,
+ "date": "2026-10-22T09:54:51.598Z",
+ "shots": 67,
  "checks": [
   {
    "name": "первый запуск ведёт на экран выбора языка",
@@ -35,7 +35,7 @@
   {
    "name": "en-GB: пролог на выбранном языке (ui.title)",
    "pass": true,
-   "info": "NA CHEBOKSARE"
+   "info": "ALONG THE CHEBOKSAR"
   },
   {
    "name": "en-GB: направление письма ltr",
@@ -53,9 +53,14 @@
    "info": "You’ve collected 8 finds"
   },
   {
-   "name": "en-GB: ссылка на Сетнера с lang/voice",
+   "name": "en-GB: «О проекте» — версия содержания на языке гостя",
    "pass": true,
-   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-URFZ&lang=en-GB&voice=en-GB"
+   "info": "Content version 2.8 · 22 October 2026"
+  },
+  {
+   "name": "en-GB: ссылка на Сетнера start=<код>_en-GB (без &lang= &voice=)",
+   "pass": true,
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-N3CH_en-GB"
   },
   {
    "name": "ar: автоопределение по языку браузера (ar)",
@@ -108,9 +113,14 @@
    "info": "عثرت على 8 اكتشافات"
   },
   {
-   "name": "ar: ссылка на Сетнера с lang/voice",
+   "name": "ar: «О проекте» — версия содержания на языке гостя",
    "pass": true,
-   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-3U73&lang=ar&voice=ar-SA"
+   "info": "إصدار المحتوى 2.8 · 22 أكتوبر 2026"
+  },
+  {
+   "name": "ar: ссылка на Сетнера start=<код>_ar_ar-SA (без &lang= &voice=)",
+   "pass": true,
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-YUJD_ar_ar-SA"
   },
   {
    "name": "zh-Hans: автоопределение по языку браузера (zh-CN)",
@@ -130,7 +140,7 @@
   {
    "name": "zh-Hans: пролог на выбранном языке (ui.title)",
    "pass": true,
-   "info": "NA CHEBOKSARE"
+   "info": "切博克萨雷寻踪"
   },
   {
    "name": "zh-Hans: направление письма ltr",
@@ -148,9 +158,34 @@
    "info": "您共找到 8 件发现"
   },
   {
-   "name": "zh-Hans: ссылка на Сетнера с lang/voice",
+   "name": "zh-Hans: «О проекте» — версия содержания на языке гостя",
    "pass": true,
-   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-9EXU&lang=zh-Hans&voice=zh-CN"
+   "info": "内容版本 2.8 · 2026年10月22日"
+  },
+  {
+   "name": "zh-Hans: ссылка на Сетнера start=<код>_zh-Hans_zh-CN (без &lang= &voice=)",
+   "pass": true,
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-BAUE_zh-Hans_zh-CN"
+  },
+  {
+   "name": "«Предлагаем», CN при языке телефона en (en-CN): en-GB + zh-Hans",
+   "pass": true,
+   "info": "en-GB, zh-Hans"
+  },
+  {
+   "name": "«Предлагаем», SA при языке телефона en (en-SA): en-GB + ar",
+   "pass": true,
+   "info": "en-GB, ar"
+  },
+  {
+   "name": "«Предлагаем», RU (ru-RU): ru-RU",
+   "pass": true,
+   "info": "ru-RU"
+  },
+  {
+   "name": "«Предлагаем», IN (маратхи без перевода) (hi-IN): hi-IN",
+   "pass": true,
+   "info": "hi-IN"
   },
   {
    "name": "hi-IN: шрифт письма NotoSansDevanagari загружен (document.fonts)",
@@ -183,9 +218,14 @@
    "info": "ltr"
   },
   {
+   "name": "лист тофу: в сборке только подмножества шрифтов (нет полных Noto)",
+   "pass": true,
+   "info": "NotoNaskhArabic, NotoSansSC, NotoSansDevanagari"
+  },
+  {
    "name": "лист тофу: шрифты письменностей загрузились из сборки",
    "pass": true,
-   "info": "{\"NotoNaskhArabic\":\"loaded\",\"NotoSansSC\":\"loaded\",\"NotoSansTC\":\"loaded\",\"NotoSansHK\":\"loaded\",\"NotoSansDevanagari\":\"loaded\"}"
+   "info": "{\"NotoNaskhArabic\":\"loaded\",\"NotoSansSC\":\"loaded\",\"NotoSansDevanagari\":\"loaded\"}"
   }
  ]
 }

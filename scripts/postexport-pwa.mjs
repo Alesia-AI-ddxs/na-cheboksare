@@ -63,15 +63,16 @@ const SKIP = [
   /\[[^/]*\]\.html$/, // шаблоны страниц вида [id].html — все реальные страницы уже собраны отдельно (а скрипты [id]-*.js нужны!)
   /(^|\/)\./, // скрытые файлы
 ];
-// Тяжёлые шрифты письменностей (китайские Noto ≈7–10 МБ каждый) НЕ скачиваем заранее всем: файл приходит,
+// Тяжёлые шрифты (больше 2 МБ — например, полный китайский Noto ≈7–10 МБ) НЕ скачиваем заранее всем: файл приходит,
 // когда гость выбрал этот язык, и дальше живёт в кэше воркера (работает без интернета) — «языковой пакет».
-// Арабский и деванагари лёгкие (≈0,2 МБ) — их кэшируем заранее, как всё остальное.
-const ON_DEMAND = [/NotoSans(SC|TC|HK)_\d+\w*\.[0-9a-f]+\.ttf$/i, /NotoSans(SC|TC|HK)_\d+\w*\.ttf$/i];
+// С версии 1.1.1 шрифты письменностей — подмножества (китайский ≈0,3 МБ, арабский и деванагари ≈0,1–0,2 МБ):
+// они лёгкие и кэшируются заранее вместе со всем сайтом — любой язык работает без интернета с первого открытия.
+const ON_DEMAND_BYTES = 2 * 1024 * 1024;
 const allFiles = walk(DIR)
   .map((f) => relative(DIR, f).split(sep).join('/'))
   .filter((rel) => !SKIP.some((re) => re.test(rel)))
   .sort();
-const onDemand = allFiles.filter((rel) => ON_DEMAND.some((re) => re.test(rel)));
+const onDemand = allFiles.filter((rel) => /\.(ttf|otf|woff2?)$/i.test(rel) && statSync(join(DIR, rel)).size > ON_DEMAND_BYTES);
 const files = allFiles.filter((rel) => !onDemand.includes(rel));
 
 const hash = createHash('sha256');

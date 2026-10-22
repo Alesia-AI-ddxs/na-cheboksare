@@ -4,6 +4,9 @@
  *  - каждый язык написан на самом себе (эндоним) — первой строкой; БЕЗ флагов стран (флаг — страна, а не язык);
  *  - второй строкой — варианты произношения, если их больше одного; второй шаг — выбор произношения;
  *  - первый запуск: язык системы предлагается сверху (автоопределение) — подтвердить одной кнопкой;
+ *  - блок «Предлагаем» (v1.1.1, решение владельца 22.10.2026): язык телефона + варианты страны телефона
+ *    (страна — из настроек телефона, колонка «Страны» листа ЯЗЫКИ; без геолокации и сети), только переведённые
+ *    (готовые и черновики, не «готовится»), без повторов; ниже — полный список;
  *  - варианты со статусом ЧЕРНОВИК (лист ЯЗЫКИ) — служебная метка мелко; без перевода — «готовится» и неактивны;
  *  - письмо справа налево на телефоне включается только после перезапуска — экран «перезапустимся».
  * Все подписи — ключи мастер-таблицы (ui.lang_*, ui.voice_*, ui.restart_*), в коде строк нет.
@@ -14,11 +17,11 @@ import { FalconMark } from '../components/Icons';
 import { Btn, Card, H, P, Screen, Tag } from '../components/ui';
 import {
   byCode,
-  detectLocale,
   isDraft,
   languageDisplayName,
   LANGUAGES,
   restartApp,
+  suggestedLocales,
   translatedCount,
   type LanguageVariant,
 } from '../i18n';
@@ -42,11 +45,12 @@ export default function LanguageSelectScreen({ onDone, onBack }: Props) {
   // язык системы и названия языков знает только устройство — считаем после первого кадра
   // (веб-страница собирается заранее на сервере, и первый кадр должен с ней совпасть)
   const [mounted, setMounted] = useState(false);
-  const [suggested, setSuggested] = useState<LanguageVariant | null>(null);
+  const [suggestions, setSuggestions] = useState<LanguageVariant[]>([]);
   useEffect(() => {
-    setSuggested(byCode(detectLocale()) ?? byCode('ru-RU')!);
+    setSuggestions(suggestedLocales((c) => translatedCount(c) > 0).map((c) => byCode(c)!).filter(Boolean));
     setMounted(true);
   }, []);
+  const suggested = suggestions[0] ?? null;
 
   const available = (l: LanguageVariant) => translatedCount(l.code) > 0;
 
@@ -142,11 +146,40 @@ export default function LanguageSelectScreen({ onDone, onBack }: Props) {
         {t('ui.lang_endonyms')}
       </P>
 
-      {!langChosen && suggested && available(suggested) ? (
+      {suggested ? (
         <Card style={{ borderColor: pal.gold, borderWidth: 1.5 }}>
-          <P muted style={{ fontSize: 13 }}>{t('ui.lang_suggested')}</P>
-          <Text style={[{ fontSize: 22, color: pal.ink, marginTop: 4 }, endonymFont(suggested)]}>{suggested.endonym}</Text>
-          <Btn testID="lang-continue" label={t('ui.lang_continue')} onPress={() => choose(suggested)} style={{ marginTop: 12 }} />
+          <View testID="lang-suggest">
+            <P muted style={{ fontSize: 13 }}>{t('ui.lang_suggest_title')}</P>
+            {!langChosen ? (
+              <>
+                {/* первый запуск: язык телефона — крупно и одной кнопкой */}
+                <P muted style={{ fontSize: 12, marginTop: 6 }}>{t('ui.lang_suggested')}</P>
+                <Text testID={`sugg-${suggested.code}`} style={[{ fontSize: 22, color: pal.ink, marginTop: 2 }, endonymFont(suggested)]}>
+                  {suggested.endonym}
+                </Text>
+                <Btn testID="lang-continue" label={t('ui.lang_continue')} onPress={() => choose(suggested)} style={{ marginTop: 12 }} />
+              </>
+            ) : null}
+            <View style={{ gap: 8, marginTop: 10 }}>
+              {(langChosen ? suggestions : suggestions.slice(1)).map((l) => (
+                <Pressable
+                  key={l.code}
+                  testID={`sugg-${l.code}`}
+                  accessibilityRole="radio"
+                  accessibilityState={{ selected: langChosen && l.code === lang }}
+                  onPress={() => choose(l)}
+                  style={rowStyle(pal, langChosen && l.code === lang)}
+                >
+                  <View style={{ flex: 1, minWidth: 0 }}>
+                    <Text style={[{ color: pal.ink, fontSize: 18 }, endonymFont(l)]}>{l.endonym}</Text>
+                    {isDraft(l.code) ? (
+                      <Text style={{ color: pal.muted, fontSize: 10.5, marginTop: 2, fontFamily: f.body }}>{t('ui.lang_draft_badge')}</Text>
+                    ) : null}
+                  </View>
+                </Pressable>
+              ))}
+            </View>
+          </View>
         </Card>
       ) : null}
 

@@ -9,16 +9,25 @@
      ключи = ID строк интерфейса (ui.*, pt.*, q.* …), ID текстов (T…) и преданий (L…); пустые ячейки не пишутся —
      недостающую строку подставит лестница фолбэка (точный вариант → старший → en-GB → ru-RU);
   3) locales/_meta.json — статус текста, тест-строка «тофу», сколько строк переведено (для метки «черновик»);
-  4) locales/index.ts — список вшитых пакетов для приложения (создаётся автоматически, руками не править).
+  4) locales/index.ts — список вшитых пакетов для приложения (создаётся автоматически, руками не править);
+  5) (v1.1.1) в locales/_meta.json — ещё страны варианта (колонка «Страны (ISO 3166-1)» листа ЯЗЫКИ) и лист ИМЕНА
+     (для npm run qa:names); в content.json — номер и дата версии содержания (для ui.content_version);
+  6) (v1.1.1) подмножества шрифтов письменностей — tools/font_subset.py → assets/fonts/subset/, src/i18n/fontFiles.ts
+     (нужно: pip install fonttools brotli; пропустить — флаг --no-fonts).
 Проверки: скобки ICU {…} в каждой строке; при ошибке — код выхода 2 (npm run check тогда тоже упадёт).
 
-Запуск:  python3 -I tools/content_build.py <путь_к_xlsx> src/content/content.json [--locales locales]
+Запуск:  python3 -I tools/content_build.py <путь_к_xlsx> src/content/content.json [--locales locales] [--no-fonts]
 """
 import sys, json, re
+import importlib.util
 from pathlib import Path
 import openpyxl
 
+sys.dont_write_bytecode = True  # не оставлять __pycache__ в tools/
+
 ARGS = [a for a in sys.argv[1:] if not a.startswith('--')]
+if '--locales' in sys.argv:
+    ARGS.remove(sys.argv[sys.argv.index('--locales') + 1])
 XLSX = ARGS[0]
 OUT = ARGS[1]
 if '--locales' in sys.argv:
@@ -130,6 +139,9 @@ if 'ЯЗЫКИ' in wb.sheetnames:
             'rtl': 'RTL' in str(ws.cell(r, col['Направление']).value or ''),
             'status': str(ws.cell(r, col['Статус текста']).value or '').strip(),
             'testString': (ws.cell(r, col['Тест-строка (тофу)']).value or '') if 'Тест-строка (тофу)' in col else '',
+            # страны, где вариант естественно предложить (ISO 3166-1 alpha-2), — для блока «Предлагаем»
+            'regions': [x.strip().upper() for x in re.split(r'[,;\s]+', str(ws.cell(r, col['Страны (ISO 3166-1)']).value or ''))
+                        if x.strip()] if 'Страны (ISO 3166-1)' in col else [],
         })
 LANG_CODES = [x['code'] for x in REGISTRY] or LEGACY_CODES
 
@@ -230,6 +242,26 @@ languages = [{'code': x['code'], 'name': x['endonym'] or x['nameRu'], 'ready': u
 # --- Как устроено: версия таблицы
 ws = wb['Как устроено']
 table_version = clean(ws.cell(2, 2).value)
+# номер и дата версии — для строки ui.content_version («Версия содержания {version} · {date}»; дату пишет приложение)
+RU_MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+mv = re.search(r'верси[яи]\s+(\d+(?:\.\d+)+)', table_version)
+md = re.search(r'(\d{1,2})\s+(' + '|'.join(RU_MONTHS) + r')\s+(\d{4})', table_version)
+content_version_number = mv.group(1) if mv else ''
+content_date = f'{md.group(3)}-{RU_MONTHS.index(md.group(2)) + 1:02d}-{int(md.group(1)):02d}' if md else ''
+if not (mv and md):
+    warnings.append(f'в «Как устроено» (B2) не найдены номер/дата версии: «{table_version}»')
+
+# --- ИМЕНА: передача имён по вариантам (для проверки npm run qa:names)
+names = {}
+if 'ИМЕНА' in wb.sheetnames:
+    ws = wb['ИМЕНА']
+    ncols = {c: CODE_ALIASES.get(str(ws.cell(1, c).value).strip(), str(ws.cell(1, c).value).strip())
+             for c in range(2, ws.max_column + 1) if ws.cell(1, c).value}
+    for r in range(2, ws.max_row + 1):
+        k = clean(ws.cell(r, 1).value)
+        if not k or len(k) > 60:  # длинная строка внизу листа — примечание, не имя
+            continue
+        names[k] = {code: clean(ws.cell(r, c).value) for c, code in ncols.items() if clean(ws.cell(r, c).value)}
 
 # ---------------------------------------------------------------- сборка точек с проверкой
 artifacts = {}
@@ -269,6 +301,8 @@ for p in POINTS:
 content = {
     'app': 'На Чебоксаре · Туризм — Чебоксары',
     'contentVersion': table_version,
+    'contentVersionNumber': content_version_number,
+    'contentDate': content_date,
     'generatedFrom': XLSX.split('/')[-1],
     'languages': languages,
     'stages': STAGES,
@@ -325,7 +359,8 @@ for old in LOCALES_DIR.glob('*.json'):
     if old.stem not in packs and old.name != '_meta.json':
         old.unlink()  # вариант убран из реестра — убираем и пакет
 reg_by = {x['code']: x for x in REGISTRY}
-meta = {'generatedFrom': XLSX.split('/')[-1], 'contentVersion': table_version, 'total': len(all_ids), 'variants': {}}
+meta = {'generatedFrom': XLSX.split('/')[-1], 'contentVersion': table_version, 'contentVersionNumber': content_version_number,
+        'contentDate': content_date, 'total': len(all_ids), 'variants': {}, 'names': names}
 print(f'\nЯзыковые пакеты → {LOCALES_DIR}  (строк всего: {len(all_ids)}; вариантов: {len(packs)})')
 for code in LANG_CODES:
     strings = packs[code]
@@ -334,7 +369,7 @@ for code in LANG_CODES:
         f.write('\n')
     rg = reg_by.get(code, {})
     meta['variants'][code] = {'status': rg.get('status', ''), 'strings': len(strings), 'rtl': rg.get('rtl', False),
-                              'testString': rg.get('testString', '')}
+                              'testString': rg.get('testString', ''), 'regions': rg.get('regions', [])}
     pct = round(100 * len(strings) / len(all_ids)) if all_ids else 0
     mark = 'ГОТОВО' if len(strings) == len(all_ids) else f'пропусков: {len(all_ids) - len(strings)}'
     print(f'  {code:9s} {len(strings):4d} из {len(all_ids)} ({pct:3d}%)  [{mark}]  {rg.get("status", "")}')
@@ -348,16 +383,46 @@ lines = ['// СОЗДАНО АВТОМАТИЧЕСКИ: tools/content_build.py �
          f'// Источник: {XLSX.split("/")[-1]}']
 lines += [f"import {ident(c)} from './{c}.json';" for c in LANG_CODES]
 lines += ["import META from './_meta.json';", '',
-          'export type LocaleMeta = { status: string; strings: number; rtl: boolean; testString: string };',
-          'export const LOCALE_META = META as { generatedFrom: string; contentVersion: string; total: number; variants: Record<string, LocaleMeta> };',
+          'export type LocaleMeta = { status: string; strings: number; rtl: boolean; testString: string; regions: string[] };',
+          'export const LOCALE_META = META as {',
+          '  generatedFrom: string;',
+          '  contentVersion: string;',
+          '  contentVersionNumber: string;',
+          '  contentDate: string;',
+          '  total: number;',
+          '  variants: Record<string, LocaleMeta>;',
+          '  names: Record<string, Record<string, string>>;',
+          '};',
           '', '/** Пакеты строк, вшитые в сборку: код письменного варианта → { ID строки: текст } */',
           'export const BUNDLED_LOCALES: Record<string, Record<string, string>> = {']
 lines += [f"  '{c}': {ident(c)}," for c in LANG_CODES]
 lines += ['};', '']
 (LOCALES_DIR / 'index.ts').write_text('\n'.join(lines), encoding='utf-8')
 
+# ---------------------------------------------------------------- подмножества шрифтов письменностей (v1.1.1)
+font_errors = []
+if '--no-fonts' not in sys.argv:
+    project_root = LOCALES_DIR.resolve().parent
+    fs_path = next((p for p in [Path(__file__).resolve().parent / 'font_subset.py', project_root / 'tools' / 'font_subset.py']
+                    if p.exists()), None)
+    if not fs_path:
+        print('\nОШИБКА: нет tools/font_subset.py — подмножества шрифтов не собраны')
+        font_errors.append('нет font_subset.py')
+    else:
+        try:
+            spec = importlib.util.spec_from_file_location('font_subset', fs_path)
+            font_subset = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(font_subset)
+        except ImportError as e:
+            print(f'\nОШИБКА: {e}. Установите: pip install fonttools brotli (или запустите с --no-fonts)')
+            sys.exit(2)
+        res = font_subset.build(project_root, packs, meta['variants'])
+        font_errors = res['errors']
+
 if bad_icu:
     print('\nОШИБКА — незакрытые скобки ICU {…} (исправить в таблице):')
     for code, sid in bad_icu:
         print(f'  {code} / {sid}')
+    sys.exit(2)
+if font_errors:
     sys.exit(2)

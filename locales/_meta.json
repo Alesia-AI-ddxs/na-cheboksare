@@ -1,139 +1,371 @@
 {
- "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.7_2026-10-22.xlsx",
- "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.7 · 22 октября 2026",
- "total": 172,
+ "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.8_2026-10-22.xlsx",
+ "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.8 · 22 октября 2026",
+ "contentVersionNumber": "2.8",
+ "contentDate": "2026-10-22",
+ "total": 174,
  "variants": {
   "ru-RU": {
    "status": "ИСХОДНИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "Съешь же ещё этих мягких французских булок, да выпей чаю. ЁЪ"
+   "testString": "Съешь же ещё этих мягких французских булок, да выпей чаю. ЁЪ",
+   "regions": [
+    "RU",
+    "BY",
+    "KZ",
+    "KG"
+   ]
   },
   "cv": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Ӑшӑ ҫӗршывӑмӑр, ӗҫчен халӑхӑмӑр, ӳсӗмлӗ ҫулсем · Шупашкар · ӐӖҪӲ"
+   "testString": "Ӑшӑ ҫӗршывӑмӑр, ӗҫчен халӑхӑмӑр, ӳсӗмлӗ ҫулсем · Шупашкар · ӐӖҪӲ",
+   "regions": [
+    "RU"
+   ]
   },
   "mdf": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Мокшень кяль · ё ъ ь ы э ю я · Ё Ъ Ь Ы Э Ю Я"
+   "testString": "Мокшень кяль · ё ъ ь ы э ю я · Ё Ъ Ь Ы Э Ю Я",
+   "regions": [
+    "RU"
+   ]
   },
   "myv": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Эрзянь кель · ё ъ ь ы э ю я · Ё Ъ Ь Ы Э Ю Я"
+   "testString": "Эрзянь кель · ё ъ ь ы э ю я · Ё Ъ Ь Ы Э Ю Я",
+   "regions": [
+    "RU"
+   ]
   },
   "mhr": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Марий йылме · ҥ ӧ ӱ · Ҥ Ӧ Ӱ"
+   "testString": "Марий йылме · ҥ ӧ ӱ · Ҥ Ӧ Ӱ",
+   "regions": [
+    "RU"
+   ]
   },
   "mrj": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Кырык мары йӹлмӹ · ӓ ӧ ӱ ӹ · Ӓ Ӧ Ӱ Ӹ"
+   "testString": "Кырык мары йӹлмӹ · ӓ ӧ ӱ ӹ · Ӓ Ӧ Ӱ Ӹ",
+   "regions": [
+    "RU"
+   ]
   },
   "tt": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Татарча · ә ө ү җ ң һ · Ә Ө Ү Җ Ң Һ"
+   "testString": "Татарча · ә ө ү җ ң һ · Ә Ө Ү Җ Ң Һ",
+   "regions": [
+    "RU"
+   ]
   },
   "ba": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "Башҡортса · ҡ ғ ҙ ҫ һ ә ө ү ң · Ҡ Ғ Ҙ Ҫ Һ"
+   "testString": "Башҡортса · ҡ ғ ҙ ҫ һ ә ө ү ң · Ҡ Ғ Ҙ Ҫ Һ",
+   "regions": [
+    "RU"
+   ]
   },
   "en-US": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "Color, center, elevator · “quotes” — 1,469"
+   "testString": "Color, center, elevator · “quotes” — 1,469",
+   "regions": [
+    "US",
+    "CA"
+   ]
   },
   "en-GB": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "Colour, centre, lift · ‘quotes’ — £1,469"
+   "testString": "Colour, centre, lift · ‘quotes’ — £1,469",
+   "regions": [
+    "GB",
+    "IE",
+    "AU",
+    "NZ"
+   ]
   },
   "de-DE": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "Größe, Äpfel, Öl, Übung · ß · „Zitat“"
+   "testString": "Größe, Äpfel, Öl, Übung · ß · „Zitat“",
+   "regions": [
+    "DE",
+    "AT",
+    "CH",
+    "LI"
+   ]
   },
   "fr-FR": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "Œuvre, déjà, Noël, où · ç à â é è ê ë î ï ô ù û ü ÿ · « guillemets »"
+   "testString": "Œuvre, déjà, Noël, où · ç à â é è ê ë î ï ô ù û ü ÿ · « guillemets »",
+   "regions": [
+    "FR",
+    "BE",
+    "CH",
+    "LU",
+    "MC"
+   ]
   },
   "es-ES": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "¿Año? ¡Señor! · á é í ó ú ü ñ"
+   "testString": "¿Año? ¡Señor! · á é í ó ú ü ñ",
+   "regions": [
+    "ES"
+   ]
   },
   "es-419": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "¿Año? ¡Señor! · á é í ó ú ü ñ"
+   "testString": "¿Año? ¡Señor! · á é í ó ú ü ñ",
+   "regions": [
+    "MX",
+    "AR",
+    "CO",
+    "CL",
+    "PE",
+    "VE",
+    "EC",
+    "GT",
+    "CU",
+    "BO",
+    "DO",
+    "HN",
+    "PY",
+    "SV",
+    "NI",
+    "CR",
+    "PA",
+    "UY"
+   ]
   },
   "tr-TR": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "Türkçe · ç ğ ı İ ö ş ü · Ç Ğ Ö Ş Ü"
+   "testString": "Türkçe · ç ğ ı İ ö ş ü · Ç Ğ Ö Ş Ü",
+   "regions": [
+    "TR",
+    "CY"
+   ]
   },
   "fa-IR": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": true,
-   "testString": "فارسی · پ چ ژ گ ک ی · ۱۴۶۹"
+   "testString": "فارسی · پ چ ژ گ ک ی · ۱۴۶۹",
+   "regions": [
+    "IR",
+    "AF",
+    "TJ"
+   ]
   },
   "zh-Hans": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "中文（简体）· 切博克萨雷 · 伏尔加河 · 楚瓦什"
+   "testString": "中文（简体）· 切博克萨雷 · 伏尔加河 · 楚瓦什",
+   "regions": [
+    "CN",
+    "SG"
+   ]
   },
   "zh-Hant": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "中文（繁體）· 切博克薩雷 · 伏爾加河 · 楚瓦什"
+   "testString": "中文（繁體）· 切博克薩雷 · 伏爾加河 · 楚瓦什",
+   "regions": [
+    "TW"
+   ]
   },
   "yue-Hant": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "粵語（繁體）· 係 喺 唔 嘅 咗 啲 冇"
+   "testString": "粵語（繁體）· 係 喺 唔 嘅 咗 啲 冇",
+   "regions": [
+    "HK",
+    "MO"
+   ]
   },
   "hi-IN": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": false,
-   "testString": "हिन्दी · चेबोक्सरी · वोल्गा · क्षत्रज्ञ"
+   "testString": "हिन्दी · चेबोक्सारी · वोल्गा · क्षत्रज्ञ",
+   "regions": [
+    "IN"
+   ]
   },
   "mr-IN": {
    "status": "ЧЕРНОВИК",
    "strings": 0,
    "rtl": false,
-   "testString": "मराठी · ळ ॲ · चेबोक्सरी"
+   "testString": "मराठी · ळ ॲ · चेबोक्सारी",
+   "regions": [
+    "IN"
+   ]
   },
   "ar": {
    "status": "ЧЕРНОВИК",
-   "strings": 172,
+   "strings": 174,
    "rtl": true,
-   "testString": "العربية · تشيبوكساري · الفولغا · ١٤٦٩ · 1469"
+   "testString": "العربية · تشيبوكساري · الفولغا · ١٤٦٩ · 1469",
+   "regions": [
+    "SA",
+    "AE",
+    "EG",
+    "QA",
+    "KW",
+    "BH",
+    "OM",
+    "JO",
+    "LB",
+    "SY",
+    "IQ",
+    "YE",
+    "PS",
+    "LY",
+    "TN",
+    "DZ",
+    "MA",
+    "SD"
+   ]
+  }
+ },
+ "names": {
+  "Чебоксары (город)": {
+   "ru-RU": "Чебоксары",
+   "cv": "Шупашкар",
+   "en-US": "Cheboksary",
+   "en-GB": "Cheboksary",
+   "de-DE": "Tscheboksary",
+   "fr-FR": "Tcheboksary",
+   "es-ES": "Cheboksari",
+   "zh-Hans": "切博克萨雷",
+   "zh-Hant": "切博克薩雷",
+   "yue-Hant": "切博克薩雷",
+   "hi-IN": "चेबोक्सारी",
+   "mr-IN": "चेबोक्सारी",
+   "ar": "تشيبوكساري",
+   "mhr": "Шупашкар",
+   "mrj": "Шупашкар",
+   "tt": "Чабаксар",
+   "es-419": "Cheboksari",
+   "tr-TR": "Çeboksarı",
+   "fa-IR": "چبوکساری"
+  },
+  "На Чебоксаре (название)": {
+   "ru-RU": "На Чебоксаре",
+   "cv": "Шупашкар тӑрӑх",
+   "en-US": "Along the Cheboksar",
+   "en-GB": "Along the Cheboksar",
+   "de-DE": "In Tscheboksar",
+   "fr-FR": "À Tcheboksar",
+   "es-ES": "En Cheboksar",
+   "zh-Hans": "切博克萨雷寻踪",
+   "zh-Hant": "切博克薩雷尋蹤",
+   "yue-Hant": "切博克薩雷尋蹤",
+   "hi-IN": "चेबोक्सार में",
+   "mr-IN": "चेबोक्सारमध्ये",
+   "ar": "على تشيبوكساري",
+   "es-419": "En Cheboksar",
+   "tr-TR": "Çeboksar'da",
+   "fa-IR": "در چبوکسار"
+  },
+  "Волга (река)": {
+   "ru-RU": "Волга",
+   "cv": "Атӑл",
+   "en-US": "the Volga",
+   "en-GB": "the Volga",
+   "de-DE": "Wolga",
+   "fr-FR": "la Volga",
+   "es-ES": "el Volga",
+   "zh-Hans": "伏尔加河",
+   "zh-Hant": "伏爾加河",
+   "yue-Hant": "伏爾加河",
+   "hi-IN": "वोल्गा",
+   "mr-IN": "वोल्गा",
+   "ar": "نهر الفولغا",
+   "mdf": "Рав",
+   "myv": "Рав",
+   "mhr": "Юл",
+   "tt": "Идел",
+   "es-419": "el Volga",
+   "tr-TR": "Volga",
+   "fa-IR": "ولگا"
+  },
+  "Сетнер (помощник)": {
+   "ru-RU": "Сетнер",
+   "cv": "Сетнер",
+   "en-US": "Setner",
+   "en-GB": "Setner",
+   "de-DE": "Setner",
+   "fr-FR": "Setner",
+   "es-ES": "Setner",
+   "zh-Hans": "谢特涅尔",
+   "zh-Hant": "謝特涅爾",
+   "yue-Hant": "謝特涅爾",
+   "hi-IN": "सेतनेर",
+   "mr-IN": "सेतनेर",
+   "ar": "سيتنر",
+   "mdf": "Сетнер",
+   "myv": "Сетнер",
+   "mhr": "Сетнер",
+   "mrj": "Сетнер",
+   "tt": "Сетнер",
+   "ba": "Сетнер",
+   "es-419": "Setner",
+   "tr-TR": "Setner",
+   "fa-IR": "ستنر"
+  },
+  "Чувашия": {
+   "ru-RU": "Чувашия",
+   "cv": "Чӑваш Ен",
+   "en-US": "Chuvashia",
+   "en-GB": "Chuvashia",
+   "de-DE": "Tschuwaschien",
+   "fr-FR": "la Tchouvachie",
+   "es-ES": "Chuvasia",
+   "zh-Hans": "楚瓦什",
+   "zh-Hant": "楚瓦什",
+   "yue-Hant": "楚瓦什",
+   "hi-IN": "चुवाशिया",
+   "mr-IN": "चुवाशिया",
+   "ar": "تشوفاشيا"
+  },
+  "залив (Чебоксарский)": {
+   "ru-RU": "Чебоксарский залив",
+   "cv": "Шупашкар пырӗ",
+   "en-US": "Cheboksary Bay",
+   "en-GB": "Cheboksary Bay",
+   "zh-Hans": "切博克萨雷湾",
+   "zh-Hant": "切博克薩雷灣",
+   "yue-Hant": "切博克薩雷灣"
   }
  }
 }

@@ -6,12 +6,13 @@ import { Platform, Pressable, Text, View } from 'react-native';
 import { FalconMark } from '../../components/Icons';
 import { Btn, Card, Expander, H, LayerChip, P, Screen } from '../../components/ui';
 import { content, Fact } from '../../content';
-import { byCode, paragraphs } from '../../i18n';
+import { byCode, formatDate, paragraphs } from '../../i18n';
+import { setnerLink } from '../../setnerLink';
 import { openUrl } from '../../share';
 import { useGame } from '../../state/game';
 
 export default function AboutTab() {
-  const { pal, f, t, tOpt, reset, lang } = useGame();
+  const { pal, f, t, tOpt, reset, lang, voice, p } = useGame();
   const [confirm, setConfirm] = useState(false);
   // Подсказка «установить на iPhone»: только в браузере и только если сайт ещё не открыт как приложение.
   // Проверяем после загрузки страницы (на этапе сборки окна браузера нет).
@@ -35,9 +36,16 @@ export default function AboutTab() {
   const orderedPointIds = content.stages.flatMap((s) => s.points.map(String));
   const factKeys = [...orderedPointIds.filter((k) => byPoint.has(k)), ...[...byPoint.keys()].filter((k) => !orderedPointIds.includes(k))];
 
-  const link = (url?: string) =>
+  // версия содержания на языке гостя: номер и дата — из мастер-таблицы, дату пишет язык (ui.content_version, ICU)
+  const [cy, cm, cd] = (content.contentDate ?? '').split('-').map(Number);
+  const versionLine =
+    content.contentVersionNumber && cy
+      ? tOpt('ui.content_version', { version: content.contentVersionNumber, date: formatDate(new Date(cy, cm - 1, cd, 12), lang) })
+      : undefined;
+
+  const link = (url?: string, open?: string) =>
     url ? (
-      <Pressable onPress={() => openUrl(url)} accessibilityRole="link" style={{ minHeight: 32, justifyContent: 'center' }}>
+      <Pressable onPress={() => openUrl(open ?? url)} accessibilityRole="link" style={{ minHeight: 32, justifyContent: 'center' }}>
         <Text style={{ color: pal.volga, fontSize: 13, textDecorationLine: 'underline', fontFamily: f.body }} numberOfLines={2}>
           {url}
         </Text>
@@ -54,7 +62,11 @@ export default function AboutTab() {
       </View>
       <Card>
         {aboutText ? paragraphs(aboutText).map((x, i) => <P key={i} style={{ marginBottom: 6 }}>{x}</P>) : null}
-        <P muted style={{ fontSize: 13 }}>{content.contentVersion ?? ''}</P>
+        {versionLine ? (
+          <P muted style={{ fontSize: 13 }} testID="content-version">
+            {versionLine}
+          </P>
+        ) : null}
       </Card>
 
       {/* веб-версия: как поставить на экран «Домой» */}
@@ -135,7 +147,7 @@ export default function AboutTab() {
         <View style={{ marginTop: 6 }}>
           {link(content.links.web)}
           {link(content.links.webGame)}
-          {link(content.links.setnerTelegram)}
+          {link(content.links.setnerTelegram, setnerLink(content.links.setnerTelegram, p.code, lang, voice))}
         </View>
       </Card>
 

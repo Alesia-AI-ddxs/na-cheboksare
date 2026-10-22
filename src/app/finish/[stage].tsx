@@ -8,7 +8,8 @@ import { TopBar } from '../../components/TopBar';
 import { Btn, Card, H, Kicker, P, Screen } from '../../components/ui';
 import { content, getStage, stagePoints } from '../../content';
 import { formatDate, rankKey } from '../../i18n';
-import { openUrl, setnerLink, shareText } from '../../share';
+import { setnerLink } from '../../setnerLink';
+import { openUrl, shareText } from '../../share';
 import { useGame } from '../../state/game';
 
 export function generateStaticParams(): { stage: string }[] {

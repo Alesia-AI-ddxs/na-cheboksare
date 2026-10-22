@@ -32,9 +32,9 @@ import ICU from 'i18next-icu';
 import { initReactI18next } from 'react-i18next';
 import { I18nManager, Platform } from 'react-native';
 import { BUNDLED_LOCALES, LOCALE_META } from '../../locales';
-import { byCode, CODE_ALIASES, DEFAULT_LOCALE, defaultVoice, fallbackChain, LANGUAGES } from './languages';
+import { byCode, CODE_ALIASES, DEFAULT_LOCALE, defaultVoice, fallbackChain, LANGUAGES, variantsForRegion } from './languages';
 
-export { LANGUAGES, DEFAULT_LOCALE, byCode, fallbackChain, defaultVoice } from './languages';
+export { LANGUAGES, DEFAULT_LOCALE, byCode, fallbackChain, defaultVoice, variantsForRegion } from './languages';
 export type { LanguageVariant, VoiceVariant } from './languages';
 
 const STORAGE_KEY = 'nacheboksare.locale'; // выбранный письменный вариант
@@ -166,6 +166,45 @@ export function detectLocale(): string {
   if (lc === 'es') return sys.regionCode === 'ES' || !sys.regionCode ? 'es-ES' : 'es-419';
   const hit = LANGUAGES.find((l) => l.code === lc || l.code.startsWith(lc + '-'));
   return hit ? hit.code : DEFAULT_LOCALE;
+}
+
+/**
+ * Страна телефона (ISO 3166-1, напр. «CN», «SA», «RU») — только из настроек самого телефона (браузера):
+ * expo-localization → getLocales()[i].regionCode. Без геолокации, без сети, без разрешений (решение владельца 22.10.2026).
+ * Следующий шаг (не сделан): язык территории по API или привязка к аккаунту — аккаунтов в приложении нет.
+ */
+export function phoneRegion(): string | undefined {
+  try {
+    for (const l of Localization.getLocales()) {
+      if (l.regionCode) return l.regionCode.toUpperCase();
+    }
+  } catch {
+    // нет данных — без страны
+  }
+  return undefined;
+}
+
+/**
+ * Блок «Предлагаем» на экране выбора языка: язык телефона, затем варианты страны телефона (лист ЯЗЫКИ, «Страны»).
+ * Только варианты с переводом (готовые и черновики) — «готовится» не предлагаем; без повторов.
+ */
+export function suggestedLocales(isAvailable: (code: string) => boolean = (c) => translatedCount(c) > 0): string[] {
+  const out: string[] = [];
+  const add = (code: string | undefined) => {
+    if (code && !out.includes(code) && isAvailable(code)) out.push(code);
+  };
+  // язык телефона — если он есть в реестре (detectLocale на незнакомом языке возвращает русский — его ставим в конец)
+  const phone = detectLocale();
+  let sysLang = '';
+  try {
+    sysLang = (Localization.getLocales()[0]?.languageCode ?? '').toLowerCase();
+  } catch {
+    sysLang = '';
+  }
+  if (phone !== DEFAULT_LOCALE || !sysLang || sysLang === 'ru') add(phone);
+  for (const l of variantsForRegion(phoneRegion())) add(l.code);
+  if (!out.length) add(DEFAULT_LOCALE);
+  return out;
 }
 
 export type SavedLocale = { locale: string; voice: string; chosen: boolean };

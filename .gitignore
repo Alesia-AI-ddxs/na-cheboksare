@@ -57,3 +57,6 @@ secrets/
 server/out/
 # снимки экранов QA (папку оставляем)
 qa/screens/*.png
+
+# Python (генератор, проверки)
+__pycache__/

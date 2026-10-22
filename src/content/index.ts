@@ -55,6 +55,9 @@ export type Source = { n: number | string; title: string; gives: string; link: s
 export type Content = {
   app?: string;
   contentVersion?: string;
+  /** номер версии содержания («2.8») и дата (ГГГГ-ММ-ДД) — из листа «Как устроено»; показываются через ui.content_version */
+  contentVersionNumber?: string;
+  contentDate?: string;
   generatedFrom?: string;
   languages: Language[];
   stages: Stage[];
@@ -73,6 +76,8 @@ const c = raw as unknown as Partial<Content>;
 export const content: Content = {
   app: c.app,
   contentVersion: c.contentVersion,
+  contentVersionNumber: c.contentVersionNumber,
+  contentDate: c.contentDate,
   generatedFrom: c.generatedFrom,
   languages: c.languages ?? [{ code: 'ru-RU', name: 'Русский', ready: true }],
   stages: c.stages ?? [],

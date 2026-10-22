@@ -5,7 +5,10 @@
 //    - для варианта из реестра src/i18n/languages.ts нет файла locales/<код>.json (или есть лишний файл);
 //    - ru-RU неполный (в каком-то пакете есть ключ, которого нет в ru-RU);
 //    - строка не читается как ICU MessageFormat (непарные скобки {…}, битый plural);
-//    - ключа, который использует код (t('…'), tOpt('…'), tFirst([…]) и список ниже), нет в ru-RU.
+//    - ключа, который использует код (t('…'), tOpt('…'), tFirst([…]) и список ниже), нет в ru-RU;
+//    - (v1.1.1) страны варианта в реестре src/i18n/languages.ts (regions) не совпадают с колонкой «Страны (ISO 3166-1)»
+//      листа ЯЗЫКИ (генератор переносит её в locales/_meta.json), или код страны не из двух латинских букв;
+//    - (v1.1.1) нет номера/даты версии содержания (строка версии на листе «Как устроено»).
 // Запуск: node scripts/validate-content.mjs   (входит в npm run check)
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -102,6 +105,8 @@ const APP_UI_KEYS = [
   // языковой модуль (v1.1.0, таблица v2.7)
   'ui.lang_choose', 'ui.lang_endonyms', 'ui.lang_suggested', 'ui.lang_continue', 'ui.voice_choose', 'ui.voice_hint',
   'ui.lang_draft_badge', 'ui.restart_rtl', 'ui.restart_btn', 'ui.listen', 'finds.count', 'finds.you_found',
+  // v1.1.1 (таблица v2.8): блок «Предлагаем», версия содержания на языке гостя
+  'ui.lang_suggest_title', 'ui.content_version',
   ...stages.map((s) => s.nameKey),
 ];
 
@@ -124,6 +129,28 @@ const notInRu = [...allKeys].filter((k) => !(k in ru));
 if (notInRu.length) errors.push(`ru-RU неполный: нет ключей ${notInRu.slice(0, 10).join(', ')}${notInRu.length > 10 ? '…' : ''}`);
 if (meta.total && Object.keys(ru).length !== meta.total) errors.push(`ru-RU: ${Object.keys(ru).length} строк, а в таблице ${meta.total}`);
 
+// страны вариантов: таблица (ЯЗЫКИ → _meta.json) = реестр (languages.ts → regions)
+const regionsOf = {};
+for (const m of regSrc.matchAll(/\{ code: '([^']+)', endonym: '[^']*', nameRu: '[^']*', script:[\s\S]*?regions: \[([^\]]*)\]/g)) {
+  regionsOf[m[1]] = [...m[2].matchAll(/'([^']+)'/g)].map((x) => x[1]);
+}
+let regionsChecked = 0;
+for (const code of registry) {
+  const inCode = regionsOf[code];
+  const inTable = meta.variants?.[code]?.regions;
+  if (!inCode) { errors.push(`реестр: у варианта ${code} нет поля regions (страны)`); continue; }
+  if (!Array.isArray(inTable)) { errors.push(`таблица: у варианта ${code} нет стран (колонка «Страны (ISO 3166-1)» листа ЯЗЫКИ)`); continue; }
+  const bad = inCode.filter((r) => !/^[A-Z]{2}$/.test(r));
+  if (bad.length) errors.push(`реестр: у ${code} коды стран не по ISO 3166-1: ${bad.join(', ')}`);
+  if ([...inCode].sort().join() !== [...inTable].sort().join()) {
+    errors.push(`страны ${code}: в таблице [${inTable.join(', ')}], в реестре languages.ts [${inCode.join(', ')}] — привести к одному`);
+  }
+  regionsChecked++;
+}
+if (!c.contentVersionNumber || !/^\d{4}-\d{2}-\d{2}$/.test(c.contentDate ?? '')) {
+  errors.push(`нет номера или даты версии содержания (content.json: «${c.contentVersionNumber ?? ''}» / «${c.contentDate ?? ''}») — проверьте строку версии на листе «Как устроено»`);
+}
+
 // ICU: каждая строка каждого пакета должна разбираться (иначе вместо фразы на экране будет «сырой» текст)
 let icuChecked = 0;
 const PLURAL_LOCALE = (code) => {
@@ -140,7 +167,12 @@ for (const [code, pack] of Object.entries(packs)) {
     if (bad || depth !== 0) { errors.push(`ICU: непарные скобки {…} — ${code} / ${k}`); continue; }
     try {
       const mf = new IntlMessageFormat(v, PLURAL_LOCALE(code), undefined, { ignoreTag: true });
-      if (v.includes('{')) mf.format({ count: 2 });
+      if (v.includes('{')) {
+        // подставляем все переменные строки ({count} — число, остальные — текст), чтобы проверить и разбор, и сборку фразы
+        const vars = { count: 2 };
+        for (const m of v.matchAll(/\{\s*([A-Za-z_]\w*)/g)) if (!(m[1] in vars)) vars[m[1]] = 'x';
+        mf.format(vars);
+      }
     } catch (e) {
       errors.push(`ICU: строка не читается — ${code} / ${k}: ${String(e.message).split('\n')[0]}`);
     }
@@ -194,6 +226,7 @@ for (const code of registry) {
   console.log(`  ${code.padEnd(9)} ${String(n).padStart(4)}/${meta.total} (${String(pct).padStart(3)}%) ${st}${n === 0 ? ' — пока фолбэк (готовится)' : ''}`);
 }
 console.log(`Строки интерфейса, которых нет в ru-RU: ${missingUi.length ? missingUi.join(', ') : '—'}`);
+console.log(`Страны вариантов (таблица = реестр): проверено ${regionsChecked} из ${registry.length}; версия содержания: ${c.contentVersionNumber ?? '—'} от ${c.contentDate ?? '—'}`);
 
 if (errors.length) {
   console.log('');

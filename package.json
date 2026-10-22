@@ -1,6 +1,6 @@
 {
   "name": "na-cheboksare",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "expo-router/entry",
   "dependencies": {
     "@expo-google-fonts/noto-naskh-arabic": "^0.4.5",
@@ -68,7 +68,10 @@
     "release:rustore": "eas workflow:run .eas/workflows/release-ru-stores.yml -F stores=rustore -F submit=no",
     "release:ru-all": "eas workflow:run .eas/workflows/release-ru-stores.yml -F stores=rustore+appgallery -F submit=no",
     "qa:plural": "node scripts/plural-check.mjs",
-    "qa:tofu": "python3 -I tools/tofu_check.py"
+    "qa:tofu": "python3 -I tools/tofu_check.py",
+    "qa:setner": "node scripts/setner-link-check.mjs",
+    "qa:names": "python3 -I tools/names_check.py",
+    "fonts:subset": "python3 -I tools/font_subset.py"
   },
   "private": true
 }

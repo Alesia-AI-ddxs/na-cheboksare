@@ -3,7 +3,8 @@
  * Единственный источник правды о языках в КОДЕ. Данные зеркалят лист «ЯЗЫКИ» мастер-таблицы
  * (код, эндоним, письмо, направление, шрифт, фолбэк, голоса). Статус текста («черновик») и тест-строка
  * берутся из таблицы генератором — locales/_meta.json, здесь их нет.
- * При расхождении главный — этот файл до этапа 2, потом таблица. npm run check сверяет коды с locales/.
+ * При расхождении главный — этот файл до этапа 2, потом таблица. npm run check сверяет коды с locales/,
+ * а страны (regions) — с колонкой «Страны (ISO 3166-1)» листа ЯЗЫКИ (через locales/_meta.json).
  * ТЗ: ТУРИЗМ_APP_ТЗ_МУЛЬТИЯЗЫЧНОСТЬ v1.3 от 22.10.2026, разделы 3–4, 6, 8.
  * Пакет архитектора: ЯЗЫКОВОЙ_МОДУЛЬ_КАРКАС v0.2; адаптация под приложение 1.1.0.
  */
@@ -66,6 +67,12 @@ export interface LanguageVariant {
    * (app.json → extra.langPackBaseUrl), тяжёлые китайские шрифты в веб-версии и так грузятся по требованию.
    */
   bundled: boolean;
+  /**
+   * Страны (ISO 3166-1 alpha-2), где этот вариант естественно предложить гостю — зеркало колонки «Страны (ISO 3166-1)»
+   * листа ЯЗЫКИ (решение владельца 22.10.2026; npm run check сверяет с таблицей). Страну приложение берёт только из
+   * настроек телефона (expo-localization → regionCode): без геолокации, без сети, без разрешений.
+   */
+  regions: string[];
 }
 
 export const DEFAULT_LOCALE = 'ru-RU';
@@ -74,34 +81,43 @@ export const LANGUAGES: LanguageVariant[] = [
   // ───── Россия и Поволжье ─────
   { code: 'ru-RU', endonym: 'Русский', nameRu: 'русский', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: [], bundled: true,
+    regions: ['RU', 'BY', 'KZ', 'KG'],
     voices: [{ code: 'ru-RU', endonym: 'Русский', nameRu: 'русский', source: 'azure' }] },
   { code: 'cv', endonym: 'Чӑвашла', nameRu: 'чувашский', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['ru-RU'], bundled: true,
+    regions: ['RU'],
     // В API Яндекс SpeechKit чувашского НЕТ (проверено 22.10.2026) — диктор или договорённость
     voices: [{ code: 'cv', endonym: 'Чӑвашла', nameRu: 'чувашский', source: 'narrator' }] },
   { code: 'tt', endonym: 'Татарча', nameRu: 'татарский', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['ru-RU'], bundled: true,
+    regions: ['RU'],
     voices: [{ code: 'tt', endonym: 'Татарча', nameRu: 'татарский', source: 'narrator' }] },
   { code: 'ba', endonym: 'Башҡортса', nameRu: 'башкирский', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['ru-RU'], bundled: true,
+    regions: ['RU'],
     voices: [{ code: 'ba', endonym: 'Башҡортса', nameRu: 'башкирский', source: 'narrator' }] },
   // Мокшанский и эрзянский — два разных языка (закон 3 ТЗ)
   { code: 'mdf', endonym: 'Мокшень кяль', nameRu: 'мокшанский', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['ru-RU'], bundled: true,
+    regions: ['RU'],
     voices: [{ code: 'mdf', endonym: 'Мокшень', nameRu: 'мокшанский', source: 'narrator' }] },
   { code: 'myv', endonym: 'Эрзянь кель', nameRu: 'эрзянский', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['ru-RU'], bundled: true,
+    regions: ['RU'],
     voices: [{ code: 'myv', endonym: 'Эрзянь', nameRu: 'эрзянский', source: 'narrator' }] },
   { code: 'mhr', endonym: 'Марий йылме', nameRu: 'марийский (луговой)', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['ru-RU'], bundled: true,
+    regions: ['RU'],
     voices: [{ code: 'mhr', endonym: 'Марий', nameRu: 'луговой марийский', source: 'narrator' }] },
   { code: 'mrj', endonym: 'Кырык мары йӹлмӹ', nameRu: 'марийский (горный)', script: 'cyrl', rtl: false, group: 'russia',
     fontFamily: 'brand', fallback: ['mhr', 'ru-RU'], bundled: true,
+    regions: ['RU'],
     voices: [{ code: 'mrj', endonym: 'Кырык мары', nameRu: 'горномарийский', source: 'narrator' }] },
 
   // ───── Европа и мир ─────
   { code: 'en-GB', endonym: 'English (UK)', nameRu: 'английский — Британия', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', fallback: ['en-US', 'ru-RU'], bundled: true,
+    regions: ['GB', 'IE', 'AU', 'NZ'],
     voices: [
       { code: 'en-GB', endonym: 'British', nameRu: 'британский', source: 'azure' },
       { code: 'en-IE', endonym: 'Irish', nameRu: 'ирландский', source: 'azure' },
@@ -109,9 +125,11 @@ export const LANGUAGES: LanguageVariant[] = [
     ] },
   { code: 'en-US', endonym: 'English (US)', nameRu: 'английский — США', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['US', 'CA'],
     voices: [{ code: 'en-US', endonym: 'American', nameRu: 'американский', source: 'azure' }] },
   { code: 'de-DE', endonym: 'Deutsch', nameRu: 'немецкий', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['DE', 'AT', 'CH', 'LI'],
     voices: [
       { code: 'de-DE', endonym: 'Deutschland', nameRu: 'Германия', source: 'azure' },
       { code: 'de-AT', endonym: 'Österreich', nameRu: 'Австрия', source: 'azure' },
@@ -119,26 +137,32 @@ export const LANGUAGES: LanguageVariant[] = [
     ] },
   { code: 'fr-FR', endonym: 'Français', nameRu: 'французский', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['FR', 'BE', 'CH', 'LU', 'MC'],
     voices: [
       { code: 'fr-FR', endonym: 'France', nameRu: 'Франция', source: 'azure' },
       { code: 'fr-CA', endonym: 'Québec', nameRu: 'Канада', source: 'azure' },
     ] },
   { code: 'es-ES', endonym: 'Español (España)', nameRu: 'испанский — Испания', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', fallback: ['es-419', 'en-GB', 'ru-RU'], bundled: true,
+    regions: ['ES'],
     voices: [{ code: 'es-ES', endonym: 'España', nameRu: 'Испания', source: 'azure' }] },
   { code: 'es-419', endonym: 'Español (Latinoamérica)', nameRu: 'испанский — Лат. Америка', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', fallback: ['es-ES', 'en-GB', 'ru-RU'], bundled: true,
+    regions: ['MX', 'AR', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'UY'],
     voices: [{ code: 'es-MX', endonym: 'México', nameRu: 'Мексика', source: 'azure' }] },
   { code: 'tr-TR', endonym: 'Türkçe', nameRu: 'турецкий', script: 'latn', rtl: false, group: 'world',
     fontFamily: 'brand', displayFromBody: true, fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['TR', 'CY'],
     voices: [{ code: 'tr-TR', endonym: 'Türkçe', nameRu: 'турецкий', source: 'azure' }] },
   { code: 'fa-IR', endonym: 'فارسی', nameRu: 'фарси', script: 'arab', rtl: true, group: 'world',
     fontFamily: 'NotoNaskhArabic', fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['IR', 'AF', 'TJ'],
     voices: [{ code: 'fa-IR', endonym: 'فارسی', nameRu: 'фарси', source: 'azure' }] },
 
   // ───── Китай (три письменных варианта — решение заказчика 22.10.2026) ─────
   { code: 'zh-Hans', endonym: '中文（简体）', nameRu: 'китайский — упрощённое письмо', script: 'hans', rtl: false, group: 'china',
     fontFamily: 'NotoSansSC', fallback: ['zh-Hant', 'en-GB', 'ru-RU'], bundled: true,
+    regions: ['CN', 'SG'],
     voices: [
       { code: 'zh-CN', endonym: '普通话', nameRu: 'путунхуа', source: 'azure' },
       { code: 'yue-CN', endonym: '粤语', nameRu: 'кантонский (Гуандун)', source: 'azure' },
@@ -152,22 +176,27 @@ export const LANGUAGES: LanguageVariant[] = [
     ] },
   { code: 'zh-Hant', endonym: '中文（繁體）', nameRu: 'китайский — традиционное письмо', script: 'hant', rtl: false, group: 'china',
     fontFamily: 'NotoSansTC', fallback: ['zh-Hans', 'en-GB', 'ru-RU'], bundled: true,
+    regions: ['TW'],
     voices: [{ code: 'zh-TW', endonym: '臺灣國語', nameRu: 'тайваньский мандарин', source: 'azure' }] },
   { code: 'yue-Hant', endonym: '粵語（繁體）', nameRu: 'кантонский письменный (Гонконг)', script: 'hant', rtl: false, group: 'china',
     fontFamily: 'NotoSansHK', fallback: ['zh-Hant', 'zh-Hans', 'en-GB', 'ru-RU'], bundled: true,
+    regions: ['HK', 'MO'],
     voices: [{ code: 'zh-HK', endonym: '廣東話（香港）', nameRu: 'кантонский (Гонконг)', source: 'azure' }] },
 
   // ───── Индия ─────
   { code: 'hi-IN', endonym: 'हिन्दी', nameRu: 'хинди', script: 'deva', rtl: false, group: 'india',
     fontFamily: 'NotoSansDevanagari', fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['IN'],
     voices: [{ code: 'hi-IN', endonym: 'हिन्दी', nameRu: 'хинди', source: 'azure' }] },
   { code: 'mr-IN', endonym: 'मराठी', nameRu: 'маратхи', script: 'deva', rtl: false, group: 'india',
     fontFamily: 'NotoSansDevanagari', fallback: ['hi-IN', 'en-GB', 'ru-RU'], bundled: true,
+    regions: ['IN'],
     voices: [{ code: 'mr-IN', endonym: 'मराठी', nameRu: 'маратхи', source: 'azure' }] },
 
   // ───── Арабский мир (письмо одно — MSA; голоса по странам) ─────
   { code: 'ar', endonym: 'العربية', nameRu: 'арабский', script: 'arab', rtl: true, group: 'arab',
     fontFamily: 'NotoNaskhArabic', fallback: ['en-GB', 'ru-RU'], bundled: true,
+    regions: ['SA', 'AE', 'EG', 'QA', 'KW', 'BH', 'OM', 'JO', 'LB', 'SY', 'IQ', 'YE', 'PS', 'LY', 'TN', 'DZ', 'MA', 'SD'],
     voices: [
       { code: 'ar-SA', endonym: 'السعودية', nameRu: 'Саудовская Аравия', source: 'azure' },
       { code: 'ar-EG', endonym: 'مصر', nameRu: 'Египет', source: 'azure' },
@@ -210,4 +239,11 @@ export function fallbackChain(code: string): string[] {
 export function defaultVoice(code: string): string {
   const l = byCode(code);
   return l?.voices[0]?.code ?? l?.code ?? code;
+}
+
+/** Варианты, которые естественно предложить в стране (по коду ISO 3166-1), в порядке реестра */
+export function variantsForRegion(region: string | null | undefined): LanguageVariant[] {
+  const r = (region ?? '').toUpperCase();
+  if (!r) return [];
+  return LANGUAGES.filter((l) => l.regions.includes(r));
 }
