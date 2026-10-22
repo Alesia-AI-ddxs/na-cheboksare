@@ -1,0 +1,14 @@
+# Тестовая сборка APK для Android (профиль preview).
+# Запуск вручную: npx eas workflow:run .eas/workflows/preview-android.yml
+name: Preview Android (APK)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build_android_preview:
+    name: Сборка APK (preview)
+    type: build
+    params:
+      platform: android
+      profile: preview

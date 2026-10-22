@@ -1,0 +1,163 @@
+// Проверка PWA: ставится ли веб-версия «как приложение» и работает ли без интернета.
+// Что делает: поднимает маленький сервер (как nginx) для папки сборки, открывает Chromium (Playwright),
+//  1) ждёт, пока установится сервис-воркер и скачает все файлы;
+//  2) проверяет манифест и иконку для iPhone;
+//  3) ВЫКЛЮЧАЕТ интернет и перезагружает /route, затем открывает страницы, где ещё не были (/finds, /point/3);
+//  4) проверяет подсказку «установить на iPhone» во вкладке «О проекте».
+// Снимки: qa/screens/20_pwa_offline.png (и для подпапки — 21_pwa_offline_<папка>.png), 22_about_pwa_hint.png.
+// Перед запуском: npm run web:export (и/или npm run web:export:turizm)
+// Запуск: node scripts/pwa-offline-check.mjs [--dir dist] [--base /]
+//         node scripts/pwa-offline-check.mjs --dir dist_turizm_app --base /turizm/app
+import { createServer } from 'node:http';
+import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs';
+import { dirname, extname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { chromium } from 'playwright';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const arg = (n, d) => {
+  const i = process.argv.indexOf(`--${n}`);
+  return i > -1 ? process.argv[i + 1] : d;
+};
+const DIR_NAME = arg('dir', 'dist');
+const DIR = join(root, DIR_NAME);
+let BASE = arg('base', '/');
+if (!BASE.startsWith('/')) BASE = '/' + BASE;
+BASE = BASE.replace(/\/+$/, '');
+const OUT = join(root, 'qa/screens');
+const PORT = Number(process.env.QA_PORT || 8098);
+const ORIGIN = `http://127.0.0.1:${PORT}`;
+const SITE = `${ORIGIN}${BASE}`;
+const shotName = BASE ? `21_pwa_offline_${DIR_NAME.replace(/^dist_?/, '') || 'base'}.png` : '20_pwa_offline.png';
+
+if (!existsSync(join(DIR, 'sw.js'))) {
+  console.error(`Нет ${DIR_NAME}/sw.js. Сначала: npm run web:export (или web:export:turizm)`);
+  process.exit(1);
+}
+mkdirSync(OUT, { recursive: true });
+
+// --- сервер, ведёт себя как nginx: try_files $uri $uri.html $uri/index.html ---
+const TYPES = {
+  '.html': 'text/html; charset=utf-8',
+  '.js': 'application/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.webmanifest': 'application/manifest+json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.ttf': 'font/ttf',
+  '.ico': 'image/x-icon',
+  '.svg': 'image/svg+xml',
+};
+let served = 0;
+const server = createServer((req, res) => {
+  served++;
+  let path = decodeURIComponent((req.url || '/').split('?')[0]);
+  if (BASE && !path.startsWith(BASE + '/')) {
+    res.writeHead(404).end('not found');
+    return;
+  }
+  path = path.slice(BASE.length) || '/';
+  const cands = [join(DIR, path), join(DIR, path + '.html'), join(DIR, path, 'index.html')];
+  const f = cands.find((c) => existsSync(c) && statSync(c).isFile());
+  if (!f) {
+    res.writeHead(404, { 'content-type': TYPES['.html'] }).end('not found');
+    return;
+  }
+  const headers = { 'content-type': TYPES[extname(f)] || 'application/octet-stream' };
+  if (f.endsWith('sw.js')) headers['cache-control'] = 'no-cache';
+  res.writeHead(200, headers).end(readFileSync(f));
+});
+await new Promise((r) => server.listen(PORT, '127.0.0.1', r));
+
+const executablePath = process.env.PW_CHROMIUM || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
+const browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
+const results = [];
+const ok = (name, pass, info = '') => {
+  results.push({ name, pass });
+  console.log(`${pass ? 'ДА ' : 'НЕТ'} | ${name}${info ? ' — ' + info : ''}`);
+};
+
+const waitRendered = (page) =>
+  page.waitForFunction(() => (document.getElementById('root')?.innerText || '').trim().length > 20, null, { timeout: 15000 });
+
+try {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, locale: 'ru-RU' });
+  const page = await ctx.newPage();
+
+  // 1. первое открытие с интернетом
+  await page.goto(`${SITE}/`);
+  const scope = await page.evaluate(async () => (await navigator.serviceWorker.ready).scope);
+  ok('сервис-воркер установлен (navigator.serviceWorker.ready)', !!scope, scope);
+
+  const precacheCount = (readFileSync(join(DIR, 'sw.js'), 'utf8').match(/const PRECACHE = (\[.*\]);/) || [])[1];
+  const expected = precacheCount ? JSON.parse(precacheCount).length : 0;
+  await page.waitForFunction(
+    async (n) => {
+      const keys = await caches.keys();
+      const k = keys.find((x) => x.startsWith('na-cheboksare-'));
+      if (!k) return false;
+      return (await (await caches.open(k)).keys()).length >= n;
+    },
+    expected,
+    { timeout: 30000, polling: 300 },
+  );
+  ok('все файлы сайта скачаны в кэш', true, `${expected} файлов`);
+
+  // 2. манифест и иконка
+  const man = await page.evaluate(async () => {
+    const href = document.querySelector('link[rel="manifest"]')?.getAttribute('href');
+    const r = await fetch(href);
+    const j = await r.json();
+    const icon = document.querySelector('link[rel="apple-touch-icon"]')?.getAttribute('href');
+    const ri = await fetch(icon);
+    return { href, name: j.name, display: j.display, icons: j.icons.length, icon, iconStatus: ri.status, type: r.headers.get('content-type') };
+  });
+  ok('манифест читается', man.name === 'На Чебоксаре' && man.display === 'standalone', `${man.href}, иконок: ${man.icons}`);
+  ok('иконка для iPhone (apple-touch-icon)', man.iconStatus === 200, man.icon);
+
+  // открываем /route с интернетом — страница теперь под управлением воркера
+  await page.goto(`${SITE}/route`);
+  await waitRendered(page);
+  const controlled = await page.evaluate(() => !!navigator.serviceWorker.controller);
+  ok('страница под управлением воркера', controlled);
+
+  // 3. выключаем интернет
+  await ctx.setOffline(true);
+  const before = served;
+  const r1 = await page.reload();
+  await waitRendered(page);
+  ok('без интернета: перезагрузка /route', r1?.status() === 200, `статус ${r1?.status()}, из воркера: ${r1?.fromServiceWorker()}`);
+  await page.waitForTimeout(600);
+  await page.screenshot({ path: join(OUT, shotName) });
+  console.log('снимок:', join(OUT, shotName));
+
+  for (const p of ['/finds', '/point/3', '/about']) {
+    const r = await page.goto(`${SITE}${p}`);
+    await waitRendered(page);
+    ok(`без интернета: ${p} (ещё не открывали)`, r?.status() === 200, `статус ${r?.status()}`);
+  }
+
+  // 4. подсказка «установить на iPhone» на вкладке «О проекте» (мы в браузере, не «как приложение»)
+  const hint = page.locator('[data-testid="pwa-hint"]').first();
+  await hint.waitFor({ timeout: 5000 }).catch(() => undefined);
+  const hintVisible = await hint.isVisible().catch(() => false);
+  ok('подсказка «установить на iPhone» видна в браузере', hintVisible);
+  if (hintVisible && !BASE) {
+    await hint.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: join(OUT, '22_about_pwa_hint.png') });
+    console.log('снимок:', join(OUT, '22_about_pwa_hint.png'));
+  }
+  ok('без интернета сервер не получил ни одного запроса', served === before, `запросов: ${served - before}`);
+  await ctx.close();
+} catch (e) {
+  ok('сценарий прошёл без сбоев', false, e.message.split('\n')[0]);
+} finally {
+  await browser.close();
+  server.close();
+}
+
+const failed = results.filter((r) => !r.pass).length;
+console.log(`\nИтог (${DIR_NAME}, путь ${BASE || '/'}): ${results.length - failed} из ${results.length} проверок пройдено.`);
+process.exit(failed ? 1 : 0);

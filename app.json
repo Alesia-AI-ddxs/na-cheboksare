@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "На Чебоксаре",
+    "slug": "na-cheboksare",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "nacheboksare",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#F5F0E6",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "ru.inospectrum.nacheboksare"
+    },
+    "android": {
+      "package": "ru.inospectrum.nacheboksare",
+      "permissions": [],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "monochromeImage": "./assets/images/adaptive-icon-mono.png",
+        "backgroundColor": "#F5F0E6"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#F5F0E6",
+          "dark": {
+            "image": "./assets/images/splash-icon.png",
+            "backgroundColor": "#0F1920"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d40c46be-823b-490b-8ca7-88d351d40c59"
+      }
+    },
+    "owner": "mobiliuss-team"
+  }
+}

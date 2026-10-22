@@ -1,0 +1,38 @@
+# Релиз в российские магазины (RuStore и др.).
+# Запуск вручную: npm run eas:release-ru
+# Шаг 1 собирает APK профиля production-apk.
+# Шаг 2 пока только ПЕЧАТАЕТ, куда планируется публикация.
+# Настоящие скрипты публикации (RuStore API и др.) лежат в шаблоне студии
+# Mobile App Studio и будут добавлены сюда позже — сейчас их здесь нет.
+name: Release RU stores
+
+on:
+  workflow_dispatch:
+    inputs:
+      stores:
+        description: "Магазины через запятую (например: rustore)"
+        type: string
+        default: "rustore"
+      submit:
+        description: "Публиковать ли сразу (yes/no)"
+        type: string
+        default: "no"
+
+jobs:
+  build_android_apk:
+    name: Сборка APK (production-apk)
+    type: build
+    params:
+      platform: android
+      profile: production-apk
+
+  planned_submission:
+    name: План публикации
+    needs: [build_android_apk]
+    steps:
+      - name: Показать план
+        run: |
+          echo "Сборка готова: ${{ needs.build_android_apk.outputs.build_id }}"
+          echo "Магазины: ${{ inputs.stores }}"
+          echo "Публиковать сразу: ${{ inputs.submit }}"
+          echo "Скрипты публикации будут добавлены из шаблона студии. Сейчас публикация не выполняется."
