@@ -1,0 +1,46 @@
+# Выпуск «На Чебоксаре» в Google Play: внутреннее тестирование, черновик.
+# Запуск вручную: npm run eas:release-gp
+# Шаг 1 собирает AAB (профиль production) в облаке EAS.
+# Шаг 2 отправляет его через EAS Submit по профилю submit.production из eas.json
+#   (track: internal, releaseStatus: draft, ключ: ./secrets/google-play-service-account.json).
+# ВАЖНО: файл ключа Google в git не кладём. В облако EAS он попадает через переменную среды production:
+#   expo.dev → проект → Environment variables → Add → имя GOOGLE_PLAY_SERVICE_ACCOUNT_JSON, тип File,
+#   видимость Secret, загрузить файл secrets/google-play-service-account.json.
+#   (Запасной вариант: переменная GOOGLE_PLAY_SERVICE_ACCOUNT_B64 — тот же файл в base64 одной строкой.)
+#   Шаг after_checkout ниже кладёт ключ в ./secrets/ — ровно туда, куда смотрит eas.json.
+# ВАЖНО: самый первый AAB Google разрешает загрузить только вручную через Play Console.
+name: Release Google Play
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build_android_aab:
+    name: Сборка AAB (production)
+    type: build
+    params:
+      platform: android
+      profile: production
+
+  submit_google_play:
+    name: Отправка в Google Play (внутренний тест, черновик)
+    needs: [build_android_aab]
+    type: submit
+    environment: production
+    params:
+      build_id: ${{ needs.build_android_aab.outputs.build_id }}
+      profile: production
+    hooks:
+      after_checkout:
+        - name: Положить ключ Google Play в ./secrets/
+          run: |
+            mkdir -p secrets
+            if [ -n "$GOOGLE_PLAY_SERVICE_ACCOUNT_JSON" ] && [ -f "$GOOGLE_PLAY_SERVICE_ACCOUNT_JSON" ]; then
+              cp "$GOOGLE_PLAY_SERVICE_ACCOUNT_JSON" secrets/google-play-service-account.json
+            elif [ -n "$GOOGLE_PLAY_SERVICE_ACCOUNT_B64" ]; then
+              printf '%s' "$GOOGLE_PLAY_SERVICE_ACCOUNT_B64" | base64 -d > secrets/google-play-service-account.json
+            else
+              echo "Нет ключа Google Play: заведите переменную GOOGLE_PLAY_SERVICE_ACCOUNT_JSON (тип File) в среде production"
+              exit 1
+            fi
+            echo "Ключ Google Play на месте"

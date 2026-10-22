@@ -2,7 +2,9 @@
 // Здесь подключаем всё, что нужно, чтобы сайт «ставился» на iPhone и Android как приложение (PWA):
 // манифест, иконку для экрана «Домой», цвет строки состояния и «сервис-воркер» для работы без интернета.
 // Путь сайта (например /turizm/app) Expo подставляет сам через EXPO_BASE_URL (настройка experiments.baseUrl).
-import { ScrollViewStyleReset } from 'expo-router/html';
+// ВАЖНО (Expo SDK 58): headNodes и bodyNodes обязательно выводить — в них скрипты приложения.
+// Без bodyNodes страница показывается, но кнопки не работают.
+import { ScrollViewStyleReset, useServerDocumentContext } from 'expo-router/html';
 import React, { type PropsWithChildren } from 'react';
 
 // Базовый путь сайта без завершающей косой черты: '' для корня или '/turizm/app'.
@@ -17,8 +19,9 @@ if ('serviceWorker' in navigator) {
 }`;
 
 export default function Root({ children }: PropsWithChildren) {
+  const { htmlAttributes, bodyAttributes, headNodes, bodyNodes } = useServerDocumentContext();
   return (
-    <html lang="ru">
+    <html {...htmlAttributes} lang="ru">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -36,8 +39,12 @@ export default function Root({ children }: PropsWithChildren) {
 
         <ScrollViewStyleReset />
         <script dangerouslySetInnerHTML={{ __html: registerSw }} />
+        {headNodes}
       </head>
-      <body>{children}</body>
+      <body {...bodyAttributes}>
+        {children}
+        {bodyNodes}
+      </body>
     </html>
   );
 }

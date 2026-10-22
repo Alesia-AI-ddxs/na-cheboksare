@@ -3,7 +3,7 @@
 //   node scripts/export-web.mjs /             → папка dist/              (сайт в корне домена)
 //   node scripts/export-web.mjs /turizm/app   → папка dist_turizm_app/   (сайт по адресу https://домен/turizm/app/)
 // Что делает: на время сборки вписывает путь в app.json (experiments.baseUrl), собирает сайт,
-// ВСЕГДА возвращает app.json как было (даже при ошибке), затем запускает scripts/postexport-pwa.mjs.
+// ВСЕГДА возвращает app.json как было (даже при ошибке; чужие правки за время сборки не теряются), затем запускает scripts/postexport-pwa.mjs.
 // Облако Expo не нужно: сборка идёт целиком на этом компьютере.
 import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -28,9 +28,28 @@ const env = { ...process.env, CI: '1', EXPO_NO_TELEMETRY: '1', EXPO_OFFLINE: '1'
 const npx = process.platform === 'win32' ? 'npx.cmd' : 'npx';
 
 console.log(`Веб-сборка: путь сайта «${base || '/'}» → папка ${outDir}/`);
+const modified = JSON.stringify(app, null, 2) + '\n';
+const originalBase = JSON.parse(original).expo?.experiments?.baseUrl;
+
+// Возврат app.json: если за время сборки файл никто не трогал — кладём исходный байт в байт;
+// если кто-то успел его поправить — сохраняем его правки и возвращаем только experiments.baseUrl.
+function restoreAppJson() {
+  const now = readFileSync(appJsonPath, 'utf8');
+  if (now === modified) {
+    writeFileSync(appJsonPath, original);
+    return;
+  }
+  const cur = JSON.parse(now);
+  cur.expo.experiments = cur.expo.experiments ?? {};
+  if (originalBase === undefined) delete cur.expo.experiments.baseUrl;
+  else cur.expo.experiments.baseUrl = originalBase;
+  writeFileSync(appJsonPath, JSON.stringify(cur, null, 2) + '\n');
+  console.log('app.json менялся во время сборки — правки сохранены, путь сайта возвращён как был.');
+}
+
 let code = 1;
 try {
-  writeFileSync(appJsonPath, JSON.stringify(app, null, 2) + '\n');
+  writeFileSync(appJsonPath, modified);
   const r = spawnSync(npx, ['expo', 'export', '--platform', 'web', '--output-dir', outDir], {
     cwd: root,
     env,
@@ -39,7 +58,7 @@ try {
   });
   code = r.status ?? 1;
 } finally {
-  writeFileSync(appJsonPath, original); // app.json возвращаем байт в байт
+  restoreAppJson();
 }
 if (code !== 0) {
   console.error('ОШИБКА: веб-сборка не удалась (текст выше).');

@@ -1,7 +1,7 @@
 {
  "app": "На Чебоксаре · Туризм — Чебоксары",
- "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.4 · 22 октября 2026",
- "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.4_2026-10-22.xlsx",
+ "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.6 · 22 октября 2026",
+ "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.6_2026-10-22.xlsx",
  "languages": [
   {
    "code": "ru-RU",
@@ -599,7 +599,7 @@
    "voice": "ПЕРСОНАЖ",
    "layer": "ДОКУМЕНТ",
    "source": "Роспись 9 августа 1613 г. (по «Советской Чувашии», sovch.chuvashia.com/?p=6164). Речь — ПЕРЕСКАЗ содержания, не цитата; сверить с публикацией росписи",
-   "status": "СНАЧАЛА СВЕРКА",
+   "status": "В РАБОТЕ — пересказ росписи по газете; по правилу 22.10.2026 (гипотеза = предание) допускается в игре с пометкой источника; публикацию самой росписи искать параллельно",
    "text": {
     "ru-RU": "Роспись городу Чебоксарам, лета тысяча шестьсот тринадцатого, августа в девятый день. Башен в городе пять, из них двое ворот въезжих — Введенские и Никольские. У острога башен четыре.",
     "en-GB": "Inventory of the town of Cheboksary, in the year sixteen hundred and thirteen, the ninth day of August. In the town there are five towers, two of them gate towers — the Vvedensky and the Nikolsky. The stockade has four towers.",
@@ -653,7 +653,7 @@
    "voice": "РАССКАЗЧИК",
    "layer": "НАУКА",
    "source": "Чувашская энциклопедия (chuvenc.ru): ст. «Ефремовы» (В.В. Орлов) — https://chuvenc.ru/show_MainTable/150329; ст. «Усыпальница Ефремовых» (Н.И. Муратов) — https://chuvenc.ru/show_MainTable/150073. Библиография ЧЭ: Орлов В.В. П.Е. Ефремов: легенды и действительность. Ч., 1997",
-   "status": "ЧЕРНОВИК 22.10.2026 (П-016) — текст на фактах энциклопедии; вычитка владельцем",
+   "status": "В РАБОТЕ (разрешено владельцем 22.10.2026; вычитка перед записью голоса) 22.10.2026 (П-016) — текст на фактах энциклопедии; вычитка владельцем",
    "text": {
     "ru-RU": "Этот квартал построила одна семья. Основатель — Ефрем Ефимов, государственный крестьянин из деревни Шинерпоси: начинал с кустарного промысла и хлебной торговли, а в сороковые годы девятнадцатого века вместе с сыном Прокопием перебрался в Чебоксары и основал торговую фирму.\nПрокопий Ефремов прошёл путь от крестьянина со свидетельством на торговлю до купца первой гильдии. Муку Ефремовы продавали в Петербурге, Нижнем Новгороде и Рыбинске; держали три самые мощные мельницы в уезде и самую большую в городе кулеткацкую мастерскую — тридцать взрослых и шестьдесят подростков делали до тридцати тысяч кулей в год. В 1890 году братья открыли лесопильный завод, а в 1906-м — торговый дом «П. Е. Ефремов с сыновьями». Общий оборот доходил до полумиллиона рублей в год.\nНа их деньги в годы русско-японской войны работала бесплатная столовая, открылся приют для сирот, было куплено здание для женской прогимназии, содержалась городская библиотека. Сын Фёдор был городским головой в 1914–1917 годах, сын Николай — депутатом Государственной думы. Между их домами стояли склады, лавки, сады, теплицы и оранжереи. Сегодня в особняках Ефремовых — Чувашский национальный музей и Отдел русского искусства художественного музея.",
     "en-GB": "This whole block was built by one family. Its founder, Yefrem Yefimov, was a state peasant from the village of Shinerposi: he began with a cottage trade and grain dealing, and in the 1840s moved to Cheboksary with his son Prokopy and set up a trading firm.\nProkopy Yefremov rose from a peasant with a trading licence to a merchant of the first guild. The Yefremovs sold flour in St Petersburg, Nizhny Novgorod and Rybinsk; they owned the three most powerful mills in the district and the largest bast-sack workshop in town — thirty adults and sixty youngsters made up to thirty thousand sacks a year. In 1890 the brothers opened a sawmill, and in 1906 the trading house ‘P. Ye. Yefremov and Sons’. Their total turnover reached half a million roubles a year.\nTheir money ran a free canteen during the Russo-Japanese War, opened an orphanage, bought the building for the girls’ pro-gymnasium and kept the town library going. Their son Fyodor was mayor in 1914–1917; their son Nikolai sat in the State Duma. Between their houses stood warehouses, shops, gardens, hothouses and orangeries. Today the Yefremov mansions house the Chuvash National Museum and the Russian Art Department of the Art Museum.",
@@ -671,7 +671,7 @@
    "voice": "ПЕРСОНАЖ",
    "layer": "ДОКУМЕНТ",
    "source": "Доклад казанского губернатора Фон Бранта в Сенат, 1773 — цитируется по методическому занятию 9 «Тайны древнего кремля» (gov.cap.ru/Content2020/orgs/GovId_911/zanyatie_9.pdf). Текст — три фрагмента доклада, соединённые многоточиями; первоисточник не найден (ГИА ЧР / РГАДА)",
-   "status": "СНАЧАЛА СВЕРКА (как T03): фрагменты по методичке, первоисточник доклада не найден",
+   "status": "В РАБОТЕ (правило владельца 22.10.2026: непроверенное = предание). Слой на экране — ДОКУМЕНТ по вторичному источнику; первоисточник доклада искать параллельно",
    "text": {
     "ru-RU": "«Апреля 30 числа в городе Чебоксарах был пожар, в котором сгорело церквей 29, обывательских домов 717… кладовых на пристанях, амбаров с хлебными и другими припасами 49… торговых лавок с мелочными товарами 38».",
     "en-GB": "‘On the 30th day of April there was a fire in the town of Cheboksary, in which there burned 29 churches, 717 townspeople’s houses… storehouses on the wharves, barns with grain and other provisions — 49… trading stalls with sundry goods — 38.’",
@@ -689,7 +689,7 @@
    "voice": "РАССКАЗЧИК",
    "layer": "НАУКА",
    "source": "Перепечатка научной монографии на workshome.ru, страницы «Торговля» и «Пристань на Волге» (архивные копии web.archive.org 20241212161218, 20250209104612) — вторичный источник, книгу установить в НБ ЧР; пожар 1773 — доклад Фон Бранта по методичке «Тайны древнего кремля», занятие 9 (gov.cap.ru). См. СВЕРКА_Точка5 (П-015)",
-   "status": "ЧЕРНОВИК 22.10.2026 (П-016) — вторичный источник; вычитка владельцем",
+   "status": "В РАБОТЕ (разрешено владельцем 22.10.2026; вычитка перед записью голоса) 22.10.2026 (П-016) — вторичный источник; вычитка владельцем",
    "text": {
     "ru-RU": "Здесь, у воды, стояло богатство города — хлебные амбары. В 1743 году их насчитали пятьдесят пять, а в середине девятнадцатого века около тридцати амбаров на пристани вмещали до ста двадцати тысяч четвертей хлеба. Рожь и муку в рогожных кулях держали до выгодной цены, потом грузили на расшивы — и вверх по Волге. Ещё в середине восемнадцатого века две трети чебоксарского хлеба уходило в Петербург: там он стоил в три-четыре раза дороже, чем здесь.\nХлеб делал купцов хитрыми. Цену писали на товаре буквами — свой шифр хранили как великую тайну. Крестьянские обозы перехватывали на подъездах к городу, чтобы на площади не сложилась честная цена. В 1833 году городничий Кропоткин приказал забаррикадировать боковые улицы — чтобы обозы шли только мимо караулов.\nТридцатого апреля 1773 года пожар унёс двадцать девять церквей и семьсот семнадцать домов. У купцов Клюевых сгорело товара на три тысячи сто рублей. Сын купца занял денег, снова стал скупать хлеб — и через десять лет в его обороте было почти тридцать тысяч рублей. Пожар и возрождение — так и жил этот берег.",
     "en-GB": "Here by the water stood the town’s wealth — the grain barns. In 1743 fifty-five of them were counted, and by the mid-nineteenth century some thirty barns on the wharf held up to a hundred and twenty thousand chetverts of grain. Rye and flour in bast sacks were kept until the price was right, then loaded onto barges — and off up the Volga. Already in the mid-eighteenth century two thirds of Cheboksary’s grain went to St Petersburg, where it fetched three to four times the price it did here.\nGrain made the merchants cunning. Prices were written on goods in letters — each kept his cipher as a great secret. Peasant carts were intercepted on the roads into town so that no honest price could form on the square. In 1833 the town governor Kropotkin had the side streets barricaded, so that every cart passed the guards.\nOn 30 April 1773 a fire took twenty-nine churches and seven hundred and seventeen houses. The merchant Klyuyevs lost goods worth three thousand one hundred roubles. The merchant’s son borrowed money and began buying grain again — and ten years later nearly thirty thousand roubles were turning over in his hands. Fire and rebirth: that is how this shore lived.",
@@ -707,7 +707,7 @@
    "voice": "РАССКАЗЧИК",
    "layer": "НАУКА",
    "source": "Чувашская энциклопедия: ст. «Чебоксарская женская гимназия» (А.П. Петрянкина) — https://chuvenc.ru/show_MainTable/151187; ст. «Ефремовы» (В.В. Орлов); workshome.ru «Женская гимназия» (архив web.archive.org 20241212160420, вторичный); судьба здания — Википедия «Образование в Чувашии» (третичный, перепроверить). См. СВЕРКА_Точка6 (П-015)",
-   "status": "ЧЕРНОВИК 22.10.2026 (П-016) — год преобразования 1908 по правилу приоритета энциклопедии; вычитка владельцем",
+   "status": "В РАБОТЕ (разрешено владельцем 22.10.2026; вычитка перед записью голоса) 22.10.2026 (П-016) — год преобразования 1908 по правилу приоритета энциклопедии; вычитка владельцем",
    "text": {
     "ru-RU": "Городу понадобилось восемь лет, чтобы открыть школу для девочек. Дума задумала прогимназию ещё в 1896 году, но денег от казны не дождалась. В 1904-м управа купила у купчихи Забродиной двухэтажный каменный дом на Набережно-Архангельской улице — десять тысяч рублей взяли в долг у купцов, первым среди них был Прокопий Ефремов. В середине октября к занятиям приступили сорок шесть девочек, выдержавших вступительные экзамены. Весь штат — начальница, две учительницы и законоучитель.\nОбщежития не было: в 1907 году сто пятьдесят девять учениц жили группами на двадцати двух частных квартирах, и учителя обходили их по домам. Учили Закону Божьему, русскому и церковно-славянскому, арифметике и геометрии, немецкому и французскому, чистописанию, рисованию, пению и рукоделию. С 1908 года прогимназия стала гимназией, а к 1914-му здесь училось триста пять девочек. Одной из стипендиаток земства была О. И. Ырзем — будущая народная артистка Чувашской АССР.\nВ 1918 году гимназию преобразовали в советскую школу второй ступени. Дом Забродиной потом занимали педагогический техникум и сельскохозяйственный институт, а улица стала называться Чернышевского.",
     "en-GB": "It took the town eight years to open a school for girls. The council first planned a pro-gymnasium in 1896, but the treasury never sent the money. In 1904 the town board bought a two-storey stone house on Naberezhno-Arkhangelskaya Street from the merchant’s widow Zabrodina — the ten thousand roubles were borrowed from merchants, the first of them Prokopy Yefremov. In mid-October forty-six girls who had passed the entrance examinations began their lessons. The whole staff: a headmistress, two teachers and a scripture teacher.\nThere was no boarding house: in 1907 a hundred and fifty-nine pupils lived in groups in twenty-two private lodgings, and the teachers made the rounds of their homes. They studied scripture, Russian and Church Slavonic, arithmetic and geometry, German and French, penmanship, drawing, singing and needlework. From 1908 the pro-gymnasium became a full gymnasium, and by 1914 three hundred and five girls studied here. One of the district council’s scholarship girls was O. I. Yrzem — a future People’s Artist of the Chuvash republic.\nIn 1918 the gymnasium was turned into a Soviet secondary school. Zabrodina’s house later held a teacher-training college and the agricultural institute, and the street was renamed after Chernyshevsky.",
@@ -725,7 +725,7 @@
    "voice": "РАССКАЗЧИК",
    "layer": "НАУКА",
    "source": "Чувашская энциклопедия: ст. «Владимирская чувашская женская община» (Ю.В. Гусаров) — https://chuvenc.ru/show_MainTable/150327; ст. «Спасо-Преображенский женский монастырь» (Ю.В. Гусаров) — https://chuvenc.ru/show_MainTable/154008; ст. «Усыпальница Ефремовых» (Н.И. Муратов) — https://chuvenc.ru/show_MainTable/150073. «С восемнадцатого века» — Владимирская (Сретенская) пустынь 1716 по sobory.ru (П-014, вторичный)",
-   "status": "ЧЕРНОВИК 22.10.2026 (П-016) — на фактах энциклопедии; вычитка владельцем",
+   "status": "В РАБОТЕ (разрешено владельцем 22.10.2026; вычитка перед записью голоса) 22.10.2026 (П-016) — на фактах энциклопедии; вычитка владельцем",
    "text": {
     "ru-RU": "Эта горка — самое тихое место старого города. С восемнадцатого века здесь стояла Владимирская пустынь, а в 1899 году на её месте открыли чувашскую женскую общину. К началу двадцатого века тут были трёхпрестольный храм, больница с деревянной церковью, живописная и чеканная мастерские, сад и пруд, а с 1900 года — школа для девочек-сирот. Сестёр собиралось до полутораста.\nНа склоне в 1908–1911 годах по проекту архитекторов Олешкевича, Деминева и Малиновского построили усыпальницу купцов Ефремовых — каменную часовню с куполом и коринфским портиком, единственный в Чувашии памятник мемориальной архитектуры. До 1918 года в её склепе стояли саркофаги Прокопия Ефремова и его жены Екатерины.\nВ 1920 году в зданиях общины открыли детский дом, в 1930-м закрыли и церковь. Потом здесь были квартиры, бондарный цех, склады и реставрационные мастерские. В 1989 году храм вернули верующим, а 25 марта 1991 года монастырь возродился — теперь он Спасо-Преображенский. Усыпальница в том же году стала приходским храмом Иоанна Кронштадтского.",
     "en-GB": "This hill is the quietest corner of the old town. From the eighteenth century the Vladimir hermitage stood here, and in 1899 a Chuvash women’s community was opened in its place. By the early twentieth century there were a church with three altars, a hospital with a wooden chapel, icon-painting and metal-chasing workshops, a garden and a pond, and from 1900 a school for orphan girls. Up to a hundred and fifty sisters gathered here.\nOn the slope, in 1908–1911, the Yefremov family tomb was built to a design by the architects Oleshkevich, Deminev and Malinovsky — a stone chapel with a dome and a Corinthian portico, the only monument of memorial architecture in Chuvashia. Until 1918 the sarcophagi of Prokopy Yefremov and his wife Yekaterina stood in its crypt.\nIn 1920 a children’s home was opened in the community’s buildings; in 1930 the church too was closed. Later there were flats here, a cooper’s shop, warehouses and restoration workshops. In 1989 the church was returned to the faithful, and on 25 March 1991 the convent was reborn — now as the Transfiguration Convent. That same year the tomb became the parish church of St John of Kronstadt.",
@@ -743,7 +743,7 @@
    "voice": "РАССКАЗЧИК",
    "layer": "НАУКА",
    "source": "Залив — Чувашская энциклопедия, ст. «Чебоксарский залив» (Р.К. Рахимов) — https://chuvenc.ru/show_MainTable/153562; фигурки — проект «Легенды Чувашского края» (Сбер, администрация города, ТИЦ), сентябрь 2024: grani21.ru, cheboksary555.ru (П-014); Нарспи и Сетнер — поэма К.В. Иванова «Нарспи» (1908)",
-   "status": "ЧЕРНОВИК 22.10.2026 (П-016); имена фигурок — по СМИ (П-014), материал фигурок не указан намеренно",
+   "status": "В РАБОТЕ (разрешено владельцем 22.10.2026; вычитка перед записью голоса) 22.10.2026 (П-016); имена фигурок — по СМИ (П-014), материал фигурок не указан намеренно",
    "text": {
     "ru-RU": "Залив, который вы видите, моложе всего, о чём мы говорили: его первую очередь наполнили в 1980 году, а дамбу и фонтаны построили в 1996-м. Семь фонтанов — не украшение, а водовыпуск: так в залив подают волжскую воду. Большой бьёт четырьмя струями на двадцать метров, шесть малых стоят вокруг него по кругу.\nА на парапетах залива живут шесть маленьких фигурок героев чувашских легенд: Девушка на Луне, Лиса-плясунья, Красавица Плаги, Волга, Богатырь Улып и пара — Нарспи и Сетнер. Их поставили в 2024 году. Нарспи и Сетнер — из поэмы Константина Иванова, остальные — из проекта «Легенды Чувашского края».\nНайдите всех шестерых. Я — тот самый Сетнер, так что одну фигурку вы уже знаете в лицо.",
     "en-GB": "The bay you see is younger than anything we have talked about: its first section was filled in 1980, and the dam and fountains were built in 1996. The seven fountains are not decoration but an outlet: that is how Volga water is fed into the bay. The big one throws four jets twenty metres high; the six small ones stand around it in a circle.\nAnd on the parapets of the bay live six little figures of heroes from Chuvash legends: the Girl on the Moon, the Dancing Fox, Plagi the Beauty, Volga, Ulyp the Bogatyr, and a pair — Narspi and Setner. They were installed in 2024. Narspi and Setner come from Konstantin Ivanov’s poem; the others from the project ‘Legends of the Chuvash Land’.\nFind all six. I am that very Setner — so you already know one of them by sight.",
@@ -2352,6 +2352,26 @@
    "zh-Hans": "月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普、纳尔斯皮与塞特涅尔。游戏发现：六个全部找到。",
    "hi-IN": "चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, नार्स्पी और सेत्नेर। खेल की खोज: सभी छह मिल गए।",
    "tr-TR": "Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp, Narspi ile Setner. Oyun buluntusu: altısı da bulundu."
+  },
+  "ui.about": {
+   "ru-RU": "О проекте",
+   "en-GB": "About",
+   "en-US": "About",
+   "de-DE": "Über das Projekt",
+   "fr-FR": "À propos",
+   "zh-Hans": "关于项目",
+   "hi-IN": "परियोजना के बारे में",
+   "tr-TR": "Proje hakkında"
+  },
+  "ui.pwa_hint": {
+   "ru-RU": "Чтобы открывать как приложение на iPhone: «Поделиться» → «На экран „Домой“».",
+   "en-GB": "To open as an app on iPhone: Share → Add to Home Screen.",
+   "en-US": "To open as an app on iPhone: Share → Add to Home Screen.",
+   "de-DE": "Als App auf dem iPhone öffnen: „Teilen“ → „Zum Home-Bildschirm“.",
+   "fr-FR": "Pour l’ouvrir comme une application sur iPhone : Partager → Sur l’écran d’accueil.",
+   "zh-Hans": "在 iPhone 上以应用方式打开：分享 → 添加到主屏幕。",
+   "hi-IN": "iPhone पर ऐप की तरह खोलने के लिए: शेयर → होम स्क्रीन पर जोड़ें।",
+   "tr-TR": "iPhone’da uygulama gibi açmak için: Paylaş → Ana Ekrana Ekle."
   }
  },
  "facts": [

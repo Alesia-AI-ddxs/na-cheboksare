@@ -8,6 +8,9 @@
 // Перед запуском: npm run web:export (и/или npm run web:export:turizm)
 // Запуск: node scripts/pwa-offline-check.mjs [--dir dist] [--base /]
 //         node scripts/pwa-offline-check.mjs --dir dist_turizm_app --base /turizm/app
+// Проверка настоящего сервера (например, nginx): --url http://127.0.0.1:8090 --stop-cmd "команда, которая его остановит"
+//   (так имитируем пропажу интернета; сервер после проверки нужно запустить снова)
+import { execSync } from 'node:child_process';
 import { createServer } from 'node:http';
 import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, extname, join } from 'node:path';
@@ -26,7 +29,9 @@ if (!BASE.startsWith('/')) BASE = '/' + BASE;
 BASE = BASE.replace(/\/+$/, '');
 const OUT = join(root, 'qa/screens');
 const PORT = Number(process.env.QA_PORT || 8098);
-const ORIGIN = `http://127.0.0.1:${PORT}`;
+const EXTERNAL = arg('url'); // внешний сервер вместо встроенного
+const STOP_CMD = arg('stop-cmd');
+const ORIGIN = EXTERNAL ? EXTERNAL.replace(/\/+$/, '') : `http://127.0.0.1:${PORT}`;
 const SITE = `${ORIGIN}${BASE}`;
 const shotName = BASE ? `21_pwa_offline_${DIR_NAME.replace(/^dist_?/, '') || 'base'}.png` : '20_pwa_offline.png';
 
@@ -50,7 +55,14 @@ const TYPES = {
   '.svg': 'image/svg+xml',
 };
 let served = 0;
+let networkDown = false; // «интернет выключен»: сервер обрывает любое соединение
+let attemptsWhileDown = 0;
 const server = createServer((req, res) => {
+  if (networkDown) {
+    attemptsWhileDown++;
+    req.socket.destroy();
+    return;
+  }
   served++;
   let path = decodeURIComponent((req.url || '/').split('?')[0]);
   if (BASE && !path.startsWith(BASE + '/')) {
@@ -68,7 +80,7 @@ const server = createServer((req, res) => {
   if (f.endsWith('sw.js')) headers['cache-control'] = 'no-cache';
   res.writeHead(200, headers).end(readFileSync(f));
 });
-await new Promise((r) => server.listen(PORT, '127.0.0.1', r));
+if (!EXTERNAL) await new Promise((r) => server.listen(PORT, '127.0.0.1', r));
 
 const executablePath = process.env.PW_CHROMIUM || (existsSync('/opt/pw-browsers/chromium') ? '/opt/pw-browsers/chromium' : undefined);
 const browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
@@ -122,8 +134,13 @@ try {
   const controlled = await page.evaluate(() => !!navigator.serviceWorker.controller);
   ok('страница под управлением воркера', controlled);
 
-  // 3. выключаем интернет
+  // 3. выключаем интернет: и в браузере, и на сервере (сервер обрывает соединения)
   await ctx.setOffline(true);
+  networkDown = true;
+  if (EXTERNAL && STOP_CMD) {
+    execSync(STOP_CMD, { stdio: 'inherit' });
+    console.log('внешний сервер остановлен — сети «нет»');
+  }
   const before = served;
   const r1 = await page.reload();
   await waitRendered(page);
@@ -132,7 +149,7 @@ try {
   await page.screenshot({ path: join(OUT, shotName) });
   console.log('снимок:', join(OUT, shotName));
 
-  for (const p of ['/finds', '/point/3', '/about']) {
+  for (const p of ['/finds', '/point/3', '/point/6', '/finish/1', '/prologue', '/about']) {
     const r = await page.goto(`${SITE}${p}`);
     await waitRendered(page);
     ok(`без интернета: ${p} (ещё не открывали)`, r?.status() === 200, `статус ${r?.status()}`);
@@ -149,13 +166,13 @@ try {
     await page.screenshot({ path: join(OUT, '22_about_pwa_hint.png') });
     console.log('снимок:', join(OUT, '22_about_pwa_hint.png'));
   }
-  ok('без интернета сервер не получил ни одного запроса', served === before, `запросов: ${served - before}`);
+  if (!EXTERNAL) ok('без интернета ни один файл не пришёл с сервера', served === before, `попыток выйти в сеть: ${attemptsWhileDown}, все оборваны`);
   await ctx.close();
 } catch (e) {
   ok('сценарий прошёл без сбоев', false, e.message.split('\n')[0]);
 } finally {
   await browser.close();
-  server.close();
+  if (!EXTERNAL) server.close();
 }
 
 const failed = results.filter((r) => !r.pass).length;

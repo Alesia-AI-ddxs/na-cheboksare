@@ -10,7 +10,10 @@
     "backgroundColor": "#F5F0E6",
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "ru.inospectrum.nacheboksare"
+      "bundleIdentifier": "ru.inospectrum.nacheboksare",
+      "infoPlist": {
+        "CFBundleDisplayName": "На Чебоксаре"
+      }
     },
     "android": {
       "package": "ru.inospectrum.nacheboksare",

@@ -1,21 +1,32 @@
-# Релиз в российские магазины (RuStore и др.).
-# Запуск вручную: npm run eas:release-ru
-# Шаг 1 собирает APK профиля production-apk.
-# Шаг 2 пока только ПЕЧАТАЕТ, куда планируется публикация.
-# Настоящие скрипты публикации (RuStore API и др.) лежат в шаблоне студии
-# Mobile App Studio и будут добавлены сюда позже — сейчас их здесь нет.
+# Выпуск «На Чебоксаре» в российские магазины: RuStore и/или Huawei AppGallery.
+# Запуск вручную:
+#   npx eas workflow:run .eas/workflows/release-ru-stores.yml -F stores=rustore -F submit=no
+#   (или npm run eas:release-ru — тогда EAS спросит магазины и «отправлять ли на модерацию»)
+# Шаг 1 собирает APK (профиль production-apk) в облаке EAS.
+# Шаг 2 скачивает этот APK и запускает наши скрипты публикации:
+#   scripts/rustore-publish.mjs и/или scripts/appgallery-publish.mjs
+# submit=no — только черновик в консоли магазина (безопасно); submit=yes — сразу на модерацию.
+# Ключи берутся из переменных EAS (expo.dev → проект → Environment variables, среда production):
+#   RUSTORE_KEY_ID, RUSTORE_PRIVATE_KEY, AGC_CLIENT_ID, AGC_CLIENT_SECRET, AGC_APP_ID (тип Secret).
 name: Release RU stores
 
 on:
   workflow_dispatch:
     inputs:
       stores:
-        description: "Магазины через запятую (например: rustore)"
-        type: string
-        default: "rustore"
+        description: "Куда выпускать: rustore | appgallery | rustore+appgallery"
+        type: choice
+        options:
+          - rustore
+          - appgallery
+          - rustore+appgallery
+        default: rustore
       submit:
-        description: "Публиковать ли сразу (yes/no)"
-        type: string
+        description: "Отправить на модерацию сразу? no — только черновик, yes — на модерацию"
+        type: choice
+        options:
+          - "no"
+          - "yes"
         default: "no"
 
 jobs:
@@ -26,13 +37,32 @@ jobs:
       platform: android
       profile: production-apk
 
-  planned_submission:
-    name: План публикации
+  publish_rustore:
+    name: Публикация в RuStore
     needs: [build_android_apk]
+    if: ${{ contains(inputs.stores || 'rustore', 'rustore') }}
+    environment: production
     steps:
-      - name: Показать план
-        run: |
-          echo "Сборка готова: ${{ needs.build_android_apk.outputs.build_id }}"
-          echo "Магазины: ${{ inputs.stores }}"
-          echo "Публиковать сразу: ${{ inputs.submit }}"
-          echo "Скрипты публикации будут добавлены из шаблона студии. Сейчас публикация не выполняется."
+      - uses: eas/checkout
+      - uses: eas/download_build
+        id: download
+        with:
+          build_id: ${{ needs.build_android_apk.outputs.build_id }}
+          extensions: [apk]
+      - name: Загрузка в RuStore
+        run: node scripts/rustore-publish.mjs --file "${{ steps.download.outputs.artifact_path }}" --submit "${{ inputs.submit || 'no' }}"
+
+  publish_appgallery:
+    name: Публикация в AppGallery
+    needs: [build_android_apk]
+    if: ${{ contains(inputs.stores || 'rustore', 'appgallery') }}
+    environment: production
+    steps:
+      - uses: eas/checkout
+      - uses: eas/download_build
+        id: download
+        with:
+          build_id: ${{ needs.build_android_apk.outputs.build_id }}
+          extensions: [apk]
+      - name: Загрузка в AppGallery
+        run: node scripts/appgallery-publish.mjs --file "${{ steps.download.outputs.artifact_path }}" --submit "${{ inputs.submit || 'no' }}"

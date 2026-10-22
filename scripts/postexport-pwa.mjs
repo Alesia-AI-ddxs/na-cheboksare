@@ -60,7 +60,7 @@ const SKIP = [
   /^_expo\/\.routes\.json$/, // служебный файл
   /^_sitemap\.html$/, // служебная страница Expo
   /^\(tabs\)\//, // дубли страниц вкладок (адреса /route и т.п. ведут на route.html)
-  /\[/, // шаблоны страниц вида [id].html — все реальные страницы уже собраны отдельно
+  /\[[^/]*\]\.html$/, // шаблоны страниц вида [id].html — все реальные страницы уже собраны отдельно (а скрипты [id]-*.js нужны!)
   /(^|\/)\./, // скрытые файлы
 ];
 const files = walk(DIR)
@@ -115,6 +115,8 @@ for (const rel of htmls) {
       changed = true;
     }
   }
+  // скрипты приложения должны быть в странице (иначе кнопки не работают — см. src/app/+html.tsx)
+  if (!/<script[^>]+src="[^"]*\/_expo\/static\/js\/web\/entry-/.test(html)) missing.push(`${rel}: нет скриптов приложения (bodyNodes)`);
   if (changed) {
     writeFileSync(p, html);
     fixed++;

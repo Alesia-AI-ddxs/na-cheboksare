@@ -21,7 +21,16 @@
 | `scripts/make-icons.mjs` | Генератор иконки-сокола и заставки |
 | `scripts/qa-screens.mjs` | Снимки экранов веб-версии для проверки |
 | `tools/content_build.py` | Сборка `content.json` из мастер-таблицы Excel |
-| `eas.json`, `.eas/workflows/` | Настройки облачных сборок EAS |
+| `eas.json`, `.eas/workflows/` | Настройки облачных сборок EAS и сценарии выпуска в магазины |
+| `src/app/+html.tsx`, `public/` | Веб-версия как приложение (PWA): манифест, иконки, `sw.js` для работы без интернета |
+| `scripts/export-web.mjs`, `scripts/postexport-pwa.mjs` | Веб-сборка под любой адрес + подготовка PWA |
+| `scripts/pwa-offline-check.mjs` | Проверка: ставится ли сайт и работает ли без интернета |
+| `scripts/rustore-publish.mjs`, `scripts/appgallery-publish.mjs` | Публикация в RuStore и AppGallery (без сторонних пакетов) |
+| `scripts/stores-doctor.mjs` | Проверка ключей всех магазинов |
+| `.env.stores.example` | Список ключей магазинов и где их взять (копия `.env.stores` — только у вас) |
+| `tests/publish-mock.test.mjs` | Тесты публикации на «поддельных» серверах магазинов |
+| `server/` | Свой Linux-сервер: сборка Android без облака Expo и веб-хостинг (см. `server/README_СЕРВЕР.md`) |
+| `СБОРКА_И_ВЫПУСК.cmd` | Меню для Windows: тестовый APK, RuStore, AppGallery, Google Play, проверка ключей |
 | `ОКНО_СТУДИИ.cmd` | Открыть PowerShell в папке проекта без прокси (Windows) |
 
 ## Команды
@@ -30,9 +39,13 @@
 npm install              # установить зависимости (один раз)
 npm run check            # проверка типов + проверка контента (должно быть зелёным)
 npm run web              # запустить в браузере для просмотра
-npm run web:export       # собрать веб-версию в папку dist/
+npm run web:export       # собрать веб-версию (PWA) в папку dist/ — для сайта в корне домена
+npm run web:export:turizm  # то же для адреса /turizm/app/ → папка dist_turizm_app/
+npm run pwa:check        # проверка PWA: установка и работа без интернета (после web:export)
 npm run qa:screens       # снимки экранов в qa/screens/ (после web:export)
-npm run icons            # перерисовать иконку и заставку
+npm run icons            # перерисовать иконку, заставку и иконки PWA
+npm run stores:doctor    # какие ключи магазинов уже есть, каких не хватает
+npm run test:publish     # тесты скриптов публикации (без настоящих магазинов)
 ```
 
 На Windows сначала дважды щёлкните `ОКНО_СТУДИИ.cmd` — откроется окно PowerShell, где прокси VPN не мешает npm.
@@ -41,16 +54,45 @@ npm run icons            # перерисовать иконку и застав
 
 1. `npx eas login` — откроется браузер, войдите в аккаунт Expo.
 2. `npx eas init` (или `npm run eas:init`) — создаст проект в Expo и запишет `projectId` в `app.json`
-   (сейчас поле `extra.eas.projectId` намеренно пустое).
+   (если поле `extra.eas.projectId` уже заполнено — этот шаг уже сделан).
 3. `npx eas credentials:configure-build -p android -e preview` — EAS сам создаст и сохранит ключ подписи Android.
 4. `npm run eas:preview` — облачная сборка APK для теста. Ссылку на APK EAS покажет в конце.
 
 Дальше:
-- `npm run eas:release-ru` — запускает сценарий `.eas/workflows/release-ru-stores.yml`: собирает APK профиля
-  `production-apk` и печатает план публикации. Скрипты настоящей публикации в RuStore лежат в шаблоне студии
-  и будут добавлены позже.
-- Профиль `production` собирает AAB для Google Play; `eas submit` отправит его во внутренний трек черновиком.
+- Проще всего — дважды щёлкнуть `СБОРКА_И_ВЫПУСК.cmd` и выбрать пункт меню.
+- `npm run release:rustore` — сценарий `.eas/workflows/release-ru-stores.yml`: собирает APK профиля
+  `production-apk` и загружает его в RuStore **черновиком** (`scripts/rustore-publish.mjs`).
+  `npm run release:ru-all` — то же сразу в RuStore и AppGallery. Отправка на модерацию — только явно:
+  `npx eas workflow:run .eas/workflows/release-ru-stores.yml -F stores=rustore -F submit=yes`.
+- `npm run eas:release-gp` — сценарий `.eas/workflows/release-google-play.yml`: AAB профиля `production`
+  → Google Play, внутреннее тестирование, черновик. Самый первый AAB Google принимает только вручную в Play Console.
+- Ключи магазинов: скопируйте `.env.stores.example` → `.env.stores`, заполните, проверьте `npm run stores:doctor`.
+  Для облака EAS те же имена заведите в expo.dev → проект → Environment variables (среда production, тип Secret).
+- Без облака: `node scripts/rustore-publish.mjs --file app.apk --submit no` (добавьте `--dry-run`, чтобы только
+  посмотреть план — ничего не отправится).
+- Сборка на своём сервере без Expo — `server/README_СЕРВЕР.md`.
 - Номер сборки Android (versionCode) ведёт EAS (`appVersionSource: remote`), руками не менять.
+
+## iPhone
+
+**Сейчас (аккаунта Apple нет) — веб-версия как приложение (PWA).**
+Сайт с игрой ставится на iPhone как обычное приложение и после первого открытия работает без интернета.
+1. Выложите веб-версию на свой домен с HTTPS (`server/README_СЕРВЕР.md`, шаг 5) — или откройте готовый адрес.
+2. На iPhone откройте адрес в **Safari** → кнопка «Поделиться» (квадрат со стрелкой) → **«На экран „Домой“»** → «Добавить».
+3. На экране появится значок-сокол «На Чебоксаре». Он открывается без адресной строки, как приложение.
+Во вкладке «О проекте» веб-версии есть та же подсказка (её не видно, когда игра уже открыта с экрана «Домой»).
+
+**Потом — App Store (когда появится аккаунт).**
+1. Оформить Apple Developer Program на ИП (платная годовая подписка, developer.apple.com). Условия оформления
+   и оплаты из России перед подачей проверить на сайте Apple — здесь они **не проверены**.
+2. `npx eas credentials -p ios` — войти своим Apple ID; EAS сам создаст сертификаты и профили.
+3. `npm run eas:preview:ios` — тестовая сборка для своих iPhone (профиль `preview`, распространение internal;
+   телефоны заранее регистрируются командой `npx eas device:create`).
+4. Создать приложение в App Store Connect (bundle ID `ru.inospectrum.nacheboksare`), вписать ASC_APP_ID и
+   APPLE_TEAM_ID в `.env.stores` → `npm run stores:ios-config` (запишет их в `eas.json`).
+5. `npx eas build -p ios --profile production` → `npx eas submit -p ios --profile production` — сборка уходит
+   в **TestFlight**; после проверки там — «Отправить на проверку» в App Store Connect.
+Имя под значком на iPhone — «На Чебоксаре» (`ios.infoPlist.CFBundleDisplayName` в `app.json`).
 
 ## Как обновить тексты (заменить content.json)
 

@@ -42,3 +42,18 @@ yarn-error.*
 
 # QA
 qa/server.log
+
+# --- «На Чебоксаре»: сборки, ключи, временное (v1.0.0) ---
+# веб-сборки (dist/, dist_turizm_app/ и т.п.)
+dist*/
+# нативные папки создаются заново командой prebuild
+android/
+ios/
+# ключи и пароли — НИКОГДА не в git
+secrets/
+.env*
+!.env.stores.example
+# готовые APK/AAB со своего сервера
+server/out/
+# снимки экранов QA (папку оставляем)
+qa/screens/*.png
