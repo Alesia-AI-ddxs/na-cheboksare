@@ -1,0 +1,12 @@
+# Веб-версия «На Чебоксаре» на EAS Hosting (адрес вида https://na-cheboksare.expo.app).
+# Запуск — только вручную (из чата через коннектор Expo или `eas workflow:run .eas/workflows/deploy-web.yml`).
+# Это тестовый адрес для просмотра и проверки; боевой сайт — свой сервер (server/README_СЕРВЕР.md).
+name: Веб-версия на EAS Hosting
+
+jobs:
+  deploy:
+    name: Выложить веб-версию
+    type: deploy
+    environment: preview
+    params:
+      prod: true
