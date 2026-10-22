@@ -1,0 +1,191 @@
+{
+ "date": "2026-10-22T08:34:45.116Z",
+ "shots": 63,
+ "checks": [
+  {
+   "name": "первый запуск ведёт на экран выбора языка",
+   "pass": true,
+   "info": "http://127.0.0.1:8099/language"
+  },
+  {
+   "name": "автоопределение: предложен язык системы (кнопка «Продолжить»)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "на экране выбора языка нет флагов стран",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "метка «черновик» у варианта со статусом ЧЕРНОВИК (en-GB)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "вариант без перевода (cv) — «готовится», выбрать нельзя (фолбэк)",
+   "pass": true,
+   "info": "aria-disabled=true"
+  },
+  {
+   "name": "en-GB: автоопределение по языку браузера (en-GB)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "en-GB: пролог на выбранном языке (ui.title)",
+   "pass": true,
+   "info": "NA CHEBOKSARE"
+  },
+  {
+   "name": "en-GB: направление письма ltr",
+   "pass": true,
+   "info": "ltr"
+  },
+  {
+   "name": "en-GB: финал — «Вы нашли N находок» через ICU",
+   "pass": true,
+   "info": "You’ve collected 8 finds"
+  },
+  {
+   "name": "en-GB: вкладка «Находки» — счётчик через ICU",
+   "pass": true,
+   "info": "You’ve collected 8 finds"
+  },
+  {
+   "name": "en-GB: ссылка на Сетнера с lang/voice",
+   "pass": true,
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-URFZ&lang=en-GB&voice=en-GB"
+  },
+  {
+   "name": "ar: автоопределение по языку браузера (ar)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "ar: шрифт письма NotoNaskhArabic загружен (document.fonts)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "ar: document.fonts.check(тест-строка) = true",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "ar: пролог на выбранном языке (ui.title)",
+   "pass": true,
+   "info": "على تشيبوكساري"
+  },
+  {
+   "name": "ar: направление письма rtl",
+   "pass": true,
+   "info": "rtl"
+  },
+  {
+   "name": "ar: строка точки зеркальна (номер справа, название слева)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "ar: вкладки зеркальны («Маршрут» справа, «О проекте» слева)",
+   "pass": true,
+   "info": "true"
+  },
+  {
+   "name": "ar: стрелка «назад» смотрит вправо (→)",
+   "pass": true,
+   "info": "→ إلى الخريطة"
+  },
+  {
+   "name": "ar: финал — «Вы нашли N находок» через ICU",
+   "pass": true,
+   "info": "عثرت على 8 اكتشافات"
+  },
+  {
+   "name": "ar: вкладка «Находки» — счётчик через ICU",
+   "pass": true,
+   "info": "عثرت على 8 اكتشافات"
+  },
+  {
+   "name": "ar: ссылка на Сетнера с lang/voice",
+   "pass": true,
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-3U73&lang=ar&voice=ar-SA"
+  },
+  {
+   "name": "zh-Hans: автоопределение по языку браузера (zh-CN)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "zh-Hans: шрифт письма NotoSansSC загружен (document.fonts)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "zh-Hans: document.fonts.check(тест-строка) = true",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "zh-Hans: пролог на выбранном языке (ui.title)",
+   "pass": true,
+   "info": "NA CHEBOKSARE"
+  },
+  {
+   "name": "zh-Hans: направление письма ltr",
+   "pass": true,
+   "info": "ltr"
+  },
+  {
+   "name": "zh-Hans: финал — «Вы нашли N находок» через ICU",
+   "pass": true,
+   "info": "您共找到 8 件发现"
+  },
+  {
+   "name": "zh-Hans: вкладка «Находки» — счётчик через ICU",
+   "pass": true,
+   "info": "您共找到 8 件发现"
+  },
+  {
+   "name": "zh-Hans: ссылка на Сетнера с lang/voice",
+   "pass": true,
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-9EXU&lang=zh-Hans&voice=zh-CN"
+  },
+  {
+   "name": "hi-IN: шрифт письма NotoSansDevanagari загружен (document.fonts)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "смена языка на лету: «О проекте» сразу по-английски",
+   "pass": true,
+   "info": "How the game is made"
+  },
+  {
+   "name": "после перезагрузки язык сохранён (en-GB, произношение en-IE)",
+   "pass": true,
+   "info": "en-GB / en-IE"
+  },
+  {
+   "name": "смена на арабский на лету: страница справа налево без перезапуска",
+   "pass": true,
+   "info": "rtl"
+  },
+  {
+   "name": "после перезагрузки: арабский и справа налево",
+   "pass": true,
+   "info": "rtl"
+  },
+  {
+   "name": "возврат на русский: слева направо",
+   "pass": true,
+   "info": "ltr"
+  },
+  {
+   "name": "лист тофу: шрифты письменностей загрузились из сборки",
+   "pass": true,
+   "info": "{\"NotoNaskhArabic\":\"loaded\",\"NotoSansSC\":\"loaded\",\"NotoSansTC\":\"loaded\",\"NotoSansHK\":\"loaded\",\"NotoSansDevanagari\":\"loaded\"}"
+  }
+ ]
+}

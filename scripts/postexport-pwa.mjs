@@ -63,10 +63,16 @@ const SKIP = [
   /\[[^/]*\]\.html$/, // шаблоны страниц вида [id].html — все реальные страницы уже собраны отдельно (а скрипты [id]-*.js нужны!)
   /(^|\/)\./, // скрытые файлы
 ];
-const files = walk(DIR)
+// Тяжёлые шрифты письменностей (китайские Noto ≈7–10 МБ каждый) НЕ скачиваем заранее всем: файл приходит,
+// когда гость выбрал этот язык, и дальше живёт в кэше воркера (работает без интернета) — «языковой пакет».
+// Арабский и деванагари лёгкие (≈0,2 МБ) — их кэшируем заранее, как всё остальное.
+const ON_DEMAND = [/NotoSans(SC|TC|HK)_\d+\w*\.[0-9a-f]+\.ttf$/i, /NotoSans(SC|TC|HK)_\d+\w*\.ttf$/i];
+const allFiles = walk(DIR)
   .map((f) => relative(DIR, f).split(sep).join('/'))
   .filter((rel) => !SKIP.some((re) => re.test(rel)))
   .sort();
+const onDemand = allFiles.filter((rel) => ON_DEMAND.some((re) => re.test(rel)));
+const files = allFiles.filter((rel) => !onDemand.includes(rel));
 
 const hash = createHash('sha256');
 for (const rel of files) {
@@ -132,6 +138,8 @@ console.log(`  папка:            ${relative(root, DIR) || '.'}`);
 console.log(`  путь сайта:       ${BASE || '/'}`);
 console.log(`  версия кэша:      ${VERSION}`);
 console.log(`  файлов в кэше:    ${files.length} (${(totalBytes / 1024 / 1024).toFixed(1)} МБ)`);
+const odBytes = onDemand.reduce((s, rel) => s + statSync(join(DIR, rel)).size, 0);
+console.log(`  по требованию:    ${onDemand.length} шрифт(ов) письма (${(odBytes / 1024 / 1024).toFixed(1)} МБ) — скачиваются при выборе языка`);
 console.log(`  страниц проверено: ${htmls.length}, исправлено путей: ${fixed}`);
 if (missing.length) {
   console.error('ОШИБКА: в страницах нет PWA-ссылок (проверьте src/app/+html.tsx):');

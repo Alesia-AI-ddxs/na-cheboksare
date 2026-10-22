@@ -1,7 +1,7 @@
 {
  "app": "На Чебоксаре · Туризм — Чебоксары",
- "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.6 · 22 октября 2026",
- "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.6_2026-10-22.xlsx",
+ "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.7 · 22 октября 2026",
+ "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.7_2026-10-22.xlsx",
  "languages": [
   {
    "code": "ru-RU",
@@ -9,59 +9,109 @@
    "ready": true
   },
   {
-   "code": "en-GB",
-   "name": "Английский (британский)",
-   "ready": true
-  },
-  {
-   "code": "en-US",
-   "name": "Английский (американский)",
-   "ready": true
-  },
-  {
-   "code": "de-DE",
-   "name": "Немецкий",
-   "ready": true
-  },
-  {
-   "code": "fr-FR",
-   "name": "Французский",
-   "ready": true
-  },
-  {
-   "code": "zh-Hans",
-   "name": "Китайский (упрощённый, путунхуа)",
-   "ready": true
-  },
-  {
-   "code": "hi-IN",
-   "name": "Хинди",
-   "ready": true
-  },
-  {
-   "code": "tr-TR",
-   "name": "Турецкий",
-   "ready": true
-  },
-  {
    "code": "cv",
-   "name": "Чувашский",
-   "ready": false
-  },
-  {
-   "code": "tt-RU",
-   "name": "Татарский",
-   "ready": false
-  },
-  {
-   "code": "myv",
-   "name": "Эрзянский (мордовский)",
+   "name": "Чӑвашла",
    "ready": false
   },
   {
    "code": "mdf",
-   "name": "Мокшанский (мордовский)",
+   "name": "Мокшень кяль",
    "ready": false
+  },
+  {
+   "code": "myv",
+   "name": "Эрзянь кель",
+   "ready": false
+  },
+  {
+   "code": "mhr",
+   "name": "Марий йылме",
+   "ready": false
+  },
+  {
+   "code": "mrj",
+   "name": "Кырык мары йӹлмӹ",
+   "ready": false
+  },
+  {
+   "code": "tt",
+   "name": "Татарча",
+   "ready": false
+  },
+  {
+   "code": "ba",
+   "name": "Башҡортса",
+   "ready": false
+  },
+  {
+   "code": "en-US",
+   "name": "English (US)",
+   "ready": true
+  },
+  {
+   "code": "en-GB",
+   "name": "English (UK)",
+   "ready": true
+  },
+  {
+   "code": "de-DE",
+   "name": "Deutsch",
+   "ready": true
+  },
+  {
+   "code": "fr-FR",
+   "name": "Français",
+   "ready": true
+  },
+  {
+   "code": "es-ES",
+   "name": "Español (España)",
+   "ready": false
+  },
+  {
+   "code": "es-419",
+   "name": "Español (Latinoamérica)",
+   "ready": false
+  },
+  {
+   "code": "tr-TR",
+   "name": "Türkçe",
+   "ready": true
+  },
+  {
+   "code": "fa-IR",
+   "name": "فارسی",
+   "ready": false
+  },
+  {
+   "code": "zh-Hans",
+   "name": "中文（简体）",
+   "ready": true
+  },
+  {
+   "code": "zh-Hant",
+   "name": "中文（繁體）",
+   "ready": false
+  },
+  {
+   "code": "yue-Hant",
+   "name": "粵語（繁體）",
+   "ready": false
+  },
+  {
+   "code": "hi-IN",
+   "name": "हिन्दी",
+   "ready": true
+  },
+  {
+   "code": "mr-IN",
+   "name": "मराठी",
+   "ready": false
+  },
+  {
+   "code": "ar",
+   "name": "العربية",
+   "ready": true
   }
  ],
  "stages": [
@@ -554,7 +604,8 @@
     "fr-FR": "L’armée du voïévode Ivan Roun marchait sur Kazan. Et la chronique rapporte : « … ils passèrent la nuit à Tcheboksar, et de Tcheboksar ils marchèrent tout le jour et toute la nuit, et parvinrent devant Kazan au point du jour. » Ce sont les premiers mots sur notre ville qui nous soient parvenus.",
     "zh-Hans": "伊万·鲁恩督军的军队正向喀山进发。编年史中记载：“……他们在切博克萨尔过夜，从切博克萨尔出发，日夜兼程，于黎明时分抵达喀山城下。”这是流传至今关于我们这座城市的最早记载。",
     "hi-IN": "वोएवोदा इवान रून की सेना कज़ान की ओर कूच कर रही थी। इतिवृत्त में लिखा है: «…उन्होंने चेबोक्सार में रात बिताई, और चेबोक्सार से वे पूरे दिन और पूरी रात चलते रहे और भोर होते ही कज़ान के सामने पहुँच गए।» यही हमारे नगर के बारे में सबसे पहले शब्द हैं जो हम तक पहुँचे हैं।",
-    "tr-TR": "Voyvoda İvan Run'un ordusu Kazan'a doğru ilerliyordu. Vakayinamede şöyle yazar: “…Çeboksar'da geceyi geçirdiler, Çeboksar'dan bütün gün ve bütün gece yürüyerek şafak vakti Kazan önlerine vardılar.” Şehrimiz hakkında bize ulaşan ilk sözler bunlardır."
+    "tr-TR": "Voyvoda İvan Run'un ordusu Kazan'a doğru ilerliyordu. Vakayinamede şöyle yazar: “…Çeboksar'da geceyi geçirdiler, Çeboksar'dan bütün gün ve bütün gece yürüyerek şafak vakti Kazan önlerine vardılar.” Şehrimiz hakkında bize ulaşan ilk sözler bunlardır.",
+    "ar": "كان جيش الفويفود إيفان رون يسير نحو قازان. وقد سُجّل في الحولية: «…باتوا على تشيبوكسار، ومن تشيبوكسار ساروا يومًا وليلة كاملين وبلغوا قازان عند الفجر الباكر». هذه أولى الكلمات عن مدينتنا التي وصلت إلينا."
    }
   },
   "T01_OLEARIUS": {
@@ -572,7 +623,8 @@
     "fr-FR": "Vers le soir, nous arrivâmes à la ville de Tcheboksary, située à quarante verstes de l'agglomération que nous avions rencontrée la veille sur la rive droite. Comme les deux précédentes, cette ville est elle aussi bâtie en bois ; par sa situation et ses maisons, c'est la plus agréable à voir des trois.\nLorsque les habitants, avant même notre arrivée, aperçurent de loin notre grand navire, ils se demandèrent ce que cela pouvait être. Aussi le voïévode nous envoya-t-il à notre rencontre une barque avec des streltsy — à trois verstes de la ville, près de l'île de Mokritsa — pour s'informer et voir quel genre de gens nous étions. Les soldats firent le tour du navire de loin, puis se hâtèrent de retourner vers la ville.\nLorsque notre passeport fut remis en ville, trois cents personnes, jeunes et vieilles, accoururent sur la rive pour nous regarder.",
     "zh-Hans": "傍晚时分，我们抵达切博克萨雷城，距离我们前一天在右岸遇到的聚落有四十俄里。和前两座城一样，这座城也是木头建造的；论地势与房屋，它是三者中最赏心悦目的一座。\n在我们到达之前，居民们远远望见我们的大船，不知道那是什么。于是督军派了一条载着射击军的小船前来迎接我们——在离城三俄里、靠近莫克里察岛的地方——打探并查看我们是什么样的人。士兵们远远绕船一周，又匆匆返回城里。\n当我们的通行证被送进城里后，三百名男女老少跑到岸边看我们。",
     "hi-IN": "शाम होते-होते हम चेबोक्सारी नगर पहुँचे, जो उस बस्ती से चालीस वेर्स्ता की दूरी पर है जिसे हमने एक दिन पहले दाहिने किनारे पर देखा था। पिछले दोनों नगरों की तरह यह नगर भी लकड़ी से बना है; अपनी स्थिति और घरों में यह तीनों में सबसे सुहावना दिखता है।\nहमारे पहुँचने से पहले ही जब निवासियों ने दूर से हमारा बड़ा जहाज़ देखा, तो वे सोच में पड़ गए कि यह क्या हो सकता है। इसलिए वोएवोदा ने हमसे मिलने के लिए — नगर से तीन वेर्स्ता पहले, मोक्रित्सा द्वीप के पास — स्ट्रेल्त्सी सैनिकों के साथ एक नाव भेजी, यह जानने और देखने के लिए कि हम किस तरह के लोग हैं। सैनिकों ने दूर से जहाज़ का चक्कर लगाया और फिर नगर की ओर वापस चले गए।\nजब हमारा पासपोर्ट नगर में पहुँचाया गया, तो तीन सौ लोग, जवान और बूढ़े, हमें देखने के लिए किनारे पर दौड़ आए।",
-    "tr-TR": "Akşama doğru, bir gün önce sağ kıyıda rastladığımız yerleşim yerinden kırk verst uzaklıktaki Çeboksarı şehrine vardık. Önceki iki şehir gibi bu şehir de ahşaptan yapılmış; konumu ve evleriyle üçü arasında göze en hoş görüneni odur.\nHalk, biz varmadan önce bile uzaktan büyük gemimizi görünce, bunun ne olabileceğini merak etti. Bu yüzden voyvoda bizi karşılamak üzere — şehre üç verst kala, Mokritsa Adası yakınında — streletsler'le dolu bir kayık gönderdi; ne tür insanlar olduğumuzu öğrenmek ve görmek için. Askerler uzaktan gemiyi dolaştıktan sonra tekrar şehre doğru acele ettiler.\nPasaportumuz şehre ulaştırıldığında, genç yaşlı üç yüz kişi bizi görmek için kıyıya koştu."
+    "tr-TR": "Akşama doğru, bir gün önce sağ kıyıda rastladığımız yerleşim yerinden kırk verst uzaklıktaki Çeboksarı şehrine vardık. Önceki iki şehir gibi bu şehir de ahşaptan yapılmış; konumu ve evleriyle üçü arasında göze en hoş görüneni odur.\nHalk, biz varmadan önce bile uzaktan büyük gemimizi görünce, bunun ne olabileceğini merak etti. Bu yüzden voyvoda bizi karşılamak üzere — şehre üç verst kala, Mokritsa Adası yakınında — streletsler'le dolu bir kayık gönderdi; ne tür insanlar olduğumuzu öğrenmek ve görmek için. Askerler uzaktan gemiyi dolaştıktan sonra tekrar şehre doğru acele ettiler.\nPasaportumuz şehre ulaştırıldığında, genç yaşlı üç yüz kişi bizi görmek için kıyıya koştu.",
+    "ar": "عند المساء وصلنا إلى مدينة تشيبوكساري، الواقعة على الضفة اليمنى على بعد أربعين فيرستًا من المستوطنة التي مررنا بها أمس. ومثل المدينتين السابقتين، بُنيت هذه المدينة أيضًا من الخشب؛ وهي بموقعها وبيوتها أبهاها منظرًا بينها.\nوحين رأى السكان سفينتنا الكبيرة من بعيد قبل وصولنا، حاروا فيما عساها تكون. فأرسل الفويفود لملاقاتنا قاربًا فيه جنود من الستريلتسي — على بعد ثلاثة فيرستات من المدينة، عند جزيرة موكريتسا — ليستطلعوا ويروا أي قوم نحن. فدار الجنود حول السفينة من بعيد ثم أسرعوا عائدين إلى المدينة.\nوحين سُلّم جواز سفرنا إلى المدينة، خرج ثلاثمئة شخص، من الشباب والشيوخ، مسرعين إلى الضفة لينظروا إلينا."
    }
   },
   "T02_NAGOY": {
@@ -590,7 +642,8 @@
     "fr-FR": "Cet été-là, une ville fut édifiée à Tcheboksary. Les voïévodes en poste pour l'année à Tcheboksary étaient : l'okolnitchi Vassili Petrovitch Borissov, Fiodor Mikhaïlovitch Nagoï et le prince Vassili Semionovitch Founikov. Et hors de la ville — Ossip Vassilievitch Polev.\nMonseigneur Gouri, archevêque de Kazan, bénit ce lieu et y plaça l'image de la Très Pure Mère de Dieu — pour la garde de la ville.",
     "zh-Hans": "同年夏天，切博克萨里城建成。当年驻守切博克萨里的督军有：近侍瓦西里·彼得罗维奇·鲍里索夫、费奥多尔·米哈伊洛维奇·纳戈伊，以及瓦西里·谢苗诺维奇·富尼科夫公爵。城外驻守的是奥西普·瓦西里耶维奇·波列夫。\n喀山大主教古里祝圣了这片土地，并安放了至洁圣母像——以护佑此城。",
     "hi-IN": "उसी गर्मी में चेबोक्सारी नगर बसाया गया। उस वर्ष चेबोक्सारी में तैनात वोएवोदा थे: ओकोल्निची वासिली पेत्रोविच बोरिसोव, फ्योदोर मिखाइलोविच नागोय और राजकुमार वासिली सेम्योनोविच फुनिकोव। और नगर के बाहर — ओसिप वासिलियेविच पोलेव।\nकज़ान के आर्चबिशप गूरी ने इस स्थान को आशीर्वाद दिया और परम पवित्र देवमाता का पवित्र चित्र स्थापित किया — नगर की रक्षा के लिए।",
-    "tr-TR": "Aynı yaz Çeboksarı'da bir şehir kuruldu. O yıl Çeboksarı'da görevli voyvodalar şunlardı: okolniçi Vasiliy Petroviç Borisov, Fyodor Mihayloviç Nagoy ve Prens Vasiliy Semyonoviç Funikov. Şehir dışında ise — Osip Vasilyeviç Polev görevliydi.\nKazan Başpiskoposu Guriy bu yeri kutsadı ve şehrin korunması için En Pak Tanrı Anası ikonasını yerleştirdi."
+    "tr-TR": "Aynı yaz Çeboksarı'da bir şehir kuruldu. O yıl Çeboksarı'da görevli voyvodalar şunlardı: okolniçi Vasiliy Petroviç Borisov, Fyodor Mihayloviç Nagoy ve Prens Vasiliy Semyonoviç Funikov. Şehir dışında ise — Osip Vasilyeviç Polev görevliydi.\nKazan Başpiskoposu Guriy bu yeri kutsadı ve şehrin korunması için En Pak Tanrı Anası ikonasını yerleştirdi.",
+    "ar": "في ذلك الصيف نفسه أُقيمت مدينة في تشيبوكساري. وتولّى الحكم في تشيبوكساري لعامٍ الفويفودات: الأوكولنيتشي فاسيلي بيتروفيتش بوريسوف، وفيودور ميخائيلوفيتش ناغوي، والأمير فاسيلي سيميونوفيتش فونيكوف. وخارج المدينة — أوسيب فاسيليفيتش بوليف.\nوبارك المطران غوري، رئيس أساقفة قازان، المكانَ ونصب أيقونة والدة الإله الكلية الطهارة — لحفظ المدينة."
    }
   },
   "T03_ROSPIS_1613": {
@@ -608,7 +661,8 @@
     "fr-FR": "Inventaire de la ville de Tcheboksary, l’an mil six cent treize, le neuvième jour d’août. La ville compte cinq tours, dont deux tours-portes — la porte Vvedenski et la porte Nikolski. L’enceinte palissadée compte quatre tours.",
     "zh-Hans": "切博克萨雷城清册，一六一三年八月九日。城中有塔楼五座，其中两座为通行城门——韦坚斯基门与尼科利斯基门。木栅外城有塔楼四座。",
     "hi-IN": "चेबोक्सारी नगर की सूची, सन् सोलह सौ तेरह, अगस्त का नौवाँ दिन। नगर में पाँच बुर्ज हैं, जिनमें से दो प्रवेश-द्वार वाले हैं — व्वेदेन्स्की और निकोल्स्की द्वार। लकड़ी के बाहरी घेरे में चार बुर्ज हैं।",
-    "tr-TR": "Çeboksarı şehrinin sayımı, bin altı yüz on üç yılı, Ağustos'un dokuzuncu günü. Şehirde beş kule vardır, bunlardan ikisi kapı kulesidir — Vvedenski ve Nikolski kapıları. Ahşap dış surun dört kulesi vardır."
+    "tr-TR": "Çeboksarı şehrinin sayımı, bin altı yüz on üç yılı, Ağustos'un dokuzuncu günü. Şehirde beş kule vardır, bunlardan ikisi kapı kulesidir — Vvedenski ve Nikolski kapıları. Ahşap dış surun dört kulesi vardır.",
+    "ar": "سجلّ مدينة تشيبوكساري، في سنة ألف وستمئة وثلاث عشرة، في اليوم التاسع من شهر أغسطس. في المدينة خمسة أبراج، اثنان منها بوابتا دخول — ففيدينسكي ونيكولسكي. وللسور الخشبي أربعة أبراج."
    }
   },
   "T04_KREMLIN_NARR": {
@@ -626,7 +680,8 @@
     "fr-FR": "La ville de ce coteau fut fondée à l’été 1555. Mais on vivait ici bien avant : les archéologues ont mis au jour une couche d’occupation de près de cinq mètres, avec treize périodes de construction. Les traces les plus anciennes remontent aux XIIIe et XIVe siècles : deux ateliers de potiers du XIVe siècle et un atelier de bijoutier à trois fourneaux de fusion, où l’on travaillait même l’or ; des peignes en bronze et en os, un miroir en bronze de l’époque de la Horde d’or, et un récipient en écorce de bouleau portant une inscription russe du début du XVIe siècle.\nLe mur est de la forteresse passait là où se trouve aujourd’hui la rue Bondarev. Et au XIXe siècle encore, la descente de la rue Sverdlov suivait vers la baie le tracé de l’ancien fossé. Suivez-la : vous longez un mur disparu depuis plus de trois cents ans.",
     "zh-Hans": "这座坡上的城建于1555年夏天。但人们在此生活的历史要早得多：考古学家发现了近五米厚、包含十三个建筑时期的文化层。最古老的遗迹可追溯到十三至十四世纪：十四世纪的两座陶器作坊和一座有三座熔炉、甚至加工黄金的首饰作坊；金帐汗国时期的青铜和骨制梳子、青铜镜，还有一件十六世纪初带俄文铭文的桦树皮器皿。\n要塞的东墙就在今天邦达列夫街的位置。直到十九世纪，斯维尔德洛夫街通往海湾的下坡路仍沿着古老壕沟的走向。沿着它走吧——你正走在一道已消失三百多年的城墙旁。",
     "hi-IN": "इस ढलान पर नगर की स्थापना 1555 की गर्मियों में हुई थी। पर लोग यहाँ उससे बहुत पहले से रहते थे: पुरातत्वविदों को लगभग पाँच मीटर मोटी बसावट की परतें मिलीं, जिनमें निर्माण के तेरह दौर हैं। सबसे पुराने निशान तेरहवीं–चौदहवीं सदी के हैं: चौदहवीं सदी की कुम्हारों की दो कार्यशालाएँ और तीन गलाने की भट्टियों वाली एक जौहरी कार्यशाला, जहाँ सोने के साथ भी काम होता था; स्वर्ण ओर्दा काल की काँसे और हड्डी की कंघियाँ, काँसे का दर्पण, और सोलहवीं सदी की शुरुआत का रूसी अभिलेख वाला भोजपत्र का एक पात्र।\nकिले की पूर्वी दीवार वहाँ थी जहाँ आज बोन्दारेव सड़क है। और उन्नीसवीं सदी में भी स्वेर्दलोव सड़क की ढलान पुरानी खाई की रेखा के साथ-साथ खाड़ी तक जाती थी। इस पर चलिए — आप उस दीवार के साथ चल रहे हैं जो तीन सौ से अधिक वर्षों से नहीं है।",
-    "tr-TR": "Bu yamaçtaki şehir 1555 yazında kuruldu. Ama burada insanlar çok daha önce yaşıyordu: arkeologlar, on üç yapılaşma dönemine ait, yaklaşık beş metre kalınlığında yerleşim katmanları buldu. En eski izler 13. ve 14. yüzyıla aittir: 14. yüzyıla ait iki çömlekçi atölyesi ve altınla bile çalışılan, üç eritme ocaklı bir kuyumcu atölyesi; Altın Orda dönemine ait bronz ve kemik taraklar, bronz bir ayna, bir de 16. yüzyılın başından kalma, üzerinde Rusça yazı bulunan huş kabuğundan bir kap.\nKalenin doğu duvarı bugünkü Bondarev Caddesi'nin olduğu yerden geçiyordu. 19. yüzyılda bile Sverdlov Caddesi'nin yokuşu, eski hendeğin çizgisini izleyerek koya iniyordu. Onun boyunca yürüyün — üç yüz yıldan uzun süredir var olmayan bir surun yanından geçiyorsunuz."
+    "tr-TR": "Bu yamaçtaki şehir 1555 yazında kuruldu. Ama burada insanlar çok daha önce yaşıyordu: arkeologlar, on üç yapılaşma dönemine ait, yaklaşık beş metre kalınlığında yerleşim katmanları buldu. En eski izler 13. ve 14. yüzyıla aittir: 14. yüzyıla ait iki çömlekçi atölyesi ve altınla bile çalışılan, üç eritme ocaklı bir kuyumcu atölyesi; Altın Orda dönemine ait bronz ve kemik taraklar, bronz bir ayna, bir de 16. yüzyılın başından kalma, üzerinde Rusça yazı bulunan huş kabuğundan bir kap.\nKalenin doğu duvarı bugünkü Bondarev Caddesi'nin olduğu yerden geçiyordu. 19. yüzyılda bile Sverdlov Caddesi'nin yokuşu, eski hendeğin çizgisini izleyerek koya iniyordu. Onun boyunca yürüyün — üç yüz yıldan uzun süredir var olmayan bir surun yanından geçiyorsunuz.",
+    "ar": "أُقيمت المدينة على هذا المنحدر في صيف عام 1555. لكن الناس عاشوا هنا قبل ذلك بكثير: فقد وجد علماء الآثار طبقة استيطان بعمق نحو خمسة أمتار وثلاث عشرة مرحلة بناء. وأقدم الآثار تعود إلى القرنين الثالث عشر والرابع عشر: ورشتان للفخار وورشة صياغة بثلاثة أفران صهر، كانوا يعملون فيها حتى بالذهب؛ وأمشاط من البرونز والعظم، ومرآة برونزية من عهد القبيلة الذهبية، وإناء من لحاء البتولا عليه نقش روسي من مطلع القرن السادس عشر.\nكان السور الشرقي للقلعة يمتد حيث يقع اليوم شارع بونداريف. أما منحدر شارع سفيردلوف فكان حتى القرن التاسع عشر يهبط نحو الخليج على خط الخندق القديم. امشِ فيه — فأنت تسير بمحاذاة سور اختفى منذ أكثر من ثلاثمئة عام."
    }
   },
   "T05_SOBOR_NARR": {
@@ -644,7 +699,8 @@
     "fr-FR": "Cette cathédrale fut bâtie par des maçons d’ici sous la direction de maîtres venus de Nijni Novgorod. C’est pour elle que l’on fabriqua pour la première fois des briques en ville — il n’y avait pas d’édifice en pierre auparavant.\nRegardez le mur sud : on y voit l’Acathiste à Jésus très doux, un sujet extrêmement rare dans la peinture murale. En 1912, la paroisse demanda l’autorisation de recouvrir ces peintures. La Commission archéologique impériale refusa — et les fresques furent sauvées.\nTrouvez maintenant les Portes royales et comptez les apôtres.",
     "zh-Hans": "这座大教堂由本地石匠在下诺夫哥罗德工匠的带领下建造。正是为了它，城里第一次开始烧制砖块——此前这里没有任何石砌建筑。\n请看南墙：那里绘有《至甘饴耶稣颂词》——这一题材在壁画中极为罕见。1912年，教区曾请求允许将这些壁画粉刷覆盖。帝国考古委员会拒绝了这一请求——壁画因此得以保存。\n现在请找到圣障中央的“王门”，数一数上面有几位使徒。",
     "hi-IN": "इस गिरजाघर को स्थानीय राजमिस्त्रियों ने निज़्नी नोवगोरोद के उस्ताद कारीगरों की देखरेख में बनाया। इसी के लिए नगर में पहली बार ईंटें बनाने का काम शुरू हुआ — इससे पहले यहाँ कोई पत्थर की इमारत नहीं थी।\nदक्षिणी दीवार देखिए: वहाँ «परम मधुर यीशु का स्तुति-गान (अकाथिस्त)» चित्रित है — भित्ति-चित्रों में यह विषय अत्यंत दुर्लभ है। 1912 में पल्ली ने इन चित्रों पर पुताई करने की अनुमति माँगी थी। शाही पुरातत्व आयोग ने मना कर दिया — और चित्र बच गए।\nअब राजद्वार (रॉयल डोर्स) खोजिए और प्रेरितों को गिनिए।",
-    "tr-TR": "Bu katedrali, Nijniy Novgorod'dan gelen usta yapıcıların yönetiminde yerel duvarcılar inşa etti. Onun için şehirde ilk kez tuğla üretimi başlatıldı — burada daha önce taş yapı yoktu.\nGüney duvarına bakın: orada “En Tatlı İsa'ya Akathistos” var — duvar resminde son derece nadir görülen bir konu. 1912'de cemaat bu resimlerin üzerinin boyanması için izin istedi. İmparatorluk Arkeoloji Komisyonu reddetti — ve resimler kurtuldu.\nŞimdi Kraliyet Kapılarını bulun ve havarileri sayın."
+    "tr-TR": "Bu katedrali, Nijniy Novgorod'dan gelen usta yapıcıların yönetiminde yerel duvarcılar inşa etti. Onun için şehirde ilk kez tuğla üretimi başlatıldı — burada daha önce taş yapı yoktu.\nGüney duvarına bakın: orada “En Tatlı İsa'ya Akathistos” var — duvar resminde son derece nadir görülen bir konu. 1912'de cemaat bu resimlerin üzerinin boyanması için izin istedi. İmparatorluk Arkeoloji Komisyonu reddetti — ve resimler kurtuldu.\nŞimdi Kraliyet Kapılarını bulun ve havarileri sayın.",
+    "ar": "بنى هذه الكاتدرائية بنّاؤون محليون بإشراف معلّمين من نيجني نوفغورود. ومن أجلها بدأت المدينة لأول مرة صناعة الطوب — إذ لم تكن فيها أبنية حجرية من قبل.\nانظر إلى الجدار الجنوبي: هناك نشيد المديح (الأكاثيستوس) ليسوع الأحلى — وهو موضوع نادر للغاية في الرسوم الجدارية. في عام 1912 طلبت الرعية الإذن بطلاء هذه الرسوم. فرفضت اللجنة الأثرية الإمبراطورية — ونجت الرسوم.\nوالآن ابحث عن الأبواب الملكية وعُدّ الرسل."
    }
   },
   "T06_EFREMOV_NARR": {
@@ -662,7 +718,8 @@
     "fr-FR": "Tout ce quartier a été bâti par une seule famille. Son fondateur, Efrem Efimov, paysan d’État du village de Chinerpossi, commença par l’artisanat et le commerce du grain, puis, dans les années 1840, s’installa à Tcheboksary avec son fils Prokopi et fonda une maison de commerce.\nProkopi Efremov passa de paysan muni d’une patente à marchand de première guilde. Les Efremov vendaient leur farine à Saint-Pétersbourg, Nijni Novgorod et Rybinsk ; ils possédaient les trois moulins les plus puissants du district et le plus grand atelier de sacs de tille de la ville — trente adultes et soixante adolescents y fabriquaient jusqu’à trente mille sacs par an. En 1890, les frères ouvrirent une scierie, et en 1906 la maison de commerce « P. E. Efremov et fils ». Le chiffre d’affaires atteignait un demi-million de roubles par an.\nAvec leur argent, une cantine gratuite fonctionna pendant la guerre russo-japonaise, un orphelinat ouvrit, le bâtiment du pro-gymnase de jeunes filles fut acheté et la bibliothèque municipale entretenue. Le fils Fiodor fut maire de 1914 à 1917, le fils Nikolaï siégea à la Douma d’État. Entre leurs maisons s’alignaient entrepôts, boutiques, jardins, serres et orangeries. Aujourd’hui, les hôtels particuliers des Efremov abritent le Musée national tchouvache et le département d’art russe du Musée des beaux-arts.",
     "zh-Hans": "这整个街区是由一个家族建起来的。创始人叶夫列姆·叶菲莫夫是希涅尔波西村的国家农民：他从家庭手工业和粮食买卖起步，十九世纪四十年代带着儿子普罗科皮迁到切博克萨雷，创办了商行。\n普罗科皮·叶夫列莫夫从持有经商执照的农民一路做到一等行会商人。叶夫列莫夫家把面粉卖到圣彼得堡、下诺夫哥罗德和雷宾斯克；他们拥有本县最强的三座磨坊，以及城里最大的麻袋作坊——三十名成人和六十名少年每年织出多达三万条麻袋。1890年兄弟俩开办了锯木厂，1906年成立了“П. Е. 叶夫列莫夫父子”商号。年营业额高达五十万卢布。\n他们出钱，在日俄战争期间开办免费食堂，建起孤儿院，为女子预科中学购买校舍，并维持着市立图书馆。儿子费奥多尔在1914至1917年任市长，儿子尼古拉是国家杜马议员。他们的宅邸之间是仓库、店铺、花园、温室和暖房。如今叶夫列莫夫家的府邸里是楚瓦什国家博物馆和美术馆的俄罗斯艺术部。",
     "hi-IN": "यह पूरा मोहल्ला एक ही परिवार ने बनाया था। इसके संस्थापक येफ़्रेम येफ़िमोव शिनेरपोसी गाँव के राजकीय किसान थे: उन्होंने घरेलू शिल्प और अनाज के व्यापार से शुरुआत की, और उन्नीसवीं सदी के चालीसवें दशक में बेटे प्रोकोपी के साथ चेबोक्सारी आकर व्यापारिक फ़र्म खोली।\nप्रोकोपी येफ़्रेमोव व्यापार-परमिट वाले किसान से पहली श्रेणी के व्यापारी बने। येफ़्रेमोव परिवार आटा सेंट पीटर्सबर्ग, निज़नी नोवगोरोद और रिबिंस्क में बेचता था; उनके पास ज़िले की तीन सबसे शक्तिशाली चक्कियाँ और शहर की सबसे बड़ी बोरी बुनने की कार्यशाला थी — तीस वयस्क और साठ किशोर साल में तीस हज़ार तक बोरियाँ बनाते थे। 1890 में भाइयों ने आरा-मिल खोली, और 1906 में व्यापारिक घराना «पी. ये. येफ़्रेमोव और पुत्र»। कुल कारोबार साल में आधा मिलियन रूबल तक पहुँचता था।\nउनके पैसे से रूस-जापान युद्ध के वर्षों में मुफ़्त भोजनालय चला, अनाथालय खुला, लड़कियों के प्रो-जिम्नेज़ियम के लिए इमारत ख़रीदी गई और नगर पुस्तकालय चलता रहा। बेटे फ़्योदोर 1914–1917 में नगर प्रमुख रहे, बेटे निकोलाई राज्य ड्यूमा के सदस्य। उनके घरों के बीच गोदाम, दुकानें, बाग़, ग्रीनहाउस और ऑरेंजरी थीं। आज येफ़्रेमोव हवेलियों में चुवाश राष्ट्रीय संग्रहालय और कला संग्रहालय का रूसी कला विभाग है।",
-    "tr-TR": "Bu mahallenin tamamını tek bir aile kurdu. Kurucusu Yefrem Yefimov, Şinerposi köyünden bir devlet köylüsüydü: ev zanaatı ve tahıl ticaretiyle başladı, on dokuzuncu yüzyılın kırklı yıllarında oğlu Prokopiy ile Çeboksarı’ya taşınıp bir ticaret firması kurdu.\nProkopiy Yefremov, ticaret belgeli bir köylüden birinci lonca tüccarlığına yükseldi. Yefremovlar unu Petersburg, Nijniy Novgorod ve Rıbinsk’te satıyordu; ilçenin en güçlü üç değirmenine ve şehrin en büyük çuval atölyesine sahiptiler — otuz yetişkin ve altmış genç yılda otuz bin çuval dokuyordu. 1890’da kardeşler bir kereste fabrikası, 1906’da “P. Ye. Yefremov ve Oğulları” ticarethanesini açtı. Toplam ciro yılda yarım milyon rubleye ulaşıyordu.\nOnların parasıyla Rus-Japon Savaşı yıllarında ücretsiz bir aşevi çalıştı, bir yetimhane açıldı, kız pro-gimnazyumu için bina satın alındı ve şehir kütüphanesi ayakta tutuldu. Oğul Fyodor 1914–1917’de belediye başkanıydı, oğul Nikolay Devlet Duması üyesi. Evlerinin arasında depolar, dükkânlar, bahçeler, seralar ve limonluklar vardı. Bugün Yefremov konaklarında Çuvaş Ulusal Müzesi ile Sanat Müzesi’nin Rus Sanatı Bölümü bulunuyor."
+    "tr-TR": "Bu mahallenin tamamını tek bir aile kurdu. Kurucusu Yefrem Yefimov, Şinerposi köyünden bir devlet köylüsüydü: ev zanaatı ve tahıl ticaretiyle başladı, on dokuzuncu yüzyılın kırklı yıllarında oğlu Prokopiy ile Çeboksarı’ya taşınıp bir ticaret firması kurdu.\nProkopiy Yefremov, ticaret belgeli bir köylüden birinci lonca tüccarlığına yükseldi. Yefremovlar unu Petersburg, Nijniy Novgorod ve Rıbinsk’te satıyordu; ilçenin en güçlü üç değirmenine ve şehrin en büyük çuval atölyesine sahiptiler — otuz yetişkin ve altmış genç yılda otuz bin çuval dokuyordu. 1890’da kardeşler bir kereste fabrikası, 1906’da “P. Ye. Yefremov ve Oğulları” ticarethanesini açtı. Toplam ciro yılda yarım milyon rubleye ulaşıyordu.\nOnların parasıyla Rus-Japon Savaşı yıllarında ücretsiz bir aşevi çalıştı, bir yetimhane açıldı, kız pro-gimnazyumu için bina satın alındı ve şehir kütüphanesi ayakta tutuldu. Oğul Fyodor 1914–1917’de belediye başkanıydı, oğul Nikolay Devlet Duması üyesi. Evlerinin arasında depolar, dükkânlar, bahçeler, seralar ve limonluklar vardı. Bugün Yefremov konaklarında Çuvaş Ulusal Müzesi ile Sanat Müzesi’nin Rus Sanatı Bölümü bulunuyor.",
+    "ar": "بنت هذا الحيَّ عائلةٌ واحدة. مؤسسها يفريم يفيموف، فلاح تابع للدولة من قرية شينيربوسي: بدأ بحرفة منزلية وتجارة الحبوب، وفي أربعينيات القرن التاسع عشر انتقل مع ابنه بروكوبي إلى تشيبوكساري وأسّس شركة تجارية.\nقطع بروكوبي يفريموف الطريق من فلاح يحمل رخصة تجارة إلى تاجر من النقابة الأولى. وكان آل يفريموف يبيعون الدقيق في بطرسبورغ ونيجني نوفغورود وريبينسك؛ وامتلكوا أقوى ثلاث مطاحن في المقاطعة وأكبر ورشة لنسج أكياس اللحاء في المدينة — حيث كان ثلاثون بالغًا وستون فتى يصنعون حتى ثلاثين ألف كيس في السنة. وفي عام 1890 افتتح الإخوة منشرة للخشب، وفي عام 1906 البيت التجاري «ب. ي. يفريموف وأبناؤه». وبلغ إجمالي حجم أعمالهم نصف مليون روبل في السنة.\nوبأموالهم عمل مطعم مجاني خلال الحرب الروسية اليابانية، وافتُتح ملجأ للأيتام، واشتُري مبنى لمدرسة البنات الإعدادية، ومُوّلت مكتبة المدينة. وكان الابن فيودور رئيسًا لبلدية المدينة في 1914–1917، والابن نيكولاي نائبًا في مجلس الدوما. وبين بيوتهم قامت مستودعات ودكاكين وحدائق ودفيئات وبيوت زجاجية للنباتات. واليوم تضم قصور آل يفريموف المتحف الوطني التشوفاشي وقسم الفن الروسي في متحف الفنون."
    }
   },
   "T07_FONBRANT": {
@@ -680,7 +737,8 @@
     "fr-FR": "« Le 30 avril, dans la ville de Tcheboksary, un incendie a détruit 29 églises, 717 maisons d’habitants… des entrepôts sur les quais, des granges à grain et autres provisions — 49… des échoppes de menues marchandises — 38. »",
     "zh-Hans": "“四月三十日，切博克萨雷城发生大火，烧毁教堂29座、居民房屋717栋……码头上的库房、存放粮食及其他物资的仓房49座……经营杂货的商铺38间。”",
     "hi-IN": "«अप्रैल की 30 तारीख़ को चेबोक्सारी नगर में आग लगी, जिसमें 29 गिरजाघर, नगरवासियों के 717 घर जल गए… घाटों पर भंडारगृह, अनाज और अन्य रसद के गोदाम — 49… फुटकर माल की दुकानें — 38।»",
-    "tr-TR": "“Nisan ayının 30’unda Çeboksarı şehrinde bir yangın çıktı; yangında 29 kilise, 717 kasaba evi yandı… iskelelerdeki depolar, tahıl ve başka erzak dolu ambarlar — 49… ufak tefek mal satan dükkânlar — 38.”"
+    "tr-TR": "“Nisan ayının 30’unda Çeboksarı şehrinde bir yangın çıktı; yangında 29 kilise, 717 kasaba evi yandı… iskelelerdeki depolar, tahıl ve başka erzak dolu ambarlar — 49… ufak tefek mal satan dükkânlar — 38.”",
+    "ar": "«في اليوم الثلاثين من شهر أبريل شبّ حريق في مدينة تشيبوكساري، احترقت فيه 29 كنيسة، و717 منزلًا للسكان… ومخازن على المراسي، ومخازن للحبوب وغيرها من المؤن 49… ودكاكين تجارية للبضائع الصغيرة 38»."
    }
   },
   "T08_AMBARY_NARR": {
@@ -695,10 +753,11 @@
     "en-GB": "Here by the water stood the town’s wealth — the grain barns. In 1743 fifty-five of them were counted, and by the mid-nineteenth century some thirty barns on the wharf held up to a hundred and twenty thousand chetverts of grain. Rye and flour in bast sacks were kept until the price was right, then loaded onto barges — and off up the Volga. Already in the mid-eighteenth century two thirds of Cheboksary’s grain went to St Petersburg, where it fetched three to four times the price it did here.\nGrain made the merchants cunning. Prices were written on goods in letters — each kept his cipher as a great secret. Peasant carts were intercepted on the roads into town so that no honest price could form on the square. In 1833 the town governor Kropotkin had the side streets barricaded, so that every cart passed the guards.\nOn 30 April 1773 a fire took twenty-nine churches and seven hundred and seventeen houses. The merchant Klyuyevs lost goods worth three thousand one hundred roubles. The merchant’s son borrowed money and began buying grain again — and ten years later nearly thirty thousand roubles were turning over in his hands. Fire and rebirth: that is how this shore lived.",
     "en-US": "Here by the water stood the town”s wealth — the grain barns. In 1743 fifty-five of them were counted, and by the mid-nineteenth century some thirty barns on the wharf held up to a hundred and twenty thousand chetverts of grain. Rye and flour in bast sacks were kept until the price was right, then loaded onto barges — and off up the Volga. Already in the mid-eighteenth century two thirds of Cheboksary”s grain went to St Petersburg, where it fetched three to four times the price it did here.\nGrain made the merchants cunning. Prices were written on goods in letters — each kept his cipher as a great secret. Peasant carts were intercepted on the roads into town so that no honest price could form on the square. In 1833 the town governor Kropotkin had the side streets barricaded, so that every cart passed the guards.\nOn 30 April 1773 a fire took twenty-nine churches and seven hundred and seventeen houses. The merchant Klyuyevs lost goods worth three thousand one hundred roubles. The merchant”s son borrowed money and began buying grain again — and ten years later nearly thirty thousand roubles were turning over in his hands. Fire and rebirth: that is how this shore lived.",
     "de-DE": "Hier am Wasser stand der Reichtum der Stadt – die Getreidespeicher. 1743 zählte man fünfundfünfzig, und um die Mitte des neunzehnten Jahrhunderts fassten etwa dreißig Speicher an der Anlegestelle bis zu hundertzwanzigtausend Tschetwert Getreide. Roggen und Mehl in Bastsäcken lagerten, bis der Preis stimmte, dann kamen sie auf die Kähne – und wolgaaufwärts. Schon Mitte des achtzehnten Jahrhunderts gingen zwei Drittel des Tscheboksaryer Getreides nach Sankt Petersburg: Dort kostete es drei- bis viermal so viel wie hier.\nDas Getreide machte die Kaufleute gerissen. Den Preis schrieb man in Buchstaben auf die Ware – jeder hütete seine Chiffre wie ein großes Geheimnis. Bauernfuhren fing man vor der Stadt ab, damit sich auf dem Markt kein ehrlicher Preis bilden konnte. 1833 ließ Stadthauptmann Kropotkin die Seitenstraßen verbarrikadieren, damit jede Fuhre an den Wachen vorbeimusste.\nAm 30. April 1773 nahm ein Brand neunundzwanzig Kirchen und siebenhundertsiebzehn Häuser. Den Kaufleuten Kljujew verbrannten Waren für dreitausendeinhundert Rubel. Der Sohn lieh sich Geld, kaufte wieder Getreide – und zehn Jahre später setzte er fast dreißigtausend Rubel um. Brand und Wiedergeburt – so lebte dieses Ufer.",
-    "fr-FR": "Ici, au bord de l’eau, se dressait la richesse de la ville : les granges à grain. En 1743 on en comptait cinquante-cinq, et au milieu du XIXᵉ siècle une trentaine de granges sur le quai contenaient jusqu’à cent vingt mille tchetverts de grain. Le seigle et la farine, en sacs de tille, attendaient le bon prix, puis on les chargeait sur les barques — et en route vers l’amont de la Volga. Dès le milieu du XVIIIᵉ siècle, les deux tiers du grain de Tcheboksary partaient pour Saint-Pétersbourg, où il valait trois à quatre fois plus cher qu’ici.\nLe grain rendait les marchands rusés. Le prix s’écrivait sur la marchandise en lettres — chacun gardait son chiffre comme un grand secret. On interceptait les convois paysans aux abords de la ville pour qu’aucun prix honnête ne se forme sur la place. En 1833, le gouverneur de la ville Kropotkine fit barricader les rues latérales, afin que chaque convoi passe devant les gardes.\nLe 30 avril 1773, un incendie emporta vingt-neuf églises et sept cent dix-sept maisons. Les marchands Kliouev perdirent pour trois mille cent roubles de marchandises. Le fils du marchand emprunta, se remit à acheter du grain — et dix ans plus tard près de trente mille roubles tournaient entre ses mains. Incendie et renaissance : ainsi vivait cette rive.",
+    "fr-FR": "Ici, au bord de l’eau, se dressait la richesse de la ville : les granges à grain. En 1743 on en comptait cinquante-cinq, et au milieu du XIXe siècle une trentaine de granges sur le quai contenaient jusqu’à cent vingt mille tchetverts de grain. Le seigle et la farine, en sacs de tille, attendaient le bon prix, puis on les chargeait sur les barques — et en route vers l’amont de la Volga. Dès le milieu du XVIIIe siècle, les deux tiers du grain de Tcheboksary partaient pour Saint-Pétersbourg, où il valait trois à quatre fois plus cher qu’ici.\nLe grain rendait les marchands rusés. Le prix s’écrivait sur la marchandise en lettres — chacun gardait son chiffre comme un grand secret. On interceptait les convois paysans aux abords de la ville pour qu’aucun prix honnête ne se forme sur la place. En 1833, le gouverneur de la ville Kropotkine fit barricader les rues latérales, afin que chaque convoi passe devant les gardes.\nLe 30 avril 1773, un incendie emporta vingt-neuf églises et sept cent dix-sept maisons. Les marchands Kliouev perdirent pour trois mille cent roubles de marchandises. Le fils du marchand emprunta, se remit à acheter du grain — et dix ans plus tard près de trente mille roubles tournaient entre ses mains. Incendie et renaissance : ainsi vivait cette rive.",
     "zh-Hans": "就在这水边，曾矗立着这座城市的财富——粮仓。1743年清点出五十五座；到十九世纪中叶，码头上约三十座粮仓可容纳多达十二万切特韦尔特的粮食。黑麦和面粉装在草席袋里，等到价钱合适，再装上平底船——溯伏尔加河而上。早在十八世纪中叶，切博克萨雷三分之二的粮食就运往圣彼得堡：那里的价钱是这里的三到四倍。\n粮食让商人变得精明。价格用字母写在货物上——各家的密码都当作天大的秘密。农民的车队在进城路口就被截住，好让广场上形成不了公道的价格。1833年市长克罗波特金下令封堵小街，让每一辆车都从岗哨前经过。\n1773年4月30日的大火吞噬了二十九座教堂和七百一十七栋房屋。克柳耶夫商人家损失了价值三千一百卢布的货物。商人的儿子借了钱，重新收购粮食——十年后，他手里周转的钱将近三万卢布。火灾与重生——这片河岸就是这样活过来的。",
     "hi-IN": "यहीं पानी के किनारे शहर की दौलत खड़ी थी — अनाज के गोदाम। 1743 में इनकी गिनती पचपन थी, और उन्नीसवीं सदी के मध्य में घाट पर क़रीब तीस गोदामों में एक लाख बीस हज़ार चेतवर्त तक अनाज समाता था। राई और आटा बोरियों में अच्छे दाम तक रखा जाता, फिर नावों पर लादकर — वोल्गा के ऊपर की ओर। अठारहवीं सदी के मध्य में ही चेबोक्सारी का दो-तिहाई अनाज पीटर्सबर्ग जाता था: वहाँ उसका दाम यहाँ से तीन-चार गुना था।\nअनाज ने व्यापारियों को चालाक बना दिया। दाम माल पर अक्षरों में लिखे जाते — अपना कोड हर कोई बड़े राज़ की तरह रखता। किसानों के काफ़िले शहर के रास्तों पर ही रोक लिए जाते, ताकि चौक पर ईमानदार दाम न बन सके। 1833 में नगराध्यक्ष क्रोपोत्किन ने बग़ल की गलियों को बंद करवा दिया — ताकि हर काफ़िला पहरे के सामने से गुज़रे।\n30 अप्रैल 1773 की आग उनतीस गिरजाघर और सात सौ सत्रह घर निगल गई। क्ल्यूयेव व्यापारियों का तीन हज़ार एक सौ रूबल का माल जला। व्यापारी के बेटे ने क़र्ज़ लिया, फिर से अनाज ख़रीदने लगा — और दस साल बाद उसके कारोबार में लगभग तीस हज़ार रूबल घूम रहे थे। आग और पुनर्जन्म — यह किनारा ऐसे ही जीता था।",
-    "tr-TR": "Burada, suyun kıyısında şehrin serveti dururdu — tahıl ambarları. 1743’te elli beş ambar sayıldı; on dokuzuncu yüzyılın ortasında iskeledeki otuz kadar ambar yüz yirmi bin çetvert tahıl alıyordu. Çavdar ve un hasır çuvallarda uygun fiyata kadar bekletilir, sonra tekne­lere yüklenirdi — ve Volga’dan yukarı. Daha on sekizinci yüzyılın ortasında Çeboksarı tahılının üçte ikisi Petersburg’a gidiyordu: orada buradakinden üç dört kat pahalıydı.\nTahıl tüccarları kurnazlaştırdı. Fiyat malın üstüne harflerle yazılır, herkes şifresini büyük bir sır gibi saklardı. Köylü arabaları şehre girişte durdurulurdu ki meydanda dürüst bir fiyat oluşmasın. 1833’te şehir yöneticisi Kropotkin yan sokakları barikatla kapattırdı — her araba nöbetçilerin önünden geçsin diye.\n30 Nisan 1773 yangını yirmi dokuz kiliseyi ve yedi yüz on yedi evi götürdü. Tüccar Klyuyevlerin üç bin yüz rublelik malı yandı. Tüccarın oğlu borç aldı, yeniden tahıl toplamaya başladı — on yıl sonra elinde neredeyse otuz bin ruble dönüyordu. Yangın ve yeniden doğuş — bu kıyı böyle yaşadı."
+    "tr-TR": "Burada, suyun kıyısında şehrin serveti dururdu — tahıl ambarları. 1743’te elli beş ambar sayıldı; on dokuzuncu yüzyılın ortasında iskeledeki otuz kadar ambar yüz yirmi bin çetvert tahıl alıyordu. Çavdar ve un hasır çuvallarda uygun fiyata kadar bekletilir, sonra tekne­lere yüklenirdi — ve Volga’dan yukarı. Daha on sekizinci yüzyılın ortasında Çeboksarı tahılının üçte ikisi Petersburg’a gidiyordu: orada buradakinden üç dört kat pahalıydı.\nTahıl tüccarları kurnazlaştırdı. Fiyat malın üstüne harflerle yazılır, herkes şifresini büyük bir sır gibi saklardı. Köylü arabaları şehre girişte durdurulurdu ki meydanda dürüst bir fiyat oluşmasın. 1833’te şehir yöneticisi Kropotkin yan sokakları barikatla kapattırdı — her araba nöbetçilerin önünden geçsin diye.\n30 Nisan 1773 yangını yirmi dokuz kiliseyi ve yedi yüz on yedi evi götürdü. Tüccar Klyuyevlerin üç bin yüz rublelik malı yandı. Tüccarın oğlu borç aldı, yeniden tahıl toplamaya başladı — on yıl sonra elinde neredeyse otuz bin ruble dönüyordu. Yangın ve yeniden doğuş — bu kıyı böyle yaşadı.",
+    "ar": "هنا، عند الماء، كانت ثروة المدينة — مخازن الحبوب. في عام 1743 أُحصي منها خمسة وخمسون، وفي منتصف القرن التاسع عشر كان نحو ثلاثين مخزنًا على المرسى تتسع لما يصل إلى مئة وعشرين ألف «تشيتفيرت» من الحبوب. كانوا يحفظون الجاودار والدقيق في أكياس الحصير حتى يحين السعر المربح، ثم يحمّلونها على المراكب — صعودًا في نهر الفولغا. ومنذ منتصف القرن الثامن عشر كان ثلثا حبوب تشيبوكساري يذهبان إلى بطرسبورغ: فهناك كان سعرها أغلى بثلاث إلى أربع مرات مما هو هنا.\nجعلت الحبوبُ التجارَ دهاة. كانوا يكتبون السعر على البضاعة بالحروف — ويحفظ كلٌّ منهم شيفرته كسرّ عظيم. وكانوا يعترضون قوافل الفلاحين على مداخل المدينة كي لا يتكوّن في الساحة سعر عادل. وفي عام 1833 أمر حاكم المدينة كروبوتكين بإغلاق الشوارع الجانبية بالحواجز — كي لا تمرّ القوافل إلا أمام الحراس.\nوفي الثلاثين من أبريل 1773 التهم الحريق تسعًا وعشرين كنيسة وسبعمئة وسبعة عشر منزلًا. وخسر التجار آل كليوييف بضائع بقيمة ثلاثة آلاف ومئة روبل. فاستدان ابن التاجر مالًا وعاد يشتري الحبوب — وبعد عشر سنوات كان في تداوله قرابة ثلاثين ألف روبل. حريقٌ ونهوض — هكذا عاشت هذه الضفة."
    }
   },
   "T09_GIMNAZIA_NARR": {
@@ -716,7 +775,8 @@
     "fr-FR": "Il fallut huit ans à la ville pour ouvrir une école de filles. La Douma projeta un pro-gymnase dès 1896, mais l’argent du Trésor ne vint jamais. En 1904, la municipalité acheta à la veuve de marchand Zabrodina une maison de pierre à deux étages rue Naberejno-Arkhangelskaïa — les dix mille roubles furent empruntés à des marchands, le premier d’entre eux Prokopi Efremov. À la mi-octobre, quarante-six filles ayant réussi l’examen d’entrée commencèrent les cours. Tout le personnel : une directrice, deux institutrices et un professeur de catéchisme.\nPas d’internat : en 1907, cent cinquante-neuf élèves logeaient par groupes dans vingt-deux appartements privés, et les enseignants faisaient la tournée de leurs logis. On enseignait le catéchisme, le russe et le slavon d’église, l’arithmétique et la géométrie, l’allemand et le français, la calligraphie, le dessin, le chant et les travaux d’aiguille. À partir de 1908, le pro-gymnase devint un gymnase, et en 1914 trois cent cinq filles y étudiaient. L’une des boursières du zemstvo fut O. I. Yrzem — future Artiste du peuple de la république tchouvache.\nEn 1918, le gymnase fut transformé en école soviétique du second degré. La maison Zabrodina abrita ensuite une école normale et l’institut agricole, et la rue prit le nom de Tchernychevski.",
     "zh-Hans": "这座城市花了八年才办起一所女子学校。市杜马早在1896年就计划设立女子预科中学，却始终没等到国库的拨款。1904年，市政府从商人遗孀扎布罗季娜手里买下了滨河-阿尔汉格尔斯克街上的一座两层石屋——一万卢布是向商人们借的，第一位出借者就是普罗科皮·叶夫列莫夫。十月中旬，四十六名通过入学考试的女孩开始上课。全部教职员：一位校长、两位女教师和一位宗教课教师。\n学校没有宿舍：1907年，一百五十九名女学生分组住在二十二处私人寓所，教师们挨家挨户走访。课程有神学、俄语和教会斯拉夫语、算术和几何、德语和法语、书法、绘画、唱歌和女红。从1908年起预科中学升格为正式中学，到1914年这里有三百零五名女生就读。地方自治会的奖学金获得者之一是О. И. 伊尔泽姆——后来的楚瓦什共和国人民演员。\n1918年，中学改为苏维埃二级学校。扎布罗季娜的房子后来先后是师范专科学校和农业学院，这条街则改名为车尔尼雪夫斯基街。",
     "hi-IN": "लड़कियों के लिए स्कूल खोलने में शहर को आठ साल लगे। ड्यूमा ने 1896 में ही प्रो-जिम्नेज़ियम की योजना बनाई थी, पर ख़ज़ाने से पैसा कभी नहीं आया। 1904 में नगर प्रशासन ने व्यापारी-विधवा ज़ाब्रोदिना से नाबेरेज़्नो-अर्खांगेल्स्काया सड़क पर दो मंज़िला पत्थर का घर ख़रीदा — दस हज़ार रूबल व्यापारियों से उधार लिए गए, उनमें पहले थे प्रोकोपी येफ़्रेमोव। अक्टूबर के मध्य में प्रवेश परीक्षा पास करने वाली छियालीस लड़कियों की पढ़ाई शुरू हुई। पूरा स्टाफ़ — एक प्रधानाचार्या, दो शिक्षिकाएँ और एक धर्मशिक्षक।\nछात्रावास नहीं था: 1907 में एक सौ उनसठ छात्राएँ बाईस निजी घरों में समूहों में रहती थीं, और शिक्षक उनके घर-घर जाकर देखते थे। पढ़ाया जाता था धर्मशास्त्र, रूसी और चर्च-स्लावोनिक, अंकगणित और ज्यामिति, जर्मन और फ़्रेंच, सुलेख, चित्रकला, गायन और सिलाई-कढ़ाई। 1908 से प्रो-जिम्नेज़ियम पूरा जिम्नेज़ियम बन गया, और 1914 तक यहाँ तीन सौ पाँच लड़कियाँ पढ़ती थीं। ज़ेम्स्त्वो की छात्रवृत्ति पाने वालों में थीं ओ. आई. यर्ज़ेम — भविष्य की चुवाश गणराज्य की जन-कलाकार।\n1918 में जिम्नेज़ियम को सोवियत द्वितीय-स्तर स्कूल में बदल दिया गया। ज़ाब्रोदिना के घर में बाद में शिक्षक-प्रशिक्षण संस्थान और कृषि संस्थान रहे, और सड़क का नाम चेर्निशेव्स्की के नाम पर पड़ा।",
-    "tr-TR": "Şehrin kızlar için bir okul açması sekiz yıl sürdü. Duma pro-gimnazyumu daha 1896’da tasarladı ama hazineden para gelmedi. 1904’te belediye, tüccar dulu Zabrodina’dan Naberejno-Arhangelskaya Sokağı’ndaki iki katlı taş evi satın aldı — on bin ruble tüccarlardan borç alındı, ilki Prokopiy Yefremov’du. Ekim ortasında giriş sınavını geçen kırk altı kız derslere başladı. Tüm kadro: bir müdire, iki öğretmen ve bir din öğretmeni.\nYurt yoktu: 1907’de yüz elli dokuz öğrenci gruplar hâlinde yirmi iki özel evde kalıyordu ve öğretmenler ev ev dolaşıyordu. Din bilgisi, Rusça ve Kilise Slavcası, aritmetik ve geometri, Almanca ve Fransızca, güzel yazı, resim, şarkı ve el işi okutuluyordu. 1908’den itibaren pro-gimnazyum tam gimnazyum oldu, 1914’te burada üç yüz beş kız okuyordu. Zemstvo burslularından biri O. İ. Irzem’di — Çuvaş cumhuriyetinin gelecekteki halk sanatçısı.\n1918’de gimnazyum Sovyet ikinci kademe okuluna dönüştürüldü. Zabrodina’nın evinde sonra öğretmen okulu ve tarım enstitüsü yer aldı, sokak ise Çernişevski adını aldı."
+    "tr-TR": "Şehrin kızlar için bir okul açması sekiz yıl sürdü. Duma pro-gimnazyumu daha 1896’da tasarladı ama hazineden para gelmedi. 1904’te belediye, tüccar dulu Zabrodina’dan Naberejno-Arhangelskaya Sokağı’ndaki iki katlı taş evi satın aldı — on bin ruble tüccarlardan borç alındı, ilki Prokopiy Yefremov’du. Ekim ortasında giriş sınavını geçen kırk altı kız derslere başladı. Tüm kadro: bir müdire, iki öğretmen ve bir din öğretmeni.\nYurt yoktu: 1907’de yüz elli dokuz öğrenci gruplar hâlinde yirmi iki özel evde kalıyordu ve öğretmenler ev ev dolaşıyordu. Din bilgisi, Rusça ve Kilise Slavcası, aritmetik ve geometri, Almanca ve Fransızca, güzel yazı, resim, şarkı ve el işi okutuluyordu. 1908’den itibaren pro-gimnazyum tam gimnazyum oldu, 1914’te burada üç yüz beş kız okuyordu. Zemstvo burslularından biri O. İ. Irzem’di — Çuvaş cumhuriyetinin gelecekteki halk sanatçısı.\n1918’de gimnazyum Sovyet ikinci kademe okuluna dönüştürüldü. Zabrodina’nın evinde sonra öğretmen okulu ve tarım enstitüsü yer aldı, sokak ise Çernişevski adını aldı.",
+    "ar": "احتاجت المدينة ثماني سنوات لتفتح مدرسة للبنات. فقد قرّر مجلس الدوما إنشاء مدرسة إعدادية منذ عام 1896، لكنه لم ينل المال من الخزينة. وفي عام 1904 اشترت إدارة المدينة من التاجرة زابرودينا منزلًا حجريًا من طابقين في شارع نابيريجنو-أرخانغيلسكايا — واقتُرضت العشرة آلاف روبل من التجار، وأولهم بروكوبي يفريموف. وفي منتصف أكتوبر بدأت الدروسَ ست وأربعون فتاة اجتزن امتحانات القبول. وكان الطاقم كله: مديرة، ومعلّمتان، ومعلّم للدين.\nلم يكن هناك سكن داخلي: ففي عام 1907 كانت مئة وتسع وخمسون تلميذة يسكنّ في مجموعات في اثنتين وعشرين شقة خاصة، وكان المعلمون يتفقدونهن في البيوت. وكُنّ يدرسن التعليم الديني، والروسية والسلافونية الكنسية، والحساب والهندسة، والألمانية والفرنسية، وحسن الخط، والرسم، والغناء، والتطريز. ومنذ عام 1908 صارت المدرسة الإعدادية ثانوية كاملة، وبحلول عام 1914 كانت تدرس فيها ثلاثمئة وخمس فتيات. وكانت من بين الحاصلات على منحة الزيمستفو أ. إ. إيرزيم — التي غدت لاحقًا فنانة الشعب في جمهورية تشوفاشيا السوفيتية ذاتية الحكم.\nوفي عام 1918 حُوّلت الثانوية إلى مدرسة سوفيتية من المرحلة الثانية. ثم شغل منزلَ زابرودينا معهدٌ لإعداد المعلمين والمعهد الزراعي، وصار اسم الشارع شارع تشيرنيشيفسكي."
    }
   },
   "T10_GORKA_NARR": {
@@ -731,10 +791,11 @@
     "en-GB": "This hill is the quietest corner of the old town. From the eighteenth century the Vladimir hermitage stood here, and in 1899 a Chuvash women’s community was opened in its place. By the early twentieth century there were a church with three altars, a hospital with a wooden chapel, icon-painting and metal-chasing workshops, a garden and a pond, and from 1900 a school for orphan girls. Up to a hundred and fifty sisters gathered here.\nOn the slope, in 1908–1911, the Yefremov family tomb was built to a design by the architects Oleshkevich, Deminev and Malinovsky — a stone chapel with a dome and a Corinthian portico, the only monument of memorial architecture in Chuvashia. Until 1918 the sarcophagi of Prokopy Yefremov and his wife Yekaterina stood in its crypt.\nIn 1920 a children’s home was opened in the community’s buildings; in 1930 the church too was closed. Later there were flats here, a cooper’s shop, warehouses and restoration workshops. In 1989 the church was returned to the faithful, and on 25 March 1991 the convent was reborn — now as the Transfiguration Convent. That same year the tomb became the parish church of St John of Kronstadt.",
     "en-US": "This hill is the quietest corner of the old town. From the eighteenth century the Vladimir hermitage stood here, and in 1899 a Chuvash women”s community was opened in its place. By the early twentieth century there were a church with three altars, a hospital with a wooden chapel, icon-painting and metal-chasing workshops, a garden and a pond, and from 1900 a school for orphan girls. Up to a hundred and fifty sisters gathered here.\nOn the slope, in 1908–1911, the Yefremov family tomb was built to a design by the architects Oleshkevich, Deminev and Malinovsky — a stone chapel with a dome and a Corinthian portico, the only monument of memorial architecture in Chuvashia. Until 1918 the sarcophagi of Prokopy Yefremov and his wife Yekaterina stood in its crypt.\nIn 1920 a children”s home was opened in the community”s buildings; in 1930 the church too was closed. Later there were flats here, a cooper”s shop, warehouses and restoration workshops. In 1989 the church was returned to the faithful, and on 25 March 1991 the convent was reborn — now as the Transfiguration Convent. That same year the tomb became the parish church of St John of Kronstadt.",
     "de-DE": "Dieser Hügel ist der stillste Ort der Altstadt. Seit dem achtzehnten Jahrhundert stand hier die Wladimir-Einsiedelei, und 1899 wurde an ihrer Stelle eine tschuwaschische Frauengemeinschaft eröffnet. Zu Beginn des zwanzigsten Jahrhunderts gab es hier eine Kirche mit drei Altären, ein Krankenhaus mit Holzkapelle, eine Ikonenmaler- und eine Ziselierwerkstatt, einen Garten und einen Teich, ab 1900 auch eine Schule für Waisenmädchen. Bis zu hundertfünfzig Schwestern kamen hier zusammen.\nAm Hang wurde 1908–1911 nach dem Entwurf der Architekten Oleschkewitsch, Deminew und Malinowski die Grabkapelle der Kaufmannsfamilie Jefremow errichtet – eine steinerne Kapelle mit Kuppel und korinthischem Portikus, das einzige Denkmal der Memorialarchitektur in Tschuwaschien. Bis 1918 standen in ihrer Gruft die Sarkophage von Prokopi Jefremow und seiner Frau Jekaterina.\n1920 wurde in den Gebäuden der Gemeinschaft ein Kinderheim eröffnet, 1930 schloss man auch die Kirche. Später gab es hier Wohnungen, eine Böttcherei, Lager und Restaurierungswerkstätten. 1989 erhielten die Gläubigen die Kirche zurück, und am 25. März 1991 wurde das Kloster neu gegründet – heute das Verklärungskloster. Die Grabkapelle wurde im selben Jahr zur Pfarrkirche des heiligen Johannes von Kronstadt.",
-    "fr-FR": "Cette colline est l’endroit le plus paisible de la vieille ville. Dès le XVIIIᵉ siècle s’y trouvait l’ermitage Saint-Vladimir, et en 1899 une communauté féminine tchouvache fut ouverte à sa place. Au début du XXᵉ siècle il y avait là une église à trois autels, un hôpital avec une chapelle en bois, des ateliers de peinture d’icônes et de ciselure, un jardin et un étang, et dès 1900 une école pour orphelines. Jusqu’à cent cinquante sœurs y vivaient.\nSur la pente, en 1908–1911, on construisit sur les plans des architectes Olechkevitch, Deminev et Malinovski le tombeau des marchands Efremov — une chapelle de pierre à coupole et portique corinthien, unique monument d’architecture funéraire de Tchouvachie. Jusqu’en 1918, les sarcophages de Prokopi Efremov et de son épouse Ekaterina reposaient dans sa crypte.\nEn 1920 on ouvrit un orphelinat dans les bâtiments de la communauté ; en 1930 l’église fut fermée à son tour. Il y eut ensuite ici des logements, une tonnellerie, des entrepôts et des ateliers de restauration. En 1989 l’église fut rendue aux fidèles, et le 25 mars 1991 le monastère renaquit — il est aujourd’hui le monastère de la Transfiguration. La même année, le tombeau devint l’église paroissiale Saint-Jean-de-Cronstadt.",
+    "fr-FR": "Cette colline est l’endroit le plus paisible de la vieille ville. Dès le XVIIIe siècle s’y trouvait l’ermitage Saint-Vladimir, et en 1899 une communauté féminine tchouvache fut ouverte à sa place. Au début du XXe siècle il y avait là une église à trois autels, un hôpital avec une chapelle en bois, des ateliers de peinture d’icônes et de ciselure, un jardin et un étang, et dès 1900 une école pour orphelines. Jusqu’à cent cinquante sœurs y vivaient.\nSur la pente, en 1908–1911, on construisit sur les plans des architectes Olechkevitch, Deminev et Malinovski le tombeau des marchands Efremov — une chapelle de pierre à coupole et portique corinthien, unique monument d’architecture funéraire de Tchouvachie. Jusqu’en 1918, les sarcophages de Prokopi Efremov et de son épouse Ekaterina reposaient dans sa crypte.\nEn 1920 on ouvrit un orphelinat dans les bâtiments de la communauté ; en 1930 l’église fut fermée à son tour. Il y eut ensuite ici des logements, une tonnellerie, des entrepôts et des ateliers de restauration. En 1989 l’église fut rendue aux fidèles, et le 25 mars 1991 le monastère renaquit — il est aujourd’hui le monastère de la Transfiguration. La même année, le tombeau devint l’église paroissiale Saint-Jean-de-Cronstadt.",
     "zh-Hans": "这座小山是老城最安静的地方。从十八世纪起这里就有弗拉基米尔隐修所，1899年在它的旧址上开设了楚瓦什女修道团体。到二十世纪初，这里有一座三祭坛的教堂、一所带木制小教堂的医院、圣像画坊和錾刻作坊、花园和池塘，1900年起还有一所孤女学校。修女多达一百五十人。\n1908至1911年间，在山坡上按建筑师奥列什克维奇、杰米涅夫和马利诺夫斯基的设计建起了叶夫列莫夫商人家族的陵墓——一座带穹顶和科林斯式柱廊的石砌小教堂，是楚瓦什唯一的纪念性建筑文物。直到1918年，普罗科皮·叶夫列莫夫和妻子叶卡捷琳娜的石棺一直安放在它的地下墓室。\n1920年，修道团体的房屋里办起了儿童之家，1930年教堂也被关闭。后来这里先后是住宅、制桶车间、仓库和修复作坊。1989年教堂归还信徒，1991年3月25日修道院重生——如今是主显圣容女修道院。同年，陵墓成了克隆施塔得的圣约翰堂区教堂。",
     "hi-IN": "यह पहाड़ी पुराने शहर की सबसे शांत जगह है। अठारहवीं सदी से यहाँ व्लादिमीर आश्रम था, और 1899 में उसकी जगह चुवाश महिला समुदाय खोला गया। बीसवीं सदी की शुरुआत तक यहाँ तीन वेदियों वाला गिरजाघर, लकड़ी के चैपल वाला अस्पताल, आइकन-चित्रण और धातु-उत्कीर्णन की कार्यशालाएँ, बाग़ और तालाब थे, और 1900 से अनाथ लड़कियों का स्कूल। डेढ़ सौ तक बहनें यहाँ रहती थीं।\nढलान पर 1908–1911 में वास्तुकार ओलेश्केविच, देमिनेव और मालिनोव्स्की के डिज़ाइन से येफ़्रेमोव व्यापारी परिवार की समाधि बनी — गुंबद और कोरिंथियन स्तंभ-द्वार वाला पत्थर का चैपल, चुवाशिया का स्मारकीय वास्तुकला का इकलौता स्मारक। 1918 तक इसके तहख़ाने में प्रोकोपी येफ़्रेमोव और उनकी पत्नी येकातेरिना के शवाधान रखे थे।\n1920 में समुदाय की इमारतों में बाल-गृह खोला गया, 1930 में गिरजाघर भी बंद कर दिया गया। फिर यहाँ फ़्लैट, पीपा बनाने की कार्यशाला, गोदाम और जीर्णोद्धार कार्यशालाएँ रहीं। 1989 में गिरजाघर श्रद्धालुओं को लौटाया गया, और 25 मार्च 1991 को मठ पुनर्जीवित हुआ — अब यह रूपांतरण (स्पासो-प्रेओब्राज़ेन्स्की) मठ है। उसी साल समाधि क्रोनश्टाट के संत योआन का पैरिश चर्च बनी।",
-    "tr-TR": "Bu tepe eski şehrin en sessiz yeridir. On sekizinci yüzyıldan beri burada Vladimir inziva manastırı vardı; 1899’da onun yerine Çuvaş kadınlar topluluğu açıldı. Yirminci yüzyılın başında burada üç sunaklı bir kilise, ahşap şapelli bir hastane, ikona ve kakma atölyeleri, bahçe ve havuz, 1900’den itibaren de yetim kızlar için bir okul vardı. Yüz elliye kadar rahibe toplanırdı.\nYamaçta 1908–1911’de mimarlar Oleşkeviç, Deminev ve Malinovskiy’nin projesiyle tüccar Yefremovların türbesi yapıldı — kubbeli ve Korint sütunlu taş bir şapel, Çuvaşistan’daki tek anıt mezar mimarisi örneği. 1918’e kadar mahzeninde Prokopiy Yefremov ile eşi Yekaterina’nın lahitleri duruyordu.\n1920’de topluluğun binalarında bir çocuk yurdu açıldı, 1930’da kilise de kapatıldı. Sonra burada daireler, fıçıcı atölyesi, depolar ve restorasyon atölyeleri oldu. 1989’da kilise inananlara geri verildi, 25 Mart 1991’de manastır yeniden doğdu — artık Başkalaşım Manastırı. Türbe aynı yıl Kronştadtlı Aziz İoann cemaat kilisesi oldu."
+    "tr-TR": "Bu tepe eski şehrin en sessiz yeridir. On sekizinci yüzyıldan beri burada Vladimir inziva manastırı vardı; 1899’da onun yerine Çuvaş kadınlar topluluğu açıldı. Yirminci yüzyılın başında burada üç sunaklı bir kilise, ahşap şapelli bir hastane, ikona ve kakma atölyeleri, bahçe ve havuz, 1900’den itibaren de yetim kızlar için bir okul vardı. Yüz elliye kadar rahibe toplanırdı.\nYamaçta 1908–1911’de mimarlar Oleşkeviç, Deminev ve Malinovskiy’nin projesiyle tüccar Yefremovların türbesi yapıldı — kubbeli ve Korint sütunlu taş bir şapel, Çuvaşistan’daki tek anıt mezar mimarisi örneği. 1918’e kadar mahzeninde Prokopiy Yefremov ile eşi Yekaterina’nın lahitleri duruyordu.\n1920’de topluluğun binalarında bir çocuk yurdu açıldı, 1930’da kilise de kapatıldı. Sonra burada daireler, fıçıcı atölyesi, depolar ve restorasyon atölyeleri oldu. 1989’da kilise inananlara geri verildi, 25 Mart 1991’de manastır yeniden doğdu — artık Başkalaşım Manastırı. Türbe aynı yıl Kronştadtlı Aziz İoann cemaat kilisesi oldu.",
+    "ar": "هذه التلة أهدأ بقعة في المدينة القديمة. منذ القرن الثامن عشر قامت هنا صومعة فلاديمير، وفي عام 1899 افتُتحت مكانها جماعة نسائية تشوفاشية. وبحلول مطلع القرن العشرين كانت هنا كنيسة بثلاثة مذابح، ومستشفى بكنيسة خشبية، وورشتا رسم الأيقونات والنقش على المعادن، وحديقة وبركة، ومنذ عام 1900 مدرسة للفتيات اليتيمات. وكان عدد الأخوات يصل إلى مئة وخمسين.\nوعلى المنحدر، في 1908–1911، شُيّد ضريح التجار آل يفريموف وفق تصميم المعماريين أوليشكيفيتش وديمينيف ومالينوفسكي — كنيسة صغيرة حجرية بقبة ورواق كورنثي، وهي النصب الوحيد لعمارة الأضرحة التذكارية في تشوفاشيا. وحتى عام 1918 كان في سردابها تابوتا بروكوبي يفريموف وزوجته يكاترينا.\nوفي عام 1920 افتُتحت في مباني الجماعة دار للأطفال، وفي عام 1930 أُغلقت الكنيسة أيضًا. ثم كانت هنا شقق سكنية، وورشة لصناعة البراميل، ومستودعات، وورش ترميم. وفي عام 1989 أُعيدت الكنيسة إلى المؤمنين، وفي 25 مارس 1991 بُعث الدير من جديد — وهو الآن دير التجلّي. وفي العام نفسه صار الضريح كنيسة رعية القديس يوحنا الكرونشتادتي."
    }
   },
   "T11_FIGURKI_NARR": {
@@ -752,7 +813,8 @@
     "fr-FR": "La baie que vous voyez est plus jeune que tout ce dont nous avons parlé : sa première partie fut remplie en 1980, la digue et les fontaines construites en 1996. Les sept fontaines ne sont pas un ornement mais une prise d’eau : c’est ainsi que l’eau de la Volga alimente la baie. La grande lance quatre jets à vingt mètres, les six petites l’entourent en cercle.\nEt sur les parapets de la baie vivent six petites figurines de héros des légendes tchouvaches : la Jeune fille sur la Lune, la Renarde danseuse, la belle Plagui, Volga, le preux Oulyp et un couple — Narspi et Setner. Elles ont été installées en 2024. Narspi et Setner viennent du poème de Konstantin Ivanov, les autres du projet « Légendes du pays tchouvache ».\nTrouvez-les toutes les six. Je suis ce même Setner — vous en connaissez donc déjà une de vue.",
     "zh-Hans": "你眼前的海湾比我们讲过的一切都年轻：它的第一期在1980年注水，大坝和喷泉建于1996年。七座喷泉不是装饰，而是出水口：伏尔加河的水就是这样注入海湾的。大喷泉四股水柱高达二十米，六座小喷泉围成一圈。\n海湾的护栏上住着六个楚瓦什传说英雄的小雕像：月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普，还有一对——纳尔斯皮与塞特涅尔。它们于2024年落成。纳尔斯皮与塞特涅尔出自康斯坦丁·伊万诺夫的长诗，其余的来自“楚瓦什大地的传说”项目。\n把六个都找出来吧。我就是那个塞特涅尔——所以有一个雕像你已经认得了。",
     "hi-IN": "जो खाड़ी आप देख रहे हैं, वह हमारी हर बात से नई है: इसका पहला चरण 1980 में भरा गया, और बाँध व फ़व्वारे 1996 में बने। सात फ़व्वारे सजावट नहीं, बल्कि जल-निकास हैं: इसी तरह वोल्गा का पानी खाड़ी में आता है। बड़ा फ़व्वारा चार धाराएँ बीस मीटर ऊँची फेंकता है, छह छोटे उसके चारों ओर गोल घेरे में खड़े हैं।\nऔर खाड़ी की मुँडेरों पर चुवाश किंवदंतियों के नायकों की छह छोटी मूर्तियाँ रहती हैं: चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, और एक जोड़ी — नार्स्पी और सेत्नेर। इन्हें 2024 में स्थापित किया गया। नार्स्पी और सेत्नेर कोन्स्तान्तिन इवानोव की कविता से हैं, बाक़ी «चुवाश भूमि की किंवदंतियाँ» परियोजना से।\nसभी छह को ढूँढिए। मैं ही वह सेत्नेर हूँ — तो एक मूर्ति को आप पहले से पहचानते हैं।",
-    "tr-TR": "Gördüğünüz körfez, anlattığımız her şeyden daha genç: ilk bölümü 1980’de dolduruldu, set ve fıskiyeler 1996’da yapıldı. Yedi fıskiye süs değil, su çıkışıdır: Volga suyu körfeze böyle verilir. Büyüğü dört fıskiyeyle yirmi metreye fışkırır, altı küçüğü çevresinde halka olur.\nKörfezin korkuluklarında ise Çuvaş efsane kahramanlarının altı küçük heykelciği yaşar: Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp ve bir çift — Narspi ile Setner. 2024’te yerleştirildiler. Narspi ile Setner Konstantin İvanov’un şiirinden, diğerleri “Çuvaş Diyarının Efsaneleri” projesinden.\nAltısını da bulun. O Setner benim — demek ki birini zaten yüzünden tanıyorsunuz."
+    "tr-TR": "Gördüğünüz körfez, anlattığımız her şeyden daha genç: ilk bölümü 1980’de dolduruldu, set ve fıskiyeler 1996’da yapıldı. Yedi fıskiye süs değil, su çıkışıdır: Volga suyu körfeze böyle verilir. Büyüğü dört fıskiyeyle yirmi metreye fışkırır, altı küçüğü çevresinde halka olur.\nKörfezin korkuluklarında ise Çuvaş efsane kahramanlarının altı küçük heykelciği yaşar: Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp ve bir çift — Narspi ile Setner. 2024’te yerleştirildiler. Narspi ile Setner Konstantin İvanov’un şiirinden, diğerleri “Çuvaş Diyarının Efsaneleri” projesinden.\nAltısını da bulun. O Setner benim — demek ki birini zaten yüzünden tanıyorsunuz.",
+    "ar": "الخليج الذي تراه أحدث من كل ما تحدثنا عنه: مُلئ قسمه الأول عام 1980، وبُني السد والنوافير عام 1996. النوافير السبع ليست زينة، بل منفذ للمياه: هكذا تُضخّ مياه الفولغا إلى الخليج. النافورة الكبرى تقذف أربع دفقات من الماء إلى ارتفاع عشرين مترًا، والستّ الصغيرة تقف حولها في دائرة.\nوعلى حواجز الخليج تعيش ستة تماثيل صغيرة لأبطال الأساطير التشوفاشية: الفتاة على القمر، والثعلبة الراقصة، والجميلة بلاغي، والفولغا، والبطل أوليب، والثنائي — نارسبي وسيتنر. نُصبت عام 2024. نارسبي وسيتنر من قصيدة كونستانتين إيفانوف، والبقية من مشروع «أساطير الأرض التشوفاشية».\nابحث عن الستة جميعًا. أنا سيتنر نفسه — لذا فأنت تعرف أحد هذه التماثيل بوجهه."
    }
   }
  },
@@ -770,7 +832,8 @@
     "fr-FR": "« On raconte que le tsar envoya un diak rusé, Ivan Vyrodkov, celui qui bâtit la ville de Sviajsk en un mois. On dit que sa main est passée par ici aussi. Mais il n’en reste aucun papier — pas une seule ligne. Peut-être n’est-il jamais venu ici. »",
     "zh-Hans": "“听说，沙皇派来一位机灵的书吏伊万·维罗德科夫——就是他一个月在斯维亚日斯克建起一座城。人们说咱们这儿也有他的手笔。可关于这事，一张纸都没留下，一行字也没有。也许他根本就没来过。”",
     "hi-IN": "«कहते हैं, ज़ार ने एक चतुर मुंशी इवान विरोदकोव को भेजा था — वही जिसने स्वियाज़्स्क में एक महीने में नगर खड़ा कर दिया था। लोग कहते हैं, हमारे यहाँ भी उसी का हाथ है। पर इसका कोई काग़ज़ नहीं बचा — एक पंक्ति भी नहीं। हो सकता है, वह यहाँ कभी आया ही न हो।»",
-    "tr-TR": "“Derler ki Çar, Sviyajsk'ta bir ayda şehir kuran becerikli kâtip İvan Vırodkov'u göndermiş. Bizimkinde de onun eli varmış. Ama bununla ilgili tek bir kâğıt kalmamış — tek satır bile. Belki de buraya hiç gelmedi.”"
+    "tr-TR": "“Derler ki Çar, Sviyajsk'ta bir ayda şehir kuran becerikli kâtip İvan Vırodkov'u göndermiş. Bizimkinde de onun eli varmış. Ama bununla ilgili tek bir kâğıt kalmamış — tek satır bile. Belki de buraya hiç gelmedi.”",
+    "ar": "«يُقال إن القيصر أرسل كاتبًا داهية، إيفان فيرودكوف، الذي أقام مدينة سفيياجسك في شهر واحد. ويُقال إن يده امتدت إلينا أيضًا. لكن لم تبقَ عن ذلك أوراق — ولا سطر واحد. ولعله لم يكن هنا قط.»"
    }
   },
   "L02_GOD_1469": {
@@ -786,7 +849,8 @@
     "fr-FR": "« Certains chroniqueurs écrivent que les voïévodes ont passé la nuit ici en l’an six mille neuf cent soixante-dix-sept — 1469 selon notre calendrier. D’autres disent un an plus tard. Un an de plus ou de moins, mais la ville est là depuis. »",
     "zh-Hans": "“有的编年史家写道，督军们在创世纪年六千九百七十七年在这里过夜——按我们的算法是1469年。也有人说是晚一年。早一年晚一年都无妨，城从那时起就一直立在这儿。”",
     "hi-IN": "«कुछ इतिवृत्तकार लिखते हैं कि वोएवोदाओं ने छह हज़ार नौ सौ सतहत्तरवें वर्ष में यहाँ रात बिताई — हमारी गिनती से 1469 में। कुछ कहते हैं — एक साल बाद। एक साल इधर, एक साल उधर, पर नगर तब से खड़ा है।»",
-    "tr-TR": "“Kimi vakanüvis, voyvodaların burada altı bin dokuz yüz yetmiş yedi yılında — bizim hesabımızla 1469'da — geceyi geçirdiğini yazar. Kimi de bir yıl sonra der. Bir yıl öne, bir yıl arkaya; şehir o günden beri ayakta.”"
+    "tr-TR": "“Kimi vakanüvis, voyvodaların burada altı bin dokuz yüz yetmiş yedi yılında — bizim hesabımızla 1469'da — geceyi geçirdiğini yazar. Kimi de bir yıl sonra der. Bir yıl öne, bir yıl arkaya; şehir o günden beri ayakta.”",
+    "ar": "«بعض كتّاب الحوليات يكتبون أن الفويفودات باتوا هنا في سنة ستة آلاف وتسعمئة وسبع وسبعين — أي 1469 بتقويمنا. وآخرون يقولون بعدها بسنة. سنة إلى هنا أو إلى هناك، والمدينة قائمة منذ ذلك الحين.»"
    }
   },
   "L03_TORAMUSH": {
@@ -796,13 +860,14 @@
    "dispute": "Название — только туристический портал; ни у собора, ни у благочиния, ни в науке подтверждения нет. Чувашское написание — проверить носителем",
    "text": {
     "ru-RU": "«Икону, что владыка Гурий привёз, у нас зовут по-своему — Торамуш. Турă амăшě — Матерь Божья. В книгах того имени нет, а в народе держится.»",
-    "en-GB": "‘The icon that Archbishop Guriy brought — we call it by our own name here: Toramush. Tură amăshĕ — the Mother of God. That name isn’t in the books, but the people hold on to it.’",
-    "en-US": "“The icon Archbishop Guriy brought, we call it by our own name — Toramush. Tură amăshĕ, the Mother of God. You won’t find that name in the books, but people still use it.”",
-    "de-DE": "„Die Ikone, die Erzbischof Gurij gebracht hat, nennen wir auf unsere Art — Toramusch. Tură amăšĕ — die Gottesmutter. In den Büchern steht dieser Name nicht, aber im Volk lebt er weiter.“",
-    "fr-FR": "« L’icône qu’a apportée l’archevêque Gouri, chez nous on l’appelle à notre façon — Toramouch. Tură amăchĕ — la Mère de Dieu. Ce nom n’est pas dans les livres, mais le peuple le garde. »",
-    "zh-Hans": "“古里大主教带来的那幅圣像，我们这儿有自己的叫法——托拉穆什。Tura amashe，就是圣母。书里没有这个名字，可老百姓一直这么叫。”",
-    "hi-IN": "«आर्चबिशप गूरी जो प्रतिमा लाए थे, उसे हम अपने ढंग से पुकारते हैं — तोरामुश। तुरा अमाश्ये — ईश्वर की माता। किताबों में यह नाम नहीं है, पर लोगों की ज़ुबान पर बना हुआ है।»",
-    "tr-TR": "“Başpiskopos Guriy'nin getirdiği ikonaya biz kendi adımızla Toramuş deriz. Tură amăşĕ — Tanrı'nın Annesi. Kitaplarda bu ad geçmez, ama halk arasında yaşar.”"
+    "en-GB": "‘The icon that Archbishop Guriy brought — we call it by our own name here: Toramush. Турӑ амӑшӗ — the Mother of God. That name isn’t in the books, but the people hold on to it.’",
+    "en-US": "“The icon Archbishop Guriy brought, we call it by our own name — Toramush. Турӑ амӑшӗ, the Mother of God. You won’t find that name in the books, but people still use it.”",
+    "de-DE": "„Die Ikone, die Erzbischof Gurij gebracht hat, nennen wir auf unsere Art — Toramusch. Турӑ амӑшӗ — die Gottesmutter. In den Büchern steht dieser Name nicht, aber im Volk lebt er weiter.“",
+    "fr-FR": "« L’icône qu’a apportée l’archevêque Gouri, chez nous on l’appelle à notre façon — Toramouch. Турӑ амӑшӗ — la Mère de Dieu. Ce nom n’est pas dans les livres, mais le peuple le garde. »",
+    "zh-Hans": "“古里大主教带来的那幅圣像，我们这儿有自己的叫法——托拉穆什。Турӑ амӑшӗ，就是圣母。书里没有这个名字，可老百姓一直这么叫。”",
+    "hi-IN": "«आर्चबिशप गूरी जो प्रतिमा लाए थे, उसे हम अपने ढंग से पुकारते हैं — तोरामुश। Турӑ амӑшӗ — ईश्वर की माता। किताबों में यह नाम नहीं है, पर लोगों की ज़ुबान पर बना हुआ है।»",
+    "tr-TR": "“Başpiskopos Guriy'nin getirdiği ikonaya biz kendi adımızla Toramuş deriz. Турӑ амӑшӗ — Tanrı'nın Annesi. Kitaplarda bu ad geçmez, ama halk arasında yaşar.”",
+    "ar": "«الأيقونة التي جاء بها المطران غوري نسمّيها عندنا باسمنا — توراموش. Турӑ амӑшӗ — أم الإله. ليس هذا الاسم في الكتب، لكن الناس متمسكون به.»"
    }
   },
   "L04_POZHAR": {
@@ -818,7 +883,8 @@
     "fr-FR": "« L’église de bois que l’archevêque avait élevée a brûlé. Les uns disent en quarante-neuf, les autres en cinquante-neuf. Et à sa place s’est dressée la pierre. »",
     "zh-Hans": "“大主教建起的那座木教堂烧毁了。有人说是四九年，也有人说是五九年。后来在原址上立起了石头教堂。”",
     "hi-IN": "«आर्चबिशप ने जो लकड़ी का गिरजाघर बनवाया था, वह जल गया। कुछ कहते हैं — उनचासवें साल में, कुछ कहते हैं — उनसठवें में। और उसकी जगह पत्थर का गिरजाघर उठ खड़ा हुआ।»",
-    "tr-TR": "“Başpiskoposun kurdurduğu ahşap kilise yandı. Kimi kırk dokuzda der, kimi elli dokuzda. Yerinde de taş kilise yükseldi.”"
+    "tr-TR": "“Başpiskoposun kurdurduğu ahşap kilise yandı. Kimi kırk dokuzda der, kimi elli dokuzda. Yerinde de taş kilise yükseldi.”",
+    "ar": "«احترقت الكنيسة الخشبية التي أقامها المطران. يقول بعضهم — في سنة تسع وأربعين، ويقول آخرون — في سنة تسع وخمسين. وفي مكانها ارتفع البناء الحجري.»"
    }
   },
   "L05_MERA": {
@@ -834,7 +900,8 @@
     "fr-FR": "« On raconte que le mur faisait le tour sur près d’une verste. Plus de deux sagènes de haut, et presque deux d’épaisseur. Je ne l’ai pas mesuré moi-même — c’est ce que disent les anciens. »",
     "zh-Hans": "“听说那道城墙绕一圈差不多有一俄里长，高两俄丈多，厚也将近两俄丈。我自己没量过——老人们都是这么讲的。”",
     "hi-IN": "«कहते हैं, दीवार चारों ओर लगभग एक वेर्स्ता लंबी थी। ऊँचाई दो साझेन से ज़्यादा, और मोटाई लगभग दो। मैंने ख़ुद नहीं नापी — बुज़ुर्ग ऐसा ही बताते हैं।»",
-    "tr-TR": "“Derler ki sur, çepeçevre neredeyse bir verst tutarmış. Yüksekliği iki sajenden fazla, kalınlığı da ikiye yakın. Ben ölçmedim — yaşlılar böyle anlatır.”"
+    "tr-TR": "“Derler ki sur, çepeçevre neredeyse bir verst tutarmış. Yüksekliği iki sajenden fazla, kalınlığı da ikiye yakın. Ben ölçmedim — yaşlılar böyle anlatır.”",
+    "ar": "«يُقال إن السور كان يدور قرابة فيرست كامل. وارتفاعه أكثر من ساجينين، وسمكه قرابة اثنين. لم أقِسه بنفسي — هكذا يروي الشيوخ.»"
    }
   },
   "L06_GOD_SOBORA": {
@@ -850,7 +917,8 @@
     "fr-FR": "« On dit que l’église de pierre fut élevée en cinquante et un. Pourtant le Hollandais Witsen dessina notre ville une dizaine d’années plus tard — et sur son dessin, pas d’église. Soit il a dessiné à la légère, soit nous nous pressons trop avec la date. »",
     "zh-Hans": "“都说石头教堂是五一年建成的。可大约十年后，荷兰人维特森画了咱们的城——图上却没有这座教堂。要么是他画得马虎，要么是我们把年份说早了。”",
     "hi-IN": "«कहते हैं, पत्थर का गिरजाघर इक्यावनवें साल में बना। पर कोई दस साल बाद डच आदमी विटसेन ने हमारे नगर का नक्शा बनाया — और उसमें गिरजाघर है ही नहीं। या तो उसने लापरवाही से बनाया, या हम साल बताने में जल्दी कर रहे हैं।»",
-    "tr-TR": "“Taş kilisenin elli bir yılında yapıldığı söylenir. Ama Hollandalı Witsen on yıl kadar sonra şehrimizi çizmiş — çiziminde kilise yok. Ya özensiz çizdi, ya da biz yılı erkene alıyoruz.”"
+    "tr-TR": "“Taş kilisenin elli bir yılında yapıldığı söylenir. Ama Hollandalı Witsen on yıl kadar sonra şehrimizi çizmiş — çiziminde kilise yok. Ya özensiz çizdi, ya da biz yılı erkene alıyoruz.”",
+    "ar": "«يقولون إن الكنيسة الحجرية أُقيمت في سنة إحدى وخمسين. لكن الهولندي فيتسن رسم مدينتنا بعد نحو عشر سنين — ولا كنيسة في رسمه. فإما أنه رسم بإهمال، وإما أننا نستعجل في السنة.»"
    }
   },
   "L07_FRESKI": {
@@ -866,7 +934,8 @@
     "fr-FR": "« Certains disent que ces peintures sont anciennes, faites au temps du tsar Alexis. Mais celui qui a prélevé la peinture pour l’analyser dit : un siècle plus tard. Les savants disputent, et les murs se taisent. »",
     "zh-Hans": "“有人说这些壁画很古老，是阿列克谢沙皇时代画的。可取过颜料做化验的人说：晚了一个世纪。学者们争来争去，墙壁却一言不发。”",
     "hi-IN": "«कुछ कहते हैं, ये भित्तिचित्र पुराने हैं, ज़ार अलेक्सेई के ज़माने के। पर जिसने रंग की जाँच की, वह कहता है — एक सदी बाद के। विद्वान बहस करते हैं, और दीवारें चुप हैं।»",
-    "tr-TR": "“Kimi bu fresklerin eski olduğunu, Çar Aleksey zamanında yapıldığını söyler. Ama boyadan örnek alıp inceleyen kişi — bir yüzyıl sonra, der. Bilginler tartışır, duvarlar susar.”"
+    "tr-TR": "“Kimi bu fresklerin eski olduğunu, Çar Aleksey zamanında yapıldığını söyler. Ama boyadan örnek alıp inceleyen kişi — bir yüzyıl sonra, der. Bilginler tartışır, duvarlar susar.”",
+    "ar": "«يقول بعضهم إن هذه الرسوم قديمة، رُسمت في عهد القيصر أليكسي. أما من أخذ من الألوان عيّنة لفحصها فيقول: بعد ذلك بقرن. يتجادل العلماء، والجدران صامتة.»"
    }
   },
   "L08_VOEVODA": {
@@ -882,7 +951,8 @@
     "fr-FR": "« Qui compte chez nous comme premier voïévode — là aussi, on en discute. Le document en nomme trois à la fois : l'okolnitchi Borissov, Fiodor Nagoï et le prince Founikov — tous en poste ensemble, la même année. Qui appeler le premier — par rang dans la liste, ou autrement — à vous de juger. »",
     "zh-Hans": "“谁算是我们的第一任督军——这也有争论。文件一下子列出了三个人：近侍鲍里索夫、费奥多尔·纳戈伊和富尼科夫公爵——同一年一起任职。该把谁算作第一——按名单上的顺序，还是别的办法——您自己判断吧。”",
     "hi-IN": "«हमारे यहाँ पहला वोएवोदा किसे माना जाए — इस पर भी बहस है। दस्तावेज़ में एक साथ तीन नाम हैं: ओकोल्निची बोरिसोव, फ्योदोर नागोय और राजकुमार फुनिकोव — सभी एक ही साल साथ तैनात थे। किसे पहला कहा जाए — सूची में वरिष्ठता के हिसाब से या किसी और तरीके से — आप ख़ुद तय कीजिए।»",
-    "tr-TR": "“Bizde ilk voyvoda kim sayılır — bu da tartışmalı. Belge aynı anda üç kişinin adını veriyor: okolniçi Borisov, Fyodor Nagoy ve Prens Funikov — hepsi aynı yıl birlikte görev yaptı. Kimi ilk sayacağınıza — listedeki kıdeme göre ya da başka türlü — siz karar verin.”"
+    "tr-TR": "“Bizde ilk voyvoda kim sayılır — bu da tartışmalı. Belge aynı anda üç kişinin adını veriyor: okolniçi Borisov, Fyodor Nagoy ve Prens Funikov — hepsi aynı yıl birlikte görev yaptı. Kimi ilk sayacağınıza — listedeki kıdeme göre ya da başka türlü — siz karar verin.”",
+    "ar": "«ومن يُعدّ عندنا أول فويفود — هذا أيضًا موضع خلاف. فالوثيقة تذكر ثلاثة دفعة واحدة: الأوكولنيتشي بوريسوف، وفيودور ناغوي، والأمير فونيكوف — وكلهم تولّوا معًا في الصيف نفسه. أما من يُسمّى الأول — بحسب الأقدمية في القائمة أو بطريقة أخرى — فاحكم بنفسك.»"
    }
   }
  },
@@ -981,7 +1051,8 @@
    "fr-FR": "Dans quelle langue préférez-vous ? J’en parle beaucoup — y compris le tchouvache et le tatar.",
    "zh-Hans": "您更喜欢用哪种语言？我会说很多种——包括楚瓦什语和鞑靼语。",
    "hi-IN": "आप किस भाषा में बात करना पसंद करेंगे? मैं कई भाषाएँ बोलता हूँ — चुवाश और तातार भी।",
-   "tr-TR": "Hangi dilde konuşmak istersiniz? Birçok dil konuşuyorum — Çuvaşça ve Tatarca da."
+   "tr-TR": "Hangi dilde konuşmak istersiniz? Birçok dil konuşuyorum — Çuvaşça ve Tatarca da.",
+   "ar": "بأي لغة تفضّل أن نتحدث؟ أتحدث لغات كثيرة — ومنها التشوفاشية والتترية."
   },
   "ui.start": {
    "ru-RU": "Начать",
@@ -991,7 +1062,8 @@
    "fr-FR": "Commencer",
    "zh-Hans": "开始",
    "hi-IN": "शुरू करें",
-   "tr-TR": "Başla"
+   "tr-TR": "Başla",
+   "ar": "ابدأ"
   },
   "ui.here": {
    "ru-RU": "Я на месте",
@@ -1001,7 +1073,8 @@
    "fr-FR": "J’y suis",
    "zh-Hans": "我到了",
    "hi-IN": "मैं पहुँच गया/गई",
-   "tr-TR": "Buradayım"
+   "tr-TR": "Buradayım",
+   "ar": "أنا في المكان"
   },
   "ui.remote": {
    "ru-RU": "Играю издалека",
@@ -1011,7 +1084,8 @@
    "fr-FR": "Jouer à distance",
    "zh-Hans": "远程游玩",
    "hi-IN": "दूर से खेलें",
-   "tr-TR": "Uzaktan oyna"
+   "tr-TR": "Uzaktan oyna",
+   "ar": "ألعب عن بُعد"
   },
   "ui.then_now": {
    "ru-RU": "Тогда · Сейчас",
@@ -1021,7 +1095,8 @@
    "fr-FR": "Autrefois · Aujourd’hui",
    "zh-Hans": "过去 · 现在",
    "hi-IN": "तब · अब",
-   "tr-TR": "O zaman · Şimdi"
+   "tr-TR": "O zaman · Şimdi",
+   "ar": "آنذاك · الآن"
   },
   "ui.source": {
    "ru-RU": "Откуда это известно",
@@ -1031,7 +1106,8 @@
    "fr-FR": "D’où le savons-nous",
    "zh-Hans": "史料出处",
    "hi-IN": "यह कैसे पता है",
-   "tr-TR": "Bunu nereden biliyoruz"
+   "tr-TR": "Bunu nereden biliyoruz",
+   "ar": "كيف نعرف ذلك"
   },
   "ui.legend": {
    "ru-RU": "Городское предание",
@@ -1041,7 +1117,8 @@
    "fr-FR": "Légende de la ville",
    "zh-Hans": "城市传说",
    "hi-IN": "नगर की किंवदंती",
-   "tr-TR": "Şehir efsanesi"
+   "tr-TR": "Şehir efsanesi",
+   "ar": "حكاية من المدينة"
   },
   "ui.found": {
    "ru-RU": "Найдено!",
@@ -1051,7 +1128,8 @@
    "fr-FR": "Trouvé !",
    "zh-Hans": "找到了！",
    "hi-IN": "मिल गया!",
-   "tr-TR": "Buldun!"
+   "tr-TR": "Buldun!",
+   "ar": "تم الاكتشاف!"
   },
   "ui.next": {
    "ru-RU": "Следующая точка",
@@ -1061,7 +1139,8 @@
    "fr-FR": "Étape suivante",
    "zh-Hans": "下一站",
    "hi-IN": "अगला पड़ाव",
-   "tr-TR": "Sonraki durak"
+   "tr-TR": "Sonraki durak",
+   "ar": "المحطة التالية"
   },
   "ui.versts": {
    "ru-RU": "вёрст пройдено",
@@ -1071,7 +1150,8 @@
    "fr-FR": "verstes parcourues",
    "zh-Hans": "已走俄里",
    "hi-IN": "वेर्स्ता चले",
-   "tr-TR": "verst yüründü"
+   "tr-TR": "verst yüründü",
+   "ar": "فيرستات قُطعت"
   },
   "ui.lang_short": {
    "ru-RU": "Выберите язык",
@@ -1081,7 +1161,8 @@
    "fr-FR": "Choisissez la langue",
    "zh-Hans": "选择语言",
    "hi-IN": "भाषा चुनें",
-   "tr-TR": "Dil seçin"
+   "tr-TR": "Dil seçin",
+   "ar": "اختر اللغة"
   },
   "ui.soon": {
    "ru-RU": "готовится",
@@ -1091,7 +1172,8 @@
    "fr-FR": "bientôt",
    "zh-Hans": "即将推出",
    "hi-IN": "जल्द आ रहा है",
-   "tr-TR": "hazırlanıyor"
+   "tr-TR": "hazırlanıyor",
+   "ar": "قيد الإعداد"
   },
   "ui.mode_question": {
    "ru-RU": "Как будете играть?",
@@ -1101,7 +1183,8 @@
    "fr-FR": "Comment souhaitez-vous jouer ?",
    "zh-Hans": "您想怎么玩？",
    "hi-IN": "आप कैसे खेलना चाहेंगे?",
-   "tr-TR": "Nasıl oynamak istersiniz?"
+   "tr-TR": "Nasıl oynamak istersiniz?",
+   "ar": "كيف ستلعب؟"
   },
   "ui.map": {
    "ru-RU": "Этап «Город у воды»",
@@ -1111,7 +1194,8 @@
    "fr-FR": "Étape « La ville au bord de l’eau »",
    "zh-Hans": "关卡：“水边的城市”",
    "hi-IN": "चरण: «पानी किनारे का नगर»",
-   "tr-TR": "Etap: “Su kıyısındaki şehir”"
+   "tr-TR": "Etap: “Su kıyısındaki şehir”",
+   "ar": "المرحلة: «مدينة على الماء»"
   },
   "ui.task": {
    "ru-RU": "Задание",
@@ -1121,7 +1205,8 @@
    "fr-FR": "Défi",
    "zh-Hans": "任务",
    "hi-IN": "कार्य",
-   "tr-TR": "Görev"
+   "tr-TR": "Görev",
+   "ar": "المهمة"
   },
   "ui.wrong": {
    "ru-RU": "Не совсем. Послушайте ещё раз — ответ в рассказе.",
@@ -1131,7 +1216,8 @@
    "fr-FR": "Pas tout à fait. Réécoutez — la réponse est dans le récit.",
    "zh-Hans": "不太对。再听一遍——答案就在故事里。",
    "hi-IN": "पूरी तरह सही नहीं। फिर से सुनिए — उत्तर कहानी में ही है।",
-   "tr-TR": "Tam değil. Bir daha dinleyin — cevap hikâyenin içinde."
+   "tr-TR": "Tam değil. Bir daha dinleyin — cevap hikâyenin içinde.",
+   "ar": "ليس تمامًا. استمع مرة أخرى — الجواب في الحكاية."
   },
   "ui.close": {
    "ru-RU": "Закрыть",
@@ -1141,7 +1227,8 @@
    "fr-FR": "Fermer",
    "zh-Hans": "关闭",
    "hi-IN": "बंद करें",
-   "tr-TR": "Kapat"
+   "tr-TR": "Kapat",
+   "ar": "إغلاق"
   },
   "ui.back": {
    "ru-RU": "К карте",
@@ -1151,7 +1238,8 @@
    "fr-FR": "Retour à la carte",
    "zh-Hans": "返回地图",
    "hi-IN": "मानचित्र पर लौटें",
-   "tr-TR": "Haritaya dön"
+   "tr-TR": "Haritaya dön",
+   "ar": "إلى الخريطة"
   },
   "ui.continue": {
    "ru-RU": "Дальше",
@@ -1161,7 +1249,8 @@
    "fr-FR": "Continuer",
    "zh-Hans": "继续",
    "hi-IN": "आगे",
-   "tr-TR": "Devam"
+   "tr-TR": "Devam",
+   "ar": "متابعة"
   },
   "ui.reconstruction": {
    "ru-RU": "Реконструкция, схематично",
@@ -1171,7 +1260,8 @@
    "fr-FR": "Reconstitution (schématique)",
    "zh-Hans": "复原示意",
    "hi-IN": "पुनर्निर्माण (योजनात्मक)",
-   "tr-TR": "Rekonstrüksiyon (şematik)"
+   "tr-TR": "Rekonstrüksiyon (şematik)",
+   "ar": "إعادة تصوّر تخطيطية"
   },
   "ui.today": {
    "ru-RU": "Сегодня",
@@ -1181,7 +1271,8 @@
    "fr-FR": "Aujourd’hui",
    "zh-Hans": "今天",
    "hi-IN": "आज",
-   "tr-TR": "Bugün"
+   "tr-TR": "Bugün",
+   "ar": "اليوم"
   },
   "ui.code": {
    "ru-RU": "Код прохождения",
@@ -1191,7 +1282,8 @@
    "fr-FR": "Votre code de jeu",
    "zh-Hans": "通关代码",
    "hi-IN": "आपका खेल कोड",
-   "tr-TR": "Oyun kodunuz"
+   "tr-TR": "Oyun kodunuz",
+   "ar": "رمز اللعبة"
   },
   "ui.voice_soon": {
    "ru-RU": "Голос появится скоро — пока читайте субтитры.",
@@ -1201,7 +1293,8 @@
    "fr-FR": "La voix arrive bientôt — en attendant, lisez les sous-titres.",
    "zh-Hans": "配音即将上线——现在请先阅读字幕。",
    "hi-IN": "आवाज़ जल्द आएगी — तब तक उपशीर्षक पढ़ें।",
-   "tr-TR": "Seslendirme yakında — şimdilik altyazıyı okuyun."
+   "tr-TR": "Seslendirme yakında — şimdilik altyazıyı okuyun.",
+   "ar": "سيتوفر الصوت قريبًا — اقرأ النص المكتوب حاليًا."
   },
   "ui.finish_title": {
    "ru-RU": "Этап «Город у воды» пройден",
@@ -1211,7 +1304,8 @@
    "fr-FR": "Étape « La ville au bord de l’eau » terminée",
    "zh-Hans": "“水边的城市”关卡完成",
    "hi-IN": "चरण «पानी किनारे का नगर» पूरा हुआ",
-   "tr-TR": "“Su kıyısındaki şehir” etabı tamamlandı"
+   "tr-TR": "“Su kıyısındaki şehir” etabı tamamlandı",
+   "ar": "اكتملت مرحلة «مدينة على الماء»"
   },
   "ui.finish_text": {
    "ru-RU": "Спасибо, что прошли этот путь с нами. Следующие этапы появятся, когда архивы откроют новые страницы.",
@@ -1221,7 +1315,8 @@
    "fr-FR": "Merci d’avoir parcouru ce chemin avec nous. Les prochaines étapes viendront quand les archives ouvriront de nouvelles pages.",
    "zh-Hans": "感谢您与我们同行。档案揭开新的篇章后，后续关卡将陆续推出。",
    "hi-IN": "हमारे साथ यह रास्ता तय करने के लिए धन्यवाद। जब अभिलेखागार नए पन्ने खोलेंगे, अगले चरण आएँगे।",
-   "tr-TR": "Bu yolu bizimle yürüdüğünüz için teşekkürler. Arşivler yeni sayfalar açtıkça sonraki etaplar gelecek."
+   "tr-TR": "Bu yolu bizimle yürüdüğünüz için teşekkürler. Arşivler yeni sayfalar açtıkça sonraki etaplar gelecek.",
+   "ar": "شكرًا لأنك سلكت هذا الطريق معنا. ستظهر المراحل التالية حين تفتح الأرشيفات صفحات جديدة."
   },
   "ui.points": {
    "ru-RU": "Пройдено точек",
@@ -1231,7 +1326,8 @@
    "fr-FR": "Étapes franchies",
    "zh-Hans": "已完成地点",
    "hi-IN": "पूरे किए गए पड़ाव",
-   "tr-TR": "Tamamlanan durak"
+   "tr-TR": "Tamamlanan durak",
+   "ar": "المحطات المنجزة"
   },
   "ui.to_bot": {
    "ru-RU": "Вернуться к Сетнеру",
@@ -1241,7 +1337,8 @@
    "fr-FR": "Retour à Setner",
    "zh-Hans": "返回塞特内尔",
    "hi-IN": "सेतनेर के पास लौटें",
-   "tr-TR": "Setner'e dön"
+   "tr-TR": "Setner'e dön",
+   "ar": "العودة إلى سيتنر"
   },
   "ui.finish_btn": {
    "ru-RU": "Завершить этап",
@@ -1251,7 +1348,8 @@
    "fr-FR": "Terminer l’étape",
    "zh-Hans": "完成本关",
    "hi-IN": "चरण पूरा करें",
-   "tr-TR": "Etabı bitir"
+   "tr-TR": "Etabı bitir",
+   "ar": "إنهاء المرحلة"
   },
   "pt.0": {
    "ru-RU": "Пролог",
@@ -1261,7 +1359,8 @@
    "fr-FR": "Prologue",
    "zh-Hans": "序章",
    "hi-IN": "प्रस्तावना",
-   "tr-TR": "Giriş"
+   "tr-TR": "Giriş",
+   "ar": "التمهيد"
   },
   "pt.1": {
    "ru-RU": "Набережная",
@@ -1271,7 +1370,8 @@
    "fr-FR": "Le quai",
    "zh-Hans": "滨河路",
    "hi-IN": "तटबंध",
-   "tr-TR": "Rıhtım"
+   "tr-TR": "Rıhtım",
+   "ar": "الكورنيش"
   },
   "pt.2": {
    "ru-RU": "Место кремля",
@@ -1281,7 +1381,8 @@
    "fr-FR": "L’emplacement du kremlin",
    "zh-Hans": "克里姆林遗址",
    "hi-IN": "क्रेमलिन का स्थान",
-   "tr-TR": "Kremlin'in yeri"
+   "tr-TR": "Kremlin'in yeri",
+   "ar": "موقع الكرملين"
   },
   "pt.3": {
    "ru-RU": "Введенский собор",
@@ -1291,7 +1392,8 @@
    "fr-FR": "Cathédrale Vvedenski",
    "zh-Hans": "圣母进殿主教座堂",
    "hi-IN": "व्वेदेंस्की गिरजाघर",
-   "tr-TR": "Vvedenski Katedrali"
+   "tr-TR": "Vvedenski Katedrali",
+   "ar": "كاتدرائية ففيدينسكي"
   },
   "pt.8": {
    "ru-RU": "Фигурки на парапетах",
@@ -1301,7 +1403,8 @@
    "fr-FR": "Les figurines du parapet",
    "zh-Hans": "护栏上的小雕像",
    "hi-IN": "मुंडेर पर मूर्तियाँ",
-   "tr-TR": "Korkuluktaki figürler"
+   "tr-TR": "Korkuluktaki figürler",
+   "ar": "تماثيل صغيرة على حواجز الكورنيش"
   },
   "h.1": {
    "ru-RU": "Подойдите к набережной Чебоксарского залива и встаньте лицом к воде.",
@@ -1311,7 +1414,8 @@
    "fr-FR": "Rendez-vous sur le quai de la baie de Tcheboksary et tournez-vous vers l’eau.",
    "zh-Hans": "请走到切博克萨雷湾滨河路，面向水面站好。",
    "hi-IN": "चेबोक्सारी खाड़ी के तटबंध पर जाइए और पानी की ओर मुँह करके खड़े होइए।",
-   "tr-TR": "Çeboksarı Körfezi rıhtımına gidin ve yüzünüzü suya dönün."
+   "tr-TR": "Çeboksarı Körfezi rıhtımına gidin ve yüzünüzü suya dönün.",
+   "ar": "توجّه إلى كورنيش خليج تشيبوكساري وقف مواجهًا للماء."
   },
   "h.2": {
    "ru-RU": "Выйдите на улицу Бондарева — здесь шла восточная стена крепости.",
@@ -1321,7 +1425,8 @@
    "fr-FR": "Rendez-vous rue Bondarev — c’est là que courait le mur est de la forteresse.",
    "zh-Hans": "请走到邦达列夫街——要塞的东墙曾沿这里延伸。",
    "hi-IN": "बोंदारेव सड़क पर जाइए — यहीं से किले की पूर्वी दीवार गुज़रती थी।",
-   "tr-TR": "Bondarev Caddesi'ne gidin — kalenin doğu suru buradan geçerdi."
+   "tr-TR": "Bondarev Caddesi'ne gidin — kalenin doğu suru buradan geçerdi.",
+   "ar": "اذهب إلى شارع بونداريف — هنا كان يمتد السور الشرقي للقلعة."
   },
   "h.3": {
    "ru-RU": "Подойдите к Введенскому собору на улице Константина Иванова.",
@@ -1331,7 +1436,8 @@
    "fr-FR": "Rendez-vous à la cathédrale Vvedenski, rue Konstantin-Ivanov.",
    "zh-Hans": "请前往康斯坦丁·伊万诺夫街上的圣母进殿主教座堂。",
    "hi-IN": "कोंस्तांतिन इवानोव सड़क पर व्वेदेंस्की गिरजाघर जाइए।",
-   "tr-TR": "Konstantin İvanov Caddesi'ndeki Vvedenski Katedrali'ne gidin."
+   "tr-TR": "Konstantin İvanov Caddesi'ndeki Vvedenski Katedrali'ne gidin.",
+   "ar": "توجّه إلى كاتدرائية ففيدينسكي في شارع كونستانتين إيفانوف."
   },
   "q.1": {
    "ru-RU": "Сколько человек, по словам Олеария, собралось на берегу встречать посольство?",
@@ -1341,7 +1447,8 @@
    "fr-FR": "Selon Olearius, combien de personnes s’étaient rassemblées sur la rive pour accueillir l’ambassade ?",
    "zh-Hans": "据奥列阿里乌斯记载，有多少人聚集在岸边迎接使团？",
    "hi-IN": "ओलेअरियस के अनुसार, दूतावास का स्वागत करने के लिए तट पर कितने लोग जमा हुए थे?",
-   "tr-TR": "Olearius'a göre elçiliği karşılamak için kıyıda kaç kişi toplanmıştı?"
+   "tr-TR": "Olearius'a göre elçiliği karşılamak için kıyıda kaç kişi toplanmıştı?",
+   "ar": "كم شخصًا، بحسب أوليريوس، تجمّعوا على الضفة لاستقبال السفارة؟"
   },
   "q.2": {
    "ru-RU": "Сколько башен было в городе по росписи 1613 года?",
@@ -1351,7 +1458,8 @@
    "fr-FR": "Selon l’inventaire de 1613, combien de tours comptait la ville ?",
    "zh-Hans": "根据1613年的清册，城里有几座塔楼？",
    "hi-IN": "1613 की सूची के अनुसार नगर में कितनी मीनारें थीं?",
-   "tr-TR": "1613 envanterine göre şehirde kaç kule vardı?"
+   "tr-TR": "1613 envanterine göre şehirde kaç kule vardı?",
+   "ar": "كم برجًا كان في المدينة بحسب سجل عام 1613؟"
   },
   "q.3": {
    "ru-RU": "Сколько апостолов изображено на Царских вратах собора?",
@@ -1361,7 +1469,8 @@
    "fr-FR": "Combien d’apôtres sont représentés sur les Portes saintes de la cathédrale ?",
    "zh-Hans": "主教座堂的圣门上画了几位使徒？",
    "hi-IN": "गिरजाघर के राजद्वार पर कितने प्रेरित चित्रित हैं?",
-   "tr-TR": "Katedralin Kraliyet Kapıları'nda kaç havari tasvir edilmiştir?"
+   "tr-TR": "Katedralin Kraliyet Kapıları'nda kaç havari tasvir edilmiştir?",
+   "ar": "كم رسولًا صُوّر على الأبواب الملكية في الكاتدرائية؟"
   },
   "r.1": {
    "ru-RU": "Верно — человек триста, молодых и старых.",
@@ -1371,7 +1480,8 @@
    "fr-FR": "Exact — environ trois cents, jeunes et vieux.",
    "zh-Hans": "答对了——大约三百人，有老有少。",
    "hi-IN": "सही — लगभग तीन सौ, जवान और बूढ़े।",
-   "tr-TR": "Doğru — genç yaşlı, üç yüz kadar kişi."
+   "tr-TR": "Doğru — genç yaşlı, üç yüz kadar kişi.",
+   "ar": "صحيح — نحو ثلاثمئة، من الشباب والشيوخ."
   },
   "r.2": {
    "ru-RU": "Верно — пять башен, из них двое ворот: Введенские и Никольские.",
@@ -1381,7 +1491,8 @@
    "fr-FR": "Exact — cinq tours, dont deux portes : celle de Vvedenski et celle de Nikolski.",
    "zh-Hans": "答对了——五座塔楼，其中两座是城门：进殿门和尼古拉门。",
    "hi-IN": "सही — पाँच मीनारें, जिनमें दो द्वार थे: व्वेदेंस्की और निकोल्स्की।",
-   "tr-TR": "Doğru — beş kule, ikisi kapı kulesi: Vvedenski ve Nikolski."
+   "tr-TR": "Doğru — beş kule, ikisi kapı kulesi: Vvedenski ve Nikolski.",
+   "ar": "صحيح — خمسة أبراج، اثنان منها بوابتان: ففيدينسكي ونيكولسكي."
   },
   "r.3": {
    "ru-RU": "Верно — одиннадцать, а не двенадцать. Это редкая особенность врат середины XVIII века.",
@@ -1391,7 +1502,8 @@
    "fr-FR": "Exact — onze, et non douze. Une particularité rare de ces portes du milieu du XVIIIe siècle.",
    "zh-Hans": "答对了——是十一位，而不是十二位。这是这扇十八世纪中叶圣门的罕见特点。",
    "hi-IN": "सही — बारह नहीं, ग्यारह। अठारहवीं सदी के मध्य के इन द्वारों की यह दुर्लभ विशेषता है।",
-   "tr-TR": "Doğru — on iki değil, on bir. 18. yüzyıl ortasına ait bu kapıların nadir bir özelliği."
+   "tr-TR": "Doğru — on iki değil, on bir. 18. yüzyıl ortasına ait bu kapıların nadir bir özelliği.",
+   "ar": "صحيح — أحد عشر لا اثنا عشر. وهذه سمة نادرة في أبواب منتصف القرن الثامن عشر."
   },
   "spk.chronicler": {
    "ru-RU": "Летописец",
@@ -1401,7 +1513,8 @@
    "fr-FR": "Le chroniqueur",
    "zh-Hans": "编年史家",
    "hi-IN": "इतिवृत्तकार",
-   "tr-TR": "Vakanüvis"
+   "tr-TR": "Vakanüvis",
+   "ar": "كاتب الحوليات"
   },
   "spk.olearius": {
    "ru-RU": "Адам Олеарий, 1636",
@@ -1411,7 +1524,8 @@
    "fr-FR": "Adam Olearius, 1636",
    "zh-Hans": "亚当·奥列阿里乌斯，1636年",
    "hi-IN": "आदम ओलेअरियस, 1636",
-   "tr-TR": "Adam Olearius, 1636"
+   "tr-TR": "Adam Olearius, 1636",
+   "ar": "آدم أوليريوس، 1636"
   },
   "spk.nagoy": {
    "ru-RU": "Фёдор Нагой, воевода, 1555",
@@ -1421,7 +1535,8 @@
    "fr-FR": "Fiodor Nagoï, voïévode, 1555",
    "zh-Hans": "费奥多尔·纳戈伊督军，1555年",
    "hi-IN": "फ़्योदोर नागोय, वोएवोदा, 1555",
-   "tr-TR": "Voyvoda Fyodor Nagoy, 1555"
+   "tr-TR": "Voyvoda Fyodor Nagoy, 1555",
+   "ar": "فيودور ناغوي، حاكم عسكري (فويفود)، 1555"
   },
   "spk.clerk": {
    "ru-RU": "Подьячий, 1613",
@@ -1431,7 +1546,8 @@
    "fr-FR": "Un greffier, 1613",
    "zh-Hans": "书吏，1613年",
    "hi-IN": "मुंशी, 1613",
-   "tr-TR": "Kâtip, 1613"
+   "tr-TR": "Kâtip, 1613",
+   "ar": "كاتب ديوان، 1613"
   },
   "spk.setner": {
    "ru-RU": "Сетнер — рассказчик",
@@ -1441,7 +1557,8 @@
    "fr-FR": "Setner, le narrateur",
    "zh-Hans": "讲述者塞特内尔",
    "hi-IN": "कथावाचक सेतनेर",
-   "tr-TR": "Anlatıcı Setner"
+   "tr-TR": "Anlatıcı Setner",
+   "ar": "سيتنر — الراوي"
   },
   "spk.strelets": {
    "ru-RU": "Старый стрелец",
@@ -1451,7 +1568,8 @@
    "fr-FR": "Un vieux strelets",
    "zh-Hans": "老射击军",
    "hi-IN": "बूढ़ा स्त्रेलेत्स",
-   "tr-TR": "Yaşlı bir strelets"
+   "tr-TR": "Yaşlı bir strelets",
+   "ar": "جندي عجوز من الستريلتسي"
   },
   "spk.bookman": {
    "ru-RU": "Книжник",
@@ -1461,7 +1579,8 @@
    "fr-FR": "Un lettré",
    "zh-Hans": "读书人",
    "hi-IN": "एक विद्वान",
-   "tr-TR": "Bir kitap ehli"
+   "tr-TR": "Bir kitap ehli",
+   "ar": "رجل من أهل الكتب"
   },
   "spk.parishioner": {
    "ru-RU": "Прихожанка",
@@ -1471,7 +1590,8 @@
    "fr-FR": "Une paroissienne",
    "zh-Hans": "一位女教友",
    "hi-IN": "एक महिला श्रद्धालु",
-   "tr-TR": "Bir cemaat üyesi kadın"
+   "tr-TR": "Bir cemaat üyesi kadın",
+   "ar": "امرأة من أبناء الرعية"
   },
   "layer.doc": {
    "ru-RU": "Документ",
@@ -1481,7 +1601,8 @@
    "fr-FR": "Document",
    "zh-Hans": "文献",
    "hi-IN": "दस्तावेज़",
-   "tr-TR": "Belge"
+   "tr-TR": "Belge",
+   "ar": "وثيقة"
   },
   "layer.sci": {
    "ru-RU": "Наука",
@@ -1491,7 +1612,8 @@
    "fr-FR": "Recherche",
    "zh-Hans": "研究",
    "hi-IN": "शोध",
-   "tr-TR": "Araştırma"
+   "tr-TR": "Araştırma",
+   "ar": "بحث علمي"
   },
   "today.1": {
    "ru-RU": "Сегодня здесь — набережная Чебоксарского залива.",
@@ -1501,7 +1623,8 @@
    "fr-FR": "Aujourd’hui, c’est le quai de la baie de Tcheboksary.",
    "zh-Hans": "今天这里是切博克萨雷湾滨河路。",
    "hi-IN": "आज यहाँ चेबोक्सारी खाड़ी का तटबंध है।",
-   "tr-TR": "Bugün burası Çeboksarı Körfezi rıhtımı."
+   "tr-TR": "Bugün burası Çeboksarı Körfezi rıhtımı.",
+   "ar": "هنا اليوم كورنيش خليج تشيبوكساري."
   },
   "today.2": {
    "ru-RU": "Сегодня здесь — улицы Бондарева и Свердлова. Стены нет уже больше трёхсот лет.",
@@ -1511,7 +1634,8 @@
    "fr-FR": "Aujourd’hui : rues Bondarev et Sverdlov. Le mur a disparu depuis plus de trois cents ans.",
    "zh-Hans": "今天这里是邦达列夫街和斯维尔德洛夫街。城墙消失已有三百多年。",
    "hi-IN": "आज यहाँ बोंदारेव और स्वेर्दलोव सड़कें हैं। दीवार को गए तीन सौ से अधिक वर्ष हो चुके हैं।",
-   "tr-TR": "Bugün burada Bondarev ve Sverdlov caddeleri var. Sur üç yüz yılı aşkın süredir yok."
+   "tr-TR": "Bugün burada Bondarev ve Sverdlov caddeleri var. Sur üç yüz yılı aşkın süredir yok.",
+   "ar": "هنا اليوم شارعا بونداريف وسفيردلوف. اختفى السور منذ أكثر من ثلاثمئة عام."
   },
   "today.3": {
    "ru-RU": "Собор стоит и сегодня.",
@@ -1521,7 +1645,8 @@
    "fr-FR": "La cathédrale est toujours debout.",
    "zh-Hans": "主教座堂至今依然矗立。",
    "hi-IN": "गिरजाघर आज भी खड़ा है।",
-   "tr-TR": "Katedral bugün de ayakta."
+   "tr-TR": "Katedral bugün de ayakta.",
+   "ar": "ما زالت الكاتدرائية قائمة حتى اليوم."
   },
   "ui.collection": {
    "ru-RU": "Находки",
@@ -1531,7 +1656,8 @@
    "fr-FR": "Trouvailles",
    "zh-Hans": "发现物",
    "hi-IN": "खोजें",
-   "tr-TR": "Buluntular"
+   "tr-TR": "Buluntular",
+   "ar": "المكتشفات"
   },
   "ui.new_find": {
    "ru-RU": "Новая находка",
@@ -1541,7 +1667,8 @@
    "fr-FR": "Nouvelle trouvaille",
    "zh-Hans": "新发现",
    "hi-IN": "नई खोज",
-   "tr-TR": "Yeni buluntu"
+   "tr-TR": "Yeni buluntu",
+   "ar": "اكتشاف جديد"
   },
   "ui.not_found_yet": {
    "ru-RU": "Ещё не найдено",
@@ -1551,7 +1678,8 @@
    "fr-FR": "Pas encore trouvé",
    "zh-Hans": "尚未发现",
    "hi-IN": "अभी नहीं मिला",
-   "tr-TR": "Henüz bulunmadı"
+   "tr-TR": "Henüz bulunmadı",
+   "ar": "لم يُعثر عليه بعد"
   },
   "ui.portrait": {
    "ru-RU": "Подлинный портрет",
@@ -1561,7 +1689,8 @@
    "fr-FR": "Portrait authentique",
    "zh-Hans": "真实肖像",
    "hi-IN": "मूल चित्र",
-   "tr-TR": "Gerçek portre"
+   "tr-TR": "Gerçek portre",
+   "ar": "صورة أصلية"
   },
   "art.A1_KRESALO.name": {
    "ru-RU": "Кресало",
@@ -1571,7 +1700,8 @@
    "fr-FR": "Briquet à silex",
    "zh-Hans": "火镰",
    "hi-IN": "चकमक इस्पात",
-   "tr-TR": "Çakmak demiri"
+   "tr-TR": "Çakmak demiri",
+   "ar": "زِناد حديدي"
   },
   "art.A1_KRESALO.desc": {
    "ru-RU": "XV век. Железо. Найдено в Чебоксарах при раскопках 1969–1970 годов. Им высекали искру из кремня.",
@@ -1581,7 +1711,8 @@
    "fr-FR": "XVe siècle. Fer. Trouvé à Tcheboksary lors des fouilles de 1969–1970. On le frappait contre un silex pour faire jaillir l’étincelle.",
    "zh-Hans": "十五世纪。铁。1969—1970年发掘时在切博克萨雷出土。用它击打燧石取火。",
    "hi-IN": "पंद्रहवीं सदी। लोहा। 1969–1970 की खुदाई में चेबोक्सारी में मिला। इसे चकमक पत्थर पर मारकर चिंगारी निकाली जाती थी।",
-   "tr-TR": "15. yüzyıl. Demir. 1969–1970 kazılarında Çeboksarı'da bulundu. Çakmaktaşına vurularak kıvılcım çıkarılırdı."
+   "tr-TR": "15. yüzyıl. Demir. 1969–1970 kazılarında Çeboksarı'da bulundu. Çakmaktaşına vurularak kıvılcım çıkarılırdı.",
+   "ar": "القرن الخامس عشر. حديد. عُثر عليه في تشيبوكساري خلال تنقيبات 1969–1970. كان يُضرب به حجر الصوان لإشعال الشرارة."
   },
   "art.A2_VESLO.name": {
    "ru-RU": "Весло",
@@ -1591,7 +1722,8 @@
    "fr-FR": "Rame",
    "zh-Hans": "船桨",
    "hi-IN": "चप्पू",
-   "tr-TR": "Kürek"
+   "tr-TR": "Kürek",
+   "ar": "مجداف"
   },
   "art.A2_VESLO.desc": {
    "ru-RU": "XV–XVII века. Дерево. Длина около метра, лопасть 28–35 см. Семь таких вёсел нашли при раскопках в Чебоксарах.",
@@ -1601,7 +1733,8 @@
    "fr-FR": "XVe–XVIIe siècles. Bois. Environ un mètre de long, pale de 28 à 35 cm. Sept rames de ce type ont été trouvées lors des fouilles de Tcheboksary.",
    "zh-Hans": "十五至十七世纪。木质。长约一米，桨叶28—35厘米。切博克萨雷发掘中共出土七支这样的桨。",
    "hi-IN": "पंद्रहवीं–सत्रहवीं सदी। लकड़ी। लंबाई लगभग एक मीटर, फलक 28–35 सेमी। चेबोक्सारी की खुदाई में ऐसे सात चप्पू मिले।",
-   "tr-TR": "15.–17. yüzyıl. Ahşap. Yaklaşık bir metre uzunluğunda, pala kısmı 28–35 cm. Çeboksarı kazılarında bunun gibi yedi kürek bulundu."
+   "tr-TR": "15.–17. yüzyıl. Ahşap. Yaklaşık bir metre uzunluğunda, pala kısmı 28–35 cm. Çeboksarı kazılarında bunun gibi yedi kürek bulundu.",
+   "ar": "القرون الخامس عشر–السابع عشر. خشب. طوله نحو متر، وعرض شفرته 28–35 سم. عُثر على سبعة مجاديف مثله في تنقيبات تشيبوكساري."
   },
   "art.A3_BERESTA.name": {
    "ru-RU": "Берестяной сосуд с надписью",
@@ -1611,7 +1744,8 @@
    "fr-FR": "Récipient en écorce de bouleau inscrit",
    "zh-Hans": "带铭文的桦树皮器皿",
    "hi-IN": "अभिलेख वाला भोजपत्र का पात्र",
-   "tr-TR": "Yazılı huş kabuğu kap"
+   "tr-TR": "Yazılı huş kabuğu kap",
+   "ar": "إناء من لحاء البتولا عليه نقش"
   },
   "art.A3_BERESTA.desc": {
    "ru-RU": "Начало XVI века. Береста. Обрывок надписи «БЕРЕЗОВЫЙ ЛЕ…» и узор, как в рукописных книгах. Найден в Чебоксарах в 1969 году.",
@@ -1621,7 +1755,8 @@
    "fr-FR": "Début du XVIe siècle. Écorce de bouleau. Un fragment d’inscription « БЕРЕЗОВЫЙ ЛЕ… » et un ornement comme dans les manuscrits. Trouvé à Tcheboksary en 1969.",
    "zh-Hans": "十六世纪初。桦树皮。残存铭文“БЕРЕЗОВЫЙ ЛЕ…”，纹饰与手抄本相似。1969年在切博克萨雷出土。",
    "hi-IN": "सोलहवीं सदी की शुरुआत। भोजपत्र। अभिलेख का टुकड़ा «БЕРЕЗОВЫЙ ЛЕ…» और हस्तलिखित पुस्तकों जैसा अलंकरण। 1969 में चेबोक्सारी में मिला।",
-   "tr-TR": "16. yüzyılın başı. Huş kabuğu. “БЕРЕЗОВЫЙ ЛЕ…” yazısının bir parçası ve el yazması kitaplardaki gibi bir süsleme. 1969'da Çeboksarı'da bulundu."
+   "tr-TR": "16. yüzyılın başı. Huş kabuğu. “БЕРЕЗОВЫЙ ЛЕ…” yazısının bir parçası ve el yazması kitaplardaki gibi bir süsleme. 1969'da Çeboksarı'da bulundu.",
+   "ar": "مطلع القرن السادس عشر. لحاء البتولا. جزء من نقش «БЕРЕЗОВЫЙ ЛЕ…» وزخرفة كتلك التي في الكتب المخطوطة. عُثر عليه في تشيبوكساري عام 1969."
   },
   "art.A4_ZERKALO.name": {
    "ru-RU": "Бронзовое зеркало",
@@ -1631,7 +1766,8 @@
    "fr-FR": "Miroir en bronze",
    "zh-Hans": "青铜镜",
    "hi-IN": "काँसे का दर्पण",
-   "tr-TR": "Bronz ayna"
+   "tr-TR": "Bronz ayna",
+   "ar": "مرآة برونزية"
   },
   "art.A4_ZERKALO.desc": {
    "ru-RU": "XIV век. Бронза. Небольшое зеркало с узором из выпуклин — такие делали в золотоордынское время. Найдено в Чебоксарах.",
@@ -1641,7 +1777,8 @@
    "fr-FR": "XIVe siècle. Bronze. Un petit miroir orné de bossettes, typique de l’époque de la Horde d’or. Trouvé à Tcheboksary.",
    "zh-Hans": "十四世纪。青铜。饰有凸点纹的小镜子，属金帐汗国时期样式。在切博克萨雷出土。",
    "hi-IN": "चौदहवीं सदी। काँसा। उभरे बिंदुओं के अलंकरण वाला छोटा दर्पण — स्वर्ण ओर्दा काल की शैली। चेबोक्सारी में मिला।",
-   "tr-TR": "14. yüzyıl. Bronz. Kabartma noktalarla süslü küçük bir ayna; Altın Orda dönemine özgü. Çeboksarı'da bulundu."
+   "tr-TR": "14. yüzyıl. Bronz. Kabartma noktalarla süslü küçük bir ayna; Altın Orda dönemine özgü. Çeboksarı'da bulundu.",
+   "ar": "القرن الرابع عشر. برونز. مرآة صغيرة بزخرفة من نتوءات بارزة — كانت تُصنع في عهد القبيلة الذهبية. عُثر عليها في تشيبوكساري."
   },
   "art.A5_BERDYSH.name": {
    "ru-RU": "Бердыш",
@@ -1651,7 +1788,8 @@
    "fr-FR": "Berdiche (hache d’armes)",
    "zh-Hans": "长柄月斧",
    "hi-IN": "बेर्दिश (फरसा)",
-   "tr-TR": "Berdiş (teber)"
+   "tr-TR": "Berdiş (teber)",
+   "ar": "بيرديش (فأس حربية)"
   },
   "art.A5_BERDYSH.desc": {
    "ru-RU": "XVII век. Железо. Лезвие 70 см, вес 800 г. Найден в Чебоксарском районе. Бердыш — оружие стрельцов.",
@@ -1661,7 +1799,8 @@
    "fr-FR": "XVIIe siècle. Fer. Lame de 70 cm, 800 g. Trouvée dans le district de Tcheboksary. La berdiche était l’arme des streltsy.",
    "zh-Hans": "十七世纪。铁。刃长70厘米，重800克。在切博克萨雷区发现。长柄月斧是射击军的武器。",
    "hi-IN": "सत्रहवीं सदी। लोहा। फलक 70 सेमी, वज़न 800 ग्राम। चेबोक्सारी ज़िले में मिला। बेर्दिश स्त्रेलेत्स सैनिकों का हथियार था।",
-   "tr-TR": "17. yüzyıl. Demir. Ağız 70 cm, ağırlık 800 g. Çeboksarı ilçesinde bulundu. Berdiş, streletslerin silahıydı."
+   "tr-TR": "17. yüzyıl. Demir. Ağız 70 cm, ağırlık 800 g. Çeboksarı ilçesinde bulundu. Berdiş, streletslerin silahıydı.",
+   "ar": "القرن السابع عشر. حديد. طول النصل 70 سم، والوزن 800 غ. عُثر عليه في مقاطعة تشيبوكساري. البيرديش سلاح جنود الستريلتسي."
   },
   "art.A6_IZRAZETS.name": {
    "ru-RU": "Изразец зелёный поливной",
@@ -1671,7 +1810,8 @@
    "fr-FR": "Carreau de poêle vernissé vert",
    "zh-Hans": "绿釉炉瓷砖",
    "hi-IN": "हरे शीशे वाली चूल्हे की टाइल",
-   "tr-TR": "Yeşil sırlı soba çinisi"
+   "tr-TR": "Yeşil sırlı soba çinisi",
+   "ar": "بلاطة خزفية خضراء مزجّجة"
   },
   "art.A6_IZRAZETS.desc": {
    "ru-RU": "XVII век. Глина, зелёная полива. Такими изразцами облицовывали печи. Найден в Чебоксарах.",
@@ -1681,7 +1821,8 @@
    "fr-FR": "XVIIe siècle. Argile, glaçure verte. On en revêtait les poêles. Trouvé à Tcheboksary.",
    "zh-Hans": "十七世纪。陶土，绿釉。用于贴饰火炉。在切博克萨雷出土。",
    "hi-IN": "सत्रहवीं सदी। मिट्टी, हरी चमकदार परत। ऐसी टाइलों से चूल्हे सजाए जाते थे। चेबोक्सारी में मिला।",
-   "tr-TR": "17. yüzyıl. Kil, yeşil sır. Sobalar bu çinilerle kaplanırdı. Çeboksarı'da bulundu."
+   "tr-TR": "17. yüzyıl. Kil, yeşil sır. Sobalar bu çinilerle kaplanırdı. Çeboksarı'da bulundu.",
+   "ar": "القرن السابع عشر. طين وطلاء زجاجي أخضر. بمثل هذه البلاطات كانت تُكسى المواقد. عُثر عليها في تشيبوكساري."
   },
   "art.A7_KOPEYKA.name": {
    "ru-RU": "Серебряная копейка",
@@ -1691,7 +1832,8 @@
    "fr-FR": "Kopeck d’argent",
    "zh-Hans": "银戈比",
    "hi-IN": "चाँदी का कोपेक",
-   "tr-TR": "Gümüş kopek"
+   "tr-TR": "Gümüş kopek",
+   "ar": "كوبيك فضي"
   },
   "art.A7_KOPEYKA.desc": {
    "ru-RU": "1615–1645 годы, царь Михаил Фёдорович. Серебро, 0,48 г. Типовая монета эпохи; серебряную копейку XVI–XVII веков нашли в Чебоксарах в 2025 году.",
@@ -1701,7 +1843,8 @@
    "fr-FR": "1615–1645, tsar Michel Fiodorovitch. Argent, 0,48 g. Pièce typique de l’époque ; un kopeck d’argent des XVIe–XVIIe siècles a été trouvé à Tcheboksary en 2025.",
    "zh-Hans": "1615—1645年，米哈伊尔·费奥多罗维奇沙皇时期。银，0.48克。这一时代的典型钱币；2025年在切博克萨雷出土过一枚十六至十七世纪的银戈比。",
    "hi-IN": "1615–1645, ज़ार मिखाइल फ़्योदोरोविच। चाँदी, 0.48 ग्राम। उस युग का सामान्य सिक्का; 2025 में चेबोक्सारी में सोलहवीं–सत्रहवीं सदी का चाँदी का कोपेक मिला।",
-   "tr-TR": "1615–1645, Çar Mihail Fyodoroviç. Gümüş, 0,48 g. Dönemin tipik sikkesi; 2025'te Çeboksarı'da 16.–17. yüzyıldan bir gümüş kopek bulundu."
+   "tr-TR": "1615–1645, Çar Mihail Fyodoroviç. Gümüş, 0,48 g. Dönemin tipik sikkesi; 2025'te Çeboksarı'da 16.–17. yüzyıldan bir gümüş kopek bulundu.",
+   "ar": "1615–1645، عهد القيصر ميخائيل فيودوروفيتش. فضة، 0.48 غ. عملة نموذجية لذلك العصر؛ وقد عُثر على كوبيك فضي من القرنين السادس عشر–السابع عشر في تشيبوكساري عام 2025."
   },
   "ui.share": {
    "ru-RU": "Поделиться",
@@ -1711,7 +1854,8 @@
    "fr-FR": "Partager",
    "zh-Hans": "分享",
    "hi-IN": "साझा करें",
-   "tr-TR": "Paylaş"
+   "tr-TR": "Paylaş",
+   "ar": "مشاركة"
   },
   "ui.share_text": {
    "ru-RU": "Я прошёл этап «Город у воды» игры «На Чебоксаре» и собрал подлинные находки из раскопок Чебоксар.",
@@ -1721,7 +1865,8 @@
    "fr-FR": "J’ai terminé l’étape « La ville au bord de l’eau » du jeu Na Cheboksare et réuni d’authentiques trouvailles des fouilles de Tcheboksary.",
    "zh-Hans": "我完成了游戏《Na Cheboksare》的“水边的城市”关卡，收集了切博克萨雷考古发掘中的真实文物。",
    "hi-IN": "मैंने खेल «Na Cheboksare» का चरण «पानी किनारे का नगर» पूरा किया और चेबोक्सारी की खुदाई की असली खोजें इकट्ठा कीं।",
-   "tr-TR": "Na Cheboksare oyununda “Su kıyısındaki şehir” etabını tamamladım ve Çeboksarı kazılarından gerçek buluntular topladım."
+   "tr-TR": "Na Cheboksare oyununda “Su kıyısındaki şehir” etabını tamamladım ve Çeboksarı kazılarından gerçek buluntular topladım.",
+   "ar": "أنهيتُ مرحلة «مدينة على الماء» في لعبة «على تشيبوكساري» وجمعتُ مكتشفات أصلية من تنقيبات تشيبوكساري."
   },
   "ui.title": {
    "ru-RU": "НА ЧЕБОКСАРЕ",
@@ -1731,7 +1876,8 @@
    "fr-FR": "NA CHEBOKSARE",
    "zh-Hans": "NA CHEBOKSARE",
    "hi-IN": "NA CHEBOKSARE",
-   "tr-TR": "NA CHEBOKSARE"
+   "tr-TR": "NA CHEBOKSARE",
+   "ar": "على تشيبوكساري"
   },
   "ui.splash_quote": {
    "ru-RU": "«…ночевали на Чебоксаре, а от Чебоксари шли день и ночь всю и пришли под Казань на ранней заре»\nЛетопись, 1469",
@@ -1741,7 +1887,8 @@
    "fr-FR": "« … ils passèrent la nuit à Tcheboksar, et de Tcheboksar ils marchèrent tout le jour et toute la nuit, et parvinrent devant Kazan au point du jour. »\nChronique, 1469",
    "zh-Hans": "“……他们在切博克萨尔过夜，从切博克萨尔出发，日夜兼程，于黎明时分抵达喀山城下。”\n编年史，1469年",
    "hi-IN": "«…उन्होंने चेबोक्सार में रात बिताई, और चेबोक्सार से वे पूरे दिन और पूरी रात चलते रहे और भोर होते ही कज़ान के सामने पहुँच गए।»\nइतिवृत्त, 1469",
-   "tr-TR": "“…Çeboksar'da geceyi geçirdiler, Çeboksar'dan bütün gün ve bütün gece yürüyerek şafak vakti Kazan önlerine vardılar.”\nVakayiname, 1469"
+   "tr-TR": "“…Çeboksar'da geceyi geçirdiler, Çeboksar'dan bütün gün ve bütün gece yürüyerek şafak vakti Kazan önlerine vardılar.”\nVakayiname, 1469",
+   "ar": "«…باتوا على تشيبوكسار، ومن تشيبوكسار ساروا يومًا وليلة كاملين وبلغوا قازان عند الفجر الباكر»\nحولية، 1469"
   },
   "pt.4": {
    "ru-RU": "Дом купца Ефремова",
@@ -1751,7 +1898,8 @@
    "fr-FR": "La maison Efremov",
    "zh-Hans": "叶夫列莫夫宅邸",
    "hi-IN": "येफ़्रेमोव हवेली",
-   "tr-TR": "Yefremov Konağı"
+   "tr-TR": "Yefremov Konağı",
+   "ar": "دار التاجر يفريموف"
   },
   "pt.5": {
    "ru-RU": "Хлебные амбары",
@@ -1761,7 +1909,8 @@
    "fr-FR": "Les granges à grain",
    "zh-Hans": "粮仓",
    "hi-IN": "अनाज के गोदाम",
-   "tr-TR": "Tahıl Ambarları"
+   "tr-TR": "Tahıl Ambarları",
+   "ar": "مخازن الحبوب"
   },
   "pt.6": {
    "ru-RU": "Женская гимназия",
@@ -1771,7 +1920,8 @@
    "fr-FR": "Le gymnase de jeunes filles",
    "zh-Hans": "女子中学",
    "hi-IN": "कन्या जिम्नेज़ियम",
-   "tr-TR": "Kız Gimnazyumu"
+   "tr-TR": "Kız Gimnazyumu",
+   "ar": "ثانوية البنات"
   },
   "pt.7": {
    "ru-RU": "Владимирская горка",
@@ -1781,7 +1931,8 @@
    "fr-FR": "La colline Saint-Vladimir",
    "zh-Hans": "弗拉基米尔山",
    "hi-IN": "व्लादिमीर पहाड़ी",
-   "tr-TR": "Vladimir Tepesi"
+   "tr-TR": "Vladimir Tepesi",
+   "ar": "تلة فلاديمير"
   },
   "h.4": {
    "ru-RU": "Подойдите к особнякам Ефремовых на улице Константина Иванова — сегодня здесь Чувашский национальный музей.",
@@ -1791,7 +1942,8 @@
    "fr-FR": "Rendez-vous aux hôtels Efremov, rue Konstantin-Ivanov — aujourd’hui le Musée national tchouvache.",
    "zh-Hans": "走到康斯坦丁·伊万诺夫街的叶夫列莫夫宅邸——如今这里是楚瓦什国家博物馆。",
    "hi-IN": "कोन्स्तान्तिन इवानोव सड़क पर येफ़्रेमोव हवेलियों तक जाइए — आज यहाँ चुवाश राष्ट्रीय संग्रहालय है।",
-   "tr-TR": "Konstantin İvanov Sokağı’ndaki Yefremov konaklarına gidin — bugün burada Çuvaş Ulusal Müzesi var."
+   "tr-TR": "Konstantin İvanov Sokağı’ndaki Yefremov konaklarına gidin — bugün burada Çuvaş Ulusal Müzesi var.",
+   "ar": "توجّه إلى قصور آل يفريموف في شارع كونستانتين إيفانوف — اليوم تضمّ المتحف الوطني التشوفاشي."
   },
   "h.5": {
    "ru-RU": "Спуститесь к воде, к старой пристани — туда, где к берегу подходили суда с хлебом.",
@@ -1801,7 +1953,8 @@
    "fr-FR": "Descendez vers l’eau, à l’ancien embarcadère — là où accostaient les barques de grain.",
    "zh-Hans": "走到水边的老码头——当年运粮船就是在这里靠岸的。",
    "hi-IN": "पानी की ओर, पुराने घाट तक उतरिए — जहाँ अनाज की नावें किनारे लगती थीं।",
-   "tr-TR": "Suya, eski iskeleye inin — tahıl teknelerinin kıyıya yanaştığı yere."
+   "tr-TR": "Suya, eski iskeleye inin — tahıl teknelerinin kıyıya yanaştığı yere.",
+   "ar": "انزل إلى الماء، إلى المرسى القديم — حيث كانت سفن الحبوب ترسو عند الضفة."
   },
   "h.6": {
    "ru-RU": "Пройдите по набережной залива: гимназия стояла на Набережно-Архангельской улице, позже — Чернышевского.",
@@ -1811,7 +1964,8 @@
    "fr-FR": "Longez le quai de la baie : le gymnase se trouvait rue Naberejno-Arkhangelskaïa, devenue rue Tchernychevski.",
    "zh-Hans": "沿着海湾的堤岸走：中学曾在滨河-阿尔汉格尔斯克街上，后来改称车尔尼雪夫斯基街。",
    "hi-IN": "खाड़ी के तट पर चलिए: जिम्नेज़ियम नाबेरेज़्नो-अर्खांगेल्स्काया, बाद में चेर्निशेव्स्की सड़क पर था।",
-   "tr-TR": "Körfez kıyısı boyunca yürüyün: gimnazyum Naberejno-Arhangelskaya, sonra Çernişevski Sokağı’ndaydı."
+   "tr-TR": "Körfez kıyısı boyunca yürüyün: gimnazyum Naberejno-Arhangelskaya, sonra Çernişevski Sokağı’ndaydı.",
+   "ar": "امشِ على كورنيش الخليج: كانت الثانوية في شارع نابيريجنو-أرخانغيلسكايا، الذي صار لاحقًا شارع تشيرنيشيفسكي."
   },
   "h.7": {
    "ru-RU": "Поднимитесь на Владимирскую горку к Спасо-Преображенскому монастырю; усыпальница Ефремовых — на склоне, вход с северной стороны.",
@@ -1821,7 +1975,8 @@
    "fr-FR": "Montez la colline Saint-Vladimir jusqu’au monastère de la Transfiguration ; le tombeau Efremov est sur la pente, entrée côté nord.",
    "zh-Hans": "登上弗拉基米尔山，到主显圣容修道院；叶夫列莫夫陵墓在山坡上，入口朝北。",
    "hi-IN": "व्लादिमीर पहाड़ी पर रूपांतरण मठ तक चढ़िए; येफ़्रेमोव समाधि ढलान पर है, प्रवेश उत्तर की ओर से।",
-   "tr-TR": "Vladimir Tepesi’ne, Başkalaşım Manastırı’na çıkın; Yefremov türbesi yamaçta, girişi kuzeyden."
+   "tr-TR": "Vladimir Tepesi’ne, Başkalaşım Manastırı’na çıkın; Yefremov türbesi yamaçta, girişi kuzeyden.",
+   "ar": "اصعد تلة فلاديمير إلى دير التجلّي؛ ضريح آل يفريموف على المنحدر، والمدخل من الجهة الشمالية."
   },
   "h.8": {
    "ru-RU": "Пройдите вдоль парапетов Чебоксарского залива и ищите маленькие фигурки.",
@@ -1831,7 +1986,8 @@
    "fr-FR": "Longez les parapets de la baie de Tcheboksary et cherchez les petites figurines.",
    "zh-Hans": "沿着切博克萨雷海湾的护栏走，寻找那些小雕像。",
    "hi-IN": "चेबोक्सारी खाड़ी की मुँडेरों के साथ चलिए और छोटी मूर्तियाँ ढूँढिए।",
-   "tr-TR": "Çeboksarı Körfezi’nin korkulukları boyunca yürüyün ve küçük heykelcikleri arayın."
+   "tr-TR": "Çeboksarı Körfezi’nin korkulukları boyunca yürüyün ve küçük heykelcikleri arayın.",
+   "ar": "امشِ بمحاذاة حواجز خليج تشيبوكساري وابحث عن التماثيل الصغيرة."
   },
   "today.4": {
    "ru-RU": "Сегодня в особняках Ефремовых — музеи.",
@@ -1841,7 +1997,8 @@
    "fr-FR": "Aujourd’hui, les hôtels Efremov sont des musées.",
    "zh-Hans": "如今叶夫列莫夫宅邸是博物馆。",
    "hi-IN": "आज येफ़्रेमोव हवेलियाँ संग्रहालय हैं।",
-   "tr-TR": "Bugün Yefremov konakları müze."
+   "tr-TR": "Bugün Yefremov konakları müze.",
+   "ar": "تضمّ قصور آل يفريموف اليوم متاحف."
   },
   "today.5": {
    "ru-RU": "Сегодня здесь набережная и залив — амбаров давно нет.",
@@ -1851,7 +2008,8 @@
    "fr-FR": "Aujourd’hui, le quai et la baie — les granges ont disparu depuis longtemps.",
    "zh-Hans": "如今这里是堤岸和海湾——粮仓早已不在。",
    "hi-IN": "आज यहाँ तट और खाड़ी है — गोदाम कब के नहीं रहे।",
-   "tr-TR": "Bugün burada kıyı ve körfez var — ambarlar çoktan yok."
+   "tr-TR": "Bugün burada kıyı ve körfez var — ambarlar çoktan yok.",
+   "ar": "هنا اليوم الكورنيش والخليج — ولم تعد المخازن موجودة منذ زمن بعيد."
   },
   "today.6": {
    "ru-RU": "Сегодня здесь — набережная Чебоксарского залива.",
@@ -1861,7 +2019,8 @@
    "fr-FR": "Aujourd’hui, c’est le quai de la baie de Tcheboksary.",
    "zh-Hans": "如今这里是切博克萨雷海湾的堤岸。",
    "hi-IN": "आज यहाँ चेबोक्सारी खाड़ी का तट है।",
-   "tr-TR": "Bugün burası Çeboksarı Körfezi kıyısı."
+   "tr-TR": "Bugün burası Çeboksarı Körfezi kıyısı.",
+   "ar": "هنا اليوم كورنيش خليج تشيبوكساري."
   },
   "today.7": {
    "ru-RU": "Монастырь действует и сегодня; усыпальница — приходской храм Иоанна Кронштадтского.",
@@ -1871,7 +2030,8 @@
    "fr-FR": "Le monastère est toujours en activité ; le tombeau est l’église paroissiale Saint-Jean-de-Cronstadt.",
    "zh-Hans": "修道院至今仍在运作；陵墓是克隆施塔得的圣约翰堂区教堂。",
    "hi-IN": "मठ आज भी सक्रिय है; समाधि क्रोनश्टाट के संत योआन का पैरिश चर्च है।",
-   "tr-TR": "Manastır bugün de faal; türbe Kronştadtlı Aziz İoann cemaat kilisesi."
+   "tr-TR": "Manastır bugün de faal; türbe Kronştadtlı Aziz İoann cemaat kilisesi.",
+   "ar": "الدير عامر حتى اليوم؛ وصار الضريح كنيسة رعية القديس يوحنا الكرونشتادتي."
   },
   "today.8": {
    "ru-RU": "Сегодня это главное место прогулок горожан.",
@@ -1881,7 +2041,8 @@
    "fr-FR": "Aujourd’hui, c’est la promenade préférée des habitants.",
    "zh-Hans": "如今这里是市民最爱散步的地方。",
    "hi-IN": "आज यह नगरवासियों की सैर की मुख्य जगह है।",
-   "tr-TR": "Bugün burası şehir halkının başlıca gezinti yeri."
+   "tr-TR": "Bugün burası şehir halkının başlıca gezinti yeri.",
+   "ar": "هذا اليوم المكان المفضّل لنزهات أهل المدينة."
   },
   "q.4": {
    "ru-RU": "Сколько кулей в год делала кулеткацкая мастерская Ефремовых?",
@@ -1891,7 +2052,8 @@
    "fr-FR": "Combien de sacs par an fabriquait l’atelier de sacs des Efremov ?",
    "zh-Hans": "叶夫列莫夫家的麻袋作坊每年织多少条麻袋？",
    "hi-IN": "येफ़्रेमोव की बोरी-कार्यशाला साल में कितनी बोरियाँ बनाती थी?",
-   "tr-TR": "Yefremovların çuval atölyesi yılda kaç çuval dokuyordu?"
+   "tr-TR": "Yefremovların çuval atölyesi yılda kaç çuval dokuyordu?",
+   "ar": "كم كيسًا في السنة كانت تصنع ورشة نسج أكياس اللحاء لدى آل يفريموف؟"
   },
   "r.4": {
    "ru-RU": "Верно — до тридцати тысяч кулей: тридцать взрослых и шестьдесят подростков.",
@@ -1901,7 +2063,8 @@
    "fr-FR": "Exact — jusqu’à trente mille sacs : trente adultes et soixante adolescents.",
    "zh-Hans": "正确——多达三万条：三十名成人和六十名少年。",
    "hi-IN": "सही — तीस हज़ार तक बोरियाँ: तीस वयस्क और साठ किशोर।",
-   "tr-TR": "Doğru — otuz bin çuvala kadar: otuz yetişkin ve altmış genç."
+   "tr-TR": "Doğru — otuz bin çuvala kadar: otuz yetişkin ve altmış genç.",
+   "ar": "صحيح — حتى ثلاثين ألف كيس: ثلاثون بالغًا وستون فتى."
   },
   "q.5": {
    "ru-RU": "Сколько амбаров с хлебом и припасами сгорело в пожаре 1773 года по докладу губернатора?",
@@ -1911,7 +2074,8 @@
    "fr-FR": "Selon le rapport du gouverneur, combien de granges à grain et provisions brûlèrent dans l’incendie de 1773 ?",
    "zh-Hans": "据省长报告，1773年大火烧毁了多少座存放粮食和物资的仓房？",
    "hi-IN": "गवर्नर की रिपोर्ट के अनुसार 1773 की आग में अनाज और रसद के कितने गोदाम जले?",
-   "tr-TR": "Valinin raporuna göre 1773 yangınında tahıl ve erzak dolu kaç ambar yandı?"
+   "tr-TR": "Valinin raporuna göre 1773 yangınında tahıl ve erzak dolu kaç ambar yandı?",
+   "ar": "بحسب تقرير الحاكم، كم مخزنًا للحبوب والمؤن احترق في حريق عام 1773؟"
   },
   "r.5": {
    "ru-RU": "Верно — сорок девять. А ещё двадцать девять церквей и семьсот семнадцать домов.",
@@ -1921,7 +2085,8 @@
    "fr-FR": "Exact — quarante-neuf. Et aussi vingt-neuf églises et sept cent dix-sept maisons.",
    "zh-Hans": "正确——四十九座。还有二十九座教堂和七百一十七栋房屋。",
    "hi-IN": "सही — उनचास। और उनतीस गिरजाघर व सात सौ सत्रह घर भी।",
-   "tr-TR": "Doğru — kırk dokuz. Ayrıca yirmi dokuz kilise ve yedi yüz on yedi ev."
+   "tr-TR": "Doğru — kırk dokuz. Ayrıca yirmi dokuz kilise ve yedi yüz on yedi ev.",
+   "ar": "صحيح — تسعة وأربعون. وفوق ذلك تسع وعشرون كنيسة وسبعمئة وسبعة عشر منزلًا."
   },
   "q.6": {
    "ru-RU": "Сколько девочек пришли на первые занятия прогимназии в октябре 1904 года?",
@@ -1931,7 +2096,8 @@
    "fr-FR": "Combien de filles vinrent aux premiers cours du pro-gymnase en octobre 1904 ?",
    "zh-Hans": "1904年10月有多少女孩来上预科中学的第一堂课？",
    "hi-IN": "अक्टूबर 1904 में प्रो-जिम्नेज़ियम की पहली कक्षाओं में कितनी लड़कियाँ आईं?",
-   "tr-TR": "Ekim 1904’te pro-gimnazyumun ilk derslerine kaç kız geldi?"
+   "tr-TR": "Ekim 1904’te pro-gimnazyumun ilk derslerine kaç kız geldi?",
+   "ar": "كم فتاة جاءت إلى أولى حصص المدرسة الإعدادية للبنات في أكتوبر 1904؟"
   },
   "r.6": {
    "ru-RU": "Верно — сорок шесть. Каждая выдержала вступительный экзамен.",
@@ -1941,7 +2107,8 @@
    "fr-FR": "Exact — quarante-six. Chacune avait réussi l’examen d’entrée.",
    "zh-Hans": "正确——四十六名。每一位都通过了入学考试。",
    "hi-IN": "सही — छियालीस। हर एक ने प्रवेश परीक्षा पास की थी।",
-   "tr-TR": "Doğru — kırk altı. Her biri giriş sınavını geçmişti."
+   "tr-TR": "Doğru — kırk altı. Her biri giriş sınavını geçmişti.",
+   "ar": "صحيح — ست وأربعون. وقد اجتازت كل واحدة منهن امتحان القبول."
   },
   "q.7": {
    "ru-RU": "В каком году возродился женский монастырь на Владимирской горке?",
@@ -1951,7 +2118,8 @@
    "fr-FR": "En quelle année le monastère de la colline Saint-Vladimir a-t-il renaît ?",
    "zh-Hans": "弗拉基米尔山上的女修道院是哪一年重生的？",
    "hi-IN": "व्लादिमीर पहाड़ी का मठ किस साल पुनर्जीवित हुआ?",
-   "tr-TR": "Vladimir Tepesi’ndeki manastır hangi yıl yeniden doğdu?"
+   "tr-TR": "Vladimir Tepesi’ndeki manastır hangi yıl yeniden doğdu?",
+   "ar": "في أي عام بُعث دير النساء على تلة فلاديمير من جديد؟"
   },
   "r.7": {
    "ru-RU": "Верно — 25 марта 1991 года, Спасо-Преображенский.",
@@ -1961,7 +2129,8 @@
    "fr-FR": "Exact — le 25 mars 1991, sous le nom de monastère de la Transfiguration.",
    "zh-Hans": "正确——1991年3月25日，主显圣容修道院。",
    "hi-IN": "सही — 25 मार्च 1991, रूपांतरण मठ के रूप में।",
-   "tr-TR": "Doğru — 25 Mart 1991’de, Başkalaşım Manastırı olarak."
+   "tr-TR": "Doğru — 25 Mart 1991’de, Başkalaşım Manastırı olarak.",
+   "ar": "صحيح — في 25 مارس 1991، باسم دير التجلّي."
   },
   "q.8": {
    "ru-RU": "Сколько фигурок героев легенд стоит на парапетах залива?",
@@ -1971,7 +2140,8 @@
    "fr-FR": "Combien de figurines de héros légendaires se trouvent sur les parapets de la baie ?",
    "zh-Hans": "海湾护栏上有多少个传说英雄的雕像？",
    "hi-IN": "खाड़ी की मुँडेरों पर किंवदंती-नायकों की कितनी मूर्तियाँ हैं?",
-   "tr-TR": "Körfezin korkuluklarında kaç efsane kahramanı heykelciği var?"
+   "tr-TR": "Körfezin korkuluklarında kaç efsane kahramanı heykelciği var?",
+   "ar": "كم تمثالًا لأبطال الأساطير يقف على حواجز الخليج؟"
   },
   "r.8": {
    "ru-RU": "Верно — шесть. И одна из них — я.",
@@ -1981,7 +2151,8 @@
    "fr-FR": "Exact — six. Et l’une d’elles, c’est moi.",
    "zh-Hans": "正确——六个。其中一个就是我。",
    "hi-IN": "सही — छह। और उनमें से एक मैं हूँ।",
-   "tr-TR": "Doğru — altı. Ve biri benim."
+   "tr-TR": "Doğru — altı. Ve biri benim.",
+   "ar": "صحيح — ستة. وأحدها أنا."
   },
   "spk.fonbrant": {
    "ru-RU": "Фон Брант, казанский губернатор, 1773",
@@ -1991,7 +2162,8 @@
    "fr-FR": "Von Brandt, gouverneur de Kazan, 1773",
    "zh-Hans": "冯·勃兰特，喀山省长，1773",
    "hi-IN": "फ़ॉन ब्रांट, कज़ान के गवर्नर, 1773",
-   "tr-TR": "von Brandt, Kazan Valisi, 1773"
+   "tr-TR": "von Brandt, Kazan Valisi, 1773",
+   "ar": "فون برانت، حاكم قازان، 1773"
   },
   "ui.map2": {
    "ru-RU": "Этап «Купеческий город»",
@@ -2001,7 +2173,8 @@
    "fr-FR": "Étape « La ville des marchands »",
    "zh-Hans": "关卡：“商人之城”",
    "hi-IN": "चरण: «व्यापारियों का नगर»",
-   "tr-TR": "Etap: “Tüccarlar Şehri”"
+   "tr-TR": "Etap: “Tüccarlar Şehri”",
+   "ar": "المرحلة: «مدينة التجّار»"
   },
   "ui.tab_route": {
    "ru-RU": "Маршрут",
@@ -2011,7 +2184,8 @@
    "fr-FR": "Parcours",
    "zh-Hans": "路线",
    "hi-IN": "मार्ग",
-   "tr-TR": "Rota"
+   "tr-TR": "Rota",
+   "ar": "المسار"
   },
   "ui.tab_finds": {
    "ru-RU": "Находки",
@@ -2021,7 +2195,8 @@
    "fr-FR": "Trouvailles",
    "zh-Hans": "发现",
    "hi-IN": "खोजें",
-   "tr-TR": "Buluntular"
+   "tr-TR": "Buluntular",
+   "ar": "المكتشفات"
   },
   "ui.tab_setner": {
    "ru-RU": "Сетнер",
@@ -2031,7 +2206,8 @@
    "fr-FR": "Setner",
    "zh-Hans": "塞特涅尔",
    "hi-IN": "सेत्नेर",
-   "tr-TR": "Setner"
+   "tr-TR": "Setner",
+   "ar": "سيتنر"
   },
   "ui.tab_about": {
    "ru-RU": "О проекте",
@@ -2041,7 +2217,8 @@
    "fr-FR": "À propos",
    "zh-Hans": "关于",
    "hi-IN": "परियोजना",
-   "tr-TR": "Hakkında"
+   "tr-TR": "Hakkında",
+   "ar": "عن المشروع"
   },
   "ui.about_title": {
    "ru-RU": "Как устроена игра",
@@ -2051,7 +2228,8 @@
    "fr-FR": "Comment le jeu est construit",
    "zh-Hans": "这个游戏是怎样做成的",
    "hi-IN": "यह खेल कैसे बना है",
-   "tr-TR": "Oyun nasıl yapıldı"
+   "tr-TR": "Oyun nasıl yapıldı",
+   "ar": "كيف صُنعت اللعبة"
   },
   "ui.about_text": {
    "ru-RU": "Каждый текст в игре стоит на документе, научной работе или честно назван преданием. Источник — рядом с каждым рассказом. Мы ничего не придумываем: если факта нет, мы так и говорим.",
@@ -2061,7 +2239,8 @@
    "fr-FR": "Chaque texte du jeu repose sur un document, un travail scientifique, ou est honnêtement présenté comme une légende. La source accompagne chaque récit. Nous n’inventons rien : s’il n’y a pas de fait, nous le disons.",
    "zh-Hans": "游戏中的每一段文字都基于文献、学术著作，或者被诚实地标注为传说。每个故事旁边都有出处。我们不编造任何东西：如果没有事实依据，我们会直说。",
    "hi-IN": "खेल का हर पाठ किसी दस्तावेज़, शोध-कार्य पर टिका है या ईमानदारी से किंवदंती कहा गया है। हर कहानी के साथ स्रोत है। हम कुछ नहीं गढ़ते: तथ्य न हो तो हम वैसा ही कहते हैं।",
-   "tr-TR": "Oyundaki her metin bir belgeye, bilimsel bir çalışmaya dayanır ya da dürüstçe efsane diye adlandırılır. Kaynak her anlatının yanındadır. Hiçbir şey uydurmuyoruz: olgu yoksa bunu söyleriz."
+   "tr-TR": "Oyundaki her metin bir belgeye, bilimsel bir çalışmaya dayanır ya da dürüstçe efsane diye adlandırılır. Kaynak her anlatının yanındadır. Hiçbir şey uydurmuyoruz: olgu yoksa bunu söyleriz.",
+   "ar": "كل نص في اللعبة يستند إلى وثيقة أو عمل علمي، أو يُسمّى بصدق حكايةً من حكايات المدينة. المصدر بجانب كل حكاية. نحن لا نختلق شيئًا: حيث لا توجد حقيقة، نقول ذلك."
   },
   "ui.privacy": {
    "ru-RU": "Приложение не собирает никаких данных. Имя и телефон не нужны — только код, если захотите продолжить с Сетнером.",
@@ -2071,7 +2250,8 @@
    "fr-FR": "L’application ne collecte aucune donnée. Ni nom ni téléphone — seulement votre code, si vous voulez continuer avec Setner.",
    "zh-Hans": "本应用不收集任何数据。不需要姓名和电话——只需您的代码，如果您想和塞特涅尔继续的话。",
    "hi-IN": "ऐप कोई डेटा इकट्ठा नहीं करता। नाम-फ़ोन की ज़रूरत नहीं — बस आपका कोड, अगर आप सेत्नेर के साथ आगे बढ़ना चाहें।",
-   "tr-TR": "Uygulama hiçbir veri toplamaz. Ad ve telefon gerekmez — yalnızca kodunuz, Setner ile devam etmek isterseniz."
+   "tr-TR": "Uygulama hiçbir veri toplamaz. Ad ve telefon gerekmez — yalnızca kodunuz, Setner ile devam etmek isterseniz.",
+   "ar": "لا يجمع التطبيق أي بيانات. لا حاجة إلى اسم أو رقم هاتف — فقط الرمز، إن أردت المتابعة مع سيتنر."
   },
   "ui.reset": {
    "ru-RU": "Начать заново",
@@ -2081,7 +2261,8 @@
    "fr-FR": "Recommencer",
    "zh-Hans": "重新开始",
    "hi-IN": "फिर से शुरू करें",
-   "tr-TR": "Baştan başla"
+   "tr-TR": "Baştan başla",
+   "ar": "البدء من جديد"
   },
   "ui.reset_confirm": {
    "ru-RU": "Сбросить прогресс и коллекцию?",
@@ -2091,7 +2272,8 @@
    "fr-FR": "Réinitialiser la progression et la collection ?",
    "zh-Hans": "重置进度和收藏？",
    "hi-IN": "प्रगति और संग्रह रीसेट करें?",
-   "tr-TR": "İlerleme ve koleksiyon sıfırlansın mı?"
+   "tr-TR": "İlerleme ve koleksiyon sıfırlansın mı?",
+   "ar": "هل تريد مسح التقدّم والمجموعة؟"
   },
   "ui.done": {
    "ru-RU": "пройдено",
@@ -2101,7 +2283,8 @@
    "fr-FR": "terminé",
    "zh-Hans": "已完成",
    "hi-IN": "पूरा हुआ",
-   "tr-TR": "tamamlandı"
+   "tr-TR": "tamamlandı",
+   "ar": "منجزة"
   },
   "ui.you_are_here": {
    "ru-RU": "вы здесь",
@@ -2111,7 +2294,8 @@
    "fr-FR": "vous êtes ici",
    "zh-Hans": "您在这里",
    "hi-IN": "आप यहाँ हैं",
-   "tr-TR": "buradasınız"
+   "tr-TR": "buradasınız",
+   "ar": "أنت هنا"
   },
   "ui.ahead": {
    "ru-RU": "впереди",
@@ -2121,7 +2305,8 @@
    "fr-FR": "à venir",
    "zh-Hans": "前方",
    "hi-IN": "आगे",
-   "tr-TR": "ileride"
+   "tr-TR": "ileride",
+   "ar": "قادمة"
   },
   "ui.kind_museum": {
    "ru-RU": "подлинный предмет",
@@ -2131,7 +2316,8 @@
    "fr-FR": "objet authentique",
    "zh-Hans": "真实文物",
    "hi-IN": "असली वस्तु",
-   "tr-TR": "özgün nesne"
+   "tr-TR": "özgün nesne",
+   "ar": "قطعة أصلية"
   },
   "ui.kind_evidence": {
    "ru-RU": "свидетельство",
@@ -2141,7 +2327,8 @@
    "fr-FR": "témoignage",
    "zh-Hans": "文献证据",
    "hi-IN": "साक्ष्य",
-   "tr-TR": "tanıklık"
+   "tr-TR": "tanıklık",
+   "ar": "شهادة"
   },
   "ui.kind_game": {
    "ru-RU": "игровая находка",
@@ -2151,7 +2338,8 @@
    "fr-FR": "trouvaille de jeu",
    "zh-Hans": "游戏发现",
    "hi-IN": "खेल की खोज",
-   "tr-TR": "oyun buluntusu"
+   "tr-TR": "oyun buluntusu",
+   "ar": "اكتشاف في اللعبة"
   },
   "ui.setner_intro": {
    "ru-RU": "Сетнер — рассказчик этой прогулки и ваш проводник в Telegram. Покажите ему код — он отметит прохождение и подскажет, что дальше.",
@@ -2161,7 +2349,8 @@
    "fr-FR": "Setner est le narrateur de cette promenade et votre guide sur Telegram. Montrez-lui votre code — il notera votre parcours et vous dira la suite.",
    "zh-Hans": "塞特涅尔是这次漫步的讲述者，也是您在 Telegram 上的向导。把代码给他看——他会记录您的进度并告诉您接下来做什么。",
    "hi-IN": "सेत्नेर इस सैर के कथावाचक और Telegram पर आपके मार्गदर्शक हैं। उन्हें अपना कोड दिखाइए — वे आपकी प्रगति दर्ज करेंगे और आगे का रास्ता बताएँगे।",
-   "tr-TR": "Setner bu yürüyüşün anlatıcısı ve Telegram’daki rehberinizdir. Ona kodunuzu gösterin — ilerlemenizi kaydeder ve sırada ne olduğunu söyler."
+   "tr-TR": "Setner bu yürüyüşün anlatıcısı ve Telegram’daki rehberinizdir. Ona kodunuzu gösterin — ilerlemenizi kaydeder ve sırada ne olduğunu söyler.",
+   "ar": "سيتنر هو راوي هذه الجولة ودليلك في تيليغرام. أرِه رمزك — وسيسجّل تقدّمك ويخبرك بما يأتي بعد ذلك."
   },
   "ui.rank_1": {
    "ru-RU": "Летописец Чебоксар",
@@ -2171,7 +2360,8 @@
    "fr-FR": "Chroniqueur de Tcheboksary",
    "zh-Hans": "切博克萨雷编年史家",
    "hi-IN": "चेबोक्सारी का इतिहासकार",
-   "tr-TR": "Çeboksarı Vakanüvisi"
+   "tr-TR": "Çeboksarı Vakanüvisi",
+   "ar": "مؤرّخ تشيبوكساري"
   },
   "ui.rank_2": {
    "ru-RU": "Краевед",
@@ -2181,7 +2371,8 @@
    "fr-FR": "Historien local",
    "zh-Hans": "乡土史家",
    "hi-IN": "स्थानीय इतिहासवेत्ता",
-   "tr-TR": "Yerel tarihçi"
+   "tr-TR": "Yerel tarihçi",
+   "ar": "باحث في تاريخ المنطقة"
   },
   "ui.rank_3": {
    "ru-RU": "Добрый гость города",
@@ -2191,7 +2382,8 @@
    "fr-FR": "Bon hôte de la ville",
    "zh-Hans": "城市的好客人",
    "hi-IN": "नगर का भला अतिथि",
-   "tr-TR": "Şehrin iyi konuğu"
+   "tr-TR": "Şehrin iyi konuğu",
+   "ar": "ضيف كريم على المدينة"
   },
   "ui.stage2": {
    "ru-RU": "К этапу «Купеческий город»",
@@ -2201,7 +2393,8 @@
    "fr-FR": "Vers l’étape « La ville des marchands »",
    "zh-Hans": "前往“商人之城”",
    "hi-IN": "«व्यापारियों का नगर» चरण की ओर",
-   "tr-TR": "“Tüccarlar Şehri” etabına"
+   "tr-TR": "“Tüccarlar Şehri” etabına",
+   "ar": "إلى مرحلة «مدينة التجّار»"
   },
   "ui.read_only": {
    "ru-RU": "Читать можно сразу; задания — по порядку.",
@@ -2211,7 +2404,8 @@
    "fr-FR": "La lecture est libre ; les défis se font dans l’ordre.",
    "zh-Hans": "随时可以阅读；任务按顺序完成。",
    "hi-IN": "पढ़ना कभी भी; कार्य क्रम से।",
-   "tr-TR": "Hemen okuyabilirsiniz; görevler sırayla."
+   "tr-TR": "Hemen okuyabilirsiniz; görevler sırayla.",
+   "ar": "يمكنك القراءة فورًا؛ أما المهام فبالترتيب."
   },
   "ui.copy": {
    "ru-RU": "Скопировать",
@@ -2221,7 +2415,8 @@
    "fr-FR": "Copier",
    "zh-Hans": "复制",
    "hi-IN": "कॉपी करें",
-   "tr-TR": "Kopyala"
+   "tr-TR": "Kopyala",
+   "ar": "نسخ"
   },
   "ui.copied": {
    "ru-RU": "Скопировано",
@@ -2231,7 +2426,8 @@
    "fr-FR": "Copié",
    "zh-Hans": "已复制",
    "hi-IN": "कॉपी हो गया",
-   "tr-TR": "Kopyalandı"
+   "tr-TR": "Kopyalandı",
+   "ar": "تم النسخ"
   },
   "ui.version": {
    "ru-RU": "Версия содержания",
@@ -2241,7 +2437,8 @@
    "fr-FR": "Version du contenu",
    "zh-Hans": "内容版本",
    "hi-IN": "सामग्री संस्करण",
-   "tr-TR": "İçerik sürümü"
+   "tr-TR": "İçerik sürümü",
+   "ar": "إصدار المحتوى"
   },
   "ui.unity_soon": {
    "ru-RU": "3D-сцены этой точки появятся в следующей версии.",
@@ -2251,7 +2448,8 @@
    "fr-FR": "Les scènes 3D de cette étape arriveront dans la prochaine version.",
    "zh-Hans": "本站的3D场景将在下一版本中推出。",
    "hi-IN": "इस पड़ाव के 3D दृश्य अगले संस्करण में आएँगे।",
-   "tr-TR": "Bu durağın 3B sahneleri sonraki sürümde gelecek."
+   "tr-TR": "Bu durağın 3B sahneleri sonraki sürümde gelecek.",
+   "ar": "ستتوفر المشاهد ثلاثية الأبعاد لهذه المحطة في الإصدار القادم."
   },
   "art.A8_TORGOVY_DOM.name": {
    "ru-RU": "Торговый дом «П. Е. Ефремов с сыновьями»",
@@ -2261,7 +2459,8 @@
    "fr-FR": "Maison de commerce « P. E. Efremov et fils »",
    "zh-Hans": "“П. Е. 叶夫列莫夫父子”商号",
    "hi-IN": "व्यापारिक घराना «पी. ये. येफ़्रेमोव और पुत्र»",
-   "tr-TR": "“P. Ye. Yefremov ve Oğulları” ticarethanesi"
+   "tr-TR": "“P. Ye. Yefremov ve Oğulları” ticarethanesi",
+   "ar": "البيت التجاري «ب. ي. يفريموف وأبناؤه»"
   },
   "art.A8_TORGOVY_DOM.desc": {
    "ru-RU": "1906 год. Основан с капиталом 325 тысяч рублей; распорядитель — Николай Ефремов. Свидетельство по Чувашской энциклопедии.",
@@ -2271,7 +2470,8 @@
    "fr-FR": "1906. Fondée avec un capital de 325 000 roubles ; gérant Nikolaï Efremov. Témoignage d’après l’Encyclopédie tchouvache.",
    "zh-Hans": "1906年。创立资本32.5万卢布；经理尼古拉·叶夫列莫夫。据楚瓦什百科全书。",
    "hi-IN": "1906। 325,000 रूबल पूँजी से स्थापित; प्रबंधक निकोलाई येफ़्रेमोव। चुवाश विश्वकोश के अनुसार।",
-   "tr-TR": "1906. 325 bin ruble sermayeyle kuruldu; yöneticisi Nikolay Yefremov. Çuvaş Ansiklopedisi’ne göre."
+   "tr-TR": "1906. 325 bin ruble sermayeyle kuruldu; yöneticisi Nikolay Yefremov. Çuvaş Ansiklopedisi’ne göre.",
+   "ar": "عام 1906. تأسّس برأس مال قدره 325 ألف روبل؛ وكان مديره نيكولاي يفريموف. شهادة بحسب الموسوعة التشوفاشية."
   },
   "art.A9_DOKLAD_1773.name": {
    "ru-RU": "Доклад о пожаре 1773 года",
@@ -2281,7 +2481,8 @@
    "fr-FR": "Rapport sur l’incendie de 1773",
    "zh-Hans": "1773年火灾报告",
    "hi-IN": "1773 की आग की रिपोर्ट",
-   "tr-TR": "1773 yangını raporu"
+   "tr-TR": "1773 yangını raporu",
+   "ar": "تقرير عن حريق عام 1773"
   },
   "art.A9_DOKLAD_1773.desc": {
    "ru-RU": "Донесение казанского губернатора Фон Бранта в Сенат: 29 церквей, 717 домов, 49 амбаров. Свидетельство по учебному занятию «Тайны древнего кремля».",
@@ -2291,7 +2492,8 @@
    "fr-FR": "Rapport du gouverneur de Kazan von Brandt au Sénat : 29 églises, 717 maisons, 49 granges. Témoignage d’après le module « Secrets du vieux kremlin ».",
    "zh-Hans": "喀山省长冯·勃兰特给参议院的报告：29座教堂、717栋房屋、49座仓房。据教学课程《古克里姆林的秘密》。",
    "hi-IN": "कज़ान के गवर्नर फ़ॉन ब्रांट की सीनेट को रिपोर्ट: 29 गिरजाघर, 717 घर, 49 गोदाम। शिक्षण-पाठ «प्राचीन क्रेमलिन के रहस्य» के अनुसार।",
-   "tr-TR": "Kazan Valisi von Brandt’ın Senato’ya raporu: 29 kilise, 717 ev, 49 ambar. “Eski Kremlin’in Sırları” ders modülüne göre."
+   "tr-TR": "Kazan Valisi von Brandt’ın Senato’ya raporu: 29 kilise, 717 ev, 49 ambar. “Eski Kremlin’in Sırları” ders modülüne göre.",
+   "ar": "تقرير حاكم قازان فون برانت إلى مجلس الشيوخ: 29 كنيسة، 717 منزلًا، 49 مخزنًا. شهادة بحسب الدرس التعليمي «أسرار الكرملين القديم»."
   },
   "art.A10_PORTRETY_1908.name": {
    "ru-RU": "Портреты Ефремовых в прогимназии",
@@ -2301,7 +2503,8 @@
    "fr-FR": "Les portraits Efremov au pro-gymnase",
    "zh-Hans": "预科中学里的叶夫列莫夫肖像",
    "hi-IN": "प्रो-जिम्नेज़ियम में येफ़्रेमोव के चित्र",
-   "tr-TR": "Pro-gimnazyumdaki Yefremov portreleri"
+   "tr-TR": "Pro-gimnazyumdaki Yefremov portreleri",
+   "ar": "صور آل يفريموف في المدرسة الإعدادية"
   },
   "art.A10_PORTRETY_1908.desc": {
    "ru-RU": "1908 год. По решению городской думы в прогимназии установили портреты почётной попечительницы Екатерины Ефремовой и её мужа Прокопия. Свидетельство.",
@@ -2311,7 +2514,8 @@
    "fr-FR": "1908. Sur décision de la Douma municipale, les portraits de la protectrice d’honneur Ekaterina Efremova et de son mari Prokopi furent placés au pro-gymnase. Témoignage.",
    "zh-Hans": "1908年。经市杜马决定，预科中学里挂起了名誉监护人叶卡捷琳娜·叶夫列莫娃及其丈夫普罗科皮的肖像。文献证据。",
    "hi-IN": "1908। नगर ड्यूमा के निर्णय से प्रो-जिम्नेज़ियम में मानद संरक्षिका येकातेरिना येफ़्रेमोवा और उनके पति प्रोकोपी के चित्र लगाए गए। साक्ष्य।",
-   "tr-TR": "1908. Şehir duması kararıyla pro-gimnazyuma onursal hamiye Yekaterina Yefremova ile eşi Prokopiy’in portreleri asıldı. Tanıklık."
+   "tr-TR": "1908. Şehir duması kararıyla pro-gimnazyuma onursal hamiye Yekaterina Yefremova ile eşi Prokopiy’in portreleri asıldı. Tanıklık.",
+   "ar": "عام 1908. بقرار من مجلس المدينة عُلّقت في المدرسة الإعدادية صورتا الراعية الفخرية يكاترينا يفريموفا وزوجها بروكوبي. شهادة."
   },
   "art.A11_PROEKT_1907.name": {
    "ru-RU": "Проект усыпальницы, 1907",
@@ -2321,7 +2525,8 @@
    "fr-FR": "Projet du tombeau, 1907",
    "zh-Hans": "陵墓设计图，1907",
    "hi-IN": "समाधि की परियोजना, 1907",
-   "tr-TR": "Türbe projesi, 1907"
+   "tr-TR": "Türbe projesi, 1907",
+   "ar": "مشروع الضريح، 1907"
   },
   "art.A11_PROEKT_1907.desc": {
    "ru-RU": "Архитекторы К. С. Олешкевич, М. Я. Деминев, Ф. Н. Малиновский. Часовня построена в 1908–1911 годах. Свидетельство по Чувашской энциклопедии.",
@@ -2331,7 +2536,8 @@
    "fr-FR": "Architectes K. S. Olechkevitch, M. Ya. Deminev, F. N. Malinovski. La chapelle fut construite en 1908–1911. Témoignage d’après l’Encyclopédie tchouvache.",
    "zh-Hans": "建筑师К. С. 奥列什克维奇、М. Я. 杰米涅夫、Ф. Н. 马利诺夫斯基。小教堂建于1908至1911年。据楚瓦什百科全书。",
    "hi-IN": "वास्तुकार के. एस. ओलेश्केविच, एम. या. देमिनेव, एफ़. एन. मालिनोव्स्की। चैपल 1908–1911 में बना। चुवाश विश्वकोश के अनुसार।",
-   "tr-TR": "Mimarlar K. S. Oleşkeviç, M. Ya. Deminev, F. N. Malinovskiy. Şapel 1908–1911’de yapıldı. Çuvaş Ansiklopedisi’ne göre."
+   "tr-TR": "Mimarlar K. S. Oleşkeviç, M. Ya. Deminev, F. N. Malinovskiy. Şapel 1908–1911’de yapıldı. Çuvaş Ansiklopedisi’ne göre.",
+   "ar": "المعماريون ك. س. أوليشكيفيتش، م. ي. ديمينيف، ف. ن. مالينوفسكي. بُنيت الكنيسة الصغيرة في 1908–1911. شهادة بحسب الموسوعة التشوفاشية."
   },
   "art.A12_FIGURKI.name": {
    "ru-RU": "Шесть фигурок залива",
@@ -2341,7 +2547,8 @@
    "fr-FR": "Les six figurines de la baie",
    "zh-Hans": "海湾的六个雕像",
    "hi-IN": "खाड़ी की छह मूर्तियाँ",
-   "tr-TR": "Körfezin altı heykelciği"
+   "tr-TR": "Körfezin altı heykelciği",
+   "ar": "تماثيل الخليج الستة"
   },
   "art.A12_FIGURKI.desc": {
    "ru-RU": "Девушка на Луне, Лиса-плясунья, Красавица Плаги, Волга, Богатырь Улып, Нарспи и Сетнер. Игровая находка: найдены все шесть.",
@@ -2351,7 +2558,8 @@
    "fr-FR": "La Jeune fille sur la Lune, la Renarde danseuse, la belle Plagui, Volga, le preux Oulyp, Narspi et Setner. Trouvaille de jeu : toutes les six trouvées.",
    "zh-Hans": "月亮上的少女、跳舞的狐狸、美人普拉吉、伏尔加、勇士乌雷普、纳尔斯皮与塞特涅尔。游戏发现：六个全部找到。",
    "hi-IN": "चाँद पर लड़की, नाचती लोमड़ी, सुंदरी प्लागी, वोल्गा, वीर उलिप, नार्स्पी और सेत्नेर। खेल की खोज: सभी छह मिल गए।",
-   "tr-TR": "Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp, Narspi ile Setner. Oyun buluntusu: altısı da bulundu."
+   "tr-TR": "Ay’daki Kız, Dansçı Tilki, Güzel Plagi, Volga, Bahadır Ulıp, Narspi ile Setner. Oyun buluntusu: altısı da bulundu.",
+   "ar": "الفتاة على القمر، والثعلبة الراقصة، والجميلة بلاغي، والفولغا، والبطل أوليب، ونارسبي وسيتنر. اكتشاف في اللعبة: عُثر على الستة جميعًا."
   },
   "ui.about": {
    "ru-RU": "О проекте",
@@ -2361,7 +2569,8 @@
    "fr-FR": "À propos",
    "zh-Hans": "关于项目",
    "hi-IN": "परियोजना के बारे में",
-   "tr-TR": "Proje hakkında"
+   "tr-TR": "Proje hakkında",
+   "ar": "عن المشروع"
   },
   "ui.pwa_hint": {
    "ru-RU": "Чтобы открывать как приложение на iPhone: «Поделиться» → «На экран „Домой“».",
@@ -2371,7 +2580,140 @@
    "fr-FR": "Pour l’ouvrir comme une application sur iPhone : Partager → Sur l’écran d’accueil.",
    "zh-Hans": "在 iPhone 上以应用方式打开：分享 → 添加到主屏幕。",
    "hi-IN": "iPhone पर ऐप की तरह खोलने के लिए: शेयर → होम स्क्रीन पर जोड़ें।",
-   "tr-TR": "iPhone’da uygulama gibi açmak için: Paylaş → Ana Ekrana Ekle."
+   "tr-TR": "iPhone’da uygulama gibi açmak için: Paylaş → Ana Ekrana Ekle.",
+   "ar": "لفتحه كتطبيق على iPhone: «مشاركة» ← «إضافة إلى الشاشة الرئيسية»."
+  },
+  "ui.lang_choose": {
+   "ru-RU": "Выбор языка",
+   "en-GB": "Choose a language",
+   "en-US": "Choose a language",
+   "de-DE": "Sprache wählen",
+   "fr-FR": "Choisir la langue",
+   "zh-Hans": "选择语言",
+   "hi-IN": "भाषा चुनें",
+   "tr-TR": "Dil seçin",
+   "ar": "اختر اللغة"
+  },
+  "ui.lang_endonyms": {
+   "ru-RU": "Каждый язык назван на самом себе",
+   "en-GB": "Each language is named in itself",
+   "en-US": "Each language is named in itself",
+   "de-DE": "Jede Sprache steht in ihrer eigenen Sprache",
+   "fr-FR": "Chaque langue est nommée dans sa propre langue",
+   "zh-Hans": "每种语言均以其自身文字书写",
+   "hi-IN": "हर भाषा का नाम उसी भाषा में लिखा है",
+   "tr-TR": "Her dilin adı kendi dilinde yazılmıştır",
+   "ar": "اسم كل لغة مكتوب بلغتها نفسها"
+  },
+  "ui.lang_suggested": {
+   "ru-RU": "Похоже, это ваш язык",
+   "en-GB": "This looks like your language",
+   "en-US": "This looks like your language",
+   "de-DE": "Das scheint Ihre Sprache zu sein",
+   "fr-FR": "Cela semble être votre langue",
+   "zh-Hans": "这似乎是您的语言",
+   "hi-IN": "लगता है यह आपकी भाषा है",
+   "tr-TR": "Diliniz bu gibi görünüyor",
+   "ar": "يبدو أن هذه لغتك"
+  },
+  "ui.lang_continue": {
+   "ru-RU": "Продолжить",
+   "en-GB": "Continue",
+   "en-US": "Continue",
+   "de-DE": "Weiter",
+   "fr-FR": "Continuer",
+   "zh-Hans": "继续",
+   "hi-IN": "जारी रखें",
+   "tr-TR": "Devam et",
+   "ar": "متابعة"
+  },
+  "ui.voice_choose": {
+   "ru-RU": "Произношение",
+   "en-GB": "Pronunciation",
+   "en-US": "Pronunciation",
+   "de-DE": "Aussprache",
+   "fr-FR": "Prononciation",
+   "zh-Hans": "发音",
+   "hi-IN": "उच्चारण",
+   "tr-TR": "Telaffuz",
+   "ar": "النطق"
+  },
+  "ui.voice_hint": {
+   "ru-RU": "Так будет звучать голос, когда появится озвучка. Текст останется на выбранном языке.",
+   "en-GB": "This is how the voice will sound once narration arrives. The text stays in the language you chose.",
+   "en-US": "This is how the voice will sound once narration arrives. The text stays in the language you chose.",
+   "de-DE": "So klingt die Stimme, sobald es eine Vertonung gibt. Der Text bleibt in der gewählten Sprache.",
+   "fr-FR": "C’est ainsi que sonnera la voix lorsque la narration sera disponible. Le texte reste dans la langue choisie.",
+   "zh-Hans": "语音上线后将按此发音播放。文字仍使用您选择的语言。",
+   "hi-IN": "आवाज़ उपलब्ध होने पर वह इसी उच्चारण में सुनाई देगी। पाठ आपकी चुनी हुई भाषा में ही रहेगा।",
+   "tr-TR": "Seslendirme geldiğinde ses böyle duyulacak. Metin seçtiğiniz dilde kalır.",
+   "ar": "هكذا سيبدو الصوت عند توفر التعليق الصوتي. ويبقى النص باللغة التي اخترتها."
+  },
+  "ui.lang_draft_badge": {
+   "ru-RU": "черновик — вычитка носителем впереди",
+   "en-GB": "draft — native-speaker review to come",
+   "en-US": "draft — native-speaker review to come",
+   "de-DE": "Entwurf – Prüfung durch Muttersprachler folgt",
+   "fr-FR": "brouillon — relecture par un locuteur natif à venir",
+   "zh-Hans": "草稿——尚待母语者审校",
+   "hi-IN": "मसौदा — मूल भाषी द्वारा जाँच अभी बाकी",
+   "tr-TR": "taslak — anadili konuşan biri kontrol edecek",
+   "ar": "مسودة — بانتظار مراجعة متحدث أصلي"
+  },
+  "ui.restart_rtl": {
+   "ru-RU": "Для письма справа налево приложение перезапустится.",
+   "en-GB": "The app will restart to switch to right-to-left writing.",
+   "en-US": "The app will restart to switch to right-to-left writing.",
+   "de-DE": "Für die Schreibrichtung von rechts nach links startet die App neu.",
+   "fr-FR": "L’application va redémarrer pour passer à l’écriture de droite à gauche.",
+   "zh-Hans": "应用将重新启动，以切换为从右到左的书写方向。",
+   "hi-IN": "दाएँ से बाएँ लिखावट के लिए ऐप फिर से शुरू होगा।",
+   "tr-TR": "Sağdan sola yazıya geçmek için uygulama yeniden başlayacak.",
+   "ar": "سيُعاد تشغيل التطبيق للتبديل إلى الكتابة من اليمين إلى اليسار."
+  },
+  "ui.restart_btn": {
+   "ru-RU": "Перезапустить",
+   "en-GB": "Restart",
+   "en-US": "Restart",
+   "de-DE": "Neu starten",
+   "fr-FR": "Redémarrer",
+   "zh-Hans": "重新启动",
+   "hi-IN": "फिर से शुरू करें",
+   "tr-TR": "Yeniden başlat",
+   "ar": "إعادة التشغيل"
+  },
+  "ui.listen": {
+   "ru-RU": "Послушать",
+   "en-GB": "Listen",
+   "en-US": "Listen",
+   "de-DE": "Anhören",
+   "fr-FR": "Écouter",
+   "zh-Hans": "收听",
+   "hi-IN": "सुनें",
+   "tr-TR": "Dinle",
+   "ar": "استمع"
+  },
+  "finds.count": {
+   "ru-RU": "{count, plural, one {# находка} few {# находки} many {# находок} other {# находки}}",
+   "en-GB": "{count, plural, one {# find} other {# finds}}",
+   "en-US": "{count, plural, one {# find} other {# finds}}",
+   "de-DE": "{count, plural, one {# Fund} other {# Funde}}",
+   "fr-FR": "{count, plural, one {# trouvaille} other {# trouvailles}}",
+   "zh-Hans": "{count, plural, other {# 件发现}}",
+   "hi-IN": "{count, plural, one {# खोज} other {# खोजें}}",
+   "tr-TR": "{count, plural, other {# buluntu}}",
+   "ar": "{count, plural, zero {لا اكتشافات} one {اكتشاف واحد} two {اكتشافان} few {# اكتشافات} many {# اكتشافًا} other {# اكتشاف}}"
+  },
+  "finds.you_found": {
+   "ru-RU": "Вы нашли {count, plural, one {# находку} few {# находки} many {# находок} other {# находки}}",
+   "en-GB": "You’ve collected {count, plural, one {# find} other {# finds}}",
+   "en-US": "You’ve collected {count, plural, one {# find} other {# finds}}",
+   "de-DE": "Sie haben {count, plural, one {# Fund} other {# Funde}} gemacht",
+   "fr-FR": "Vous avez fait {count, plural, one {# trouvaille} other {# trouvailles}}",
+   "zh-Hans": "您共找到 {count, plural, other {# 件发现}}",
+   "hi-IN": "{count, plural, one {आपने # खोज की} other {आपने # खोजें कीं}}",
+   "tr-TR": "{count, plural, other {# buluntu buldunuz}}",
+   "ar": "{count, plural, zero {لم تعثر على أي اكتشاف بعد} one {عثرت على اكتشاف واحد} two {عثرت على اكتشافين} few {عثرت على # اكتشافات} many {عثرت على # اكتشافًا} other {عثرت على # اكتشاف}}"
   }
  },
  "facts": [

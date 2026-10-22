@@ -3,7 +3,8 @@
 //  1) ждёт, пока установится сервис-воркер и скачает все файлы;
 //  2) проверяет манифест и иконку для iPhone;
 //  3) ВЫКЛЮЧАЕТ интернет и перезагружает /route, затем открывает страницы, где ещё не были (/finds, /point/3);
-//  4) проверяет подсказку «установить на iPhone» во вкладке «О проекте».
+//  4) проверяет подсказку «установить на iPhone» во вкладке «О проекте»;
+//  5) языковой пакет: после выбора китайского его шрифт сохранён и работает без интернета.
 // Снимки: qa/screens/20_pwa_offline.png (и для подпапки — 21_pwa_offline_<папка>.png), 22_about_pwa_hint.png.
 // Перед запуском: npm run web:export (и/или npm run web:export:turizm)
 // Запуск: node scripts/pwa-offline-check.mjs [--dir dist] [--base /]
@@ -134,6 +135,27 @@ try {
   const controlled = await page.evaluate(() => !!navigator.serviceWorker.controller);
   ok('страница под управлением воркера', controlled);
 
+  // 2б. языковой пакет: выбираем китайский — его шрифт (≈10 МБ) заранее не качается, а сохраняется при выборе языка
+  await page.goto(`${SITE}/language?from=pwa`);
+  await page.waitForTimeout(800);
+  await page.locator('[data-testid="lang-zh-Hans"]').click();
+  await page.locator('[data-testid="voice-zh-CN"]').click();
+  await page.waitForTimeout(500);
+  const zhCached = await page
+    .waitForFunction(
+      async () => {
+        const k = (await caches.keys()).find((x) => x.startsWith('na-cheboksare-'));
+        return !!k && (await (await caches.open(k)).keys()).some((r) => /NotoSansSC_400Regular/.test(r.url));
+      },
+      null,
+      { timeout: 30000, polling: 300 },
+    )
+    .then(() => true)
+    .catch(() => false);
+  ok('языковой пакет: шрифт китайского сохранён после выбора языка', zhCached);
+  await page.goto(`${SITE}/route`);
+  await waitRendered(page);
+
   // 3. выключаем интернет: и в браузере, и на сервере (сервер обрывает соединения)
   await ctx.setOffline(true);
   networkDown = true;
@@ -154,6 +176,17 @@ try {
     await waitRendered(page);
     ok(`без интернета: ${p} (ещё не открывали)`, r?.status() === 200, `статус ${r?.status()}`);
   }
+
+  // 3б. без интернета китайский шрифт берётся из кэша (тофу нет, вид тот же)
+  await page.goto(`${SITE}/route`);
+  await waitRendered(page);
+  const zhFont = await page
+    .waitForFunction(() => [...document.fonts].some((f) => f.family.replace(/["']/g, '') === 'NotoSansSC' && f.status === 'loaded'), null, { timeout: 15000 })
+    .then(() => true)
+    .catch(() => false);
+  ok('без интернета: выбранный китайский — со своим шрифтом', zhFont);
+  await page.goto(`${SITE}/about`);
+  await waitRendered(page);
 
   // 4. подсказка «установить на iPhone» на вкладке «О проекте» (мы в браузере, не «как приложение»)
   const hint = page.locator('[data-testid="pwa-hint"]').first();

@@ -11,7 +11,7 @@ import { roman } from '../../i18n';
 import { PointStatus, useGame } from '../../state/game';
 
 export default function RouteTab() {
-  const { pal, f, t, tOpt, p, pointStatus, isStageUnlocked, currentStage } = useGame();
+  const { pal, f, t, tOpt, p, pointStatus, isStageUnlocked, currentStage, dir, num } = useGame();
   const cur = currentStage();
   const open = (id: number) => router.push(`/point/${id}`);
 
@@ -23,7 +23,7 @@ export default function RouteTab() {
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, marginTop: 14 }}>
         <FalconMark size={30} />
         <Text style={{ flex: 1, fontFamily: f.display, fontSize: 17, color: pal.ink }}>{t('ui.title')}</Text>
-        <Text style={{ color: pal.gold, fontWeight: '700', fontSize: 15 }}>{p.score} ★</Text>
+        <Text style={{ color: pal.gold, fontWeight: '700', fontSize: 15 }}>{num(p.score)} ★</Text>
       </View>
       {ordered.map((st) => {
         const idx = content.stages.findIndex((s) => s.id === st.id);
@@ -36,8 +36,8 @@ export default function RouteTab() {
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
               <Kicker>{roman(idx + 1)}</Kicker>
               {!name ? <Tag label={t('ui.soon')} /> : null}
-              {finished ? <Tag label={`✓ ${t('ui.done', 'пройдено')}`} color={pal.gold} /> : null}
-              {!unlocked ? <Tag label={`🔒 ${t('ui.ahead', 'впереди')}`} /> : null}
+              {finished ? <Tag label={`✓ ${t('ui.done')}`} color={pal.gold} /> : null}
+              {!unlocked ? <Tag label={`🔒 ${t('ui.ahead')}`} /> : null}
             </View>
             {name ? (
               <H size={22} style={{ marginTop: 4 }}>
@@ -53,7 +53,7 @@ export default function RouteTab() {
             {finished ? (
               <Pressable onPress={() => router.push(`/finish/${st.id}`)} style={{ minHeight: 48, justifyContent: 'center', marginTop: 4 }}>
                 <Text style={{ color: pal.gold, fontFamily: f.bold, fontWeight: f.bold ? undefined : '700', fontSize: 14 }}>
-                  ★ {t('ui.finish_btn')} →
+                  ★ {t('ui.finish_btn')} {dir.fwd}
                 </Text>
               </Pressable>
             ) : null}
@@ -68,7 +68,7 @@ export default function RouteTab() {
         style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 8, marginTop: 18 }}
       >
         <Text style={{ color: pal.muted, fontSize: 13, fontFamily: f.body }}>
-          {t('ui.collection')} · {p.found.length}/{artifactList.length}
+          {t('ui.collection')} · {num(p.found.length)}/{num(artifactList.length)}
         </Text>
         {artifactList.map((a) => {
           const has = p.found.includes(a.id);
@@ -97,14 +97,14 @@ export default function RouteTab() {
 }
 
 function PointRow({ pt, n, status, onPress }: { pt: Point; n: number; status: PointStatus; onPress: () => void }) {
-  const { pal, f, t, tOpt } = useGame();
+  const { pal, f, t, tOpt, num } = useGame();
   const name = tOpt(pt.nameKey);
   const era = pt.era === 'today' ? t('ui.today') : pt.era;
   const numBg = status === 'done' ? pal.gold : 'transparent';
   const numBorder = status === 'done' ? pal.gold : status === 'current' ? pal.varya : pal.line;
   const numColor = status === 'done' ? pal.goldInk : status === 'current' ? pal.varya : pal.muted;
   const stLabel =
-    status === 'done' ? `✓ ${t('ui.done', 'пройдено')}` : status === 'current' ? t('ui.you_are_here', 'вы здесь') : t('ui.ahead', 'впереди');
+    status === 'done' ? `✓ ${t('ui.done')}` : status === 'current' ? t('ui.you_are_here') : t('ui.ahead');
   const stColor = status === 'done' ? pal.gold : status === 'current' ? pal.varya : pal.muted;
   return (
     <Pressable
@@ -137,7 +137,7 @@ function PointRow({ pt, n, status, onPress }: { pt: Point; n: number; status: Po
           justifyContent: 'center',
         }}
       >
-        <Text style={{ color: numColor, fontWeight: '700', fontSize: 15 }}>{n}</Text>
+        <Text style={{ color: numColor, fontWeight: '700', fontSize: 15 }}>{num(n)}</Text>
       </View>
       <View style={{ flex: 1, minWidth: 0 }}>
         <Text numberOfLines={2} style={{ color: pal.ink, fontSize: 15, fontFamily: f.bold, fontWeight: f.bold ? undefined : '700' }}>

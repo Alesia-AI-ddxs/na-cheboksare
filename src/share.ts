@@ -31,9 +31,17 @@ export function openUrl(url?: string) {
   Linking.openURL(url).catch(() => undefined);
 }
 
-/** Ссылка на бота Сетнера с кодом прохождения (бот увидит код в /start). */
-export function setnerLink(base: string | undefined, code: string): string | undefined {
+/**
+ * Ссылка на бота Сетнера с кодом прохождения (бот увидит код в /start) и выбранным языком:
+ * lang — письменный вариант (ru-RU, en-GB, ar…), voice — голосовой (en-IE, ar-EG…), ТЗ мультиязычности р.8.
+ * ВАЖНО для бота: Telegram передаёт боту только параметр start; lang/voice видны в ссылке (и веб-версии бота),
+ * а чтобы бот получил их в /start, нужна договорённость о формате start (см. отчёт этапа 1).
+ */
+export function setnerLink(base: string | undefined, code: string, lang?: string, voice?: string): string | undefined {
   if (!base) return undefined;
   const sep = base.includes('?') ? '&' : '?';
-  return `${base}${sep}start=${encodeURIComponent(code)}`;
+  let url = `${base}${sep}start=${encodeURIComponent(code)}`;
+  if (lang) url += `&lang=${encodeURIComponent(lang)}`;
+  if (voice) url += `&voice=${encodeURIComponent(voice)}`;
+  return url;
 }

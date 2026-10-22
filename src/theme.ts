@@ -1,5 +1,7 @@
 // Цвета и шрифты — перенесены из CSS веб-прототипа игры (turizm/igra/index.html).
 import { Platform, useColorScheme } from 'react-native';
+import { familyNames } from './i18n/fonts';
+import { byCode } from './i18n/languages';
 
 export type Palette = {
   paper: string;
@@ -78,16 +80,25 @@ export function usePalette(): Palette {
   return scheme === 'dark' ? dark : light;
 }
 
-// Шрифты: Prata — заголовки, PT Sans — основной текст (подключены офлайн через expo-font).
-// Для китайского и хинди у этих шрифтов нет знаков — там берём системный шрифт.
-const SYSTEM_SCRIPT_LANGS = ['zh-Hans', 'hi-IN'];
+// Шрифты (ТЗ мультиязычности р.6): латиница и кириллица — фирменная пара Prata (заголовки) + PT Sans (текст);
+// китайский, деванагари, арабское письмо — Noto выбранного письма (src/i18n/fonts.ts, грузится по требованию).
+// Пока шрифт письма не загружен — системный шрифт (квадратиков «□» не будет: система подставит свой).
 const SERIF_FALLBACK = Platform.select({ ios: 'Georgia', android: 'serif', default: 'Georgia, serif' });
 
-export type Fonts = { display?: string; body?: string; bold?: string };
-export function fontsFor(lang: string, loaded: boolean): Fonts {
-  if (SYSTEM_SCRIPT_LANGS.includes(lang)) return { display: undefined, body: undefined, bold: undefined };
-  if (!loaded) return { display: SERIF_FALLBACK, body: undefined, bold: undefined };
-  return { display: 'Prata_400Regular', body: 'PTSans_400Regular', bold: 'PTSans_700Bold' };
+/** spacing=false — разрядка букв запрещена (арабское письмо и деванагари: буквы связаны, разрядка рвёт слова) */
+export type Fonts = { display?: string; body?: string; bold?: string; spacing: boolean };
+export function fontsFor(lang: string, brandLoaded: boolean, scriptLoaded = false): Fonts {
+  const l = byCode(lang);
+  const family = l?.fontFamily ?? 'brand';
+  const spacing = !(l && (l.script === 'arab' || l.script === 'deva'));
+  if (family !== 'brand') {
+    const n = familyNames(family);
+    if (!scriptLoaded || !n) return { display: undefined, body: undefined, bold: undefined, spacing };
+    return { display: n.bold, body: n.regular, bold: n.bold, spacing };
+  }
+  if (!brandLoaded) return { display: SERIF_FALLBACK, body: undefined, bold: undefined, spacing };
+  // в Prata нет части букв (турецкие ğ ş İ) — для таких языков заголовки жирным PT Sans
+  return { display: l?.displayFromBody ? 'PTSans_700Bold' : 'Prata_400Regular', body: 'PTSans_400Regular', bold: 'PTSans_700Bold', spacing };
 }
 
 export const radius = { card: 16, btn: 12, chip: 999 };

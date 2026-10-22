@@ -1,0 +1,139 @@
+{
+ "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.7_2026-10-22.xlsx",
+ "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.7 · 22 октября 2026",
+ "total": 172,
+ "variants": {
+  "ru-RU": {
+   "status": "ИСХОДНИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "Съешь же ещё этих мягких французских булок, да выпей чаю. ЁЪ"
+  },
+  "cv": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Ӑшӑ ҫӗршывӑмӑр, ӗҫчен халӑхӑмӑр, ӳсӗмлӗ ҫулсем · Шупашкар · ӐӖҪӲ"
+  },
+  "mdf": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Мокшень кяль · ё ъ ь ы э ю я · Ё Ъ Ь Ы Э Ю Я"
+  },
+  "myv": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Эрзянь кель · ё ъ ь ы э ю я · Ё Ъ Ь Ы Э Ю Я"
+  },
+  "mhr": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Марий йылме · ҥ ӧ ӱ · Ҥ Ӧ Ӱ"
+  },
+  "mrj": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Кырык мары йӹлмӹ · ӓ ӧ ӱ ӹ · Ӓ Ӧ Ӱ Ӹ"
+  },
+  "tt": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Татарча · ә ө ү җ ң һ · Ә Ө Ү Җ Ң Һ"
+  },
+  "ba": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "Башҡортса · ҡ ғ ҙ ҫ һ ә ө ү ң · Ҡ Ғ Ҙ Ҫ Һ"
+  },
+  "en-US": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "Color, center, elevator · “quotes” — 1,469"
+  },
+  "en-GB": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "Colour, centre, lift · ‘quotes’ — £1,469"
+  },
+  "de-DE": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "Größe, Äpfel, Öl, Übung · ß · „Zitat“"
+  },
+  "fr-FR": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "Œuvre, déjà, Noël, où · ç à â é è ê ë î ï ô ù û ü ÿ · « guillemets »"
+  },
+  "es-ES": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "¿Año? ¡Señor! · á é í ó ú ü ñ"
+  },
+  "es-419": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "¿Año? ¡Señor! · á é í ó ú ü ñ"
+  },
+  "tr-TR": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "Türkçe · ç ğ ı İ ö ş ü · Ç Ğ Ö Ş Ü"
+  },
+  "fa-IR": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": true,
+   "testString": "فارسی · پ چ ژ گ ک ی · ۱۴۶۹"
+  },
+  "zh-Hans": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "中文（简体）· 切博克萨雷 · 伏尔加河 · 楚瓦什"
+  },
+  "zh-Hant": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "中文（繁體）· 切博克薩雷 · 伏爾加河 · 楚瓦什"
+  },
+  "yue-Hant": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "粵語（繁體）· 係 喺 唔 嘅 咗 啲 冇"
+  },
+  "hi-IN": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": false,
+   "testString": "हिन्दी · चेबोक्सरी · वोल्गा · क्षत्रज्ञ"
+  },
+  "mr-IN": {
+   "status": "ЧЕРНОВИК",
+   "strings": 0,
+   "rtl": false,
+   "testString": "मराठी · ळ ॲ · चेबोक्सरी"
+  },
+  "ar": {
+   "status": "ЧЕРНОВИК",
+   "strings": 172,
+   "rtl": true,
+   "testString": "العربية · تشيبوكساري · الفولغا · ١٤٦٩ · 1469"
+  }
+ }
+}

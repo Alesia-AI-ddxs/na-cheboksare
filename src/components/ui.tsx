@@ -104,7 +104,7 @@ export function Kicker({ children, color, style }: { children: React.ReactNode; 
       style={[
         {
           fontSize: 11,
-          letterSpacing: 1.4,
+          letterSpacing: f.spacing ? 1.4 : 0,
           textTransform: 'uppercase',
           color: color ?? pal.gold,
           fontFamily: f.bold,
@@ -192,7 +192,7 @@ export function LayerChip({ layer, label }: { layer: Layer; label: string }) {
         style={{
           color: fg,
           fontSize: 10.5,
-          letterSpacing: 0.8,
+          letterSpacing: f.spacing ? 0.8 : 0,
           textTransform: 'uppercase',
           fontFamily: f.bold,
           fontWeight: f.bold ? undefined : '700',
@@ -236,7 +236,7 @@ export function Tag({ label, color, filled }: { label: string; color?: string; f
 
 /** Раскрывающийся блок («Откуда это известно»). */
 export function Expander({ title, children, initiallyOpen = false }: { title: string; children: React.ReactNode; initiallyOpen?: boolean }) {
-  const { pal, f } = useGame();
+  const { pal, f, dir } = useGame();
   const [open, setOpen] = React.useState(initiallyOpen);
   return (
     <View style={{ marginTop: 10, borderTopWidth: 1, borderStyle: 'dashed', borderColor: pal.line, paddingTop: 4 }}>
@@ -247,7 +247,7 @@ export function Expander({ title, children, initiallyOpen = false }: { title: st
         style={{ minHeight: 40, flexDirection: 'row', alignItems: 'center', gap: 6 }}
       >
         <Text style={{ color: pal.muted, fontSize: 13, fontFamily: f.bold, fontWeight: f.bold ? undefined : '700' }}>
-          {open ? '▾' : '▸'} {title}
+          {open ? dir.collapse : dir.expand} {title}
         </Text>
       </Pressable>
       {open ? <View style={{ paddingBottom: 4 }}>{children}</View> : null}

@@ -1,9 +1,22 @@
 // Состояние игры: язык, режим, код, очки, пройденные точки, находки.
 // Хранится только на устройстве (AsyncStorage). Никуда не отправляется.
+// Язык: выбор письменного варианта и произношения хранит языковой модуль (src/i18n), здесь — связка с экранами.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { I18nManager, Platform } from 'react-native';
 import { content, DEFAULT_LANG, getPoint, getStage, Point, Stage, stagePoints } from '../content';
-import { guessDeviceLang, t as tRaw, tOpt as tOptRaw } from '../i18n';
+import {
+  applyDirection,
+  byCode,
+  defaultVoice,
+  formatNumber,
+  isRtlLocale,
+  loadSavedLocale,
+  setLocale,
+  t as tRaw,
+  tOpt as tOptRaw,
+} from '../i18n';
+import { isScriptFontLoaded, loadFontFor } from '../i18n/fonts';
 import { Fonts, fontsFor, light, Palette, usePalette } from '../theme';
 
 const STORAGE_KEY = 'nacheboksare_app_v1';
@@ -31,7 +44,7 @@ export function makeCode(): string {
 
 function fresh(prev?: Partial<Progress>): Progress {
   return {
-    lang: prev?.lang ?? guessDeviceLang(),
+    lang: byCode(prev?.lang)?.code ?? DEFAULT_LANG,
     mode: prev?.mode ?? null,
     code: prev?.code && CODE_RE.test(prev.code) ? prev.code : makeCode(),
     started: false,
@@ -45,15 +58,31 @@ function fresh(prev?: Partial<Progress>): Progress {
 
 export type PointStatus = 'done' | 'current' | 'ahead';
 
+/** Стрелки и значки, которые в письме справа налево смотрят в другую сторону */
+export type Dir = { back: string; fwd: string; expand: string; collapse: string; end: 'left' | 'right' };
+
+type Vars = Record<string, string | number>;
+
 type Ctx = {
   ready: boolean;
   p: Progress;
   pal: Palette;
   f: Fonts;
+  /** письменный вариант (код из src/i18n/languages.ts) */
   lang: string;
-  t: (key: string, lastResort?: string) => string;
-  tOpt: (key: string | null | undefined) => string | undefined;
-  setLang: (code: string) => void;
+  /** голосовой вариант (произношение) */
+  voice: string;
+  /** язык уже выбран (false — первый запуск: показываем экран выбора языка) */
+  langChosen: boolean;
+  /** интерфейс зеркальный (письмо справа налево) */
+  isRTL: boolean;
+  dir: Dir;
+  t: (key: string, vars?: Vars) => string;
+  tOpt: (key: string | null | undefined, vars?: Vars) => string | undefined;
+  /** число средствами локали (арабские цифры для ar и т.п.) */
+  num: (n: number) => string;
+  /** сменить язык; true — на телефоне нужен перезапуск (смена направления письма) */
+  setLang: (code: string, voice?: string) => Promise<boolean>;
   setMode: (m: Mode) => void;
   start: () => void;
   /** Засчитать точку. Возвращает id этапа, если этап только что завершён. */
@@ -74,15 +103,36 @@ export function GameProvider({ children, fontsLoaded }: { children: React.ReactN
   // с заранее собранной страницей (static export), а потом тема переключается по системе.
   const systemPal = usePalette();
   const pal = ready ? systemPal : light;
+  const [lang, setLangState] = useState(DEFAULT_LANG);
+  const [voice, setVoiceState] = useState(defaultVoice(DEFAULT_LANG));
+  const [langChosen, setLangChosen] = useState(false);
+  const [scriptFont, setScriptFont] = useState(true);
+
+  // шрифт письма выбранного языка (китайский, деванагари, арабский) — только для него, по требованию
+  useEffect(() => {
+    let alive = true;
+    if (isScriptFontLoaded(byCode(lang)?.fontFamily ?? 'brand')) {
+      setScriptFont(true);
+      return;
+    }
+    setScriptFont(false);
+    loadFontFor(lang).then((ok) => {
+      if (alive) setScriptFont(ok);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [lang]);
 
   // загрузка сохранённого прогресса
   useEffect(() => {
     let alive = true;
     (async () => {
+      let saved: Partial<Progress> | null = null;
       try {
         const raw = await AsyncStorage.getItem(STORAGE_KEY);
         if (raw) {
-          const saved = JSON.parse(raw) as Partial<Progress>;
+          saved = JSON.parse(raw) as Partial<Progress>;
           const base = fresh(saved);
           if (alive)
             setP({
@@ -100,6 +150,19 @@ export function GameProvider({ children, fontsLoaded }: { children: React.ReactN
       } catch {
         if (alive) setP(fresh());
       }
+      // язык: сохранённый выбор → язык из прогресса версии 1.0 → язык системы
+      try {
+        const loc = await loadSavedLocale(saved?.lang, !!saved?.started);
+        if (alive) {
+          setLangState(loc.locale);
+          setVoiceState(loc.voice);
+          setLangChosen(loc.chosen);
+          setP((x) => ({ ...x, lang: loc.locale }));
+          if (Platform.OS === 'web') applyDirection(loc.locale);
+        }
+      } catch {
+        // остаёмся на русском
+      }
       if (alive) setReady(true);
     })();
     return () => {
@@ -113,7 +176,23 @@ export function GameProvider({ children, fontsLoaded }: { children: React.ReactN
     AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(p)).catch(() => undefined);
   }, [p, ready]);
 
-  const lang = p.lang;
+  const setLang = useCallback(async (code: string, v?: string) => {
+    const l = byCode(code);
+    if (!l) return false;
+    const needsRestart = await setLocale(l.code, v);
+    setLangState(l.code);
+    setVoiceState(v ?? defaultVoice(l.code));
+    setLangChosen(true);
+    setP((x) => ({ ...x, lang: l.code }));
+    return needsRestart;
+  }, []);
+
+  // направление интерфейса: на телефоне — как его реально применила система (после перезапуска),
+  // в браузере — сразу по языку
+  const isRTL = Platform.OS === 'web' ? isRtlLocale(lang) : I18nManager.isRTL;
+  const dir: Dir = isRTL
+    ? { back: '→', fwd: '←', expand: '◂', collapse: '▾', end: 'left' }
+    : { back: '←', fwd: '→', expand: '▸', collapse: '▾', end: 'right' };
 
   const isStageUnlockedFor = useCallback((prog: Progress, stageId: number) => {
     const idx = content.stages.findIndex((s) => s.id === stageId);
@@ -168,11 +247,16 @@ export function GameProvider({ children, fontsLoaded }: { children: React.ReactN
       ready,
       p,
       pal,
-      f: fontsFor(lang, fontsLoaded && ready),
+      f: fontsFor(lang, fontsLoaded && ready, scriptFont && ready),
       lang,
-      t: (key, lastResort) => tRaw(key, lang, lastResort),
-      tOpt: (key) => tOptRaw(key, lang),
-      setLang: (code) => setP((x) => ({ ...x, lang: code })),
+      voice,
+      langChosen,
+      isRTL,
+      dir,
+      t: (key, vars) => tRaw(key, lang, vars),
+      tOpt: (key, vars) => tOptRaw(key, lang, vars),
+      num: (n) => formatNumber(n, lang),
+      setLang,
       setMode: (m) => setP((x) => ({ ...x, mode: m })),
       start: () => setP((x) => ({ ...x, started: true, mode: x.mode ?? 'remote' })),
       completePoint,
@@ -184,7 +268,7 @@ export function GameProvider({ children, fontsLoaded }: { children: React.ReactN
         return unlocked.find((s) => !p.finishedStages.includes(s.id)) ?? unlocked[unlocked.length - 1];
       },
     }),
-    [ready, p, pal, lang, fontsLoaded, completePoint, isStageUnlockedFor, statusFor],
+    [ready, p, pal, lang, voice, langChosen, isRTL, scriptFont, fontsLoaded, completePoint, isStageUnlockedFor, statusFor, setLang],
   );
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

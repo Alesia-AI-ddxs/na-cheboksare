@@ -6,12 +6,12 @@ import { Platform, Pressable, Text, View } from 'react-native';
 import { FalconMark } from '../../components/Icons';
 import { Btn, Card, Expander, H, LayerChip, P, Screen } from '../../components/ui';
 import { content, Fact } from '../../content';
-import { paragraphs } from '../../i18n';
+import { byCode, paragraphs } from '../../i18n';
 import { openUrl } from '../../share';
 import { useGame } from '../../state/game';
 
 export default function AboutTab() {
-  const { pal, f, t, tOpt, reset } = useGame();
+  const { pal, f, t, tOpt, reset, lang } = useGame();
   const [confirm, setConfirm] = useState(false);
   // Подсказка «установить на iPhone»: только в браузере и только если сайт ещё не открыт как приложение.
   // Проверяем после загрузки страницы (на этапе сборки окна браузера нет).
@@ -61,7 +61,7 @@ export default function AboutTab() {
       {showPwaHint ? (
         <Card>
           <View testID="pwa-hint">
-            <P style={{ fontSize: 14 }}>{t('ui.pwa_hint', 'Чтобы открывать как приложение на iPhone: Поделиться → На экран «Домой»')}</P>
+            <P style={{ fontSize: 14 }}>{t('ui.pwa_hint')}</P>
           </View>
         </Card>
       ) : null}
@@ -75,8 +75,14 @@ export default function AboutTab() {
         </View>
       </Card>
 
-      {/* язык */}
-      <Btn kind="ghost" label={t('ui.lang_short')} onPress={() => router.push('/prologue')} style={{ marginTop: 12 }} />
+      {/* язык: экран выбора (эндонимы, произношение); выбор запоминается */}
+      <Btn
+        testID="about-lang"
+        kind="ghost"
+        label={`${t('ui.lang_short')} · ${byCode(lang)?.endonym ?? lang}`}
+        onPress={() => router.push('/language?from=about')}
+        style={{ marginTop: 12 }}
+      />
 
       {/* источники (на русском, как в мастер-таблице) */}
       <Card>
@@ -125,7 +131,7 @@ export default function AboutTab() {
 
       {/* приватность и ссылки */}
       <Card>
-        <P style={{ fontSize: 14 }}>{t('ui.privacy', 'Приложение не собирает никаких данных. Имя и телефон не нужны.')}</P>
+        <P style={{ fontSize: 14 }}>{t('ui.privacy')}</P>
         <View style={{ marginTop: 6 }}>
           {link(content.links.web)}
           {link(content.links.webGame)}
@@ -135,11 +141,11 @@ export default function AboutTab() {
 
       {/* сброс прогресса */}
       {!confirm ? (
-        <Btn kind="ghost" label={t('ui.reset', 'Начать заново')} onPress={() => setConfirm(true)} style={{ marginTop: 14 }} />
+        <Btn kind="ghost" label={t('ui.reset')} onPress={() => setConfirm(true)} style={{ marginTop: 14 }} />
       ) : (
         <View style={{ flexDirection: 'row', gap: 10, marginTop: 14 }}>
           <Btn
-            label={`✓ ${t('ui.reset', 'Начать заново')}`}
+            label={`✓ ${t('ui.reset')}`}
             style={{ flex: 1, backgroundColor: pal.bad }}
             onPress={() => {
               reset();

@@ -139,9 +139,9 @@ export function RouteMap({
         </Svg>
       </View>
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 14, paddingHorizontal: 14, paddingVertical: 10 }}>
-        <LegendDot color={pal.gold} label={t('ui.done', 'пройдено')} f={f.body} muted={pal.muted} />
-        <LegendDot color={pal.varya} label={t('ui.you_are_here', 'вы здесь')} f={f.body} muted={pal.muted} />
-        <LegendDot color="transparent" border={pal.muted} label={t('ui.ahead', 'впереди')} f={f.body} muted={pal.muted} />
+        <LegendDot color={pal.gold} label={t('ui.done')} f={f.body} muted={pal.muted} />
+        <LegendDot color={pal.varya} label={t('ui.you_are_here')} f={f.body} muted={pal.muted} />
+        <LegendDot color="transparent" border={pal.muted} label={t('ui.ahead')} f={f.body} muted={pal.muted} />
       </View>
     </View>
   );

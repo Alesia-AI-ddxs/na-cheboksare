@@ -7,15 +7,19 @@ import { artifactList } from '../../content';
 import { useGame } from '../../state/game';
 
 export default function FindsTab() {
-  const { pal, f, t, tOpt, p } = useGame();
+  const { pal, f, t, tOpt, p, num } = useGame();
   return (
     <Screen>
       <View style={{ flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', marginTop: 18 }}>
         <H size={24}>{t('ui.collection')}</H>
         <Text style={{ color: pal.gold, fontWeight: '700', fontSize: 15 }}>
-          {p.found.length}/{artifactList.length}
+          {num(p.found.length)}/{num(artifactList.length)}
         </Text>
       </View>
+      {/* «Вы нашли N находок» — склонение по правилам языка (ICU, ключ finds.you_found в таблице) */}
+      <P muted testID="finds-count" style={{ fontSize: 14, marginTop: 4 }}>
+        {t('finds.you_found', { count: p.found.length })}
+      </P>
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 14 }}>
         {artifactList.map((a) => {
           const has = p.found.includes(a.id);

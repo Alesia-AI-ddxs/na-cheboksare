@@ -8,7 +8,10 @@
 //   - здесь рендерится <UnityView ref=... onUnityMessage=... style={{ aspectRatio: 560 / 240 }} />.
 //
 // Договор сообщений (JSON-строки):
-//   приложение → Unity:  { "type": "showEra", "pointId": <номер точки>, "era": "<эпоха из content.json>" }
+//   приложение → Unity:  { "type": "showEra", "pointId": <номер точки>, "era": "<эпоха из content.json>",
+//                          "lang": "<письменный вариант: ru-RU, en-GB, ar…>", "voice": "<голосовой: en-IE, ar-EG…>" }
+//   lang/voice — тот же выбор, что в приложении (языковой модуль, ТЗ мультиязычности р.2): отдельной
+//   языковой системы в Unity не заводим; 3D-сцена берёт язык только отсюда.
 //   Unity → приложение:  { "type": "ready" }      — сцена загружена, можно слать showEra
 //                         { "type": "sceneDone" } — сцена доиграла, можно показывать текст/вопрос
 //
@@ -16,10 +19,16 @@
 // по-прежнему берутся из content.json — 3D-сцена ничего не «знает» о контенте.
 import { UNITY_ENABLED } from './config';
 
-export type AppToUnity = { type: 'showEra'; pointId: number; era: string };
+export type AppToUnity = { type: 'showEra'; pointId: number; era: string; lang: string; voice: string };
 export type UnityToApp = { type: 'ready' } | { type: 'sceneDone' };
 
-export function UnitySlot(_props: { pointId: number; era: string; onMessage?: (m: UnityToApp) => void }) {
+/** Сообщение «показать эпоху» для Unity — вместе с языком и произношением */
+export function showEraMessage(pointId: number, era: string, lang: string, voice: string): string {
+  const m: AppToUnity = { type: 'showEra', pointId, era, lang, voice };
+  return JSON.stringify(m);
+}
+
+export function UnitySlot(_props: { pointId: number; era: string; lang: string; voice: string; onMessage?: (m: UnityToApp) => void }) {
   if (!UNITY_ENABLED) return null;
   // Сюда в волне 0 встанет UnityView. До тех пор — пусто.
   return null;

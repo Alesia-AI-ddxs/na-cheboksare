@@ -9,10 +9,10 @@ import { openUrl, setnerLink, shareText } from '../../share';
 import { useGame } from '../../state/game';
 
 export default function SetnerTab() {
-  const { t, tOpt, p } = useGame();
+  const { t, tOpt, p, lang, voice } = useGame();
   const [shared, setShared] = useState<string | null>(null);
   const intro = tOpt('ui.setner_intro');
-  const tg = setnerLink(content.links.setnerTelegram, p.code);
+  const tg = setnerLink(content.links.setnerTelegram, p.code, lang, voice);
   return (
     <Screen>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 18 }}>

@@ -9,7 +9,9 @@
  *  - страницы: сначала пробует интернет (чтобы приходили обновления), без сети — берёт из кэша;
  *  - скрипты, картинки, шрифты (_expo/static, assets, icons): сразу из кэша — у них в имени хэш,
  *    поэтому они никогда не меняются;
- *  - при новой сборке номер версии меняется → браузер ставит новый воркер, старый кэш удаляется.
+ *  - при новой сборке номер версии меняется → браузер ставит новый воркер, старый кэш удаляется;
+ *  - тяжёлые шрифты письменностей (китайские) заранее не качаются: приложение присылает сообщение 'cache-urls',
+ *    когда гость выбрал язык, — воркер сохраняет файл, и язык дальше работает без интернета.
  * Сайт может лежать в корне (/) или в подпапке (/turizm/app/) — пути считаются от места, где лежит sw.js.
  */
 const BUILT = false; // __BUILT__
@@ -114,6 +116,28 @@ async function networkFirst(request) {
     throw e;
   }
 }
+
+// Языковой пакет офлайн: приложение просит сохранить файлы выбранного языка (например, китайский шрифт ≈10 МБ,
+// который заранее всем не скачиваем). После этого язык работает без интернета.
+self.addEventListener('message', (event) => {
+  const d = event.data;
+  if (!BUILT || !d || d.type !== 'cache-urls' || !Array.isArray(d.urls)) return;
+  event.waitUntil(
+    caches.open(CACHE).then(async (cache) => {
+      for (const u of d.urls) {
+        try {
+          const url = new URL(u, SCOPE);
+          if (url.origin !== self.location.origin || !url.pathname.startsWith(SCOPE_PATH)) continue;
+          if (await caches.match(url.href, { ignoreSearch: true })) continue;
+          const res = await fetch(url.href);
+          if (res.ok) await cache.put(url.href, res);
+        } catch (e) {
+          // нет сети — сохраним в следующий раз
+        }
+      }
+    }),
+  );
+});
 
 self.addEventListener('fetch', (event) => {
   if (!BUILT) return;

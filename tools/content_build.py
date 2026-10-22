@@ -3,16 +3,36 @@
 Правило проекта: приложение ничего не выдумывает — все тексты берутся из таблицы.
 Структура точек повторяет Story.cs игры Unity v0.3 и расширена на точки 4–8.
 
-Запуск:  python3 -I content_build.py <путь_к_xlsx> <выход_content.json>
+Что пишет:
+  1) content.json — структура (точки, этапы, находки, факты, источники) + тексты (как раньше, для совместимости);
+  2) locales/<код>.json — по одному файлу на КАЖДЫЙ письменный вариант листа ЯЗЫКИ (языковой модуль, ТЗ v1.3 р.8):
+     ключи = ID строк интерфейса (ui.*, pt.*, q.* …), ID текстов (T…) и преданий (L…); пустые ячейки не пишутся —
+     недостающую строку подставит лестница фолбэка (точный вариант → старший → en-GB → ru-RU);
+  3) locales/_meta.json — статус текста, тест-строка «тофу», сколько строк переведено (для метки «черновик»);
+  4) locales/index.ts — список вшитых пакетов для приложения (создаётся автоматически, руками не править).
+Проверки: скобки ICU {…} в каждой строке; при ошибке — код выхода 2 (npm run check тогда тоже упадёт).
+
+Запуск:  python3 -I tools/content_build.py <путь_к_xlsx> src/content/content.json [--locales locales]
 """
 import sys, json, re
+from pathlib import Path
 import openpyxl
 
-XLSX = sys.argv[1]
-OUT = sys.argv[2]
+ARGS = [a for a in sys.argv[1:] if not a.startswith('--')]
+XLSX = ARGS[0]
+OUT = ARGS[1]
+if '--locales' in sys.argv:
+    LOCALES_DIR = Path(sys.argv[sys.argv.index('--locales') + 1])
+else:
+    # по умолчанию — папка locales/ в корне проекта (рядом с src/)
+    out_p = Path(OUT).resolve()
+    LOCALES_DIR = out_p.parents[2] / 'locales' if out_p.parent.name == 'content' and out_p.parents[1].name == 'src' \
+        else Path.cwd() / 'locales'
 
-LANG_CODES = ['ru-RU', 'en-GB', 'en-US', 'de-DE', 'fr-FR', 'zh-Hans', 'hi-IN', 'tr-TR', 'cv', 'tt-RU', 'myv', 'mdf']
-READY = {'ru-RU', 'en-GB', 'en-US', 'de-DE', 'fr-FR', 'zh-Hans', 'hi-IN', 'tr-TR'}
+# старые коды из шапок таблицы → коды реестра ЯЗЫКИ
+CODE_ALIASES = {'tt-RU': 'tt'}
+# запасной список (если в таблице ещё нет листа ЯЗЫКИ)
+LEGACY_CODES = ['ru-RU', 'en-GB', 'en-US', 'de-DE', 'fr-FR', 'zh-Hans', 'hi-IN', 'tr-TR', 'cv', 'tt', 'myv', 'mdf']
 
 # ---------------------------------------------------------------- структура маршрута (= Story.cs + точки 4–8)
 def beat(key, speaker, layer, era):
@@ -94,6 +114,25 @@ ARTIFACT_ICON = {
 # ---------------------------------------------------------------- чтение таблицы
 wb = openpyxl.load_workbook(XLSX, data_only=True)
 
+# --- ЯЗЫКИ: реестр письменных вариантов (единственный список языков для генератора)
+REGISTRY = []  # [{code, nameRu, endonym, rtl, status, testString}]
+if 'ЯЗЫКИ' in wb.sheetnames:
+    ws = wb['ЯЗЫКИ']
+    head = [str(ws.cell(1, c).value or '').strip() for c in range(1, ws.max_column + 1)]
+    col = {h: i + 1 for i, h in enumerate(head)}
+    for r in range(2, ws.max_row + 1):
+        if ws.cell(r, col['Тип']).value != 'письменный':
+            continue
+        REGISTRY.append({
+            'code': str(ws.cell(r, col['Код']).value).strip(),
+            'nameRu': ws.cell(r, col['Язык (по-русски)']).value or '',
+            'endonym': ws.cell(r, col['Эндоним (на экране)']).value or '',
+            'rtl': 'RTL' in str(ws.cell(r, col['Направление']).value or ''),
+            'status': str(ws.cell(r, col['Статус текста']).value or '').strip(),
+            'testString': (ws.cell(r, col['Тест-строка (тофу)']).value or '') if 'Тест-строка (тофу)' in col else '',
+        })
+LANG_CODES = [x['code'] for x in REGISTRY] or LEGACY_CODES
+
 def header_lang_map(ws, first_lang_col):
     """колонка -> код языка, по коду в заголовке (последняя строка заголовка)"""
     m = {}
@@ -102,6 +141,7 @@ def header_lang_map(ws, first_lang_col):
         if not h:
             continue
         code = str(h).strip().split('\n')[-1].strip()
+        code = CODE_ALIASES.get(code, code)
         if code in LANG_CODES:
             m[c] = code
     return m
@@ -181,13 +221,11 @@ for r in range(2, ws.max_row + 1):
         'link': clean(ws.cell(r, 4).value), 'status': clean(ws.cell(r, 5).value), 'todo': clean(ws.cell(r, 6).value),
     })
 
-# --- Языки
-ws = wb['Языки']
-languages = []
-for r in range(2, ws.max_row + 1):
-    code = clean(ws.cell(r, 1).value)
-    if code in LANG_CODES:
-        languages.append({'code': code, 'name': clean(ws.cell(r, 2).value), 'ready': code in READY})
+# --- Языки (для совместимости content.json; приложение берёт список языков из src/i18n/languages.ts)
+def ui_count(code):
+    return sum(1 for v in ui.values() if v.get(code))
+languages = [{'code': x['code'], 'name': x['endonym'] or x['nameRu'], 'ready': ui_count(x['code']) > 0}
+             for x in REGISTRY] or [{'code': c, 'name': c, 'ready': ui_count(c) > 0} for c in LEGACY_CODES]
 
 # --- Как устроено: версия таблицы
 ws = wb['Как устроено']
@@ -256,3 +294,70 @@ print('языков:', len(languages), '| ui-ключей:', len(ui), '| тек�
 print('точки готовы:', [p['id'] for p in points_out if p['ready']], '| не готовы:', [p['id'] for p in points_out if not p['ready']])
 for w in warnings:
     print('ПРЕДУПРЕЖДЕНИЕ:', w)
+
+# ---------------------------------------------------------------- языковые пакеты locales/<код>.json
+def icu_ok(text):
+    """Скобки ICU {…} сбалансированы — защита от обрезанных подстановок (как в generate_locales.py)."""
+    depth = 0
+    for ch in text:
+        if ch == '{':
+            depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth < 0:
+                return False
+    return depth == 0
+
+all_ids = list(ui.keys()) + list(texts.keys()) + list(legends.keys())
+packs = {code: {} for code in LANG_CODES}
+bad_icu = []
+for sid in all_ids:
+    entry = ui.get(sid) if sid in ui else (texts.get(sid) or legends.get(sid) or {}).get('text', {})
+    for code, val in entry.items():
+        if code not in packs or not val:
+            continue
+        if not icu_ok(val):
+            bad_icu.append((code, sid))
+        packs[code][sid] = val
+
+LOCALES_DIR.mkdir(parents=True, exist_ok=True)
+for old in LOCALES_DIR.glob('*.json'):
+    if old.stem not in packs and old.name != '_meta.json':
+        old.unlink()  # вариант убран из реестра — убираем и пакет
+reg_by = {x['code']: x for x in REGISTRY}
+meta = {'generatedFrom': XLSX.split('/')[-1], 'contentVersion': table_version, 'total': len(all_ids), 'variants': {}}
+print(f'\nЯзыковые пакеты → {LOCALES_DIR}  (строк всего: {len(all_ids)}; вариантов: {len(packs)})')
+for code in LANG_CODES:
+    strings = packs[code]
+    with open(LOCALES_DIR / f'{code}.json', 'w', encoding='utf-8') as f:
+        json.dump(strings, f, ensure_ascii=False, indent=1)
+        f.write('\n')
+    rg = reg_by.get(code, {})
+    meta['variants'][code] = {'status': rg.get('status', ''), 'strings': len(strings), 'rtl': rg.get('rtl', False),
+                              'testString': rg.get('testString', '')}
+    pct = round(100 * len(strings) / len(all_ids)) if all_ids else 0
+    mark = 'ГОТОВО' if len(strings) == len(all_ids) else f'пропусков: {len(all_ids) - len(strings)}'
+    print(f'  {code:9s} {len(strings):4d} из {len(all_ids)} ({pct:3d}%)  [{mark}]  {rg.get("status", "")}')
+with open(LOCALES_DIR / '_meta.json', 'w', encoding='utf-8') as f:
+    json.dump(meta, f, ensure_ascii=False, indent=1)
+    f.write('\n')
+
+# список вшитых пакетов для приложения (Metro подключает только то, что импортировано явно)
+ident = lambda c: 'L_' + re.sub(r'[^A-Za-z0-9]', '_', c)
+lines = ['// СОЗДАНО АВТОМАТИЧЕСКИ: tools/content_build.py из листа ЯЗЫКИ мастер-таблицы. Руками не править.',
+         f'// Источник: {XLSX.split("/")[-1]}']
+lines += [f"import {ident(c)} from './{c}.json';" for c in LANG_CODES]
+lines += ["import META from './_meta.json';", '',
+          'export type LocaleMeta = { status: string; strings: number; rtl: boolean; testString: string };',
+          'export const LOCALE_META = META as { generatedFrom: string; contentVersion: string; total: number; variants: Record<string, LocaleMeta> };',
+          '', '/** Пакеты строк, вшитые в сборку: код письменного варианта → { ID строки: текст } */',
+          'export const BUNDLED_LOCALES: Record<string, Record<string, string>> = {']
+lines += [f"  '{c}': {ident(c)}," for c in LANG_CODES]
+lines += ['};', '']
+(LOCALES_DIR / 'index.ts').write_text('\n'.join(lines), encoding='utf-8')
+
+if bad_icu:
+    print('\nОШИБКА — незакрытые скобки ICU {…} (исправить в таблице):')
+    for code, sid in bad_icu:
+        print(f'  {code} / {sid}')
+    sys.exit(2)

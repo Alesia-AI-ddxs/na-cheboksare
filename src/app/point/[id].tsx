@@ -9,7 +9,8 @@ import { TopBar } from '../../components/TopBar';
 import { Btn, Card, Expander, H, Kicker, LayerChip, P, Screen, Tag } from '../../components/ui';
 import { Vignette } from '../../components/Vignette';
 import { Beat, content, getPoint, getStage, Point, stagePoints } from '../../content';
-import { hasUi, paragraphs, storyText } from '../../i18n';
+import { hasKey, paragraphs, storyText } from '../../i18n';
+import { AUDIO_MANIFEST, audioBaseUrl, canPlayAudio, playAudio, resolveAudio } from '../../i18n/audio';
 import { PORTRAITS } from '../../portraits';
 import { useGame } from '../../state/game';
 import { UnitySlot } from '../../unity/UnitySlot';
@@ -35,13 +36,13 @@ export default function PointScreen() {
 }
 
 function PointView({ pt }: { pt: Point }) {
-  const { pal, f, t, tOpt, p, pointStatus, completePoint } = useGame();
+  const { pal, f, t, tOpt, p, pointStatus, completePoint, lang, voice, dir } = useGame();
   const scrollRef = useRef<ScrollViewInstance | null>(null);
   const status = pointStatus(pt.id);
   const name = tOpt(pt.nameKey);
   const era = pt.era === 'today' ? t('ui.today') : pt.era;
 
-  const quiz = pt.quiz && hasUi(pt.quiz.q) && pt.quiz.options.length > 0 ? pt.quiz : null;
+  const quiz = pt.quiz && hasKey(pt.quiz.q) && pt.quiz.options.length > 0 ? pt.quiz : null;
   const [tries, setTries] = useState(0);
   const [wrong, setWrong] = useState<number[]>([]);
   const [gained, setGained] = useState<number | null>(null); // очки за верный ответ в этом заходе
@@ -84,7 +85,7 @@ function PointView({ pt }: { pt: Point }) {
 
   return (
     <Screen scrollRef={scrollRef} header={<TopBar title={name ?? t('ui.title')} backLabel={t('ui.back')} />}>
-      <UnitySlot pointId={pt.id} era={pt.era} />
+      <UnitySlot pointId={pt.id} era={pt.era} lang={lang} voice={voice} />
       <Vignette kind={pt.scene} era={era} title={name ?? t('ui.soon')} note={tOpt('ui.reconstruction')} />
 
       {!pt.ready ? (
@@ -135,7 +136,7 @@ function PointView({ pt }: { pt: Point }) {
       {/* задание */}
       {status === 'ahead' ? (
         <Card>
-          <Tag label={`🔒 ${t('ui.ahead', 'впереди')}`} />
+          <Tag label={`🔒 ${t('ui.ahead')}`} />
         </Card>
       ) : null}
 
@@ -168,7 +169,16 @@ function PointView({ pt }: { pt: Point }) {
                     opacity: isWrong ? 0.75 : 1,
                   }}
                 >
-                  <Text style={{ color: pal.ink, fontSize: 15, fontFamily: isRight ? f.bold : f.body, fontWeight: isRight && !f.bold ? '700' : undefined }}>
+                  <Text
+                    style={{
+                      color: pal.ink,
+                      fontSize: 15,
+                      fontFamily: isRight ? f.bold : f.body,
+                      fontWeight: isRight && !f.bold ? '700' : undefined,
+                      // варианты — числа: в письме справа налево прижимаем к началу строки (справа)
+                      textAlign: dir.end === 'left' ? 'right' : 'left',
+                    }}
+                  >
                     {o}
                   </Text>
                 </Pressable>
@@ -207,8 +217,10 @@ function PointView({ pt }: { pt: Point }) {
 }
 
 function BeatCard({ beat, pointEra, legend }: { beat: Beat; pointEra: string; legend?: boolean }) {
-  const { pal, f, t, tOpt, lang } = useGame();
+  const { pal, f, t, tOpt, lang, voice } = useGame();
   const text = storyText(beat.key, lang);
+  // озвучка: фирменный голос рассказчика квеста — Александр (ТЗ 7.0); нет файла в манифесте — кнопки нет
+  const audio = canPlayAudio() ? resolveAudio(AUDIO_MANIFEST, beat.key, voice, lang, audioBaseUrl(), 'aleksandr') : null;
   const portrait = PORTRAITS[beat.speaker];
   const speaker = tOpt(beat.speaker);
   const layerLabel = beat.layer === 'doc' ? t('layer.doc') : beat.layer === 'sci' ? t('layer.sci') : t('ui.legend');
@@ -248,6 +260,9 @@ function BeatCard({ beat, pointEra, legend }: { beat: Beat; pointEra: string; le
           </View>
         )}
       </View>
+      {audio ? (
+        <Btn testID={`listen-${beat.key}`} kind="ghost" label={`▶ ${t('ui.listen')}`} onPress={() => playAudio(audio.url)} style={{ marginTop: 10 }} />
+      ) : null}
       {text && src ? (
         <Expander title={t('ui.source')}>
           <Text style={{ color: pal.muted, fontSize: 12.5, lineHeight: 19, fontFamily: f.body }}>{src}</Text>

@@ -1,17 +1,17 @@
-// Пролог / первый запуск: название, цитата летописи, выбор языка, режим игры, код, «Начать».
+// Пролог / первый запуск: название, цитата летописи, текущий язык (смена — экран /language), режим игры, код, «Начать».
 import { router } from 'expo-router';
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { Btn, Card, H, P, Screen, Tag } from '../components/ui';
+import { Btn, Card, H, P, Screen } from '../components/ui';
 import { CodeBox } from '../components/CodeBox';
 import { FalconMark, HomeIcon, WalkIcon } from '../components/Icons';
 import { Vignette } from '../components/Vignette';
-import { content } from '../content';
-import { paragraphs } from '../i18n';
+import { byCode, isDraft, paragraphs } from '../i18n';
 import { Mode, useGame } from '../state/game';
 
 export default function Prologue() {
-  const { pal, f, t, p, setLang, setMode, start } = useGame();
+  const { pal, f, t, p, lang, setMode, start, dir } = useGame();
+  const cur = byCode(lang);
   const quote = paragraphs(t('ui.splash_quote'));
 
   const onStart = () => {
@@ -23,7 +23,7 @@ export default function Prologue() {
     <Screen>
       <View style={{ alignItems: 'center', marginTop: 18 }}>
         <FalconMark size={44} />
-        <H size={30} style={{ marginTop: 8, textAlign: 'center', letterSpacing: 1 }} testID="title">
+        <H size={30} style={{ marginTop: 8, textAlign: 'center', letterSpacing: f.spacing ? 1 : 0 }} testID="title">
           {t('ui.title')}
         </H>
       </View>
@@ -36,7 +36,7 @@ export default function Prologue() {
             key={i}
             style={
               i === quote.length - 1 && quote.length > 1
-                ? { marginTop: 6, color: pal.muted, fontSize: 13, textAlign: 'right' }
+                ? { marginTop: 6, color: pal.muted, fontSize: 13, textAlign: dir.end }
                 : { fontFamily: f.display, fontSize: 17, lineHeight: 26 }
             }
           >
@@ -45,43 +45,37 @@ export default function Prologue() {
         ))}
       </Card>
 
-      {/* язык */}
+      {/* язык: текущий вариант (эндоним) и переход к экрану выбора */}
       <Card>
-        <H>{t('ui.lang_question')}</H>
-        <View style={{ marginTop: 10, gap: 8 }}>
-          {content.languages.map((l) => {
-            const sel = p.lang === l.code;
-            return (
-              <Pressable
-                key={l.code}
-                testID={`lang-${l.code}`}
-                accessibilityRole="radio"
-                accessibilityState={{ selected: sel, disabled: !l.ready }}
-                disabled={!l.ready}
-                onPress={() => setLang(l.code)}
-                style={{
-                  minHeight: 48,
-                  borderRadius: 12,
-                  borderWidth: 1.5,
-                  borderColor: sel ? pal.gold : pal.line,
-                  backgroundColor: sel ? (pal.dark ? '#2A2410' : '#F4EBD6') : 'transparent',
-                  paddingHorizontal: 14,
-                  paddingVertical: 10,
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  gap: 10,
-                  opacity: l.ready ? 1 : 0.55,
-                }}
-              >
-                <Text style={{ flex: 1, color: pal.ink, fontFamily: sel ? f.bold : f.body, fontWeight: sel && !f.bold ? '700' : undefined, fontSize: 15 }}>
-                  {l.name}
-                </Text>
-                <Text style={{ color: pal.muted, fontSize: 12, fontFamily: f.body }}>{l.code}</Text>
-                {!l.ready ? <Tag label={t('ui.soon')} /> : null}
-              </Pressable>
-            );
-          })}
-        </View>
+        <H>{t('ui.lang_choose')}</H>
+        <Pressable
+          testID="open-language"
+          accessibilityRole="button"
+          accessibilityLabel={t('ui.lang_short')}
+          onPress={() => router.push('/language?from=prologue')}
+          style={{
+            marginTop: 10,
+            minHeight: 52,
+            borderRadius: 12,
+            borderWidth: 1.5,
+            borderColor: pal.gold,
+            backgroundColor: pal.dark ? '#2A2410' : '#F4EBD6',
+            paddingHorizontal: 14,
+            paddingVertical: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 10,
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <Text testID="current-lang" style={{ color: pal.ink, fontFamily: f.bold, fontWeight: f.bold ? undefined : '700', fontSize: 16 }}>
+              {cur?.endonym ?? lang}
+            </Text>
+            {isDraft(lang) ? <Text style={{ color: pal.muted, fontSize: 10.5, fontFamily: f.body }}>{t('ui.lang_draft_badge')}</Text> : null}
+          </View>
+          <Text style={{ color: pal.muted, fontSize: 13, fontFamily: f.body }}>{t('ui.lang_short')}</Text>
+          <Text style={{ color: pal.ink, fontSize: 16 }}>{dir.fwd}</Text>
+        </Pressable>
       </Card>
 
       {/* режим и код */}
