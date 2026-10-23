@@ -1,11 +1,12 @@
 // Вкладка «О проекте»: что это, три слоя достоверности, источники, факты по точкам, версия контента,
 // приватность, ссылки, смена языка и сброс прогресса.
 import { router } from 'expo-router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Platform, Pressable, Text, View } from 'react-native';
 import { FalconMark } from '../../components/Icons';
 import { Btn, Card, Expander, H, LayerChip, P, Screen } from '../../components/ui';
 import { content, Fact } from '../../content';
+import { LAB_CONFIG } from '../../lab/config';
 import { byCode, formatDate, paragraphs } from '../../i18n';
 import { setnerLink } from '../../setnerLink';
 import { openUrl } from '../../share';
@@ -24,6 +25,18 @@ export default function AboutTab() {
       (window.navigator as Navigator & { standalone?: boolean }).standalone === true;
     setShowPwaHint(!standalone);
   }, []);
+  // скрытый вход в «Лабораторию замеров» (для владельца и тестировщиков): 7 касаний подряд по строке версии содержания
+  const taps = useRef({ n: 0, at: 0 });
+  const onVersionTap = () => {
+    const nowMs = Date.now();
+    const r = taps.current;
+    r.n = nowMs - r.at <= LAB_CONFIG.entryTapGapMs ? r.n + 1 : 1;
+    r.at = nowMs;
+    if (r.n >= LAB_CONFIG.entryTaps) {
+      r.n = 0;
+      router.push('/lab');
+    }
+  };
   const aboutTitle = tOpt('ui.about_title') ?? t('ui.title');
   const aboutText = tOpt('ui.about_text');
 
@@ -63,9 +76,11 @@ export default function AboutTab() {
       <Card>
         {aboutText ? paragraphs(aboutText).map((x, i) => <P key={i} style={{ marginBottom: 6 }}>{x}</P>) : null}
         {versionLine ? (
-          <P muted style={{ fontSize: 13 }} testID="content-version">
-            {versionLine}
-          </P>
+          <Pressable testID="lab-tap" accessible={false} onPress={onVersionTap}>
+            <P muted style={{ fontSize: 13 }} testID="content-version">
+              {versionLine}
+            </P>
+          </Pressable>
         ) : null}
       </Card>
 

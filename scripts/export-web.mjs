@@ -50,7 +50,9 @@ function restoreAppJson() {
 let code = 1;
 try {
   writeFileSync(appJsonPath, modified);
-  const r = spawnSync(npx, ['expo', 'export', '--platform', 'web', '--output-dir', outDir], {
+  // --clear (v1.2.0): без него Metro берёт описание приложения (app.json → Constants.expoConfig) из своего кэша —
+  // в веб-сборку попадала старая версия (в 1.1.1 браузер видел «1.0.0» и старые extra). С --clear — всегда текущий app.json.
+  const r = spawnSync(npx, ['expo', 'export', '--platform', 'web', '--clear', '--output-dir', outDir], {
     cwd: root,
     env,
     stdio: 'inherit',

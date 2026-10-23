@@ -8,7 +8,8 @@
 //    - ключа, который использует код (t('…'), tOpt('…'), tFirst([…]) и список ниже), нет в ru-RU;
 //    - (v1.1.1) страны варианта в реестре src/i18n/languages.ts (regions) не совпадают с колонкой «Страны (ISO 3166-1)»
 //      листа ЯЗЫКИ (генератор переносит её в locales/_meta.json), или код страны не из двух латинских букв;
-//    - (v1.1.1) нет номера/даты версии содержания (строка версии на листе «Как устроено»).
+//    - (v1.1.1) нет номера/даты версии содержания (строка версии на листе «Как устроено»);
+//    - (v1.2.0) нет строк «Лаборатории замеров» (lab.*) или кнопки «Открыть в 3D» (ui.open_3d) в ru-RU.
 // Запуск: node scripts/validate-content.mjs   (входит в npm run check)
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -107,6 +108,8 @@ const APP_UI_KEYS = [
   'ui.lang_draft_badge', 'ui.restart_rtl', 'ui.restart_btn', 'ui.listen', 'finds.count', 'finds.you_found',
   // v1.1.1 (таблица v2.8): блок «Предлагаем», версия содержания на языке гостя
   'ui.lang_suggest_title', 'ui.content_version',
+  // v1.2.0 (таблица v2.9): «Лаборатория замеров» (итог берётся по ключу lab.verdict_<цвет> — перечисляем явно) и «Открыть в 3D»
+  'lab.title', 'lab.verdict_green', 'lab.verdict_yellow', 'lab.verdict_red', 'lab.verdict_none', 'lab.rule', 'ui.open_3d',
   ...stages.map((s) => s.nameKey),
 ];
 

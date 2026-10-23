@@ -1,9 +1,9 @@
 {
  "app": "На Чебоксаре · Туризм — Чебоксары",
- "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.8 · 22 октября 2026",
- "contentVersionNumber": "2.8",
- "contentDate": "2026-10-22",
- "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.8_2026-10-22.xlsx",
+ "contentVersion": "Краеведческий квест · проект «Спутник гостя Чебоксар» · версия 2.9 · 23 октября 2026",
+ "contentVersionNumber": "2.9",
+ "contentDate": "2026-10-23",
+ "generatedFrom": "КОНТЕНТ_На_Чебоксаре_v2.9_2026-10-23.xlsx",
  "languages": [
   {
    "code": "ru-RU",
@@ -2453,6 +2453,11 @@
    "tr-TR": "İçerik sürümü {version} · {date}",
    "ar": "إصدار المحتوى {version} · {date}"
   },
+  "ui.open_3d": {
+   "ru-RU": "Открыть в 3D",
+   "en-GB": "Open in 3D",
+   "en-US": "Open in 3D"
+  },
   "ui.unity_soon": {
    "ru-RU": "3D-сцены этой точки появятся в следующей версии.",
    "en-GB": "3D scenes for this stop will arrive in the next version.",
@@ -2738,6 +2743,206 @@
    "hi-IN": "{count, plural, one {आपने # खोज की} other {आपने # खोजें कीं}}",
    "tr-TR": "{count, plural, other {# buluntu buldunuz}}",
    "ar": "{count, plural, zero {لم تعثر على أي اكتشاف بعد} one {عثرت على اكتشاف واحد} two {عثرت على اكتشافين} few {عثرت على # اكتشافات} many {عثرت على # اكتشافًا} other {عثرت على # اكتشاف}}"
+  },
+  "lab.title": {
+   "ru-RU": "Лаборатория замеров",
+   "en-GB": "Measurement lab"
+  },
+  "lab.intro": {
+   "ru-RU": "Служебный экран для владельца и тестировщиков. Замеры идут только на этом устройстве: без интернета, без разрешений, ничего не сохраняется и никуда не отправляется. Перед замером закройте другие приложения.",
+   "en-GB": "Service screen for the owner and testers. Measurements run only on this device: no internet, no permissions, nothing is stored or sent anywhere. Close other apps before measuring."
+  },
+  "lab.section_device": {
+   "ru-RU": "Устройство",
+   "en-GB": "Device"
+  },
+  "lab.maker": {
+   "ru-RU": "Производитель",
+   "en-GB": "Manufacturer"
+  },
+  "lab.model": {
+   "ru-RU": "Модель",
+   "en-GB": "Model"
+  },
+  "lab.os": {
+   "ru-RU": "Система",
+   "en-GB": "Operating system"
+  },
+  "lab.ram": {
+   "ru-RU": "Оперативная память",
+   "en-GB": "RAM"
+  },
+  "lab.year_class": {
+   "ru-RU": "Класс устройства (год)",
+   "en-GB": "Device year class"
+  },
+  "lab.cpu": {
+   "ru-RU": "Процессор",
+   "en-GB": "Processor"
+  },
+  "lab.disk_free": {
+   "ru-RU": "Свободное место",
+   "en-GB": "Free storage"
+  },
+  "lab.screen": {
+   "ru-RU": "Экран (точки × плотность)",
+   "en-GB": "Screen (points × density)"
+  },
+  "lab.phone_lang": {
+   "ru-RU": "Язык и страна устройства",
+   "en-GB": "Device language and region"
+  },
+  "lab.no_data": {
+   "ru-RU": "нет данных",
+   "en-GB": "no data"
+  },
+  "lab.unit_mb": {
+   "ru-RU": "{value} МБ",
+   "en-GB": "{value} MB"
+  },
+  "lab.unit_ms": {
+   "ru-RU": "{value} мс",
+   "en-GB": "{value} ms"
+  },
+  "lab.unit_fps": {
+   "ru-RU": "{value} к/с",
+   "en-GB": "{value} fps"
+  },
+  "lab.unit_pct": {
+   "ru-RU": "{value} %",
+   "en-GB": "{value}%"
+  },
+  "lab.section_start": {
+   "ru-RU": "Холодный старт",
+   "en-GB": "Cold start"
+  },
+  "lab.start_hint": {
+   "ru-RU": "Время от запуска программы до первого экрана — в этом запуске. Для честного замера закройте приложение полностью, откройте снова и сразу зайдите сюда.",
+   "en-GB": "Time from program start to the first screen in this launch. For a fair result, close the app completely, reopen it and come here straight away."
+  },
+  "lab.start_js": {
+   "ru-RU": "До первого экрана",
+   "en-GB": "To first screen"
+  },
+  "lab.run_all": {
+   "ru-RU": "Запустить все замеры (около {seconds} с)",
+   "en-GB": "Run all tests (about {seconds} s)"
+  },
+  "lab.run_2d": {
+   "ru-RU": "Только 2D",
+   "en-GB": "2D only"
+  },
+  "lab.run_3d": {
+   "ru-RU": "Только 3D",
+   "en-GB": "3D only"
+  },
+  "lab.running": {
+   "ru-RU": "Идёт замер — не трогайте экран",
+   "en-GB": "Measuring — please don’t touch the screen"
+  },
+  "lab.not_run": {
+   "ru-RU": "Ещё не запускали",
+   "en-GB": "Not run yet"
+  },
+  "lab.section_2d": {
+   "ru-RU": "2D-нагрузка",
+   "en-GB": "2D load"
+  },
+  "lab.hint_2d": {
+   "ru-RU": "Виньетка текущей точки и движущиеся элементы: {count}; длительность — {seconds} с.",
+   "en-GB": "Current point vignette and moving elements: {count}; duration {seconds} s."
+  },
+  "lab.section_3d": {
+   "ru-RU": "3D-нагрузка — бюджет 3D-модели",
+   "en-GB": "3D load — 3D model budget"
+  },
+  "lab.hint_3d": {
+   "ru-RU": "Сфера с рельефом: {tris} треугольников, текстура {tex}×{tex}, свет и вращение. Три ступени по {seconds} с: 1, 4 и 8 объектов.",
+   "en-GB": "Sphere with relief: {tris} triangles, {tex}×{tex} texture, lighting and rotation. Three stages of {seconds} s: 1, 4 and 8 objects."
+  },
+  "lab.stage": {
+   "ru-RU": "Ступень {n}: объектов — {objects}, треугольников — {tris}",
+   "en-GB": "Stage {n}: objects — {objects}, triangles — {tris}"
+  },
+  "lab.fps_avg": {
+   "ru-RU": "Средний кадр/с",
+   "en-GB": "Average fps"
+  },
+  "lab.fps_min": {
+   "ru-RU": "Минимальный кадр/с (худшая секунда)",
+   "en-GB": "Minimum fps (worst second)"
+  },
+  "lab.heavy": {
+   "ru-RU": "Тяжёлые кадры (дольше {ms} мс)",
+   "en-GB": "Heavy frames (over {ms} ms)"
+  },
+  "lab.first_frame": {
+   "ru-RU": "Первая отрисовка",
+   "en-GB": "First frame"
+  },
+  "lab.gl_errors": {
+   "ru-RU": "Ошибки GL",
+   "en-GB": "GL errors"
+  },
+  "lab.gpu": {
+   "ru-RU": "Видеочип",
+   "en-GB": "Graphics chip"
+  },
+  "lab.canvas": {
+   "ru-RU": "Размер холста, пикселей",
+   "en-GB": "Canvas size, pixels"
+  },
+  "lab.setup": {
+   "ru-RU": "Подготовка сцены (сетка и текстура)",
+   "en-GB": "Scene setup (mesh and texture)"
+  },
+  "lab.gl_unavailable": {
+   "ru-RU": "3D на этом устройстве не запустилось",
+   "en-GB": "3D did not start on this device"
+  },
+  "lab.section_verdict": {
+   "ru-RU": "Итог: потянет ли 3D",
+   "en-GB": "Result: can it handle 3D"
+  },
+  "lab.verdict_green": {
+   "ru-RU": "Зелёный — 3D-сцена по бюджету идёт плавно: делать 3D можно.",
+   "en-GB": "Green — the budget 3D scene runs smoothly: 3D is a go."
+  },
+  "lab.verdict_yellow": {
+   "ru-RU": "Жёлтый — одна модель идёт плавно, несколько — с рывками: 3D делать облегчённым.",
+   "en-GB": "Yellow — one model runs smoothly, several stutter: keep 3D light."
+  },
+  "lab.verdict_red": {
+   "ru-RU": "Красный — 3D по этому бюджету тормозит: оставить 2D или уменьшить модель.",
+   "en-GB": "Red — 3D at this budget stutters: stay with 2D or reduce the model."
+  },
+  "lab.verdict_none": {
+   "ru-RU": "Нет данных — запустите 3D-замер.",
+   "en-GB": "No data — run the 3D test."
+  },
+  "lab.rule": {
+   "ru-RU": "Правило: зелёный — ступень 1 не меньше {g1} к/с и ступень 2 не меньше {g2} к/с; жёлтый — ступень 1 не меньше {y1} к/с; иначе красный. Берётся средний кадр/с.",
+   "en-GB": "Rule: green — stage 1 at least {g1} fps and stage 2 at least {g2} fps; yellow — stage 1 at least {y1} fps; otherwise red. Average fps is used."
+  },
+  "lab.section_report": {
+   "ru-RU": "Отчёт",
+   "en-GB": "Report"
+  },
+  "lab.report_hint": {
+   "ru-RU": "Только модель устройства и цифры, без личных данных. Отчёт нигде не хранится — скопируйте его или отправьте.",
+   "en-GB": "Device model and numbers only, no personal data. The report is not stored anywhere — copy or share it."
+  },
+  "lab.copy": {
+   "ru-RU": "Скопировать отчёт",
+   "en-GB": "Copy report"
+  },
+  "lab.copied": {
+   "ru-RU": "Скопировано",
+   "en-GB": "Copied"
+  },
+  "lab.share": {
+   "ru-RU": "Поделиться",
+   "en-GB": "Share"
   }
  },
  "facts": [

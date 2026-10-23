@@ -10,7 +10,9 @@
 //  - ссылка на Сетнера: start=<код>_<письменный>[_<голосовой>] (v1.1.1, без &lang= &voice=);
 //  - (v1.1.1) блок «Предлагаем»: язык телефона + варианты страны телефона (CN при языке en → 中文（简体）;
 //    SA → العربية; RU → только Русский — языки России без перевода («готовится») не предлагаются);
-//  - (v1.1.1) «О проекте»: версия содержания на языке гостя (ui.content_version, дата средствами языка).
+//  - (v1.1.1) «О проекте»: версия содержания на языке гостя (ui.content_version, дата средствами языка);
+//  - (v1.2.0) «Лаборатория замеров»: 6 касаний — нет, 7 — открывается; все замеры в браузере (3D через SwiftShader) без ошибок GL;
+//    отчёт «ключ: значение»; кнопки «Открыть в 3D» нет при пустой схеме 3D-приложения.
 // Итог проверок — qa/qa_report.json (ДА/НЕТ по каждому пункту).
 // Перед запуском: npm run web:export
 // Запуск: npm run qa:screens
@@ -546,6 +548,94 @@ try {
     await page.waitForTimeout(800);
     await shot(page, '10_point2_dark_ru.png');
     await ctx.close();
+  }
+
+  // 12. «Лаборатория замеров» (v1.2.0, волна 0): скрытый вход 7 касаниями, 3D-ступени в браузере (WebGL через SwiftShader),
+  //     отчёт «ключ: значение»; кнопки «Открыть в 3D» нет при пустой схеме 3D-приложения.
+  //     Цифры кадров в headless Chromium НЕ показательны (программная отрисовка) — проверяем, что рисует без ошибок GL
+  //     и что отчёт собирается.
+  {
+    const glBrowser = await chromium.launch({
+      executablePath,
+      args: ['--no-sandbox', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'],
+    });
+    const ctx = await glBrowser.newContext({ viewport: VIEW, deviceScaleFactor: 1, locale: 'ru-RU', reducedMotion: 'reduce' });
+    const page = await ctx.newPage();
+    page.on('pageerror', (e) => errors.push(String(e)));
+    page.on('console', (m) => {
+      if (m.type() === 'error') errors.push(m.text());
+    });
+    const ru = LOCALE('ru-RU');
+    await page.goto(`${BASE}/about`);
+    await byId(page, 'content-version').waitFor();
+    await page.waitForTimeout(800);
+    // 6 касаний подряд — лаборатория НЕ открывается
+    for (let i = 0; i < 6; i++) await byId(page, 'lab-tap').click();
+    await page.waitForTimeout(1000);
+    check('лаборатория: 6 касаний по версии содержания — НЕ открывается', !/\/lab/.test(page.url()), page.url());
+    await page.waitForTimeout(1700); // пауза больше 1,5 с — счёт касаний начинается заново
+    for (let i = 0; i < 7; i++) await byId(page, 'lab-tap').click();
+    let opened = false;
+    try {
+      await page.waitForURL(/\/lab/, { timeout: 5000 });
+      opened = true;
+    } catch {
+      opened = false;
+    }
+    check('лаборатория: 7 касаний подряд — открывается', opened, page.url());
+    if (!opened) await page.goto(`${BASE}/lab`);
+    await byId(page, 'lab-title').waitFor();
+    await page.waitForTimeout(600);
+    const robots = await page.evaluate(() => document.querySelector('meta[name="robots"]')?.getAttribute('content') ?? '');
+    check('лаборатория: страница закрыта от поисковиков (noindex)', robots.includes('noindex'), robots);
+    const rowsTxt = await page.evaluate(() => document.body.innerText);
+    check('лаборатория: подписи из таблицы (lab.title, lab.section_device на ru-RU)', rowsTxt.includes(ru['lab.title']) && rowsTxt.includes(ru['lab.section_device']));
+    const ram = await byId(page, 'lab-disk').innerText();
+    check('лаборатория (веб): свободное место — «нет данных» (в браузере API нет)', ram.trim() === ru['lab.no_data'], ram);
+    await shot(page, '70_lab_top_ru.png');
+    // все замеры: 2D (10 с) + 3D (3 ступени по 10 с)
+    await byId(page, 'lab-run-all').click();
+    await byId(page, 'lab-2d').waitFor({ timeout: 10000 });
+    await page.waitForTimeout(3000);
+    await scrollTo(page, 'lab-2d');
+    await shot(page, '71_lab_2d_running_ru.png');
+    await byId(page, 'lab-2d-result').waitFor({ timeout: 40000 });
+    await byId(page, 'lab-gl').waitFor({ timeout: 20000 });
+    await page.waitForTimeout(4000);
+    await scrollTo(page, 'lab-gl');
+    await shot(page, '72_lab_3d_stage1_ru.png');
+    const painted = await page.evaluate(() => {
+      const c = document.querySelector('[data-testid="lab-gl"] canvas');
+      return c ? { w: c.width, h: c.height } : null;
+    });
+    check('лаборатория: 3D-холст создан (WebGL)', !!painted && painted.w > 0 && painted.h > 0, JSON.stringify(painted));
+    await byId(page, 'lab-3d-result').waitFor({ timeout: 240000 });
+    await page.waitForTimeout(500);
+    const glErr = await byId(page, 'lab-3d-error').count();
+    const s1 = await byId(page, 'lab-3d-s1-errors').innerText().catch(() => '');
+    check('лаборатория: 3D-ступень 1 прошла без ошибок GL (headless, SwiftShader)', glErr === 0 && s1.trim() === '0', `ошибок GL ступени 1: ${s1}; плашка ошибки: ${glErr}`);
+    const report = await byId(page, 'lab-report').innerText();
+    const lines = report.trim().split('\n');
+    const kv = Object.fromEntries(lines.slice(1).map((l) => [l.slice(0, l.indexOf(':')), l.slice(l.indexOf(':') + 2)]));
+    check('лаборатория: отчёт — первая строка «LAB na-cheboksare v1.2.0 <дата>»', /^LAB na-cheboksare v1\.2\.0 \d{4}-\d{2}-\d{2}$/.test(lines[0]), lines[0]);
+    check('лаборатория: отчёт — все строки «ключ: значение»', lines.slice(1).every((l) => /^[a-z0-9_]+: \S/.test(l)), `${lines.length} строк`);
+    check('лаборатория: отчёт — 2D и 3D ступени 1–3 с числами, итог есть', /^\d/.test(kv['2d_fps_avg'] ?? '') && /^\d/.test(kv['3d_s1_fps_avg'] ?? '') && kv['3d_s3_objects'] === '8' && ['green', 'yellow', 'red'].includes(kv.verdict),
+      `2d ${kv['2d_fps_avg']} · 3d с1 ${kv['3d_s1_fps_avg']} / с2 ${kv['3d_s2_fps_avg']} / с3 ${kv['3d_s3_fps_avg']} к/с (не показательно) · ${kv['3d_gl_renderer']} · итог ${kv.verdict}`);
+    check('лаборатория: в отчёте нет кода прохождения и имени устройства', !/ND-[A-Z0-9]{4}|device_name/i.test(report));
+    await scrollTo(page, 'lab-verdict');
+    await shot(page, '73_lab_verdict_ru.png');
+    await scrollTo(page, 'lab-report');
+    await shot(page, '74_lab_report_ru.png');
+    // «Открыть в 3D»: схема 3D-приложения в app.json пустая — кнопки нет ни на одной точке
+    let btn = 0;
+    for (const id of content.points.map((x) => x.id)) {
+      await page.goto(`${BASE}/point/${id}`);
+      await page.waitForTimeout(250);
+      btn += await byId(page, 'open-3d').count();
+    }
+    check('вариант Э: кнопки «Открыть в 3D» нет (схема пустая) — все точки', btn === 0, `кнопок: ${btn}`);
+    await ctx.close();
+    await glBrowser.close();
   }
 } catch (e) {
   console.error('СЦЕНАРИЙ ПРЕРВАН:', e.message);

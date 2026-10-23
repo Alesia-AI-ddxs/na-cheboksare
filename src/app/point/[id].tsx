@@ -13,6 +13,7 @@ import { hasKey, paragraphs, storyText } from '../../i18n';
 import { AUDIO_MANIFEST, audioBaseUrl, canPlayAudio, playAudio, resolveAudio } from '../../i18n/audio';
 import { PORTRAITS } from '../../portraits';
 import { useGame } from '../../state/game';
+import { Open3DButton } from '../../unity/Open3DButton';
 import { UnitySlot } from '../../unity/UnitySlot';
 
 export function generateStaticParams(): { id: string }[] {
@@ -87,6 +88,8 @@ function PointView({ pt }: { pt: Point }) {
     <Screen scrollRef={scrollRef} header={<TopBar title={name ?? t('ui.title')} backLabel={t('ui.back')} />}>
       <UnitySlot pointId={pt.id} era={pt.era} lang={lang} voice={voice} />
       <Vignette kind={pt.scene} era={era} title={name ?? t('ui.soon')} note={tOpt('ui.reconstruction')} />
+      {/* «вариант Э»: отдельное 3D-приложение по ссылке; схема в app.json пустая — кнопки нет */}
+      <Open3DButton pointId={pt.id} />
 
       {!pt.ready ? (
         <Card>

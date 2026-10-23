@@ -1,0 +1,16 @@
+# Веб-версия «На Чебоксаре» на EAS Hosting — ПРОБНАЯ выкладка (v1.2.0), без боевого адреса.
+# Новая версия открывается по постоянному адресу-алиасу https://na-cheboksare--next.expo.app,
+# боевой адрес (https://na-cheboksare.expo.app) при этом НЕ меняется.
+# Посмотрели, всё хорошо → запустить deploy-web.yml (выкладка в production) или продвинуть эту выкладку:
+#   npx eas deploy:promote --id <идентификатор выкладки>   (то же, что eas deploy:alias --prod --id …)
+# Запуск — только вручную (из чата через коннектор Expo или `npx eas workflow:run .eas/workflows/deploy-web-preview.yml`).
+name: Веб-версия на EAS Hosting (пробная, алиас next)
+
+jobs:
+  deploy:
+    name: Выложить на алиас next (без production)
+    type: deploy
+    environment: preview
+    params:
+      alias: next
+      prod: false

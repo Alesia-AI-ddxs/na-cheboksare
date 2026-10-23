@@ -2,7 +2,7 @@
   "expo": {
     "name": "На Чебоксаре",
     "slug": "na-cheboksare",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "orientation": "portrait",
     "scheme": "nacheboksare",
     "icon": "./assets/images/icon.png",
@@ -30,7 +30,7 @@
         "backgroundColor": "#F5F0E6"
       },
       "predictiveBackGestureEnabled": false,
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "output": "static",
@@ -59,7 +59,8 @@
           "supportsRTL": true
         }
       ],
-      "expo-asset"
+      "expo-asset",
+      "./plugins/with-unity-3d-queries"
     ],
     "experiments": {
       "typedRoutes": false
@@ -68,7 +69,9 @@
       "eas": {
         "projectId": "d40c46be-823b-490b-8ca7-88d351d40c59"
       },
-      "langPackBaseUrl": ""
+      "langPackBaseUrl": "",
+      "unity3dScheme": "",
+      "unity3dStoreUrl": ""
     },
     "owner": "mobiliuss-team"
   }

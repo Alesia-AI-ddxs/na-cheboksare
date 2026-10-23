@@ -1,5 +1,5 @@
 // СОЗДАНО АВТОМАТИЧЕСКИ: tools/content_build.py из листа ЯЗЫКИ мастер-таблицы. Руками не править.
-// Источник: КОНТЕНТ_На_Чебоксаре_v2.8_2026-10-22.xlsx
+// Источник: КОНТЕНТ_На_Чебоксаре_v2.9_2026-10-23.xlsx
 import L_ru_RU from './ru-RU.json';
 import L_cv from './cv.json';
 import L_mdf from './mdf.json';

@@ -1,6 +1,6 @@
 {
- "date": "2026-10-22T09:54:51.598Z",
- "shots": 67,
+ "date": "2026-10-23T15:05:53.513Z",
+ "shots": 72,
  "checks": [
   {
    "name": "первый запуск ведёт на экран выбора языка",
@@ -55,12 +55,12 @@
   {
    "name": "en-GB: «О проекте» — версия содержания на языке гостя",
    "pass": true,
-   "info": "Content version 2.8 · 22 October 2026"
+   "info": "Content version 2.9 · 23 October 2026"
   },
   {
    "name": "en-GB: ссылка на Сетнера start=<код>_en-GB (без &lang= &voice=)",
    "pass": true,
-   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-N3CH_en-GB"
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-SNC5_en-GB"
   },
   {
    "name": "ar: автоопределение по языку браузера (ar)",
@@ -115,12 +115,12 @@
   {
    "name": "ar: «О проекте» — версия содержания на языке гостя",
    "pass": true,
-   "info": "إصدار المحتوى 2.8 · 22 أكتوبر 2026"
+   "info": "إصدار المحتوى 2.9 · 23 أكتوبر 2026"
   },
   {
    "name": "ar: ссылка на Сетнера start=<код>_ar_ar-SA (без &lang= &voice=)",
    "pass": true,
-   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-YUJD_ar_ar-SA"
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-33UV_ar_ar-SA"
   },
   {
    "name": "zh-Hans: автоопределение по языку браузера (zh-CN)",
@@ -160,12 +160,12 @@
   {
    "name": "zh-Hans: «О проекте» — версия содержания на языке гостя",
    "pass": true,
-   "info": "内容版本 2.8 · 2026年10月22日"
+   "info": "内容版本 2.9 · 2026年10月23日"
   },
   {
    "name": "zh-Hans: ссылка на Сетнера start=<код>_zh-Hans_zh-CN (без &lang= &voice=)",
    "pass": true,
-   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-BAUE_zh-Hans_zh-CN"
+   "info": "https://t.me/Setner_Cheboksary_bot?start=ND-XLWD_zh-Hans_zh-CN"
   },
   {
    "name": "«Предлагаем», CN при языке телефона en (en-CN): en-GB + zh-Hans",
@@ -226,6 +226,66 @@
    "name": "лист тофу: шрифты письменностей загрузились из сборки",
    "pass": true,
    "info": "{\"NotoNaskhArabic\":\"loaded\",\"NotoSansSC\":\"loaded\",\"NotoSansDevanagari\":\"loaded\"}"
+  },
+  {
+   "name": "лаборатория: 6 касаний по версии содержания — НЕ открывается",
+   "pass": true,
+   "info": "http://127.0.0.1:8099/about"
+  },
+  {
+   "name": "лаборатория: 7 касаний подряд — открывается",
+   "pass": true,
+   "info": "http://127.0.0.1:8099/lab"
+  },
+  {
+   "name": "лаборатория: страница закрыта от поисковиков (noindex)",
+   "pass": true,
+   "info": "noindex, nofollow"
+  },
+  {
+   "name": "лаборатория: подписи из таблицы (lab.title, lab.section_device на ru-RU)",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "лаборатория (веб): свободное место — «нет данных» (в браузере API нет)",
+   "pass": true,
+   "info": "нет данных"
+  },
+  {
+   "name": "лаборатория: 3D-холст создан (WebGL)",
+   "pass": true,
+   "info": "{\"w\":324,\"h\":432}"
+  },
+  {
+   "name": "лаборатория: 3D-ступень 1 прошла без ошибок GL (headless, SwiftShader)",
+   "pass": true,
+   "info": "ошибок GL ступени 1: 0; плашка ошибки: 0"
+  },
+  {
+   "name": "лаборатория: отчёт — первая строка «LAB na-cheboksare v1.2.0 <дата>»",
+   "pass": true,
+   "info": "LAB na-cheboksare v1.2.0 2026-10-23"
+  },
+  {
+   "name": "лаборатория: отчёт — все строки «ключ: значение»",
+   "pass": true,
+   "info": "59 строк"
+  },
+  {
+   "name": "лаборатория: отчёт — 2D и 3D ступени 1–3 с числами, итог есть",
+   "pass": true,
+   "info": "2d 59.1 · 3d с1 33.9 / с2 13.8 / с3 8.5 к/с (не показательно) · WebKit WebGL · итог yellow"
+  },
+  {
+   "name": "лаборатория: в отчёте нет кода прохождения и имени устройства",
+   "pass": true,
+   "info": ""
+  },
+  {
+   "name": "вариант Э: кнопки «Открыть в 3D» нет (схема пустая) — все точки",
+   "pass": true,
+   "info": "кнопок: 0"
   }
  ]
 }

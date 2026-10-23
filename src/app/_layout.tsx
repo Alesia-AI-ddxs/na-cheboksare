@@ -1,4 +1,6 @@
 // Корневой макет: шрифты, состояние игры, стек экранов.
+// Первым импортом — метка старта для «Лаборатории замеров» (две цифры в памяти, на работу не влияет).
+import { markFirstScreen } from '../lab/startup';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -13,7 +15,9 @@ SplashScreen.preventAutoHideAsync().catch(() => undefined);
 function Shell() {
   const { pal, ready } = useGame();
   useEffect(() => {
-    if (ready) SplashScreen.hideAsync().catch(() => undefined);
+    if (!ready) return;
+    SplashScreen.hideAsync().catch(() => undefined);
+    requestAnimationFrame(() => markFirstScreen()); // первый экран показан — для замера холодного старта
   }, [ready]);
   return (
     <View style={{ flex: 1, backgroundColor: pal.paper }}>
